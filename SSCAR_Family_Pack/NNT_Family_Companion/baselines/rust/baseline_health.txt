@@ -1,0 +1,6 @@
+# baseline health-probe (live execution)
+OK selfcheck domain=fam next_state(S0,Fv01Pass,true)=S1 verdict_vocab=6
+probe1: fam next_state S0 Fv01Pass true
+OK state=S1
+probe2: fam compose ct08 (full-closure composition)
+OK compose state=S8;verdict=REPLAY_ADMISSIBLE;foc=FOC-03;FEV-01_family_decision_id=fam-dec-0001;FEV-02_boundary_event_id=be-0001;FEV-03_session_id_prior=sess-0002/sess-0001;FEV-04_carried_statement_refs=cs-0001;FEV-05_tsa_refs_provenance=mechanism_level_admitted;FEV-06_anchor_document=bda-anchor-ref-0001;FEV-07_accepted_head_linked_irr=sha256:acceptedhead0001/sha256:irr0001;FEV-08_freshness_anchor_update=41/43;FEV-09_rehydration_closure_ref=vra-rhc-0001;FEV-10_replay_checkpoint_rollback=ara-ckpt-0001/ara-rb-0001;FEV-11_disclosure_class_entries=none;FEV-12_family_validator_outcomes=FV-01..FV-12:pass;FEV-13_hold_enter_exit=none;FEV-14_contamination_flags=none;FEV-15_report_signature_export=rsig-0001/em-0001

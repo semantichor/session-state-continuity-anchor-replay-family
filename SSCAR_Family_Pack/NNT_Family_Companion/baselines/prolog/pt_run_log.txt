@@ -1,0 +1,1350 @@
+PT-ID: TAA-PT-001
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa intake intake_to_role_screening true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=role_screening
+
+PT-ID: TAA-PT-002
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa evaluating evaluating_to_classifying true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=classifying
+
+PT-ID: TAA-PT-003
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa decided decided_to_handoff_ready true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=handoff_ready
+
+PT-ID: TAA-PT-004
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa evaluating evaluating_to_classifying false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=fail_closed
+
+PT-ID: TAA-PT-005
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa conflict_checking conflict_checking_to_allow_constrained_decision true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence taa allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided verdict=allow_constrained / FIELD decision_id / FIELD statement_id_list / FIELD verdict / FIELD reason_code / FIELD boundary_validated_role / FIELD policy_snapshot_id / FIELD conflict_check_mode / FIELD conflict_check_strength / FIELD conflict_check_confidence / FIELD conflict_check_coverage_scope / FIELD compared_claim_set_ref / FIELD residual_risk_statement
+
+PT-ID: TAA-PT-006
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa conflict_checking conflict_checking_to_escalate_decision true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence taa escalate
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided verdict=escalate / FIELD decision_id / FIELD verdict / FIELD reason_code / FIELD escalation_request_ref / FIELD request_id / FIELD failure_ref / FIELD required_actor_role / FIELD required_evidence / FIELD status
+
+PT-ID: TAA-PT-007
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa role_screening role_screening_reclassify_to_canonicalizing true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=canonicalizing
+
+PT-ID: TAA-PT-008
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa classifying classifying_to_deny_decision true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa evaluating evaluating_to_fail_closed true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=fail_closed
+
+PT-ID: TAA-PT-009
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa intake structural_incompleteness_to_fail_closed true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=fail_closed
+
+PT-ID: TAA-PT-010
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa classifying policy_snapshot_drift_to_fail_closed true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=fail_closed
+
+PT-ID: TAA-PT-011
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa evaluating conflict_checking_to_allow_decision true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=fail_closed
+
+PT-ID: TAA-PT-012
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa fail_closed fail_closed_to_noncompliant_hold true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=noncompliant_hold
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa noncompliant_hold noncompliant_hold_to_readmission_pending true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=readmission_pending
+
+PT-ID: TAA-PT-013
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa readmission_pending readmission_pending_to_role_screening true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=role_screening
+
+PT-ID: TAA-PT-014
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa closed any_non_reopen true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=closed
+
+PT-ID: TAA-PT-015
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence taa base_allow
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided verdict=allow / FIELD decision_id / FIELD statement_id_list / FIELD verdict / FIELD reason_code / FIELD tsa_label / FIELD source_class / FIELD source_ref / FIELD boundary_validated_role / FIELD role_validation_result / FIELD policy_snapshot_id / FIELD policy_hash_ref / FIELD scope_id / FIELD turn_id / FIELD order_ref / FIELD logical_timestamp / FIELD semantic_closure / FIELD evidence_closure / FIELD failure_closure / FIELD policy_snapshot_closure
+
+PT-ID: TAA-PT-016
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence taa base_allow
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided verdict=allow / FIELD decision_id / FIELD statement_id_list / FIELD verdict / FIELD reason_code / FIELD tsa_label / FIELD source_class / FIELD source_ref / FIELD boundary_validated_role / FIELD role_validation_result / FIELD policy_snapshot_id / FIELD policy_hash_ref / FIELD scope_id / FIELD turn_id / FIELD order_ref / FIELD logical_timestamp / FIELD semantic_closure / FIELD evidence_closure / FIELD failure_closure / FIELD policy_snapshot_closure
+
+PT-ID: TAA-PT-017
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence taa allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided verdict=allow_constrained / FIELD decision_id / FIELD statement_id_list / FIELD verdict / FIELD reason_code / FIELD boundary_validated_role / FIELD policy_snapshot_id / FIELD conflict_check_mode / FIELD conflict_check_strength / FIELD conflict_check_confidence / FIELD conflict_check_coverage_scope / FIELD compared_claim_set_ref / FIELD residual_risk_statement
+
+PT-ID: TAA-PT-018
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence taa fail_closed_escalation
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=fail_closed verdict=fail_closed / FIELD decision_id / FIELD verdict / FIELD inhibit_flags / FIELD root_reason_code / FIELD clearance_needed / FIELD cleared_only_by / FIELD remediation_class / FIELD escalation_request_ref / FIELD request_id / FIELD failure_ref / FIELD required_actor_role / FIELD required_evidence / FIELD status
+
+PT-ID: TAA-PT-019
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa decided clearance_artifact_missing_to_fail_closed true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=fail_closed
+
+PT-ID: TAA-PT-020
+COMMAND: (no invocation -- SKIP: TAA Conformance Tests declarative record TAA-PT-020-DECL / VP-GEN-020 record-kind line: Declarative conformance claim (not a buyer-runnable unit test); + Section 4 Minimal run note bounded-external list (ordering enforcement distributed across Section 11 + Section 9))
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: TAA-PT-021
+COMMAND: swipl -q /build/prolog/baseline.pl -- taxonomy taa
+EXIT_CODE: 0
+STDOUT_TAIL: verdicts=[allow,allow_constrained,deny,fail_closed,escalate,out_of_scope] / count=6 / reclassify=action_not_verdict / RESULT distinct=true
+
+PT-ID: TAA-PT-022
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa role_screening role_screening_reclassify_to_canonicalizing true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=canonicalizing
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa role_screening role_screening_to_out_of_scope_decision true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided
+
+PT-ID: TAA-PT-023
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa conflict_checking conflict_checking_to_deny_decision true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa conflict_checking conflict_checking_to_fail_closed true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=fail_closed
+
+PT-ID: TAA-PT-024
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa evaluating evaluating_to_fail_closed true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=fail_closed
+
+PT-ID: TAA-PT-025
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence taa allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided verdict=allow_constrained / FIELD decision_id / FIELD statement_id_list / FIELD verdict / FIELD reason_code / FIELD boundary_validated_role / FIELD policy_snapshot_id / FIELD conflict_check_mode / FIELD conflict_check_strength / FIELD conflict_check_confidence / FIELD conflict_check_coverage_scope / FIELD compared_claim_set_ref / FIELD residual_risk_statement
+
+PT-ID: TAA-PT-026
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa conflict_checking conflict_checking_to_allow_decision true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa intake intake_to_role_screening true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=role_screening
+
+PT-ID: TAA-PT-027
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa conflict_checking conflict_checking_to_allow_decision true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa conflict_checking conflict_checking_to_allow_constrained_decision true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa conflict_checking conflict_checking_to_deny_decision true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa conflict_checking conflict_checking_to_escalate_decision true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided
+
+PT-ID: VP-GEN-001
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa intake intake_to_role_screening true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=role_screening
+
+PT-ID: VP-GEN-002
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa evaluating evaluating_to_classifying true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=classifying
+
+PT-ID: VP-GEN-003
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa decided decided_to_handoff_ready true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=handoff_ready
+
+PT-ID: VP-GEN-004
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa evaluating evaluating_to_classifying false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=fail_closed
+
+PT-ID: VP-GEN-005
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa conflict_checking conflict_checking_to_allow_constrained_decision true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence taa allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided verdict=allow_constrained / FIELD decision_id / FIELD statement_id_list / FIELD verdict / FIELD reason_code / FIELD boundary_validated_role / FIELD policy_snapshot_id / FIELD conflict_check_mode / FIELD conflict_check_strength / FIELD conflict_check_confidence / FIELD conflict_check_coverage_scope / FIELD compared_claim_set_ref / FIELD residual_risk_statement
+
+PT-ID: VP-GEN-006
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa conflict_checking conflict_checking_to_escalate_decision true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence taa escalate
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided verdict=escalate / FIELD decision_id / FIELD verdict / FIELD reason_code / FIELD escalation_request_ref / FIELD request_id / FIELD failure_ref / FIELD required_actor_role / FIELD required_evidence / FIELD status
+
+PT-ID: VP-GEN-007
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa role_screening role_screening_reclassify_to_canonicalizing true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=canonicalizing
+
+PT-ID: VP-GEN-008
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa classifying classifying_to_deny_decision true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa evaluating evaluating_to_fail_closed true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=fail_closed
+
+PT-ID: VP-GEN-009
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa intake structural_incompleteness_to_fail_closed true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=fail_closed
+
+PT-ID: VP-GEN-010
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa classifying policy_snapshot_drift_to_fail_closed true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=fail_closed
+
+PT-ID: VP-GEN-011
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa evaluating conflict_checking_to_allow_decision true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=fail_closed
+
+PT-ID: VP-GEN-012
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa fail_closed fail_closed_to_noncompliant_hold true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=noncompliant_hold
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa noncompliant_hold noncompliant_hold_to_readmission_pending true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=readmission_pending
+
+PT-ID: VP-GEN-013
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa readmission_pending readmission_pending_to_role_screening true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=role_screening
+
+PT-ID: VP-GEN-014
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa closed any_non_reopen true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=closed
+
+PT-ID: VP-GEN-015
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence taa base_allow
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided verdict=allow / FIELD decision_id / FIELD statement_id_list / FIELD verdict / FIELD reason_code / FIELD tsa_label / FIELD source_class / FIELD source_ref / FIELD boundary_validated_role / FIELD role_validation_result / FIELD policy_snapshot_id / FIELD policy_hash_ref / FIELD scope_id / FIELD turn_id / FIELD order_ref / FIELD logical_timestamp / FIELD semantic_closure / FIELD evidence_closure / FIELD failure_closure / FIELD policy_snapshot_closure
+
+PT-ID: VP-GEN-016
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence taa base_allow
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided verdict=allow / FIELD decision_id / FIELD statement_id_list / FIELD verdict / FIELD reason_code / FIELD tsa_label / FIELD source_class / FIELD source_ref / FIELD boundary_validated_role / FIELD role_validation_result / FIELD policy_snapshot_id / FIELD policy_hash_ref / FIELD scope_id / FIELD turn_id / FIELD order_ref / FIELD logical_timestamp / FIELD semantic_closure / FIELD evidence_closure / FIELD failure_closure / FIELD policy_snapshot_closure
+
+PT-ID: VP-GEN-017
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence taa allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided verdict=allow_constrained / FIELD decision_id / FIELD statement_id_list / FIELD verdict / FIELD reason_code / FIELD boundary_validated_role / FIELD policy_snapshot_id / FIELD conflict_check_mode / FIELD conflict_check_strength / FIELD conflict_check_confidence / FIELD conflict_check_coverage_scope / FIELD compared_claim_set_ref / FIELD residual_risk_statement
+
+PT-ID: VP-GEN-018
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence taa fail_closed_escalation
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=fail_closed verdict=fail_closed / FIELD decision_id / FIELD verdict / FIELD inhibit_flags / FIELD root_reason_code / FIELD clearance_needed / FIELD cleared_only_by / FIELD remediation_class / FIELD escalation_request_ref / FIELD request_id / FIELD failure_ref / FIELD required_actor_role / FIELD required_evidence / FIELD status
+
+PT-ID: VP-GEN-019
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa decided clearance_artifact_missing_to_fail_closed true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=fail_closed
+
+PT-ID: VP-GEN-020
+COMMAND: (no invocation -- SKIP: TAA Conformance Tests declarative record TAA-PT-020-DECL / VP-GEN-020 record-kind line: Declarative conformance claim (not a buyer-runnable unit test); + Section 4 Minimal run note bounded-external list (ordering enforcement distributed across Section 11 + Section 9))
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: VP-GEN-021
+COMMAND: swipl -q /build/prolog/baseline.pl -- taxonomy taa
+EXIT_CODE: 0
+STDOUT_TAIL: verdicts=[allow,allow_constrained,deny,fail_closed,escalate,out_of_scope] / count=6 / reclassify=action_not_verdict / RESULT distinct=true
+
+PT-ID: VP-GEN-022
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa role_screening role_screening_reclassify_to_canonicalizing true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=canonicalizing
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa role_screening role_screening_to_out_of_scope_decision true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided
+
+PT-ID: VP-GEN-023
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa conflict_checking conflict_checking_to_deny_decision true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa conflict_checking conflict_checking_to_fail_closed true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=fail_closed
+
+PT-ID: VP-GEN-024
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa evaluating evaluating_to_fail_closed true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=fail_closed
+
+PT-ID: VP-GEN-025
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence taa allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided verdict=allow_constrained / FIELD decision_id / FIELD statement_id_list / FIELD verdict / FIELD reason_code / FIELD boundary_validated_role / FIELD policy_snapshot_id / FIELD conflict_check_mode / FIELD conflict_check_strength / FIELD conflict_check_confidence / FIELD conflict_check_coverage_scope / FIELD compared_claim_set_ref / FIELD residual_risk_statement
+
+PT-ID: VP-GEN-026
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa conflict_checking conflict_checking_to_allow_decision true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa intake intake_to_role_screening true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=role_screening
+
+PT-ID: VP-GEN-027
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa conflict_checking conflict_checking_to_allow_decision true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa conflict_checking conflict_checking_to_allow_constrained_decision true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa conflict_checking conflict_checking_to_deny_decision true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided
+COMMAND: swipl -q /build/prolog/baseline.pl -- next taa conflict_checking conflict_checking_to_escalate_decision true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=decided
+
+PT-ID: PT-001
+COMMAND: swipl -q /build/prolog/baseline.pl -- next vra s0_startup_readonly startup_complete true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s1_snapshot_locked
+
+PT-ID: PT-002
+COMMAND: swipl -q /build/prolog/baseline.pl -- next vra s2_structural_verified structural_checks_done true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s3_eligible_head_selected
+
+PT-ID: PT-003
+COMMAND: swipl -q /build/prolog/baseline.pl -- next vra s3_eligible_head_selected eligibility_checks_done true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s4_rehydrated_validated
+
+PT-ID: PT-004
+COMMAND: swipl -q /build/prolog/baseline.pl -- next vra s2_structural_verified structural_checks_done false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s5_fail_safe
+
+PT-ID: PT-005
+COMMAND: swipl -q /build/prolog/baseline.pl -- next vra s2_structural_verified structural_checks_done false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s5_fail_safe
+
+PT-ID: PT-006
+COMMAND: swipl -q /build/prolog/baseline.pl -- next vra s2_structural_verified structural_checks_done false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s5_fail_safe
+
+PT-ID: PT-007
+COMMAND: swipl -q /build/prolog/baseline.pl -- next vra s2_structural_verified structural_checks_done false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s5_fail_safe
+
+PT-ID: PT-008
+COMMAND: swipl -q /build/prolog/baseline.pl -- next vra s3_eligible_head_selected eligibility_checks_done false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s5_fail_safe
+
+PT-ID: PT-009
+COMMAND: swipl -q /build/prolog/baseline.pl -- next vra s3_eligible_head_selected eligibility_checks_done false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s5_fail_safe
+
+PT-ID: PT-010
+COMMAND: swipl -q /build/prolog/baseline.pl -- next vra s0_startup_readonly startup_complete false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s5_fail_safe
+
+PT-ID: PT-011
+COMMAND: swipl -q /build/prolog/baseline.pl -- next vra s3_eligible_head_selected rollback_detected true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s5_fail_safe
+
+PT-ID: PT-012
+COMMAND: swipl -q /build/prolog/baseline.pl -- next vra s5_fail_safe wal_replay_needed true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s7_recovery_replay
+
+PT-ID: PT-013
+COMMAND: swipl -q /build/prolog/baseline.pl -- next vra s3_eligible_head_selected tool_state_invalid true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s6_tool_quarantine
+
+PT-ID: PT-014
+COMMAND: swipl -q /build/prolog/baseline.pl -- next vra s3_eligible_head_selected tool_state_invalid true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s6_tool_quarantine
+COMMAND: swipl -q /build/prolog/baseline.pl -- next vra s3_eligible_head_selected eligibility_checks_done true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s4_rehydrated_validated
+
+PT-ID: PT-015
+COMMAND: swipl -q /build/prolog/baseline.pl -- next vra s6_tool_quarantine startup_complete true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s6_tool_quarantine
+
+PT-ID: PT-016
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence vra deny_chain
+EXIT_CODE: 0
+STDOUT_TAIL: FIELD validator_bundle_id / FIELD verified_head_digest / FIELD snapshot_id
+
+PT-ID: PT-017
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence vra deny_freshness
+EXIT_CODE: 0
+STDOUT_TAIL: FIELD validator_bundle_id / FIELD verified_head_digest / FIELD snapshot_id / FIELD policy_id / FIELD source_id / FIELD freshness_value / FIELD irr_digest / FIELD tool_activation_status / failed_validator=v_freshness
+
+PT-ID: PT-018
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence vra deny_parse
+EXIT_CODE: 0
+STDOUT_TAIL: FIELD failure_code / FIELD failed_validator / FIELD suppression_status
+
+PT-ID: PT-019
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence vra recovery
+EXIT_CODE: 0
+STDOUT_TAIL: FIELD recovery_phase / FIELD recovery_phase_producer / recovery_phase_producer=v_wal_phase
+
+PT-ID: PT-020
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence vra readmission
+EXIT_CODE: 0
+STDOUT_TAIL: FIELD readmission_token_id
+
+PT-ID: PT-021
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence vra producers
+EXIT_CODE: 0
+STDOUT_TAIL: FIELD validator_bundle_id / FIELD failure_explanation / FIELD tool_activation_status / validator_bundle_id_producer=executionlayer / failure_explanation_producer=gatelogic / tool_activation_status_producer=toolgate
+
+PT-ID: PT-022
+COMMAND: swipl -q /build/prolog/baseline.pl -- taxonomy vra
+EXIT_CODE: 0
+STDOUT_TAIL: verdicts=[allow,deny,quarantine,escalate,readmission_pending] / states=[s0_startup_readonly,s6_tool_quarantine,s8_readmission_pending] / RESULT distinct=true
+
+PT-ID: PT-023
+COMMAND: swipl -q /build/prolog/baseline.pl -- taxonomy vra
+EXIT_CODE: 0
+STDOUT_TAIL: verdicts=[allow,deny,quarantine,escalate,readmission_pending] / states=[s0_startup_readonly,s6_tool_quarantine,s8_readmission_pending] / RESULT distinct=true
+
+PT-ID: PT-024
+COMMAND: swipl -q /build/prolog/baseline.pl -- next vra s8_readmission_pending authority_release true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s0_startup_readonly
+
+PT-ID: PT-025
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence vra deny_freshness
+EXIT_CODE: 0
+STDOUT_TAIL: FIELD validator_bundle_id / FIELD verified_head_digest / FIELD snapshot_id / FIELD policy_id / FIELD source_id / FIELD freshness_value / FIELD irr_digest / FIELD tool_activation_status / failed_validator=v_freshness
+
+PT-ID: PT-026
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence vra recovery
+EXIT_CODE: 0
+STDOUT_TAIL: FIELD recovery_phase / FIELD recovery_phase_producer / recovery_phase_producer=v_wal_phase
+
+PT-ID: PT-027
+COMMAND: swipl -q /build/prolog/baseline.pl -- next vra s3_eligible_head_selected tool_state_invalid true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s6_tool_quarantine
+
+PT-ID: PT-028
+COMMAND: swipl -q /build/prolog/baseline.pl -- attest vra v_compat
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT attested=v_compat / agent=vra / enforcement=bounded_architecture_surface
+
+PT-ID: PT-029
+COMMAND: swipl -q /build/prolog/baseline.pl -- attest vra v_writer_lock
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT attested=v_writer_lock / agent=vra / enforcement=bounded_architecture_surface
+
+PT-ID: PTS-BDA-001
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda idle input_received true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=ingest_validate
+
+PT-ID: PTS-BDA-002
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda ingest_validate validation_pass true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=filter_review
+
+PT-ID: PTS-BDA-003
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda filter_review no_escalation true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=ready_for_release
+
+PT-ID: PTS-BDA-004
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda finalization_review evidence_ok true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=idle
+
+PT-ID: PTS-BDA-005
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda ingest_validate validation_fail true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=output_blocked
+COMMAND: swipl -q /build/prolog/baseline.pl -- verdict bda schema_invalid
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=block
+
+PT-ID: PTS-BDA-006
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda filter_review tool_state_detected true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=tool_state_quarantined
+COMMAND: swipl -q /build/prolog/baseline.pl -- verdict bda tool_state_no_approval
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=quarantine
+
+PT-ID: PTS-BDA-007
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda ingest_validate validation_fail true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=output_blocked
+COMMAND: swipl -q /build/prolog/baseline.pl -- verdict bda allowlist_miss
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=block
+
+PT-ID: PTS-BDA-008
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda tool_state_quarantined approval_granted false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=tool_state_quarantined
+
+PT-ID: PTS-BDA-009
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda ingest_validate validation_fail true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=output_blocked
+COMMAND: swipl -q /build/prolog/baseline.pl -- verdict bda freshness_replay
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=block
+
+PT-ID: PTS-BDA-010
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda ingest_validate validation_fail true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=output_blocked
+
+PT-ID: PTS-BDA-011
+COMMAND: swipl -q /build/prolog/baseline.pl -- verdict bda unlabeled_statement
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=block
+
+PT-ID: PTS-BDA-012
+COMMAND: swipl -q /build/prolog/baseline.pl -- taxonomy bda
+EXIT_CODE: 0
+STDOUT_TAIL: verdicts=[allow,allow_constrained,block,quarantine,fail_closed,noncompliant_hold,readmit] / count=7 / state_output_blocked=output_blocked / state_noncompliant_hold=noncompliant_hold / RESULT distinct=true
+
+PT-ID: PTS-BDA-013
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda filter_review cpw_critical true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=output_blocked
+COMMAND: swipl -q /build/prolog/baseline.pl -- verdict bda cpw_critical
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=fail_closed
+
+PT-ID: PTS-BDA-014
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda ingest_validate validation_fail true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=output_blocked
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda finalization_review evidence_fail true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=noncompliant_hold
+
+PT-ID: PTS-BDA-015
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda filter_review cpw_critical true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=output_blocked
+
+PT-ID: PTS-BDA-016
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda finalization_review cpw_critical true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=output_blocked
+
+PT-ID: PTS-BDA-017
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda tool_state_quarantined cpw_critical true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=output_blocked
+
+PT-ID: PTS-BDA-018
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda output_blocked readmission_approved true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=idle
+
+PT-ID: PTS-BDA-019
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda noncompliant_hold compliance_restored true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=idle
+
+PT-ID: PTS-BDA-020
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda output_blocked readmission_approved false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=output_blocked
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda noncompliant_hold compliance_restored false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=noncompliant_hold
+
+PT-ID: PTS-BDA-021
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda idle input_received true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=ingest_validate
+
+PT-ID: PTS-BDA-022
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence bda artifact
+EXIT_CODE: 0
+STDOUT_TAIL: FIELD decision_id / FIELD verdict / FIELD reason_code / FIELD validator_results / FIELD statement_refs / FIELD input_digest
+
+PT-ID: PTS-BDA-023
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence bda mandatory
+EXIT_CODE: 0
+STDOUT_TAIL: FIELD decision_id / FIELD session_id / FIELD boundary_side / FIELD decision_object / FIELD input_digest / FIELD policy_hash / FIELD validator_results / FIELD statement_refs / FIELD verdict / FIELD reason_code / FIELD order_index / FIELD hash_prev / FIELD hash_curr
+
+PT-ID: PTS-BDA-024
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence bda approval
+EXIT_CODE: 0
+STDOUT_TAIL: FIELD approval_ref
+
+PT-ID: PTS-BDA-025
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence bda finalization
+EXIT_CODE: 0
+STDOUT_TAIL: FIELD evidence_ref / FIELD verif_counter_anchor
+
+PT-ID: PTS-BDA-026
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence bda rollback
+EXIT_CODE: 0
+STDOUT_TAIL: FIELD rollback_ref
+
+PT-ID: PTS-BDA-027
+COMMAND: (no invocation -- SKIP: BDA Conformance Tests :516 Section 5 Minimal Run Note bounded-external list entry: authorized non-validator producer grounding (whole-assertion coverage))
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-BDA-028
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda ready_for_release cpw_critical true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=output_blocked
+
+PT-ID: PTS-BDA-029
+COMMAND: (no invocation -- SKIP: BDA Conformance Tests :516 Section 5 Minimal Run Note bounded-external list entry: distributed enforcement legitimacy where not exposed by local transition function)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-BDA-030
+COMMAND: swipl -q /build/prolog/baseline.pl -- taxonomy bda
+EXIT_CODE: 0
+STDOUT_TAIL: verdicts=[allow,allow_constrained,block,quarantine,fail_closed,noncompliant_hold,readmit] / count=7 / state_output_blocked=output_blocked / state_noncompliant_hold=noncompliant_hold / RESULT distinct=true
+
+PT-ID: PTS-BDA-031
+COMMAND: swipl -q /build/prolog/baseline.pl -- taxonomy bda
+EXIT_CODE: 0
+STDOUT_TAIL: verdicts=[allow,allow_constrained,block,quarantine,fail_closed,noncompliant_hold,readmit] / count=7 / state_output_blocked=output_blocked / state_noncompliant_hold=noncompliant_hold / RESULT distinct=true
+
+PT-ID: PTS-BDA-032
+COMMAND: swipl -q /build/prolog/baseline.pl -- verdict bda schema_invalid
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=block
+COMMAND: swipl -q /build/prolog/baseline.pl -- verdict bda tool_state_no_approval
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=quarantine
+COMMAND: swipl -q /build/prolog/baseline.pl -- verdict bda all_pass
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=allow
+
+PT-ID: PTS-BDA-033
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda ready_for_release cpw_critical true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=output_blocked
+COMMAND: swipl -q /build/prolog/baseline.pl -- verdict bda cpw_critical
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=fail_closed
+
+PT-ID: PTS-BDA-034
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence bda approval
+EXIT_CODE: 0
+STDOUT_TAIL: FIELD approval_ref
+
+PT-ID: PTS-BDA-035
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda finalization_review evidence_ok true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=idle
+COMMAND: swipl -q /build/prolog/baseline.pl -- next bda finalization_review evidence_fail true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=noncompliant_hold
+
+PT-ID: PTS-BDA-036
+COMMAND: swipl -q /build/prolog/baseline.pl -- taxonomy bda
+EXIT_CODE: 0
+STDOUT_TAIL: verdicts=[allow,allow_constrained,block,quarantine,fail_closed,noncompliant_hold,readmit] / count=7 / state_output_blocked=output_blocked / state_noncompliant_hold=noncompliant_hold / RESULT distinct=true
+
+PT-ID: ARA-T001
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara s0_ingested ev_parse_ok true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s1_parsed
+
+PT-ID: ARA-T002
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara s2_verified replay_fold_complete true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s3_reconstructed
+
+PT-ID: ARA-T003
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara s4_checkpoint_resolved ev_report_bound true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s5_report_ready
+
+PT-ID: ARA-T004
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara s2_verified ev_signature_fail true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx_fail_closed
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara s2_verified ev_chain_break true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx_fail_closed
+COMMAND: swipl -q /build/prolog/baseline.pl -- verdict ara chain_break
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=broken
+
+PT-ID: ARA-T005
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara s4_checkpoint_resolved report_insufficient false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s4_checkpoint_resolved
+COMMAND: swipl -q /build/prolog/baseline.pl -- verdict ara report_insufficient
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=partial
+
+PT-ID: ARA-T006
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara s2_verified ev_evidence_fail true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sh_hold_active
+
+PT-ID: ARA-T007
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara s3_reconstructed ev_lastclean_found false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s3_reconstructed
+COMMAND: swipl -q /build/prolog/baseline.pl -- verdict ara checkpoint_unverified
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=partial
+
+PT-ID: ARA-T008
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara s2_verified ev_signature_fail true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx_fail_closed
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara s2_verified ev_counter_replay true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sh_hold_active
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara s3_reconstructed ev_lastclean_found false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s3_reconstructed
+
+PT-ID: ARA-T009
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara s2_verified ev_signature_fail true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx_fail_closed
+
+PT-ID: ARA-T010
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara s4_checkpoint_resolved ev_chain_break false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx_fail_closed
+
+PT-ID: ARA-T011
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara s3_reconstructed ev_signature_fail true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx_fail_closed
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara s3_reconstructed ev_evidence_fail true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sh_hold_active
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara s2_verified ev_policy_unresolved true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx_fail_closed
+
+PT-ID: ARA-T012
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara sh_hold_active ev_readmission_granted true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s6_readmitted
+
+PT-ID: ARA-T013
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara sh_hold_active ev_readmission_granted false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sh_hold_active
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara sx_fail_closed ev_readmission_granted false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx_fail_closed
+
+PT-ID: ARA-T014
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara s5_report_ready ev_report_bound true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s5_report_ready
+
+PT-ID: ARA-T015
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence ara final_output
+EXIT_CODE: 0
+STDOUT_TAIL: FIELD report_signature / FIELD export_manifest_ref / FIELD chain_of_custody
+
+PT-ID: ARA-T016
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence ara mandatory
+EXIT_CODE: 0
+STDOUT_TAIL: FIELD bundle_digest / FIELD policy_profile_id / FIELD policy_hash / FIELD validator_outcomes / FIELD hash_continuity_refs / FIELD signature_refs / FIELD checkpoint_refs / FIELD rollback_refs
+
+PT-ID: ARA-T017
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence ara hold_readmission
+EXIT_CODE: 0
+STDOUT_TAIL: FIELD hold_enter_refs / FIELD hold_exit_refs / FIELD anchor_update_ref
+
+PT-ID: ARA-T018
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence ara producers
+EXIT_CODE: 0
+STDOUT_TAIL: FIELD bundle_digest / FIELD policy_profile_id / FIELD validator_outcomes / FIELD report_fields_ref
+
+PT-ID: ARA-T019
+COMMAND: swipl -q /build/prolog/baseline.pl -- verdict ara tool_state
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=quarantine
+
+PT-ID: ARA-T020
+COMMAND: swipl -q /build/prolog/baseline.pl -- verdict ara tool_state
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=quarantine
+
+PT-ID: ARA-T021
+COMMAND: swipl -q /build/prolog/baseline.pl -- taxonomy ara
+EXIT_CODE: 0
+STDOUT_TAIL: verdicts=[replayable,partial,rejected,broken,incident_only] / sx=sx_fail_closed / sh=sh_hold_active / RESULT distinct=true
+
+PT-ID: ARA-T022
+COMMAND: swipl -q /build/prolog/baseline.pl -- taxonomy ara
+EXIT_CODE: 0
+STDOUT_TAIL: verdicts=[replayable,partial,rejected,broken,incident_only] / sx=sx_fail_closed / sh=sh_hold_active / RESULT distinct=true
+
+PT-ID: ARA-T023
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara s2_verified ev_policy_unresolved true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx_fail_closed
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara s6_readmitted resume_s2 true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s2_verified
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara s6_readmitted resume_s4 true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s4_checkpoint_resolved
+
+PT-ID: ARA-T024
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara s3_reconstructed ev_lastclean_found true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s4_checkpoint_resolved
+
+PT-ID: ARA-T025
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence ara readmission_closure
+EXIT_CODE: 0
+STDOUT_TAIL: FIELD hold_exit_refs / FIELD anchor_update_ref / FIELD policy_profile_id / FIELD boot_or_verif_refs
+
+PT-ID: ARA-T026
+COMMAND: swipl -q /build/prolog/baseline.pl -- next ara s4_checkpoint_resolved ev_report_bound true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s5_report_ready
+
+PT-ID: ARA-T027
+COMMAND: swipl -q /build/prolog/baseline.pl -- verdict ara tool_state
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=quarantine
+
+PT-ID: FPA-D-01
+COMMAND: (no invocation -- SKIP: FPA Section F.D declarative-obligations section placement + Section H Minimal Run Note documented-mode clause: every declarative obligation in F.D is documented in the buyer conformance record as a non-runnable but required obligation)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-02
+COMMAND: (no invocation -- SKIP: FPA Section F.D declarative-obligations section placement + Section H Minimal Run Note documented-mode clause: every declarative obligation in F.D is documented in the buyer conformance record as a non-runnable but required obligation)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-03
+COMMAND: (no invocation -- SKIP: FPA Section F.D declarative-obligations section placement + Section H Minimal Run Note documented-mode clause: every declarative obligation in F.D is documented in the buyer conformance record as a non-runnable but required obligation)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-04
+COMMAND: (no invocation -- SKIP: FPA Section F.D declarative-obligations section placement + Section H Minimal Run Note documented-mode clause: every declarative obligation in F.D is documented in the buyer conformance record as a non-runnable but required obligation)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-05
+COMMAND: (no invocation -- SKIP: FPA Section F.D declarative-obligations section placement + Section H Minimal Run Note documented-mode clause: every declarative obligation in F.D is documented in the buyer conformance record as a non-runnable but required obligation)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-06
+COMMAND: (no invocation -- SKIP: FPA Section F.D declarative-obligations section placement + Section H Minimal Run Note documented-mode clause: every declarative obligation in F.D is documented in the buyer conformance record as a non-runnable but required obligation)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-T-01
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s0_idle transfer_packet_received true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s1_received
+
+PT-ID: FPA-T-02
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s1_received structure_valid true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s2_verified
+
+PT-ID: FPA-T-03
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s6_restoration_eligible restore_admitted true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s0_idle
+
+PT-ID: FPA-T-04
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s1_received structure_valid false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s8_rejected
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s1_received structure_invalid true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s8_rejected
+
+PT-ID: FPA-T-06
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s2_verified evidence_pending false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s7_quarantined
+
+PT-ID: FPA-T-08a
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s2_verified freshness_fail true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s8_rejected
+
+PT-ID: FPA-T-08b
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s5_watermark_committed restore_request_genesis_confirmed false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s8_rejected
+
+PT-ID: FPA-T-08c
+COMMAND: swipl -q /build/prolog/baseline.pl -- taxonomy fpa
+EXIT_CODE: 0
+STDOUT_TAIL: verdicts=[accept,reject,quarantine,restoration_eligible,readmit,fail_closed] / count=6 / verdict_restoration_eligible=restoration_eligible / state_restoration_eligible=s6_restoration_eligible / RESULT distinct=true
+
+PT-ID: FPA-T-09
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s2_verified freshness_pass false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s8_rejected
+
+PT-ID: FPA-T-10
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s5_watermark_committed restore_request_genesis_confirmed false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s8_rejected
+
+PT-ID: FPA-T-11
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s4_irr_committed freshness_pass true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s8_rejected
+
+PT-ID: FPA-T-12
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s7_quarantined readmission_approved true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s2_verified
+
+PT-ID: FPA-T-13a
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s5_watermark_committed restore_request_genesis_confirmed true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s6_restoration_eligible
+
+PT-ID: FPA-T-13b
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s6_restoration_eligible restore_admitted true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s0_idle
+
+PT-ID: FPA-T-14
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s8_rejected freshness_pass true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s8_rejected
+
+PT-ID: FPA-T-15
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence fpa deny_restore
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=fail_closed gate_class=block / FIELD decision_id / FIELD agent_id / FIELD source_id / FIELD ledger_uuid / FIELD decision_object / FIELD policy_id / FIELD policy_version / FIELD reason_code / FIELD semantic_verdict / FIELD gate_class
+
+PT-ID: FPA-T-16
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence fpa accept
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=accept gate_class=release / FIELD decision_id / FIELD agent_id / FIELD source_id / FIELD ledger_uuid / FIELD decision_object / FIELD policy_id / FIELD policy_version / FIELD reason_code / FIELD semantic_verdict / FIELD gate_class / FIELD packet_hash / FIELD freshness_value / FIELD watermark_before / FIELD watermark_after / FIELD ssm_validation_result / FIELD irr_digest / FIELD prev_receipt_digest
+
+PT-ID: FPA-T-17A
+COMMAND: swipl -q /build/prolog/baseline.pl -- param fpa tvc true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT activation=true / FIELD tvc_validation_result
+COMMAND: swipl -q /build/prolog/baseline.pl -- param fpa tvc false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT activation=false / absent=tvc_validation_result
+
+PT-ID: FPA-T-17B
+COMMAND: swipl -q /build/prolog/baseline.pl -- param fpa evidence_bin true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT activation=true / FIELD evidence_validation_result
+COMMAND: swipl -q /build/prolog/baseline.pl -- param fpa evidence_bin false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT activation=false / absent=evidence_validation_result
+
+PT-ID: FPA-T-17C
+COMMAND: swipl -q /build/prolog/baseline.pl -- param fpa transport true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT activation=true / FIELD transport_validation_result
+COMMAND: swipl -q /build/prolog/baseline.pl -- param fpa transport false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT activation=false / absent=transport_validation_result
+
+PT-ID: FPA-T-17D
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence fpa accept
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=accept gate_class=release / FIELD decision_id / FIELD agent_id / FIELD source_id / FIELD ledger_uuid / FIELD decision_object / FIELD policy_id / FIELD policy_version / FIELD reason_code / FIELD semantic_verdict / FIELD gate_class / FIELD packet_hash / FIELD freshness_value / FIELD watermark_before / FIELD watermark_after / FIELD ssm_validation_result / FIELD irr_digest / FIELD prev_receipt_digest
+
+PT-ID: FPA-T-18
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence fpa accept
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=accept gate_class=release / FIELD decision_id / FIELD agent_id / FIELD source_id / FIELD ledger_uuid / FIELD decision_object / FIELD policy_id / FIELD policy_version / FIELD reason_code / FIELD semantic_verdict / FIELD gate_class / FIELD packet_hash / FIELD freshness_value / FIELD watermark_before / FIELD watermark_after / FIELD ssm_validation_result / FIELD irr_digest / FIELD prev_receipt_digest
+
+PT-ID: FPA-T-21
+COMMAND: swipl -q /build/prolog/baseline.pl -- taxonomy fpa
+EXIT_CODE: 0
+STDOUT_TAIL: verdicts=[accept,reject,quarantine,restoration_eligible,readmit,fail_closed] / count=6 / verdict_restoration_eligible=restoration_eligible / state_restoration_eligible=s6_restoration_eligible / RESULT distinct=true
+
+PT-ID: FPA-T-23
+COMMAND: swipl -q /build/prolog/baseline.pl -- param fpa recoverable true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT trigger=evidence_pending / RESULT state=s7_quarantined
+COMMAND: swipl -q /build/prolog/baseline.pl -- param fpa recoverable false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT trigger=freshness_pass_fail / RESULT state=s8_rejected
+
+PT-ID: FPA-T-24
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s2_verified freshness_pass true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s3_freshness_eligible
+
+PT-ID: FPA-T-25
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence fpa quarantine
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=quarantine gate_class=escalation / FIELD decision_id / FIELD agent_id / FIELD source_id / FIELD ledger_uuid / FIELD decision_object / FIELD policy_id / FIELD policy_version / FIELD reason_code / FIELD semantic_verdict / FIELD gate_class / FIELD evidence_validation_result
+
+PT-ID: FPA-T-26
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s3_freshness_eligible irr_appended true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s4_irr_committed
+
+PT-ID: FPA-T-PR-01
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s2_verified freshness_fail true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s8_rejected
+
+PT-ID: FPA-T-PR-02
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s3_freshness_eligible irr_appended true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s4_irr_committed
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s4_irr_committed watermark_persisted true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s5_watermark_committed
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s3_freshness_eligible watermark_persisted true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s8_rejected
+
+PT-ID: FPA-T-PR-03
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s5_watermark_committed restore_request_genesis_confirmed true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s6_restoration_eligible
+
+PT-ID: FPA-T-PR-09
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s5_watermark_committed restore_request_genesis_confirmed true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s6_restoration_eligible
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s5_watermark_committed restore_request_genesis_confirmed false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s8_rejected
+
+PT-ID: FPA-T-PR-10
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s0_idle restore_admitted true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s8_rejected
+
+PT-ID: FPA-T-PR-12
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s7_quarantined readmission_approved true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s2_verified
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s0_idle readmission_approved true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s8_rejected
+
+PT-ID: FPA-T-PR-13
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s2_verified freshness_pass true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s3_freshness_eligible
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s3_freshness_eligible irr_appended true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s4_irr_committed
+
+PT-ID: FPA-T-PR-14
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fpa s4_irr_committed watermark_persisted false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s8_rejected
+
+PT-ID: PTS-001
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam s0 fv01_pass true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s1
+
+PT-ID: PTS-002
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam s2 fv03_pass true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s3
+
+PT-ID: PTS-003
+COMMAND: swipl -q /build/prolog/baseline.pl -- closure complete
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s8 verdict=replay_admissible / FIELD family_decision_id / foc01=produced
+
+PT-ID: PTS-004a
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam s1 fv02_and_fv04_pass false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx
+
+PT-ID: PTS-004b
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam s2 unlabeled_mechanism_level_carried_claim false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx
+
+PT-ID: PTS-005
+COMMAND: (no invocation -- SKIP: SSCAR Conformance Tests Section 5 closed-enumeration note: declarative record listed in Section 7 Public Oracles, not the Section 5 buyer-runnable table)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-006
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam s3 freshness_replay false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sh
+COMMAND: swipl -q /build/prolog/baseline.pl -- verdict fam fv06_freshness
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=noncompliant_hold
+COMMAND: swipl -q /build/prolog/baseline.pl -- foc hold
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT foc=foc05 / FIELD freshness_before / FIELD freshness_after / FIELD hold_enter_refs
+
+PT-ID: PTS-007
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam s2 fv04_reclassification_pending false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s2
+
+PT-ID: PTS-008
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam s3 freshness_replay false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sh
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam s3 critical_contamination false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx
+
+PT-ID: PTS-009
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam s3 critical_contamination false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam s5 critical_contamination false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam s0 critical_contamination false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx
+
+PT-ID: PTS-010
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam s5 anti_rollback_failure false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx
+
+PT-ID: PTS-011
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam s3 chain_break false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam s3 untrusted_anchor_promoted false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx
+
+PT-ID: PTS-012
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam sh hold_case_with_new_family_closure_bundle_and_anchor_update true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sr
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam sh hold_case_with_new_family_closure_bundle_and_anchor_update false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sh
+
+PT-ID: PTS-013
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam sr readmission_bundle_changed_carried_payload true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s2
+
+PT-ID: PTS-014
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam s8 handoff true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s8
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam sx incident_only_output true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx
+
+PT-ID: PTS-015
+COMMAND: (no invocation -- SKIP: SSCAR Conformance Tests Section 5 closed-enumeration note: Section 7-relocated declarative (ORC-CONSTRAINED-DELTA family))
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-016
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence fam complete
+EXIT_CODE: 0
+STDOUT_TAIL: FIELD family_decision_id / FIELD boundary_event_id / FIELD session_id_prior_session_ref / FIELD carried_statement_refs / FIELD tsa_refs_provenance_refs / FIELD anchor_document_digest_ref / FIELD accepted_head_digest_linked_irr_digest / FIELD freshness_before_after_anchor_update_ref / FIELD rehydration_closure_ref / FIELD replay_refs_checkpoint_refs_rollback_refs / FIELD disclosure_class_entries / FIELD family_validator_outcomes / FIELD hold_enter_refs_hold_exit_refs / FIELD contamination_flags_contaminating_ref_set / FIELD report_signature_export_manifest_ref / RESULT verdict=replay_admissible
+
+PT-ID: PTS-017a
+COMMAND: swipl -q /build/prolog/baseline.pl -- foc contamination
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT foc=foc04 / FIELD tsa_refs / FIELD blocked_stage / FIELD contaminating_ref_set
+
+PT-ID: PTS-017b
+COMMAND: swipl -q /build/prolog/baseline.pl -- foc hold
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT foc=foc05 / FIELD freshness_before / FIELD freshness_after / FIELD hold_enter_refs
+
+PT-ID: PTS-017d
+COMMAND: swipl -q /build/prolog/baseline.pl -- foc readmission
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT foc=foc05 / FIELD hold_exit_refs / FIELD anchor_update_ref
+
+PT-ID: PTS-018
+COMMAND: swipl -q /build/prolog/baseline.pl -- foc producers
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT foc=foc0405 / FIELD incident_id / FIELD root_reason_code / FIELD contaminating_ref_set / FIELD blocked_stage / FIELD remediation_class / FIELD hold_case_id / FIELD hold_enter_refs / FIELD pending_requirements / FIELD readmission_budget / FIELD cleared_only_by
+
+PT-ID: PTS-019
+COMMAND: (no invocation -- SKIP: SSCAR Conformance Tests Section 5 closed-enumeration note: Section 7-relocated declarative (ORC-FOC-PRODUCERS))
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-020
+COMMAND: (no invocation -- SKIP: SSCAR Conformance Tests Section 5 closed-enumeration note: Section 7-relocated declarative (ORC-DISTRIBUTED-LEGITIMACY))
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-021
+COMMAND: swipl -q /build/prolog/baseline.pl -- taxonomy fam
+EXIT_CODE: 0
+STDOUT_TAIL: verdicts=[replay_admissible,replay_admissible_constrained,replay_incomplete,noncompliant_hold,contamination_fail_closed,incident_only] / count=6 / workflow_states=[s0,s1,s2,s3,s4,s5,s6,s7,s8,sh,sr,sx] / RESULT distinct=true
+
+PT-ID: PTS-022
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam s3 freshness_replay false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sh
+COMMAND: swipl -q /build/prolog/baseline.pl -- verdict fam fv06_freshness
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=noncompliant_hold
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam s3 critical_contamination false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx
+COMMAND: swipl -q /build/prolog/baseline.pl -- verdict fam fv09_contam
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT verdict=contamination_fail_closed
+
+PT-ID: PTS-023
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam sr readmission_bundle_changed_carried_payload true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s2
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam sr readmission_bundle_changed_policy_snapshot_id true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s5
+
+PT-ID: PTS-024
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam s4 fv07_pass true
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s5
+
+PT-ID: PTS-025
+COMMAND: swipl -q /build/prolog/baseline.pl -- evidence fam anti_rollback
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx verdict=contamination_fail_closed / FIELD rehydration_closure_ref / FIELD anchor_document_digest_ref / FIELD family_validator_outcomes
+
+PT-ID: PTS-026
+COMMAND: swipl -q /build/prolog/baseline.pl -- next fam s1 fv02_and_fv04_pass false
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx
+
+PT-ID: PTS-027
+COMMAND: (no invocation -- SKIP: SSCAR Conformance Tests Section 5 closed-enumeration note: Section 7-relocated declarative (canonical verdict taxonomy))
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: CT-01
+COMMAND: swipl -q /build/prolog/baseline.pl -- ct 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s1 / FIELD family_validator_outcomes / fv=FV-01
+
+PT-ID: CT-02
+COMMAND: swipl -q /build/prolog/baseline.pl -- ct 2
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx verdict=contamination_fail_closed / blocked_stage=provenance_classification / FIELD contamination_flags / FIELD contaminating_ref_set / FIELD tsa_refs
+
+PT-ID: CT-03
+COMMAND: swipl -q /build/prolog/baseline.pl -- ct 3
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s1 / anchor=untrusted_until_verification / trust_by_assertion=rejected / FIELD anchor_document_digest_ref
+
+PT-ID: CT-04
+COMMAND: swipl -q /build/prolog/baseline.pl -- ct 4
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sh verdict=noncompliant_hold / FIELD hold_enter_refs / FIELD freshness_before / FIELD freshness_after / pending_requirements=strict_increase_anchor_update_ref
+
+PT-ID: CT-05
+COMMAND: swipl -q /build/prolog/baseline.pl -- ct 5
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s3 verdict=replay_incomplete / FIELD accepted_head_digest_linked_irr_digest / FIELD disclosure_class_entries
+
+PT-ID: CT-06
+COMMAND: swipl -q /build/prolog/baseline.pl -- ct 6
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s5 / FIELD rehydration_closure_ref / FIELD irr_digest
+
+PT-ID: CT-07
+COMMAND: swipl -q /build/prolog/baseline.pl -- ct 7
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s5 verdict=replay_incomplete / FIELD replay_refs_checkpoint_refs_rollback_refs
+
+PT-ID: CT-08
+COMMAND: swipl -q /build/prolog/baseline.pl -- ct 8
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s8 verdict=replay_admissible / FIELD family_validator_outcomes / FIELD report_signature_export_manifest_ref / FIELD family_decision_id / FIELD boundary_event_id
+
+PT-ID: CT-09
+COMMAND: swipl -q /build/prolog/baseline.pl -- ct 9
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sx verdict=contamination_fail_closed / FIELD contaminating_ref_set / tool_state_activation=blocked
+
+PT-ID: CT-10
+COMMAND: swipl -q /build/prolog/baseline.pl -- ct 10
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=sr / FIELD hold_exit_refs / FIELD anchor_update_ref / anchor_update_ref_strict_increase=true
+
+PT-ID: CT-11
+COMMAND: swipl -q /build/prolog/baseline.pl -- ct 11
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s6 verdict=incident_only / FIELD disclosure_class_entries
+
+PT-ID: CT-12
+COMMAND: swipl -q /build/prolog/baseline.pl -- ct 12
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s6 verdict=incident_only / FIELD family_validator_outcomes / FIELD family_evidence_refs
+
+PT-ID: CT-13
+COMMAND: swipl -q /build/prolog/baseline.pl -- ct 13
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT state=s2 / reclassification=explicit_policy_bound / FIELD carried_statement_refs / FIELD tsa_refs
+
+PT-ID: CT-14
+COMMAND: swipl -q /build/prolog/baseline.pl -- ct 14
+EXIT_CODE: 0
+STDOUT_TAIL: case_a=s2 / case_b=s2 / case_c=s5 / case_d=s2 / case_e=s5 / RESULT reentry_envelope=closed_two_point
+

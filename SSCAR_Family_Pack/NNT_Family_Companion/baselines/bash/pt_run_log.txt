@@ -1,0 +1,2467 @@
+PT-ID: PT-001
+COMMAND: baseline.sh vra next_state S0_STARTUP_READONLY StartupComplete true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=vra in_state=S0_STARTUP_READONLY trigger=StartupComplete validator_passed=true result_state=S1_SNAPSHOT_LOCKED
+PT-ID: PT-002
+COMMAND: baseline.sh vra next_state S2_STRUCTURAL_VERIFIED StructuralChecksDone true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=vra in_state=S2_STRUCTURAL_VERIFIED trigger=StructuralChecksDone validator_passed=true result_state=S3_ELIGIBLE_HEAD_SELECTED
+PT-ID: PT-003
+COMMAND: baseline.sh vra next_state S3_ELIGIBLE_HEAD_SELECTED EligibilityChecksDone true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=vra in_state=S3_ELIGIBLE_HEAD_SELECTED trigger=EligibilityChecksDone validator_passed=true result_state=S4_REHYDRATED_VALIDATED
+PT-ID: PT-004
+COMMAND: baseline.sh vra next_state S2_STRUCTURAL_VERIFIED StructuralChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=vra in_state=S2_STRUCTURAL_VERIFIED trigger=StructuralChecksDone validator_passed=false result_state=S5_FAIL_SAFE
+PT-ID: PT-005
+COMMAND: baseline.sh vra next_state S2_STRUCTURAL_VERIFIED StructuralChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=vra in_state=S2_STRUCTURAL_VERIFIED trigger=StructuralChecksDone validator_passed=false result_state=S5_FAIL_SAFE
+PT-ID: PT-006
+COMMAND: baseline.sh vra next_state S2_STRUCTURAL_VERIFIED StructuralChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=vra in_state=S2_STRUCTURAL_VERIFIED trigger=StructuralChecksDone validator_passed=false result_state=S5_FAIL_SAFE
+PT-ID: PT-007
+COMMAND: baseline.sh vra next_state S2_STRUCTURAL_VERIFIED StructuralChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=vra in_state=S2_STRUCTURAL_VERIFIED trigger=StructuralChecksDone validator_passed=false result_state=S5_FAIL_SAFE
+PT-ID: PT-008
+COMMAND: baseline.sh vra next_state S3_ELIGIBLE_HEAD_SELECTED EligibilityChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=vra in_state=S3_ELIGIBLE_HEAD_SELECTED trigger=EligibilityChecksDone validator_passed=false result_state=S5_FAIL_SAFE
+PT-ID: PT-009
+COMMAND: baseline.sh vra next_state S3_ELIGIBLE_HEAD_SELECTED EligibilityChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=vra in_state=S3_ELIGIBLE_HEAD_SELECTED trigger=EligibilityChecksDone validator_passed=false result_state=S5_FAIL_SAFE
+PT-ID: PT-010
+COMMAND: baseline.sh vra next_state S0_STARTUP_READONLY StartupComplete false
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=vra in_state=S0_STARTUP_READONLY trigger=StartupComplete validator_passed=false result_state=S5_FAIL_SAFE
+PT-ID: PT-011
+COMMAND: baseline.sh vra next_state S3_ELIGIBLE_HEAD_SELECTED RollbackDetected true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=vra in_state=S3_ELIGIBLE_HEAD_SELECTED trigger=RollbackDetected validator_passed=true result_state=S5_FAIL_SAFE
+PT-ID: PT-012
+COMMAND: baseline.sh vra next_state S5_FAIL_SAFE WalReplayNeeded true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=vra in_state=S5_FAIL_SAFE trigger=WalReplayNeeded validator_passed=true result_state=S7_RECOVERY_REPLAY
+PT-ID: PT-013
+COMMAND: baseline.sh vra next_state S3_ELIGIBLE_HEAD_SELECTED ToolStateInvalid true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=vra in_state=S3_ELIGIBLE_HEAD_SELECTED trigger=ToolStateInvalid validator_passed=true result_state=S6_TOOL_QUARANTINE
+PT-ID: PT-014
+COMMAND: baseline.sh vra next_state S3_ELIGIBLE_HEAD_SELECTED ToolStateInvalid true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=vra in_state=S3_ELIGIBLE_HEAD_SELECTED trigger=ToolStateInvalid validator_passed=true result_state=S6_TOOL_QUARANTINE
+COMMAND: baseline.sh vra next_state S3_ELIGIBLE_HEAD_SELECTED EligibilityChecksDone true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=vra in_state=S3_ELIGIBLE_HEAD_SELECTED trigger=EligibilityChecksDone validator_passed=true result_state=S4_REHYDRATED_VALIDATED
+PT-ID: PT-015
+COMMAND: baseline.sh vra next_state S6_TOOL_QUARANTINE StartupComplete true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=vra in_state=S6_TOOL_QUARANTINE trigger=StartupComplete validator_passed=true result_state=S6_TOOL_QUARANTINE
+PT-ID: PT-016
+COMMAND: baseline.sh vra evidence EB-01
+EXIT_CODE: 0
+STDOUT_TAIL: validator_bundle_id=VBUNDLE-VRA-0001
+verified_head_digest=HEAD-DIGEST-CANON-0001
+snapshot_id=SNAP-CANON-0001
+surface=evidence
+agent=vra
+class=EB-01
+PT-ID: PT-017
+COMMAND: baseline.sh vra evidence EB-02
+EXIT_CODE: 0
+STDOUT_TAIL: validator_bundle_id=VBUNDLE-VRA-0001
+verified_head_digest=HEAD-DIGEST-CANON-0001
+snapshot_id=SNAP-CANON-0001
+policy_id=POL-CANON-0001
+source_id=SRC-CANON-0001
+freshness_value=11
+irr_digest=IRR-DIGEST-CANON-0001
+tool_activation_status=inactive
+failure_code=FRESHNESS_DOWNGRADE
+failed_validator=V_FRESHNESS
+suppression_status=suppressed
+surface=evidence
+agent=vra
+class=EB-02
+PT-ID: PT-018
+COMMAND: baseline.sh vra evidence EB-03
+EXIT_CODE: 0
+STDOUT_TAIL: validator_bundle_id=VBUNDLE-VRA-0001
+verified_head_digest=HEAD-DIGEST-CANON-0001
+snapshot_id=SNAP-CANON-0001
+policy_id=POL-CANON-0001
+source_id=SRC-CANON-0001
+irr_digest=IRR-DIGEST-CANON-0001
+tool_activation_status=inactive
+failure_code=CANONICAL_PARSE_AMBIGUITY
+failed_validator=V_PARSE
+suppression_status=suppressed
+surface=evidence
+agent=vra
+class=EB-03
+PT-ID: PT-019
+COMMAND: baseline.sh vra evidence EB-05
+EXIT_CODE: 0
+STDOUT_TAIL: validator_bundle_id=VBUNDLE-VRA-0001
+verified_head_digest=HEAD-DIGEST-CANON-0001
+snapshot_id=SNAP-CANON-0001
+recovery_phase=ANCHOR
+recovery_phase_producer=V_WAL_PHASE
+surface=evidence
+agent=vra
+class=EB-05
+PT-ID: PT-020
+COMMAND: baseline.sh vra evidence EB-06
+EXIT_CODE: 0
+STDOUT_TAIL: validator_bundle_id=VBUNDLE-VRA-0001
+verified_head_digest=HEAD-DIGEST-CANON-0001
+snapshot_id=SNAP-CANON-0001
+readmission_token_id=RTOKEN-CANON-0001
+surface=evidence
+agent=vra
+class=EB-06
+PT-ID: PT-021
+COMMAND: baseline.sh vra evidence EB-04
+EXIT_CODE: 0
+STDOUT_TAIL: validator_bundle_id=VBUNDLE-VRA-0001
+verified_head_digest=HEAD-DIGEST-CANON-0001
+snapshot_id=SNAP-CANON-0001
+policy_id=POL-CANON-0001
+source_id=SRC-CANON-0001
+freshness_value=11
+irr_digest=IRR-DIGEST-CANON-0001
+tool_activation_status=inactive
+failure_code=FRESHNESS_DOWNGRADE
+failed_validator=V_FRESHNESS
+suppression_status=suppressed
+validator_bundle_id_producer=ExecutionLayer
+failure_explanation_producer=GateLogic
+tool_activation_status_producer=ToolGate
+surface=evidence
+agent=vra
+class=EB-04
+PT-ID: PT-022
+COMMAND: baseline.sh vra distinct QUARANTINE S6_TOOL_QUARANTINE
+EXIT_CODE: 0
+STDOUT_TAIL: distinct=yes
+a=QUARANTINE
+b=S6_TOOL_QUARANTINE
+surface=distinct
+agent=vra
+PT-ID: PT-023
+COMMAND: baseline.sh vra distinct DENY ESCALATE
+EXIT_CODE: 0
+STDOUT_TAIL: distinct=yes
+a=DENY
+b=ESCALATE
+surface=distinct
+agent=vra
+COMMAND: baseline.sh vra distinct DENY QUARANTINE
+EXIT_CODE: 0
+STDOUT_TAIL: distinct=yes
+a=DENY
+b=QUARANTINE
+surface=distinct
+agent=vra
+COMMAND: baseline.sh vra distinct ESCALATE QUARANTINE
+EXIT_CODE: 0
+STDOUT_TAIL: distinct=yes
+a=ESCALATE
+b=QUARANTINE
+surface=distinct
+agent=vra
+PT-ID: PT-024
+COMMAND: baseline.sh vra next_state S8_READMISSION_PENDING AuthorityRelease true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=vra in_state=S8_READMISSION_PENDING trigger=AuthorityRelease validator_passed=true result_state=S1_SNAPSHOT_LOCKED
+PT-ID: PT-025
+COMMAND: baseline.sh vra evidence EB-02
+EXIT_CODE: 0
+STDOUT_TAIL: validator_bundle_id=VBUNDLE-VRA-0001
+verified_head_digest=HEAD-DIGEST-CANON-0001
+snapshot_id=SNAP-CANON-0001
+policy_id=POL-CANON-0001
+source_id=SRC-CANON-0001
+freshness_value=11
+irr_digest=IRR-DIGEST-CANON-0001
+tool_activation_status=inactive
+failure_code=FRESHNESS_DOWNGRADE
+failed_validator=V_FRESHNESS
+suppression_status=suppressed
+surface=evidence
+agent=vra
+class=EB-02
+PT-ID: PT-026
+COMMAND: baseline.sh vra evidence EB-05
+EXIT_CODE: 0
+STDOUT_TAIL: validator_bundle_id=VBUNDLE-VRA-0001
+verified_head_digest=HEAD-DIGEST-CANON-0001
+snapshot_id=SNAP-CANON-0001
+recovery_phase=ANCHOR
+recovery_phase_producer=V_WAL_PHASE
+surface=evidence
+agent=vra
+class=EB-05
+PT-ID: PT-027
+COMMAND: baseline.sh vra next_state S3_ELIGIBLE_HEAD_SELECTED ToolStateInvalid true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=vra in_state=S3_ELIGIBLE_HEAD_SELECTED trigger=ToolStateInvalid validator_passed=true result_state=S6_TOOL_QUARANTINE
+PT-ID: PT-028
+COMMAND: baseline.sh vra attest V_COMPAT
+EXIT_CODE: 0
+STDOUT_TAIL: surface=attest
+agent=vra
+obligation=V_COMPAT
+enforcement_point=import_admissibility/policy_compatibility
+compat_status=enforced
+evidence_recorded=true
+attested=true
+PT-ID: PT-029
+COMMAND: baseline.sh vra attest V_WRITER_LOCK
+EXIT_CODE: 0
+STDOUT_TAIL: surface=attest
+agent=vra
+obligation=V_WRITER_LOCK
+enforcement_point=persistence_control_plane
+writer_lock_status=single_writer
+contention_status=none
+attested=true
+PT-ID: PTS-BDA-001
+COMMAND: baseline.sh bda next_state IDLE INPUT_RECEIVED true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=IDLE trigger=INPUT_RECEIVED validator_passed=true result_state=INGEST_VALIDATE
+PT-ID: PTS-BDA-002
+COMMAND: baseline.sh bda next_state INGEST_VALIDATE VALIDATION_PASS true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=INGEST_VALIDATE trigger=VALIDATION_PASS validator_passed=true result_state=FILTER_REVIEW
+PT-ID: PTS-BDA-003
+COMMAND: baseline.sh bda next_state FILTER_REVIEW NO_ESCALATION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=FILTER_REVIEW trigger=NO_ESCALATION validator_passed=true result_state=READY_FOR_RELEASE
+PT-ID: PTS-BDA-004
+COMMAND: baseline.sh bda next_state FINALIZATION_REVIEW EVIDENCE_OK true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=FINALIZATION_REVIEW trigger=EVIDENCE_OK validator_passed=true result_state=IDLE
+PT-ID: PTS-BDA-005
+COMMAND: baseline.sh bda next_state INGEST_VALIDATE VALIDATION_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=INGEST_VALIDATE trigger=VALIDATION_FAIL validator_passed=true result_state=OUTPUT_BLOCKED
+PT-ID: PTS-BDA-006
+COMMAND: baseline.sh bda next_state FILTER_REVIEW TOOL_STATE_DETECTED true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=FILTER_REVIEW trigger=TOOL_STATE_DETECTED validator_passed=true result_state=TOOL_STATE_QUARANTINED
+PT-ID: PTS-BDA-007
+COMMAND: baseline.sh bda next_state INGEST_VALIDATE VALIDATION_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=INGEST_VALIDATE trigger=VALIDATION_FAIL validator_passed=true result_state=OUTPUT_BLOCKED
+PT-ID: PTS-BDA-008
+COMMAND: baseline.sh bda next_state TOOL_STATE_QUARANTINED APPROVAL_GRANTED false
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=TOOL_STATE_QUARANTINED trigger=APPROVAL_GRANTED validator_passed=false result_state=TOOL_STATE_QUARANTINED
+PT-ID: PTS-BDA-009
+COMMAND: baseline.sh bda next_state INGEST_VALIDATE VALIDATION_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=INGEST_VALIDATE trigger=VALIDATION_FAIL validator_passed=true result_state=OUTPUT_BLOCKED
+PT-ID: PTS-BDA-010
+COMMAND: baseline.sh bda next_state INGEST_VALIDATE VALIDATION_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=INGEST_VALIDATE trigger=VALIDATION_FAIL validator_passed=true result_state=OUTPUT_BLOCKED
+PT-ID: PTS-BDA-011
+COMMAND: baseline.sh bda attest conflict_evidence
+EXIT_CODE: 0
+STDOUT_TAIL: surface=attest
+agent=bda
+obligation=VAL-03_conflict_evidence
+verdict=BLOCK
+conflict_recorded=true
+gate_use=denied
+attested=true
+PT-ID: PTS-BDA-012
+COMMAND: baseline.sh bda distinct ALLOW ALLOW_CONSTRAINED
+EXIT_CODE: 0
+STDOUT_TAIL: distinct=yes
+a=ALLOW
+b=ALLOW_CONSTRAINED
+surface=distinct
+agent=bda
+PT-ID: PTS-BDA-013
+COMMAND: baseline.sh bda next_state FILTER_REVIEW CPW_CRITICAL true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=FILTER_REVIEW trigger=CPW_CRITICAL validator_passed=true result_state=OUTPUT_BLOCKED
+PT-ID: PTS-BDA-014
+COMMAND: baseline.sh bda next_state INGEST_VALIDATE VALIDATION_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=INGEST_VALIDATE trigger=VALIDATION_FAIL validator_passed=true result_state=OUTPUT_BLOCKED
+COMMAND: baseline.sh bda next_state FINALIZATION_REVIEW EVIDENCE_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=FINALIZATION_REVIEW trigger=EVIDENCE_FAIL validator_passed=true result_state=NONCOMPLIANT_HOLD
+PT-ID: PTS-BDA-015
+COMMAND: baseline.sh bda next_state FILTER_REVIEW CPW_CRITICAL true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=FILTER_REVIEW trigger=CPW_CRITICAL validator_passed=true result_state=OUTPUT_BLOCKED
+PT-ID: PTS-BDA-016
+COMMAND: baseline.sh bda next_state FINALIZATION_REVIEW CPW_CRITICAL true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=FINALIZATION_REVIEW trigger=CPW_CRITICAL validator_passed=true result_state=OUTPUT_BLOCKED
+PT-ID: PTS-BDA-017
+COMMAND: baseline.sh bda next_state TOOL_STATE_QUARANTINED CPW_CRITICAL true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=TOOL_STATE_QUARANTINED trigger=CPW_CRITICAL validator_passed=true result_state=OUTPUT_BLOCKED
+PT-ID: PTS-BDA-018
+COMMAND: baseline.sh bda next_state OUTPUT_BLOCKED READMISSION_APPROVED true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=OUTPUT_BLOCKED trigger=READMISSION_APPROVED validator_passed=true result_state=IDLE
+PT-ID: PTS-BDA-019
+COMMAND: baseline.sh bda next_state NONCOMPLIANT_HOLD COMPLIANCE_RESTORED true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=NONCOMPLIANT_HOLD trigger=COMPLIANCE_RESTORED validator_passed=true result_state=IDLE
+PT-ID: PTS-BDA-020
+COMMAND: baseline.sh bda next_state OUTPUT_BLOCKED READMISSION_APPROVED false
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=OUTPUT_BLOCKED trigger=READMISSION_APPROVED validator_passed=false result_state=OUTPUT_BLOCKED
+PT-ID: PTS-BDA-021
+COMMAND: baseline.sh bda next_state IDLE INPUT_RECEIVED true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=IDLE trigger=INPUT_RECEIVED validator_passed=true result_state=INGEST_VALIDATE
+COMMAND: baseline.sh bda next_state IDLE FINALIZATION_REQUESTED true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=IDLE trigger=FINALIZATION_REQUESTED validator_passed=true result_state=OUTPUT_BLOCKED
+PT-ID: PTS-BDA-022
+COMMAND: baseline.sh bda evidence full
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=BDA-DEC-0001
+session_id=SESS-0001
+boundary_side=ingress
+decision_object=ingress_request
+input_digest=IN-DIG-0001
+policy_hash=PHASH-0001
+validator_results=VAL-01:pass,VAL-02:pass,VAL-03:pass
+statement_refs=STMT-0001
+verdict=ALLOW
+reason_code=D-08_ALLOW
+order_index=1
+hash_prev=HPREV-0001
+hash_curr=HCURR-0001
+surface=evidence
+agent=bda
+class=full
+PT-ID: PTS-BDA-023
+COMMAND: baseline.sh bda evidence full
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=BDA-DEC-0001
+session_id=SESS-0001
+boundary_side=ingress
+decision_object=ingress_request
+input_digest=IN-DIG-0001
+policy_hash=PHASH-0001
+validator_results=VAL-01:pass,VAL-02:pass,VAL-03:pass
+statement_refs=STMT-0001
+verdict=ALLOW
+reason_code=D-08_ALLOW
+order_index=1
+hash_prev=HPREV-0001
+hash_curr=HCURR-0001
+surface=evidence
+agent=bda
+class=full
+PT-ID: PTS-BDA-024
+COMMAND: baseline.sh bda evidence approval
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=BDA-DEC-0001
+session_id=SESS-0001
+boundary_side=ingress
+decision_object=ingress_request
+input_digest=IN-DIG-0001
+policy_hash=PHASH-0001
+validator_results=VAL-01:pass,VAL-02:pass,VAL-03:pass
+statement_refs=STMT-0001
+verdict=ALLOW
+reason_code=D-08_ALLOW
+order_index=1
+hash_prev=HPREV-0001
+hash_curr=HCURR-0001
+approval_ref=APPROVAL-0001
+surface=evidence
+agent=bda
+class=approval
+PT-ID: PTS-BDA-025
+COMMAND: baseline.sh bda evidence finalization
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=BDA-DEC-0001
+session_id=SESS-0001
+boundary_side=ingress
+decision_object=ingress_request
+input_digest=IN-DIG-0001
+policy_hash=PHASH-0001
+validator_results=VAL-01:pass,VAL-02:pass,VAL-03:pass
+statement_refs=STMT-0001
+verdict=ALLOW
+reason_code=D-08_ALLOW
+order_index=1
+hash_prev=HPREV-0001
+hash_curr=HCURR-0001
+evidence_ref=EVREF-0001
+verif_counter_anchor=VCA-0002
+surface=evidence
+agent=bda
+class=finalization
+PT-ID: PTS-BDA-026
+COMMAND: baseline.sh bda evidence rollback
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=BDA-DEC-0001
+session_id=SESS-0001
+boundary_side=ingress
+decision_object=ingress_request
+input_digest=IN-DIG-0001
+policy_hash=PHASH-0001
+validator_results=VAL-01:pass,VAL-02:pass,VAL-03:pass
+statement_refs=STMT-0001
+verdict=ALLOW
+reason_code=D-08_ALLOW
+order_index=1
+hash_prev=HPREV-0001
+hash_curr=HCURR-0001
+rollback_ref=RBK-0001
+surface=evidence
+agent=bda
+class=rollback
+PT-ID: PTS-BDA-027
+COMMAND: (no invocation -- SKIP: BDA Conformance Tests §5 Minimal Run Note 'Bounded external obligations not locally runnable: ... authorized non-validator producer grounding')
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+PT-ID: PTS-BDA-028
+COMMAND: baseline.sh bda next_state READY_FOR_RELEASE CPW_CRITICAL true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=READY_FOR_RELEASE trigger=CPW_CRITICAL validator_passed=true result_state=OUTPUT_BLOCKED
+PT-ID: PTS-BDA-029
+COMMAND: (no invocation -- SKIP: BDA Conformance Tests §5 Minimal Run Note 'Bounded external obligations not locally runnable: ... distributed enforcement legitimacy where not exposed by local transition function')
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+PT-ID: PTS-BDA-030
+COMMAND: baseline.sh bda verdicts
+EXIT_CODE: 0
+STDOUT_TAIL: verdicts=ALLOW ALLOW_CONSTRAINED BLOCK QUARANTINE FAIL_CLOSED NONCOMPLIANT_HOLD READMIT
+PT-ID: PTS-BDA-031
+COMMAND: baseline.sh bda distinct BLOCK QUARANTINE
+EXIT_CODE: 0
+STDOUT_TAIL: distinct=yes
+a=BLOCK
+b=QUARANTINE
+surface=distinct
+agent=bda
+COMMAND: baseline.sh bda distinct FAIL_CLOSED NONCOMPLIANT_HOLD
+EXIT_CODE: 0
+STDOUT_TAIL: distinct=yes
+a=FAIL_CLOSED
+b=NONCOMPLIANT_HOLD
+surface=distinct
+agent=bda
+COMMAND: baseline.sh bda distinct OUTPUT_BLOCKED NONCOMPLIANT_HOLD
+EXIT_CODE: 0
+STDOUT_TAIL: distinct=yes
+a=OUTPUT_BLOCKED
+b=NONCOMPLIANT_HOLD
+surface=distinct
+agent=bda
+PT-ID: PTS-BDA-032
+COMMAND: baseline.sh bda next_state INGEST_VALIDATE VALIDATION_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=INGEST_VALIDATE trigger=VALIDATION_FAIL validator_passed=true result_state=OUTPUT_BLOCKED
+COMMAND: baseline.sh bda next_state FILTER_REVIEW TOOL_STATE_DETECTED true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=FILTER_REVIEW trigger=TOOL_STATE_DETECTED validator_passed=true result_state=TOOL_STATE_QUARANTINED
+COMMAND: baseline.sh bda next_state FILTER_REVIEW NO_ESCALATION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=FILTER_REVIEW trigger=NO_ESCALATION validator_passed=true result_state=READY_FOR_RELEASE
+PT-ID: PTS-BDA-033
+COMMAND: baseline.sh bda next_state FILTER_REVIEW CPW_CRITICAL true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=FILTER_REVIEW trigger=CPW_CRITICAL validator_passed=true result_state=OUTPUT_BLOCKED
+PT-ID: PTS-BDA-034
+COMMAND: baseline.sh bda evidence approval
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=BDA-DEC-0001
+session_id=SESS-0001
+boundary_side=ingress
+decision_object=ingress_request
+input_digest=IN-DIG-0001
+policy_hash=PHASH-0001
+validator_results=VAL-01:pass,VAL-02:pass,VAL-03:pass
+statement_refs=STMT-0001
+verdict=ALLOW
+reason_code=D-08_ALLOW
+order_index=1
+hash_prev=HPREV-0001
+hash_curr=HCURR-0001
+approval_ref=APPROVAL-0001
+surface=evidence
+agent=bda
+class=approval
+PT-ID: PTS-BDA-035
+COMMAND: baseline.sh bda next_state FINALIZATION_REVIEW EVIDENCE_OK true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=FINALIZATION_REVIEW trigger=EVIDENCE_OK validator_passed=true result_state=IDLE
+COMMAND: baseline.sh bda next_state FINALIZATION_REVIEW EVIDENCE_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=bda in_state=FINALIZATION_REVIEW trigger=EVIDENCE_FAIL validator_passed=true result_state=NONCOMPLIANT_HOLD
+PT-ID: PTS-BDA-036
+COMMAND: baseline.sh bda distinct ALLOW ALLOW_CONSTRAINED
+EXIT_CODE: 0
+STDOUT_TAIL: distinct=yes
+a=ALLOW
+b=ALLOW_CONSTRAINED
+surface=distinct
+agent=bda
+PT-ID: TAA-PT-001
+COMMAND: baseline.sh taa next_state INTAKE INTAKE_TO_ROLE_SCREENING true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=INTAKE trigger=INTAKE_TO_ROLE_SCREENING validator_passed=true result_state=ROLE_SCREENING
+PT-ID: VP-GEN-001
+COMMAND: baseline.sh taa next_state INTAKE INTAKE_TO_ROLE_SCREENING true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=INTAKE trigger=INTAKE_TO_ROLE_SCREENING validator_passed=true result_state=ROLE_SCREENING
+PT-ID: TAA-PT-002
+COMMAND: baseline.sh taa next_state EVALUATING EVALUATING_TO_CLASSIFYING true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=EVALUATING trigger=EVALUATING_TO_CLASSIFYING validator_passed=true result_state=CLASSIFYING
+PT-ID: VP-GEN-002
+COMMAND: baseline.sh taa next_state EVALUATING EVALUATING_TO_CLASSIFYING true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=EVALUATING trigger=EVALUATING_TO_CLASSIFYING validator_passed=true result_state=CLASSIFYING
+PT-ID: TAA-PT-003
+COMMAND: baseline.sh taa next_state DECIDED DECIDED_TO_HANDOFF_READY true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=DECIDED trigger=DECIDED_TO_HANDOFF_READY validator_passed=true result_state=HANDOFF_READY
+PT-ID: VP-GEN-003
+COMMAND: baseline.sh taa next_state DECIDED DECIDED_TO_HANDOFF_READY true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=DECIDED trigger=DECIDED_TO_HANDOFF_READY validator_passed=true result_state=HANDOFF_READY
+PT-ID: TAA-PT-004
+COMMAND: baseline.sh taa next_state EVALUATING EVALUATING_TO_CLASSIFYING false
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=EVALUATING trigger=EVALUATING_TO_CLASSIFYING validator_passed=false result_state=FAIL_CLOSED
+PT-ID: VP-GEN-004
+COMMAND: baseline.sh taa next_state EVALUATING EVALUATING_TO_CLASSIFYING false
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=EVALUATING trigger=EVALUATING_TO_CLASSIFYING validator_passed=false result_state=FAIL_CLOSED
+PT-ID: TAA-PT-005
+COMMAND: baseline.sh taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_CONSTRAINED_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CONFLICT_CHECKING trigger=CONFLICT_CHECKING_TO_ALLOW_CONSTRAINED_DECISION validator_passed=true result_state=DECIDED
+COMMAND: baseline.sh taa evidence allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=TAA-DEC-0001
+statement_id_list=STMT-CANON-0001
+verdict=ALLOW
+reason_code=DO-008_COMPLETE
+tsa_label=attested_mechanism
+source_class=TRAINED
+source_ref=SREF-0001
+boundary_validated_role=mechanism_level
+role_validation_result=confirmed
+policy_snapshot_id=POLSNAP-CANON-0001
+policy_hash_ref=PHREF-0001
+scope_id=SCOPE-0001
+turn_id=TURN-0001
+order_ref=ORD-0001
+logical_timestamp=LTS-0001
+semantic_closure=closed
+evidence_closure=closed
+failure_closure=closed
+policy_snapshot_closure=closed
+verdict=ALLOW_CONSTRAINED
+reason_code=DO-006_HEURISTIC_CONFLICT_UNCLOSED
+conflict_check_mode=heuristic
+conflict_check_strength=v006b
+conflict_check_confidence=0.6
+conflict_check_coverage_scope=partial
+compared_claim_set_ref=CCS-0001
+residual_risk_statement=bounded_residual
+surface=evidence
+agent=taa
+class=allow_constrained
+PT-ID: VP-GEN-005
+COMMAND: baseline.sh taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_CONSTRAINED_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CONFLICT_CHECKING trigger=CONFLICT_CHECKING_TO_ALLOW_CONSTRAINED_DECISION validator_passed=true result_state=DECIDED
+COMMAND: baseline.sh taa evidence allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=TAA-DEC-0001
+statement_id_list=STMT-CANON-0001
+verdict=ALLOW
+reason_code=DO-008_COMPLETE
+tsa_label=attested_mechanism
+source_class=TRAINED
+source_ref=SREF-0001
+boundary_validated_role=mechanism_level
+role_validation_result=confirmed
+policy_snapshot_id=POLSNAP-CANON-0001
+policy_hash_ref=PHREF-0001
+scope_id=SCOPE-0001
+turn_id=TURN-0001
+order_ref=ORD-0001
+logical_timestamp=LTS-0001
+semantic_closure=closed
+evidence_closure=closed
+failure_closure=closed
+policy_snapshot_closure=closed
+verdict=ALLOW_CONSTRAINED
+reason_code=DO-006_HEURISTIC_CONFLICT_UNCLOSED
+conflict_check_mode=heuristic
+conflict_check_strength=v006b
+conflict_check_confidence=0.6
+conflict_check_coverage_scope=partial
+compared_claim_set_ref=CCS-0001
+residual_risk_statement=bounded_residual
+surface=evidence
+agent=taa
+class=allow_constrained
+PT-ID: TAA-PT-006
+COMMAND: baseline.sh taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CONFLICT_CHECKING trigger=CONFLICT_CHECKING_TO_ESCALATE_DECISION validator_passed=true result_state=DECIDED
+COMMAND: baseline.sh taa evidence fail_closed_escalation
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=TAA-DEC-0001
+statement_id_list=STMT-CANON-0001
+verdict=ALLOW
+reason_code=DO-008_COMPLETE
+tsa_label=attested_mechanism
+source_class=TRAINED
+source_ref=SREF-0001
+boundary_validated_role=mechanism_level
+role_validation_result=confirmed
+policy_snapshot_id=POLSNAP-CANON-0001
+policy_hash_ref=PHREF-0001
+scope_id=SCOPE-0001
+turn_id=TURN-0001
+order_ref=ORD-0001
+logical_timestamp=LTS-0001
+semantic_closure=closed
+evidence_closure=closed
+failure_closure=closed
+policy_snapshot_closure=closed
+verdict=FAIL_CLOSED
+reason_code=UNLABELED_CLAIM
+inhibit_flags=block_local
+root_reason_code=UNLABELED_CLAIM
+cleared_only_by=external_actor
+remediation_class=clearance
+escalation_request_ref=ESC-0001
+request_id=REQ-0001
+failure_ref=FR-0001
+required_actor_role=auditor
+required_evidence=clearance_bundle
+status=pending
+surface=evidence
+agent=taa
+class=fail_closed_escalation
+PT-ID: VP-GEN-006
+COMMAND: baseline.sh taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CONFLICT_CHECKING trigger=CONFLICT_CHECKING_TO_ESCALATE_DECISION validator_passed=true result_state=DECIDED
+COMMAND: baseline.sh taa evidence fail_closed_escalation
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=TAA-DEC-0001
+statement_id_list=STMT-CANON-0001
+verdict=ALLOW
+reason_code=DO-008_COMPLETE
+tsa_label=attested_mechanism
+source_class=TRAINED
+source_ref=SREF-0001
+boundary_validated_role=mechanism_level
+role_validation_result=confirmed
+policy_snapshot_id=POLSNAP-CANON-0001
+policy_hash_ref=PHREF-0001
+scope_id=SCOPE-0001
+turn_id=TURN-0001
+order_ref=ORD-0001
+logical_timestamp=LTS-0001
+semantic_closure=closed
+evidence_closure=closed
+failure_closure=closed
+policy_snapshot_closure=closed
+verdict=FAIL_CLOSED
+reason_code=UNLABELED_CLAIM
+inhibit_flags=block_local
+root_reason_code=UNLABELED_CLAIM
+cleared_only_by=external_actor
+remediation_class=clearance
+escalation_request_ref=ESC-0001
+request_id=REQ-0001
+failure_ref=FR-0001
+required_actor_role=auditor
+required_evidence=clearance_bundle
+status=pending
+surface=evidence
+agent=taa
+class=fail_closed_escalation
+PT-ID: TAA-PT-007
+COMMAND: baseline.sh taa next_state ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=ROLE_SCREENING trigger=ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING validator_passed=true result_state=CANONICALIZING
+PT-ID: VP-GEN-007
+COMMAND: baseline.sh taa next_state ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=ROLE_SCREENING trigger=ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING validator_passed=true result_state=CANONICALIZING
+PT-ID: TAA-PT-008
+COMMAND: baseline.sh taa next_state CLASSIFYING CLASSIFYING_TO_DENY_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CLASSIFYING trigger=CLASSIFYING_TO_DENY_DECISION validator_passed=true result_state=DECIDED
+COMMAND: baseline.sh taa next_state EVALUATING EVALUATING_TO_FAIL_CLOSED true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=EVALUATING trigger=EVALUATING_TO_FAIL_CLOSED validator_passed=true result_state=FAIL_CLOSED
+PT-ID: VP-GEN-008
+COMMAND: baseline.sh taa next_state CLASSIFYING CLASSIFYING_TO_DENY_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CLASSIFYING trigger=CLASSIFYING_TO_DENY_DECISION validator_passed=true result_state=DECIDED
+COMMAND: baseline.sh taa next_state EVALUATING EVALUATING_TO_FAIL_CLOSED true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=EVALUATING trigger=EVALUATING_TO_FAIL_CLOSED validator_passed=true result_state=FAIL_CLOSED
+PT-ID: TAA-PT-009
+COMMAND: baseline.sh taa next_state INTAKE STRUCTURAL_INCOMPLETENESS_TO_FAIL_CLOSED true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=INTAKE trigger=STRUCTURAL_INCOMPLETENESS_TO_FAIL_CLOSED validator_passed=true result_state=FAIL_CLOSED
+PT-ID: VP-GEN-009
+COMMAND: baseline.sh taa next_state INTAKE STRUCTURAL_INCOMPLETENESS_TO_FAIL_CLOSED true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=INTAKE trigger=STRUCTURAL_INCOMPLETENESS_TO_FAIL_CLOSED validator_passed=true result_state=FAIL_CLOSED
+PT-ID: TAA-PT-010
+COMMAND: baseline.sh taa next_state CLASSIFYING POLICY_SNAPSHOT_DRIFT_TO_FAIL_CLOSED true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CLASSIFYING trigger=POLICY_SNAPSHOT_DRIFT_TO_FAIL_CLOSED validator_passed=true result_state=FAIL_CLOSED
+PT-ID: VP-GEN-010
+COMMAND: baseline.sh taa next_state CLASSIFYING POLICY_SNAPSHOT_DRIFT_TO_FAIL_CLOSED true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CLASSIFYING trigger=POLICY_SNAPSHOT_DRIFT_TO_FAIL_CLOSED validator_passed=true result_state=FAIL_CLOSED
+PT-ID: TAA-PT-011
+COMMAND: baseline.sh taa next_state EVALUATING CONFLICT_CHECKING_TO_ALLOW_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=EVALUATING trigger=CONFLICT_CHECKING_TO_ALLOW_DECISION validator_passed=true result_state=FAIL_CLOSED
+PT-ID: VP-GEN-011
+COMMAND: baseline.sh taa next_state EVALUATING CONFLICT_CHECKING_TO_ALLOW_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=EVALUATING trigger=CONFLICT_CHECKING_TO_ALLOW_DECISION validator_passed=true result_state=FAIL_CLOSED
+PT-ID: TAA-PT-012
+COMMAND: baseline.sh taa next_state FAIL_CLOSED FAIL_CLOSED_TO_NONCOMPLIANT_HOLD true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=FAIL_CLOSED trigger=FAIL_CLOSED_TO_NONCOMPLIANT_HOLD validator_passed=true result_state=NONCOMPLIANT_HOLD
+COMMAND: baseline.sh taa next_state NONCOMPLIANT_HOLD NONCOMPLIANT_HOLD_TO_READMISSION_PENDING true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=NONCOMPLIANT_HOLD trigger=NONCOMPLIANT_HOLD_TO_READMISSION_PENDING validator_passed=true result_state=READMISSION_PENDING
+PT-ID: VP-GEN-012
+COMMAND: baseline.sh taa next_state FAIL_CLOSED FAIL_CLOSED_TO_NONCOMPLIANT_HOLD true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=FAIL_CLOSED trigger=FAIL_CLOSED_TO_NONCOMPLIANT_HOLD validator_passed=true result_state=NONCOMPLIANT_HOLD
+COMMAND: baseline.sh taa next_state NONCOMPLIANT_HOLD NONCOMPLIANT_HOLD_TO_READMISSION_PENDING true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=NONCOMPLIANT_HOLD trigger=NONCOMPLIANT_HOLD_TO_READMISSION_PENDING validator_passed=true result_state=READMISSION_PENDING
+PT-ID: TAA-PT-013
+COMMAND: baseline.sh taa next_state READMISSION_PENDING READMISSION_PENDING_TO_ROLE_SCREENING true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=READMISSION_PENDING trigger=READMISSION_PENDING_TO_ROLE_SCREENING validator_passed=true result_state=ROLE_SCREENING
+PT-ID: VP-GEN-013
+COMMAND: baseline.sh taa next_state READMISSION_PENDING READMISSION_PENDING_TO_ROLE_SCREENING true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=READMISSION_PENDING trigger=READMISSION_PENDING_TO_ROLE_SCREENING validator_passed=true result_state=ROLE_SCREENING
+PT-ID: TAA-PT-014
+COMMAND: baseline.sh taa next_state CLOSED DECIDED_TO_HANDOFF_READY true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CLOSED trigger=DECIDED_TO_HANDOFF_READY validator_passed=true result_state=CLOSED
+PT-ID: VP-GEN-014
+COMMAND: baseline.sh taa next_state CLOSED DECIDED_TO_HANDOFF_READY true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CLOSED trigger=DECIDED_TO_HANDOFF_READY validator_passed=true result_state=CLOSED
+PT-ID: TAA-PT-015
+COMMAND: baseline.sh taa evidence base
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=TAA-DEC-0001
+statement_id_list=STMT-CANON-0001
+verdict=ALLOW
+reason_code=DO-008_COMPLETE
+tsa_label=attested_mechanism
+source_class=TRAINED
+source_ref=SREF-0001
+boundary_validated_role=mechanism_level
+role_validation_result=confirmed
+policy_snapshot_id=POLSNAP-CANON-0001
+policy_hash_ref=PHREF-0001
+scope_id=SCOPE-0001
+turn_id=TURN-0001
+order_ref=ORD-0001
+logical_timestamp=LTS-0001
+semantic_closure=closed
+evidence_closure=closed
+failure_closure=closed
+policy_snapshot_closure=closed
+surface=evidence
+agent=taa
+class=base
+PT-ID: VP-GEN-015
+COMMAND: baseline.sh taa evidence base
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=TAA-DEC-0001
+statement_id_list=STMT-CANON-0001
+verdict=ALLOW
+reason_code=DO-008_COMPLETE
+tsa_label=attested_mechanism
+source_class=TRAINED
+source_ref=SREF-0001
+boundary_validated_role=mechanism_level
+role_validation_result=confirmed
+policy_snapshot_id=POLSNAP-CANON-0001
+policy_hash_ref=PHREF-0001
+scope_id=SCOPE-0001
+turn_id=TURN-0001
+order_ref=ORD-0001
+logical_timestamp=LTS-0001
+semantic_closure=closed
+evidence_closure=closed
+failure_closure=closed
+policy_snapshot_closure=closed
+surface=evidence
+agent=taa
+class=base
+PT-ID: TAA-PT-016
+COMMAND: baseline.sh taa evidence base
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=TAA-DEC-0001
+statement_id_list=STMT-CANON-0001
+verdict=ALLOW
+reason_code=DO-008_COMPLETE
+tsa_label=attested_mechanism
+source_class=TRAINED
+source_ref=SREF-0001
+boundary_validated_role=mechanism_level
+role_validation_result=confirmed
+policy_snapshot_id=POLSNAP-CANON-0001
+policy_hash_ref=PHREF-0001
+scope_id=SCOPE-0001
+turn_id=TURN-0001
+order_ref=ORD-0001
+logical_timestamp=LTS-0001
+semantic_closure=closed
+evidence_closure=closed
+failure_closure=closed
+policy_snapshot_closure=closed
+surface=evidence
+agent=taa
+class=base
+PT-ID: VP-GEN-016
+COMMAND: baseline.sh taa evidence base
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=TAA-DEC-0001
+statement_id_list=STMT-CANON-0001
+verdict=ALLOW
+reason_code=DO-008_COMPLETE
+tsa_label=attested_mechanism
+source_class=TRAINED
+source_ref=SREF-0001
+boundary_validated_role=mechanism_level
+role_validation_result=confirmed
+policy_snapshot_id=POLSNAP-CANON-0001
+policy_hash_ref=PHREF-0001
+scope_id=SCOPE-0001
+turn_id=TURN-0001
+order_ref=ORD-0001
+logical_timestamp=LTS-0001
+semantic_closure=closed
+evidence_closure=closed
+failure_closure=closed
+policy_snapshot_closure=closed
+surface=evidence
+agent=taa
+class=base
+PT-ID: TAA-PT-017
+COMMAND: baseline.sh taa evidence allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=TAA-DEC-0001
+statement_id_list=STMT-CANON-0001
+verdict=ALLOW
+reason_code=DO-008_COMPLETE
+tsa_label=attested_mechanism
+source_class=TRAINED
+source_ref=SREF-0001
+boundary_validated_role=mechanism_level
+role_validation_result=confirmed
+policy_snapshot_id=POLSNAP-CANON-0001
+policy_hash_ref=PHREF-0001
+scope_id=SCOPE-0001
+turn_id=TURN-0001
+order_ref=ORD-0001
+logical_timestamp=LTS-0001
+semantic_closure=closed
+evidence_closure=closed
+failure_closure=closed
+policy_snapshot_closure=closed
+verdict=ALLOW_CONSTRAINED
+reason_code=DO-006_HEURISTIC_CONFLICT_UNCLOSED
+conflict_check_mode=heuristic
+conflict_check_strength=v006b
+conflict_check_confidence=0.6
+conflict_check_coverage_scope=partial
+compared_claim_set_ref=CCS-0001
+residual_risk_statement=bounded_residual
+surface=evidence
+agent=taa
+class=allow_constrained
+PT-ID: VP-GEN-017
+COMMAND: baseline.sh taa evidence allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=TAA-DEC-0001
+statement_id_list=STMT-CANON-0001
+verdict=ALLOW
+reason_code=DO-008_COMPLETE
+tsa_label=attested_mechanism
+source_class=TRAINED
+source_ref=SREF-0001
+boundary_validated_role=mechanism_level
+role_validation_result=confirmed
+policy_snapshot_id=POLSNAP-CANON-0001
+policy_hash_ref=PHREF-0001
+scope_id=SCOPE-0001
+turn_id=TURN-0001
+order_ref=ORD-0001
+logical_timestamp=LTS-0001
+semantic_closure=closed
+evidence_closure=closed
+failure_closure=closed
+policy_snapshot_closure=closed
+verdict=ALLOW_CONSTRAINED
+reason_code=DO-006_HEURISTIC_CONFLICT_UNCLOSED
+conflict_check_mode=heuristic
+conflict_check_strength=v006b
+conflict_check_confidence=0.6
+conflict_check_coverage_scope=partial
+compared_claim_set_ref=CCS-0001
+residual_risk_statement=bounded_residual
+surface=evidence
+agent=taa
+class=allow_constrained
+PT-ID: TAA-PT-018
+COMMAND: baseline.sh taa evidence fail_closed_escalation
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=TAA-DEC-0001
+statement_id_list=STMT-CANON-0001
+verdict=ALLOW
+reason_code=DO-008_COMPLETE
+tsa_label=attested_mechanism
+source_class=TRAINED
+source_ref=SREF-0001
+boundary_validated_role=mechanism_level
+role_validation_result=confirmed
+policy_snapshot_id=POLSNAP-CANON-0001
+policy_hash_ref=PHREF-0001
+scope_id=SCOPE-0001
+turn_id=TURN-0001
+order_ref=ORD-0001
+logical_timestamp=LTS-0001
+semantic_closure=closed
+evidence_closure=closed
+failure_closure=closed
+policy_snapshot_closure=closed
+verdict=FAIL_CLOSED
+reason_code=UNLABELED_CLAIM
+inhibit_flags=block_local
+root_reason_code=UNLABELED_CLAIM
+cleared_only_by=external_actor
+remediation_class=clearance
+escalation_request_ref=ESC-0001
+request_id=REQ-0001
+failure_ref=FR-0001
+required_actor_role=auditor
+required_evidence=clearance_bundle
+status=pending
+surface=evidence
+agent=taa
+class=fail_closed_escalation
+PT-ID: VP-GEN-018
+COMMAND: baseline.sh taa evidence fail_closed_escalation
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=TAA-DEC-0001
+statement_id_list=STMT-CANON-0001
+verdict=ALLOW
+reason_code=DO-008_COMPLETE
+tsa_label=attested_mechanism
+source_class=TRAINED
+source_ref=SREF-0001
+boundary_validated_role=mechanism_level
+role_validation_result=confirmed
+policy_snapshot_id=POLSNAP-CANON-0001
+policy_hash_ref=PHREF-0001
+scope_id=SCOPE-0001
+turn_id=TURN-0001
+order_ref=ORD-0001
+logical_timestamp=LTS-0001
+semantic_closure=closed
+evidence_closure=closed
+failure_closure=closed
+policy_snapshot_closure=closed
+verdict=FAIL_CLOSED
+reason_code=UNLABELED_CLAIM
+inhibit_flags=block_local
+root_reason_code=UNLABELED_CLAIM
+cleared_only_by=external_actor
+remediation_class=clearance
+escalation_request_ref=ESC-0001
+request_id=REQ-0001
+failure_ref=FR-0001
+required_actor_role=auditor
+required_evidence=clearance_bundle
+status=pending
+surface=evidence
+agent=taa
+class=fail_closed_escalation
+PT-ID: TAA-PT-019
+COMMAND: baseline.sh taa next_state DECIDED CLEARANCE_ARTIFACT_MISSING_TO_FAIL_CLOSED true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=DECIDED trigger=CLEARANCE_ARTIFACT_MISSING_TO_FAIL_CLOSED validator_passed=true result_state=FAIL_CLOSED
+PT-ID: VP-GEN-019
+COMMAND: baseline.sh taa next_state DECIDED CLEARANCE_ARTIFACT_MISSING_TO_FAIL_CLOSED true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=DECIDED trigger=CLEARANCE_ARTIFACT_MISSING_TO_FAIL_CLOSED validator_passed=true result_state=FAIL_CLOSED
+PT-ID: TAA-PT-020
+COMMAND: (no invocation -- SKIP: TAA Conformance Tests record-kind 'Declarative conformance claim (not a buyer-runnable unit test)' + Minimal run note 'the 1 declarative record (VP-GEN-020 / TAA-PT-020-DECL) is preserved as a buyer obligation rather than a runnable assertion')
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+PT-ID: VP-GEN-020
+COMMAND: (no invocation -- SKIP: TAA Conformance Tests record-kind 'Declarative conformance claim (not a buyer-runnable unit test)' + Minimal run note 'the 1 declarative record (VP-GEN-020 / TAA-PT-020-DECL) is preserved as a buyer obligation rather than a runnable assertion')
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+PT-ID: TAA-PT-021
+COMMAND: baseline.sh taa verdicts
+EXIT_CODE: 0
+STDOUT_TAIL: verdicts=ALLOW ALLOW_CONSTRAINED DENY FAIL_CLOSED ESCALATE OUT_OF_SCOPE
+PT-ID: VP-GEN-021
+COMMAND: baseline.sh taa verdicts
+EXIT_CODE: 0
+STDOUT_TAIL: verdicts=ALLOW ALLOW_CONSTRAINED DENY FAIL_CLOSED ESCALATE OUT_OF_SCOPE
+PT-ID: TAA-PT-022
+COMMAND: baseline.sh taa next_state ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=ROLE_SCREENING trigger=ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING validator_passed=true result_state=CANONICALIZING
+COMMAND: baseline.sh taa next_state ROLE_SCREENING ROLE_SCREENING_TO_OUT_OF_SCOPE_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=ROLE_SCREENING trigger=ROLE_SCREENING_TO_OUT_OF_SCOPE_DECISION validator_passed=true result_state=DECIDED
+PT-ID: VP-GEN-022
+COMMAND: baseline.sh taa next_state ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=ROLE_SCREENING trigger=ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING validator_passed=true result_state=CANONICALIZING
+COMMAND: baseline.sh taa next_state ROLE_SCREENING ROLE_SCREENING_TO_OUT_OF_SCOPE_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=ROLE_SCREENING trigger=ROLE_SCREENING_TO_OUT_OF_SCOPE_DECISION validator_passed=true result_state=DECIDED
+PT-ID: TAA-PT-023
+COMMAND: baseline.sh taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CONFLICT_CHECKING trigger=CONFLICT_CHECKING_TO_DENY_DECISION validator_passed=true result_state=DECIDED
+COMMAND: baseline.sh taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_FAIL_CLOSED true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CONFLICT_CHECKING trigger=CONFLICT_CHECKING_TO_FAIL_CLOSED validator_passed=true result_state=FAIL_CLOSED
+PT-ID: VP-GEN-023
+COMMAND: baseline.sh taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CONFLICT_CHECKING trigger=CONFLICT_CHECKING_TO_DENY_DECISION validator_passed=true result_state=DECIDED
+COMMAND: baseline.sh taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_FAIL_CLOSED true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CONFLICT_CHECKING trigger=CONFLICT_CHECKING_TO_FAIL_CLOSED validator_passed=true result_state=FAIL_CLOSED
+PT-ID: TAA-PT-024
+COMMAND: baseline.sh taa next_state EVALUATING EVALUATING_TO_FAIL_CLOSED true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=EVALUATING trigger=EVALUATING_TO_FAIL_CLOSED validator_passed=true result_state=FAIL_CLOSED
+PT-ID: VP-GEN-024
+COMMAND: baseline.sh taa next_state EVALUATING EVALUATING_TO_FAIL_CLOSED true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=EVALUATING trigger=EVALUATING_TO_FAIL_CLOSED validator_passed=true result_state=FAIL_CLOSED
+PT-ID: TAA-PT-025
+COMMAND: baseline.sh taa evidence allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=TAA-DEC-0001
+statement_id_list=STMT-CANON-0001
+verdict=ALLOW
+reason_code=DO-008_COMPLETE
+tsa_label=attested_mechanism
+source_class=TRAINED
+source_ref=SREF-0001
+boundary_validated_role=mechanism_level
+role_validation_result=confirmed
+policy_snapshot_id=POLSNAP-CANON-0001
+policy_hash_ref=PHREF-0001
+scope_id=SCOPE-0001
+turn_id=TURN-0001
+order_ref=ORD-0001
+logical_timestamp=LTS-0001
+semantic_closure=closed
+evidence_closure=closed
+failure_closure=closed
+policy_snapshot_closure=closed
+verdict=ALLOW_CONSTRAINED
+reason_code=DO-006_HEURISTIC_CONFLICT_UNCLOSED
+conflict_check_mode=heuristic
+conflict_check_strength=v006b
+conflict_check_confidence=0.6
+conflict_check_coverage_scope=partial
+compared_claim_set_ref=CCS-0001
+residual_risk_statement=bounded_residual
+surface=evidence
+agent=taa
+class=allow_constrained
+PT-ID: VP-GEN-025
+COMMAND: baseline.sh taa evidence allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=TAA-DEC-0001
+statement_id_list=STMT-CANON-0001
+verdict=ALLOW
+reason_code=DO-008_COMPLETE
+tsa_label=attested_mechanism
+source_class=TRAINED
+source_ref=SREF-0001
+boundary_validated_role=mechanism_level
+role_validation_result=confirmed
+policy_snapshot_id=POLSNAP-CANON-0001
+policy_hash_ref=PHREF-0001
+scope_id=SCOPE-0001
+turn_id=TURN-0001
+order_ref=ORD-0001
+logical_timestamp=LTS-0001
+semantic_closure=closed
+evidence_closure=closed
+failure_closure=closed
+policy_snapshot_closure=closed
+verdict=ALLOW_CONSTRAINED
+reason_code=DO-006_HEURISTIC_CONFLICT_UNCLOSED
+conflict_check_mode=heuristic
+conflict_check_strength=v006b
+conflict_check_confidence=0.6
+conflict_check_coverage_scope=partial
+compared_claim_set_ref=CCS-0001
+residual_risk_statement=bounded_residual
+surface=evidence
+agent=taa
+class=allow_constrained
+PT-ID: TAA-PT-026
+COMMAND: baseline.sh taa next_state ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=ROLE_SCREENING trigger=ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING validator_passed=true result_state=CANONICALIZING
+COMMAND: baseline.sh taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CONFLICT_CHECKING trigger=CONFLICT_CHECKING_TO_DENY_DECISION validator_passed=true result_state=DECIDED
+PT-ID: VP-GEN-026
+COMMAND: baseline.sh taa next_state ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=ROLE_SCREENING trigger=ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING validator_passed=true result_state=CANONICALIZING
+COMMAND: baseline.sh taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CONFLICT_CHECKING trigger=CONFLICT_CHECKING_TO_DENY_DECISION validator_passed=true result_state=DECIDED
+PT-ID: TAA-PT-027
+COMMAND: baseline.sh taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CONFLICT_CHECKING trigger=CONFLICT_CHECKING_TO_ALLOW_DECISION validator_passed=true result_state=DECIDED
+COMMAND: baseline.sh taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_CONSTRAINED_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CONFLICT_CHECKING trigger=CONFLICT_CHECKING_TO_ALLOW_CONSTRAINED_DECISION validator_passed=true result_state=DECIDED
+COMMAND: baseline.sh taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CONFLICT_CHECKING trigger=CONFLICT_CHECKING_TO_DENY_DECISION validator_passed=true result_state=DECIDED
+COMMAND: baseline.sh taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CONFLICT_CHECKING trigger=CONFLICT_CHECKING_TO_ESCALATE_DECISION validator_passed=true result_state=DECIDED
+PT-ID: VP-GEN-027
+COMMAND: baseline.sh taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CONFLICT_CHECKING trigger=CONFLICT_CHECKING_TO_ALLOW_DECISION validator_passed=true result_state=DECIDED
+COMMAND: baseline.sh taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_CONSTRAINED_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CONFLICT_CHECKING trigger=CONFLICT_CHECKING_TO_ALLOW_CONSTRAINED_DECISION validator_passed=true result_state=DECIDED
+COMMAND: baseline.sh taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CONFLICT_CHECKING trigger=CONFLICT_CHECKING_TO_DENY_DECISION validator_passed=true result_state=DECIDED
+COMMAND: baseline.sh taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=taa in_state=CONFLICT_CHECKING trigger=CONFLICT_CHECKING_TO_ESCALATE_DECISION validator_passed=true result_state=DECIDED
+PT-ID: ARA-T001
+COMMAND: baseline.sh ara next_state S0_INGESTED EV_PARSE_OK true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=ara in_state=S0_INGESTED trigger=EV_PARSE_OK validator_passed=true result_state=S1_PARSED
+PT-ID: ARA-T002
+COMMAND: baseline.sh ara next_state S2_VERIFIED replay_fold_complete true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=ara in_state=S2_VERIFIED trigger=replay_fold_complete validator_passed=true result_state=S3_RECONSTRUCTED
+PT-ID: ARA-T003
+COMMAND: baseline.sh ara next_state S4_CHECKPOINT_RESOLVED EV_REPORT_BOUND true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=ara in_state=S4_CHECKPOINT_RESOLVED trigger=EV_REPORT_BOUND validator_passed=true result_state=S5_REPORT_READY
+PT-ID: ARA-T004
+COMMAND: baseline.sh ara next_state S4_CHECKPOINT_RESOLVED EV_SIGNATURE_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=ara in_state=S4_CHECKPOINT_RESOLVED trigger=EV_SIGNATURE_FAIL validator_passed=true result_state=SX_FAIL_CLOSED
+COMMAND: baseline.sh ara next_state S4_CHECKPOINT_RESOLVED EV_CHAIN_BREAK true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=ara in_state=S4_CHECKPOINT_RESOLVED trigger=EV_CHAIN_BREAK validator_passed=true result_state=SX_FAIL_CLOSED
+PT-ID: ARA-T005
+COMMAND: baseline.sh ara gate report_insufficient
+EXIT_CODE: 0
+STDOUT_TAIL: surface=gate
+agent=ara
+verdict=PARTIAL
+finalize_report=blocked
+note=INCIDENT_ONLY_or_PARTIAL
+PT-ID: ARA-T006
+COMMAND: baseline.sh ara next_state S2_VERIFIED EV_EVIDENCE_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=ara in_state=S2_VERIFIED trigger=EV_EVIDENCE_FAIL validator_passed=true result_state=SH_HOLD_ACTIVE
+PT-ID: ARA-T007
+COMMAND: baseline.sh ara gate checkpoint_unverified
+EXIT_CODE: 0
+STDOUT_TAIL: surface=gate
+agent=ara
+rollback_sequence=INVALID
+note=no_REPLAYABLE
+PT-ID: ARA-T008
+COMMAND: baseline.sh ara next_state S1_PARSED EV_SIGNATURE_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=ara in_state=S1_PARSED trigger=EV_SIGNATURE_FAIL validator_passed=true result_state=SX_FAIL_CLOSED
+COMMAND: baseline.sh ara next_state S1_PARSED EV_COUNTER_REPLAY true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=ara in_state=S1_PARSED trigger=EV_COUNTER_REPLAY validator_passed=true result_state=SH_HOLD_ACTIVE
+PT-ID: ARA-T009
+COMMAND: baseline.sh ara next_state S1_PARSED EV_SIGNATURE_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=ara in_state=S1_PARSED trigger=EV_SIGNATURE_FAIL validator_passed=true result_state=SX_FAIL_CLOSED
+PT-ID: ARA-T010
+COMMAND: baseline.sh ara next_state S4_CHECKPOINT_RESOLVED EV_CHAIN_BREAK false
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=ara in_state=S4_CHECKPOINT_RESOLVED trigger=EV_CHAIN_BREAK validator_passed=false result_state=SX_FAIL_CLOSED
+PT-ID: ARA-T011
+COMMAND: baseline.sh ara next_state S1_PARSED EV_SIGNATURE_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=ara in_state=S1_PARSED trigger=EV_SIGNATURE_FAIL validator_passed=true result_state=SX_FAIL_CLOSED
+COMMAND: baseline.sh ara next_state S2_VERIFIED EV_EVIDENCE_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=ara in_state=S2_VERIFIED trigger=EV_EVIDENCE_FAIL validator_passed=true result_state=SH_HOLD_ACTIVE
+COMMAND: baseline.sh ara next_state S0_INGESTED EV_POLICY_UNRESOLVED true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=ara in_state=S0_INGESTED trigger=EV_POLICY_UNRESOLVED validator_passed=true result_state=SX_FAIL_CLOSED
+PT-ID: ARA-T012
+COMMAND: baseline.sh ara next_state SH_HOLD_ACTIVE EV_READMISSION_GRANTED true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=ara in_state=SH_HOLD_ACTIVE trigger=EV_READMISSION_GRANTED validator_passed=true result_state=S6_READMITTED
+PT-ID: ARA-T013
+COMMAND: baseline.sh ara next_state SH_HOLD_ACTIVE EV_READMISSION_GRANTED false
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=ara in_state=SH_HOLD_ACTIVE trigger=EV_READMISSION_GRANTED validator_passed=false result_state=SH_HOLD_ACTIVE
+PT-ID: ARA-T014
+COMMAND: baseline.sh ara next_state S5_REPORT_READY EV_PARSE_OK true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=ara in_state=S5_REPORT_READY trigger=EV_PARSE_OK validator_passed=true result_state=S5_REPORT_READY
+PT-ID: ARA-T015
+COMMAND: baseline.sh ara evidence mandatory
+EXIT_CODE: 0
+STDOUT_TAIL: bundle_digest=BND-0001
+policy_profile_id=PPID-0001
+policy_hash=PHASH-0001
+validator_outcomes=V-01:pass,V-05:pass,V-07:pass
+hash_continuity_refs=HC-0001
+signature_refs=SIG-0001
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+report_fields_ref=RPT-0001
+report_signature=RSIG-0001
+export_manifest_ref=EXM-0001
+surface=evidence
+agent=ara
+class=mandatory
+PT-ID: ARA-T016
+COMMAND: baseline.sh ara evidence mandatory
+EXIT_CODE: 0
+STDOUT_TAIL: bundle_digest=BND-0001
+policy_profile_id=PPID-0001
+policy_hash=PHASH-0001
+validator_outcomes=V-01:pass,V-05:pass,V-07:pass
+hash_continuity_refs=HC-0001
+signature_refs=SIG-0001
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+report_fields_ref=RPT-0001
+report_signature=RSIG-0001
+export_manifest_ref=EXM-0001
+surface=evidence
+agent=ara
+class=mandatory
+PT-ID: ARA-T017
+COMMAND: baseline.sh ara evidence hold_readmission
+EXIT_CODE: 0
+STDOUT_TAIL: bundle_digest=BND-0001
+policy_profile_id=PPID-0001
+policy_hash=PHASH-0001
+validator_outcomes=V-01:pass,V-05:pass,V-07:pass
+hash_continuity_refs=HC-0001
+signature_refs=SIG-0001
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+report_fields_ref=RPT-0001
+report_signature=RSIG-0001
+export_manifest_ref=EXM-0001
+hold_enter_refs=HEN-0001
+hold_exit_refs=HEX-0001
+anchor_update_ref=ANCHOR-UPD-0002
+surface=evidence
+agent=ara
+class=hold_readmission
+PT-ID: ARA-T018
+COMMAND: baseline.sh ara evidence producers
+EXIT_CODE: 0
+STDOUT_TAIL: bundle_digest=BND-0001
+policy_profile_id=PPID-0001
+policy_hash=PHASH-0001
+validator_outcomes=V-01:pass,V-05:pass,V-07:pass
+hash_continuity_refs=HC-0001
+signature_refs=SIG-0001
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+report_fields_ref=RPT-0001
+report_signature=RSIG-0001
+export_manifest_ref=EXM-0001
+producer_input=InputContract
+producer_export=ExportGovernance
+producer_readmission=ReadmissionGovernance
+orphaned_producer=none
+surface=evidence
+agent=ara
+class=producers
+PT-ID: ARA-T019
+COMMAND: baseline.sh ara gate V-10_quarantine
+EXIT_CODE: 0
+STDOUT_TAIL: surface=gate
+agent=ara
+validator=V-10
+gate_status=QUARANTINE
+admitted_to_reconstruction=false
+incident_export=emitted
+attested=true
+PT-ID: ARA-T020
+COMMAND: baseline.sh ara gate distributed_enforcement
+EXIT_CODE: 0
+STDOUT_TAIL: surface=gate
+agent=ara
+mapping=V-10->QUARANTINE
+orphaned=false
+attested=true
+PT-ID: ARA-T021
+COMMAND: baseline.sh ara verdicts
+EXIT_CODE: 0
+STDOUT_TAIL: verdicts=REPLAYABLE PARTIAL REJECTED BROKEN INCIDENT_ONLY
+PT-ID: ARA-T022
+COMMAND: baseline.sh ara distinct BROKEN REJECTED
+EXIT_CODE: 0
+STDOUT_TAIL: distinct=yes
+a=BROKEN
+b=REJECTED
+surface=distinct
+agent=ara
+COMMAND: baseline.sh ara distinct SX_FAIL_CLOSED SH_HOLD_ACTIVE
+EXIT_CODE: 0
+STDOUT_TAIL: distinct=yes
+a=SX_FAIL_CLOSED
+b=SH_HOLD_ACTIVE
+surface=distinct
+agent=ara
+COMMAND: baseline.sh ara distinct INCIDENT_ONLY FAIL_CLOSED
+EXIT_CODE: 0
+STDOUT_TAIL: distinct=yes
+a=INCIDENT_ONLY
+b=FAIL_CLOSED
+surface=distinct
+agent=ara
+PT-ID: ARA-T023
+COMMAND: baseline.sh ara next_state S0_INGESTED EV_POLICY_UNRESOLVED true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=ara in_state=S0_INGESTED trigger=EV_POLICY_UNRESOLVED validator_passed=true result_state=SX_FAIL_CLOSED
+COMMAND: baseline.sh ara next_state S6_READMITTED controlled_resumption true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=ara in_state=S6_READMITTED trigger=controlled_resumption validator_passed=true result_state=S2_VERIFIED
+PT-ID: ARA-T024
+COMMAND: baseline.sh ara next_state S3_RECONSTRUCTED EV_LASTCLEAN_FOUND true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=ara in_state=S3_RECONSTRUCTED trigger=EV_LASTCLEAN_FOUND validator_passed=true result_state=S4_CHECKPOINT_RESOLVED
+PT-ID: ARA-T025
+COMMAND: baseline.sh ara evidence hold_readmission
+EXIT_CODE: 0
+STDOUT_TAIL: bundle_digest=BND-0001
+policy_profile_id=PPID-0001
+policy_hash=PHASH-0001
+validator_outcomes=V-01:pass,V-05:pass,V-07:pass
+hash_continuity_refs=HC-0001
+signature_refs=SIG-0001
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+report_fields_ref=RPT-0001
+report_signature=RSIG-0001
+export_manifest_ref=EXM-0001
+hold_enter_refs=HEN-0001
+hold_exit_refs=HEX-0001
+anchor_update_ref=ANCHOR-UPD-0002
+surface=evidence
+agent=ara
+class=hold_readmission
+PT-ID: ARA-T026
+COMMAND: baseline.sh ara next_state S4_CHECKPOINT_RESOLVED EV_REPORT_BOUND true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=ara in_state=S4_CHECKPOINT_RESOLVED trigger=EV_REPORT_BOUND validator_passed=true result_state=S5_REPORT_READY
+PT-ID: ARA-T027
+COMMAND: baseline.sh ara gate transparent_classification
+EXIT_CODE: 0
+STDOUT_TAIL: surface=gate
+agent=ara
+v10_export=declarative
+v06_s6_export=parameterized
+hidden_omission=none
+attested=true
+PT-ID: FPA-D-01
+COMMAND: (no invocation -- SKIP: FPA Conformance Tests §F.D 'Declarative obligations (not locally runnable on the published surface)' + §H Minimal Run Note 'Bounded external obligations not locally runnable: FPA-D-01 through FPA-D-06')
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+PT-ID: FPA-D-02
+COMMAND: (no invocation -- SKIP: FPA Conformance Tests §F.D 'Declarative obligations (not locally runnable on the published surface)' + §H Minimal Run Note 'Bounded external obligations not locally runnable: FPA-D-01 through FPA-D-06')
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+PT-ID: FPA-D-03
+COMMAND: (no invocation -- SKIP: FPA Conformance Tests §F.D 'Declarative obligations (not locally runnable on the published surface)' + §H Minimal Run Note 'Bounded external obligations not locally runnable: FPA-D-01 through FPA-D-06')
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+PT-ID: FPA-D-04
+COMMAND: (no invocation -- SKIP: FPA Conformance Tests §F.D 'Declarative obligations (not locally runnable on the published surface)' + §H Minimal Run Note 'Bounded external obligations not locally runnable: FPA-D-01 through FPA-D-06')
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+PT-ID: FPA-D-05
+COMMAND: (no invocation -- SKIP: FPA Conformance Tests §F.D 'Declarative obligations (not locally runnable on the published surface)' + §H Minimal Run Note 'Bounded external obligations not locally runnable: FPA-D-01 through FPA-D-06')
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+PT-ID: FPA-D-06
+COMMAND: (no invocation -- SKIP: FPA Conformance Tests §F.D 'Declarative obligations (not locally runnable on the published surface)' + §H Minimal Run Note 'Bounded external obligations not locally runnable: FPA-D-01 through FPA-D-06')
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+PT-ID: FPA-T-01
+COMMAND: baseline.sh fpa next_state IDLE TransferPacketReceived true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=IDLE trigger=TransferPacketReceived validator_passed=true result_state=RECEIVED
+PT-ID: FPA-T-02
+COMMAND: baseline.sh fpa next_state RECEIVED StructureValid true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=RECEIVED trigger=StructureValid validator_passed=true result_state=VERIFIED
+PT-ID: FPA-T-03
+COMMAND: baseline.sh fpa next_state RESTORATION_ELIGIBLE RestoreAdmitted true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=RESTORATION_ELIGIBLE trigger=RestoreAdmitted validator_passed=true result_state=IDLE
+PT-ID: FPA-T-04
+COMMAND: baseline.sh fpa next_state RECEIVED StructureValid false
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=RECEIVED trigger=StructureValid validator_passed=false result_state=REJECTED
+COMMAND: baseline.sh fpa next_state RECEIVED StructureInvalid true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=RECEIVED trigger=StructureInvalid validator_passed=true result_state=REJECTED
+PT-ID: FPA-T-06
+COMMAND: baseline.sh fpa next_state VERIFIED EvidencePending false
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=VERIFIED trigger=EvidencePending validator_passed=false result_state=QUARANTINED
+PT-ID: FPA-T-08a
+COMMAND: baseline.sh fpa next_state VERIFIED FreshnessFail true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=VERIFIED trigger=FreshnessFail validator_passed=true result_state=REJECTED
+PT-ID: FPA-T-08b
+COMMAND: baseline.sh fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed false
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=WATERMARK_COMMITTED trigger=RestoreRequest_GenesisConfirmed validator_passed=false result_state=REJECTED
+PT-ID: FPA-T-08c
+COMMAND: baseline.sh fpa distinct REJECT FAIL_CLOSED
+EXIT_CODE: 0
+STDOUT_TAIL: distinct=yes
+a=REJECT
+b=FAIL_CLOSED
+surface=distinct
+agent=fpa
+PT-ID: FPA-T-09
+COMMAND: baseline.sh fpa next_state VERIFIED FreshnessPass false
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=VERIFIED trigger=FreshnessPass validator_passed=false result_state=REJECTED
+PT-ID: FPA-T-10
+COMMAND: baseline.sh fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed false
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=WATERMARK_COMMITTED trigger=RestoreRequest_GenesisConfirmed validator_passed=false result_state=REJECTED
+PT-ID: FPA-T-11
+COMMAND: baseline.sh fpa next_state IRR_COMMITTED FreshnessPass true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=IRR_COMMITTED trigger=FreshnessPass validator_passed=true result_state=REJECTED
+PT-ID: FPA-T-12
+COMMAND: baseline.sh fpa next_state QUARANTINED ReadmissionApproved true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=QUARANTINED trigger=ReadmissionApproved validator_passed=true result_state=VERIFIED
+PT-ID: FPA-T-13a
+COMMAND: baseline.sh fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=WATERMARK_COMMITTED trigger=RestoreRequest_GenesisConfirmed validator_passed=true result_state=RESTORATION_ELIGIBLE
+PT-ID: FPA-T-13b
+COMMAND: baseline.sh fpa next_state RESTORATION_ELIGIBLE RestoreAdmitted true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=RESTORATION_ELIGIBLE trigger=RestoreAdmitted validator_passed=true result_state=IDLE
+PT-ID: FPA-T-14
+COMMAND: baseline.sh fpa next_state REJECTED FreshnessPass true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=REJECTED trigger=FreshnessPass validator_passed=true result_state=REJECTED
+PT-ID: FPA-T-15
+COMMAND: baseline.sh fpa evidence deny_restore
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=FPA-DEC-0001
+agent_id=FPA-FRESHNESS-PORTABILITY-003
+source_id=SRC-CANON-0001
+ledger_uuid=LEDGER-0001
+policy_id=POL-CANON-0001
+policy_version=v1
+decision_object=restore_deny
+reason_code=DENY_RESTORE
+semantic_verdict=FAIL_CLOSED
+gate_class=BLOCK
+surface=evidence
+agent=fpa
+class=deny_restore
+PT-ID: FPA-T-16
+COMMAND: baseline.sh fpa evidence accept
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=FPA-DEC-0001
+agent_id=FPA-FRESHNESS-PORTABILITY-003
+source_id=SRC-CANON-0001
+ledger_uuid=LEDGER-0001
+policy_id=POL-CANON-0001
+policy_version=v1
+decision_object=accept_import
+reason_code=APPEND_IRR
+semantic_verdict=ACCEPT
+gate_class=RELEASE
+packet_hash=PKT-0001
+freshness_value=11
+watermark_before=10
+watermark_after=11
+ssm_validation_result=valid
+irr_digest=IRR-DIGEST-CANON-0001
+prev_receipt_digest=PREVIRR-0001
+accepted_head_digest=HEAD-DIGEST-CANON-0001
+surface=evidence
+agent=fpa
+class=accept
+PT-ID: FPA-T-17A
+COMMAND: baseline.sh fpa evidence tvc
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=FPA-DEC-0001
+agent_id=FPA-FRESHNESS-PORTABILITY-003
+source_id=SRC-CANON-0001
+ledger_uuid=LEDGER-0001
+policy_id=POL-CANON-0001
+policy_version=v1
+tvc_validation_result=valid
+surface=evidence
+agent=fpa
+class=tvc
+PT-ID: FPA-T-17B
+COMMAND: baseline.sh fpa evidence evidence
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=FPA-DEC-0001
+agent_id=FPA-FRESHNESS-PORTABILITY-003
+source_id=SRC-CANON-0001
+ledger_uuid=LEDGER-0001
+policy_id=POL-CANON-0001
+policy_version=v1
+evidence_validation_result=valid
+surface=evidence
+agent=fpa
+class=evidence
+PT-ID: FPA-T-17C
+COMMAND: baseline.sh fpa evidence transport
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=FPA-DEC-0001
+agent_id=FPA-FRESHNESS-PORTABILITY-003
+source_id=SRC-CANON-0001
+ledger_uuid=LEDGER-0001
+policy_id=POL-CANON-0001
+policy_version=v1
+transport_validation_result=valid
+surface=evidence
+agent=fpa
+class=transport
+PT-ID: FPA-T-17D
+COMMAND: baseline.sh fpa evidence accept
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=FPA-DEC-0001
+agent_id=FPA-FRESHNESS-PORTABILITY-003
+source_id=SRC-CANON-0001
+ledger_uuid=LEDGER-0001
+policy_id=POL-CANON-0001
+policy_version=v1
+decision_object=accept_import
+reason_code=APPEND_IRR
+semantic_verdict=ACCEPT
+gate_class=RELEASE
+packet_hash=PKT-0001
+freshness_value=11
+watermark_before=10
+watermark_after=11
+ssm_validation_result=valid
+irr_digest=IRR-DIGEST-CANON-0001
+prev_receipt_digest=PREVIRR-0001
+accepted_head_digest=HEAD-DIGEST-CANON-0001
+surface=evidence
+agent=fpa
+class=accept
+PT-ID: FPA-T-18
+COMMAND: baseline.sh fpa evidence accept
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=FPA-DEC-0001
+agent_id=FPA-FRESHNESS-PORTABILITY-003
+source_id=SRC-CANON-0001
+ledger_uuid=LEDGER-0001
+policy_id=POL-CANON-0001
+policy_version=v1
+decision_object=accept_import
+reason_code=APPEND_IRR
+semantic_verdict=ACCEPT
+gate_class=RELEASE
+packet_hash=PKT-0001
+freshness_value=11
+watermark_before=10
+watermark_after=11
+ssm_validation_result=valid
+irr_digest=IRR-DIGEST-CANON-0001
+prev_receipt_digest=PREVIRR-0001
+accepted_head_digest=HEAD-DIGEST-CANON-0001
+surface=evidence
+agent=fpa
+class=accept
+PT-ID: FPA-T-21
+COMMAND: baseline.sh fpa verdicts
+EXIT_CODE: 0
+STDOUT_TAIL: verdicts=ACCEPT REJECT QUARANTINE RESTORATION_ELIGIBLE READMIT FAIL_CLOSED
+PT-ID: FPA-T-23
+COMMAND: baseline.sh fpa next_state VERIFIED EvidencePending true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=VERIFIED trigger=EvidencePending validator_passed=true result_state=QUARANTINED
+COMMAND: baseline.sh fpa next_state VERIFIED FreshnessPass false
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=VERIFIED trigger=FreshnessPass validator_passed=false result_state=REJECTED
+PT-ID: FPA-T-24
+COMMAND: baseline.sh fpa next_state VERIFIED FreshnessPass true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=VERIFIED trigger=FreshnessPass validator_passed=true result_state=FRESHNESS_ELIGIBLE
+PT-ID: FPA-T-25
+COMMAND: baseline.sh fpa evidence quarantine
+EXIT_CODE: 0
+STDOUT_TAIL: decision_id=FPA-DEC-0001
+agent_id=FPA-FRESHNESS-PORTABILITY-003
+source_id=SRC-CANON-0001
+ledger_uuid=LEDGER-0001
+policy_id=POL-CANON-0001
+policy_version=v1
+decision_object=quarantine_inconclusive
+reason_code=OPEN_QUARANTINE_CASE
+semantic_verdict=QUARANTINE
+gate_class=ESCALATION
+evidence_validation_result=pending
+surface=evidence
+agent=fpa
+class=quarantine
+PT-ID: FPA-T-26
+COMMAND: baseline.sh fpa next_state FRESHNESS_ELIGIBLE IRRAppended true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=FRESHNESS_ELIGIBLE trigger=IRRAppended validator_passed=true result_state=IRR_COMMITTED
+PT-ID: FPA-T-PR-01
+COMMAND: baseline.sh fpa next_state VERIFIED FreshnessFail true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=VERIFIED trigger=FreshnessFail validator_passed=true result_state=REJECTED
+PT-ID: FPA-T-PR-02
+COMMAND: baseline.sh fpa next_state FRESHNESS_ELIGIBLE IRRAppended true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=FRESHNESS_ELIGIBLE trigger=IRRAppended validator_passed=true result_state=IRR_COMMITTED
+COMMAND: baseline.sh fpa next_state IRR_COMMITTED WatermarkPersisted true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=IRR_COMMITTED trigger=WatermarkPersisted validator_passed=true result_state=WATERMARK_COMMITTED
+COMMAND: baseline.sh fpa next_state FRESHNESS_ELIGIBLE WatermarkPersisted true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=FRESHNESS_ELIGIBLE trigger=WatermarkPersisted validator_passed=true result_state=REJECTED
+PT-ID: FPA-T-PR-03
+COMMAND: baseline.sh fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=WATERMARK_COMMITTED trigger=RestoreRequest_GenesisConfirmed validator_passed=true result_state=RESTORATION_ELIGIBLE
+PT-ID: FPA-T-PR-09
+COMMAND: baseline.sh fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=WATERMARK_COMMITTED trigger=RestoreRequest_GenesisConfirmed validator_passed=true result_state=RESTORATION_ELIGIBLE
+COMMAND: baseline.sh fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed false
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=WATERMARK_COMMITTED trigger=RestoreRequest_GenesisConfirmed validator_passed=false result_state=REJECTED
+PT-ID: FPA-T-PR-10
+COMMAND: baseline.sh fpa next_state IDLE RestoreAdmitted true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=IDLE trigger=RestoreAdmitted validator_passed=true result_state=REJECTED
+PT-ID: FPA-T-PR-12
+COMMAND: baseline.sh fpa next_state QUARANTINED ReadmissionApproved true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=QUARANTINED trigger=ReadmissionApproved validator_passed=true result_state=VERIFIED
+COMMAND: baseline.sh fpa next_state IDLE ReadmissionApproved true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=IDLE trigger=ReadmissionApproved validator_passed=true result_state=REJECTED
+PT-ID: FPA-T-PR-13
+COMMAND: baseline.sh fpa next_state VERIFIED FreshnessPass true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=VERIFIED trigger=FreshnessPass validator_passed=true result_state=FRESHNESS_ELIGIBLE
+COMMAND: baseline.sh fpa next_state FRESHNESS_ELIGIBLE IRRAppended true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=FRESHNESS_ELIGIBLE trigger=IRRAppended validator_passed=true result_state=IRR_COMMITTED
+PT-ID: FPA-T-PR-14
+COMMAND: baseline.sh fpa next_state IRR_COMMITTED WatermarkPersisted false
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=fpa in_state=IRR_COMMITTED trigger=WatermarkPersisted validator_passed=false result_state=REJECTED
+PT-ID: PTS-001
+COMMAND: baseline.sh family next_state S0 Fv01Pass true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=S0 trigger=Fv01Pass validator_passed=true result_state=S1
+PT-ID: PTS-002
+COMMAND: baseline.sh family next_state S2 Fv03Pass true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=S2 trigger=Fv03Pass validator_passed=true result_state=S3
+PT-ID: PTS-003
+COMMAND: baseline.sh family compose clean
+EXIT_CODE: 0
+STDOUT_TAIL: surface=compose
+agent=family
+scenario=clean
+components_admitted=5
+cc01_head_link=yes
+fv06_strict_increase=yes
+failed_validator=none
+fail_subclass=none
+reached_state=S8
+family_verdict=REPLAY_ADMISSIBLE
+anchor_document_ref=ANCHORDOC-CANON-0001
+tsa_label=attested_mechanism
+source_class=TRAINED
+accepted_head_digest_fpa=HEAD-DIGEST-CANON-0001
+accepted_head_digest_vra=HEAD-DIGEST-CANON-0001
+linked_irr_digest=IRR-DIGEST-CANON-0001
+rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+COMMAND: baseline.sh family compose clean
+EXIT_CODE: 0
+STDOUT_TAIL: surface=compose
+agent=family
+scenario=clean
+components_admitted=5
+cc01_head_link=yes
+fv06_strict_increase=yes
+failed_validator=none
+fail_subclass=none
+reached_state=S8
+family_verdict=REPLAY_ADMISSIBLE
+anchor_document_ref=ANCHORDOC-CANON-0001
+tsa_label=attested_mechanism
+source_class=TRAINED
+accepted_head_digest_fpa=HEAD-DIGEST-CANON-0001
+accepted_head_digest_vra=HEAD-DIGEST-CANON-0001
+linked_irr_digest=IRR-DIGEST-CANON-0001
+rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+COMMAND: baseline.sh family foc FOC-01 REPLAY_ADMISSIBLE
+EXIT_CODE: 0
+STDOUT_TAIL: surface=foc
+contract=FOC-01
+family_decision_id=FAM-DEC-0001
+session_id=SESS-0001
+family_verdict=REPLAY_ADMISSIBLE
+reason_code=FD-05
+family_validator_refs=FV-01..FV-12
+family_evidence_refs=FEV-01..FEV-15
+PT-ID: PTS-004a
+COMMAND: baseline.sh family next_state S1 Fv02AndFv04Pass false
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=S1 trigger=Fv02AndFv04Pass validator_passed=false result_state=SX
+PT-ID: PTS-004b
+COMMAND: baseline.sh family next_state S2 UnlabeledMechanismLevelCarriedClaim _
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=S2 trigger=UnlabeledMechanismLevelCarriedClaim validator_passed=_ result_state=SX
+PT-ID: PTS-005
+COMMAND: (no invocation -- SKIP: SSCAR Conformance Tests §5 '7 declarative records (PTS-005, PTS-015, PTS-019, PTS-020, PTS-027, plus the verdict-layer subsets of PTS-004 and PTS-017) are listed in §7 Public Oracles rather than here')
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+PT-ID: PTS-006
+COMMAND: baseline.sh family next_state S3 FreshnessReplay _
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=S3 trigger=FreshnessReplay validator_passed=_ result_state=SH
+COMMAND: baseline.sh family verdict FV-06
+EXIT_CODE: 0
+STDOUT_TAIL: surface=verdict agent=family failed_validator=FV-06 fail_subclass=none family_verdict=NONCOMPLIANT_HOLD
+COMMAND: baseline.sh family foc FOC-05
+EXIT_CODE: 0
+STDOUT_TAIL: surface=foc
+contract=FOC-05
+hold_case_id=HOLD-0001
+hold_enter_refs=HEN-0001
+pending_requirements=anchor_update_ref_strict_increase
+readmission_budget=3
+cleared_only_by=external_actor
+PT-ID: PTS-007
+COMMAND: baseline.sh family compose fv04_reclass
+EXIT_CODE: 0
+STDOUT_TAIL: surface=compose
+agent=family
+scenario=fv04_reclass
+components_admitted=5
+cc01_head_link=yes
+fv06_strict_increase=yes
+failed_validator=FV-04
+fail_subclass=none
+reached_state=SX
+family_verdict=CONTAMINATION_FAIL_CLOSED
+anchor_document_ref=ANCHORDOC-CANON-0001
+tsa_label=attested_mechanism
+source_class=TRAINED
+accepted_head_digest_fpa=HEAD-DIGEST-CANON-0001
+accepted_head_digest_vra=HEAD-DIGEST-CANON-0001
+linked_irr_digest=IRR-DIGEST-CANON-0001
+rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+PT-ID: PTS-008
+COMMAND: baseline.sh family next_state S3 FreshnessReplay _
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=S3 trigger=FreshnessReplay validator_passed=_ result_state=SH
+COMMAND: baseline.sh family next_state S3 CriticalContamination _
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=S3 trigger=CriticalContamination validator_passed=_ result_state=SX
+PT-ID: PTS-009
+COMMAND: baseline.sh family next_state S3 CriticalContamination _
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=S3 trigger=CriticalContamination validator_passed=_ result_state=SX
+COMMAND: baseline.sh family next_state S5 CriticalContamination _
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=S5 trigger=CriticalContamination validator_passed=_ result_state=SX
+COMMAND: baseline.sh family next_state S0 CriticalContamination _
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=S0 trigger=CriticalContamination validator_passed=_ result_state=SX
+PT-ID: PTS-010
+COMMAND: baseline.sh family next_state S5 AntiRollbackFailure _
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=S5 trigger=AntiRollbackFailure validator_passed=_ result_state=SX
+PT-ID: PTS-011
+COMMAND: baseline.sh family next_state S3 ChainBreak _
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=S3 trigger=ChainBreak validator_passed=_ result_state=SX
+COMMAND: baseline.sh family next_state S3 UntrustedAnchorPromoted _
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=S3 trigger=UntrustedAnchorPromoted validator_passed=_ result_state=SX
+PT-ID: PTS-012
+COMMAND: baseline.sh family next_state SH HoldCaseWithNewFamilyClosureBundleAndAnchorUpdate true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=SH trigger=HoldCaseWithNewFamilyClosureBundleAndAnchorUpdate validator_passed=true result_state=SR
+PT-ID: PTS-013
+COMMAND: baseline.sh family next_state SR ReadmissionBundleChangedCarriedPayload true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=SR trigger=ReadmissionBundleChangedCarriedPayload validator_passed=true result_state=S2
+PT-ID: PTS-014
+COMMAND: baseline.sh family next_state S8 Handoff _
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=S8 trigger=Handoff validator_passed=_ result_state=S8
+COMMAND: baseline.sh family next_state SX IncidentOnlyOutput _
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=SX trigger=IncidentOnlyOutput validator_passed=_ result_state=SX
+PT-ID: PTS-015
+COMMAND: (no invocation -- SKIP: SSCAR Conformance Tests §5 '7 declarative records (PTS-005, PTS-015, PTS-019, PTS-020, PTS-027, plus the verdict-layer subsets of PTS-004 and PTS-017) are listed in §7 Public Oracles rather than here')
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+PT-ID: PTS-016
+COMMAND: baseline.sh family evidence
+EXIT_CODE: 0
+STDOUT_TAIL: FEV-01_family_decision_id=FAM-DEC-0001
+FEV-02_boundary_event_id=BEVT-0001
+FEV-03_session_id=SESS-0001/prior:SESS-0000
+FEV-04_carried_statement_refs=STMT-CANON-0001
+FEV-05_tsa_refs=attested_mechanism/TRAINED
+FEV-06_anchor_document_ref=ANCHORDOC-CANON-0001
+FEV-07_accepted_head_digest=HEAD-DIGEST-CANON-0001/IRR-DIGEST-CANON-0001
+FEV-08_freshness=10/11/ANCHOR-UPD-0002
+FEV-09_rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+FEV-10_replay_refs=RPLY-0001,RPLY-0002/CKPT-0001,CKPT-0002/RBK-0001
+FEV-11_disclosure_class_entries=none
+FEV-12_family_validator_outcomes=FV-01..FV-12:pass
+FEV-13_hold_refs=none
+FEV-14_contamination_flags=none
+FEV-15_report_signature=RSIG-FAM-0001/EXM-FAM-0001
+surface=evidence
+agent=family
+PT-ID: PTS-017a
+COMMAND: baseline.sh family foc FOC-04
+EXIT_CODE: 0
+STDOUT_TAIL: surface=foc
+contract=FOC-04
+incident_id=INC-0001
+root_reason_code=UNLABELED_CARRIED_MECHANISM_CLAIM
+contaminating_ref_set=CREF-0001
+blocked_stage=provenance_classification
+remediation_class=fail_closed
+PT-ID: PTS-017b
+COMMAND: baseline.sh family foc FOC-05
+EXIT_CODE: 0
+STDOUT_TAIL: surface=foc
+contract=FOC-05
+hold_case_id=HOLD-0001
+hold_enter_refs=HEN-0001
+pending_requirements=anchor_update_ref_strict_increase
+readmission_budget=3
+cleared_only_by=external_actor
+PT-ID: PTS-017d
+COMMAND: baseline.sh family evidence none HEN-0001/HEX-0001 none
+EXIT_CODE: 0
+STDOUT_TAIL: FEV-01_family_decision_id=FAM-DEC-0001
+FEV-02_boundary_event_id=BEVT-0001
+FEV-03_session_id=SESS-0001/prior:SESS-0000
+FEV-04_carried_statement_refs=STMT-CANON-0001
+FEV-05_tsa_refs=attested_mechanism/TRAINED
+FEV-06_anchor_document_ref=ANCHORDOC-CANON-0001
+FEV-07_accepted_head_digest=HEAD-DIGEST-CANON-0001/IRR-DIGEST-CANON-0001
+FEV-08_freshness=10/11/ANCHOR-UPD-0002
+FEV-09_rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+FEV-10_replay_refs=RPLY-0001,RPLY-0002/CKPT-0001,CKPT-0002/RBK-0001
+FEV-11_disclosure_class_entries=none
+FEV-12_family_validator_outcomes=FV-01..FV-12:pass
+FEV-13_hold_refs=HEN-0001/HEX-0001
+FEV-14_contamination_flags=none
+FEV-15_report_signature=RSIG-FAM-0001/EXM-FAM-0001
+surface=evidence
+agent=family
+PT-ID: PTS-018
+COMMAND: baseline.sh family foc FOC-04
+EXIT_CODE: 0
+STDOUT_TAIL: surface=foc
+contract=FOC-04
+incident_id=INC-0001
+root_reason_code=UNLABELED_CARRIED_MECHANISM_CLAIM
+contaminating_ref_set=CREF-0001
+blocked_stage=provenance_classification
+remediation_class=fail_closed
+COMMAND: baseline.sh family foc FOC-05
+EXIT_CODE: 0
+STDOUT_TAIL: surface=foc
+contract=FOC-05
+hold_case_id=HOLD-0001
+hold_enter_refs=HEN-0001
+pending_requirements=anchor_update_ref_strict_increase
+readmission_budget=3
+cleared_only_by=external_actor
+PT-ID: PTS-019
+COMMAND: (no invocation -- SKIP: SSCAR Conformance Tests §5 '7 declarative records (PTS-005, PTS-015, PTS-019, PTS-020, PTS-027, plus the verdict-layer subsets of PTS-004 and PTS-017) are listed in §7 Public Oracles rather than here')
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+PT-ID: PTS-020
+COMMAND: (no invocation -- SKIP: SSCAR Conformance Tests §5 '7 declarative records (PTS-005, PTS-015, PTS-019, PTS-020, PTS-027, plus the verdict-layer subsets of PTS-004 and PTS-017) are listed in §7 Public Oracles rather than here')
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+PT-ID: PTS-021
+COMMAND: baseline.sh family distinct SH NONCOMPLIANT_HOLD
+EXIT_CODE: 0
+STDOUT_TAIL: distinct=yes
+a=SH
+b=NONCOMPLIANT_HOLD
+surface=distinct
+agent=family
+COMMAND: baseline.sh family distinct SX CONTAMINATION_FAIL_CLOSED
+EXIT_CODE: 0
+STDOUT_TAIL: distinct=yes
+a=SX
+b=CONTAMINATION_FAIL_CLOSED
+surface=distinct
+agent=family
+PT-ID: PTS-022
+COMMAND: baseline.sh family next_state S3 FreshnessReplay _
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=S3 trigger=FreshnessReplay validator_passed=_ result_state=SH
+COMMAND: baseline.sh family next_state S3 CriticalContamination _
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=S3 trigger=CriticalContamination validator_passed=_ result_state=SX
+PT-ID: PTS-023
+COMMAND: baseline.sh family next_state SR ReadmissionBundleChangedCarriedPayload true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=SR trigger=ReadmissionBundleChangedCarriedPayload validator_passed=true result_state=S2
+COMMAND: baseline.sh family next_state SR ReadmissionBundleChangedAnchorDocumentRef true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=SR trigger=ReadmissionBundleChangedAnchorDocumentRef validator_passed=true result_state=S2
+COMMAND: baseline.sh family next_state SR ReadmissionBundleChangedSourceControlBundles true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=SR trigger=ReadmissionBundleChangedSourceControlBundles validator_passed=true result_state=S2
+COMMAND: baseline.sh family next_state SR ReadmissionBundleChangedPolicySnapshotId true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=SR trigger=ReadmissionBundleChangedPolicySnapshotId validator_passed=true result_state=S5
+COMMAND: baseline.sh family next_state SR ReadmissionBundleChangedRehydrationClosureRef true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=SR trigger=ReadmissionBundleChangedRehydrationClosureRef validator_passed=true result_state=S5
+PT-ID: PTS-024
+COMMAND: baseline.sh family next_state S4 Fv07Pass true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=S4 trigger=Fv07Pass validator_passed=true result_state=S5
+PT-ID: PTS-025
+COMMAND: baseline.sh family compose fv07_antirollback
+EXIT_CODE: 0
+STDOUT_TAIL: surface=compose
+agent=family
+scenario=fv07_antirollback
+components_admitted=5
+cc01_head_link=yes
+fv06_strict_increase=yes
+failed_validator=FV-07
+fail_subclass=integrity
+reached_state=SX
+family_verdict=CONTAMINATION_FAIL_CLOSED
+anchor_document_ref=ANCHORDOC-CANON-0001
+tsa_label=attested_mechanism
+source_class=TRAINED
+accepted_head_digest_fpa=HEAD-DIGEST-CANON-0001
+accepted_head_digest_vra=HEAD-DIGEST-CANON-0001
+linked_irr_digest=IRR-DIGEST-CANON-0001
+rehydration_closure_ref=EMPTY
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+COMMAND: baseline.sh family evidence
+EXIT_CODE: 0
+STDOUT_TAIL: FEV-01_family_decision_id=FAM-DEC-0001
+FEV-02_boundary_event_id=BEVT-0001
+FEV-03_session_id=SESS-0001/prior:SESS-0000
+FEV-04_carried_statement_refs=STMT-CANON-0001
+FEV-05_tsa_refs=attested_mechanism/TRAINED
+FEV-06_anchor_document_ref=ANCHORDOC-CANON-0001
+FEV-07_accepted_head_digest=HEAD-DIGEST-CANON-0001/IRR-DIGEST-CANON-0001
+FEV-08_freshness=10/11/ANCHOR-UPD-0002
+FEV-09_rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+FEV-10_replay_refs=RPLY-0001,RPLY-0002/CKPT-0001,CKPT-0002/RBK-0001
+FEV-11_disclosure_class_entries=none
+FEV-12_family_validator_outcomes=FV-01..FV-12:pass
+FEV-13_hold_refs=none
+FEV-14_contamination_flags=none
+FEV-15_report_signature=RSIG-FAM-0001/EXM-FAM-0001
+surface=evidence
+agent=family
+COMMAND: baseline.sh family evidence
+EXIT_CODE: 0
+STDOUT_TAIL: FEV-01_family_decision_id=FAM-DEC-0001
+FEV-02_boundary_event_id=BEVT-0001
+FEV-03_session_id=SESS-0001/prior:SESS-0000
+FEV-04_carried_statement_refs=STMT-CANON-0001
+FEV-05_tsa_refs=attested_mechanism/TRAINED
+FEV-06_anchor_document_ref=ANCHORDOC-CANON-0001
+FEV-07_accepted_head_digest=HEAD-DIGEST-CANON-0001/IRR-DIGEST-CANON-0001
+FEV-08_freshness=10/11/ANCHOR-UPD-0002
+FEV-09_rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+FEV-10_replay_refs=RPLY-0001,RPLY-0002/CKPT-0001,CKPT-0002/RBK-0001
+FEV-11_disclosure_class_entries=none
+FEV-12_family_validator_outcomes=FV-01..FV-12:pass
+FEV-13_hold_refs=none
+FEV-14_contamination_flags=none
+FEV-15_report_signature=RSIG-FAM-0001/EXM-FAM-0001
+surface=evidence
+agent=family
+PT-ID: PTS-026
+COMMAND: baseline.sh family next_state S1 Fv02AndFv04Pass false
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=S1 trigger=Fv02AndFv04Pass validator_passed=false result_state=SX
+PT-ID: PTS-027
+COMMAND: (no invocation -- SKIP: SSCAR Conformance Tests §5 '7 declarative records (PTS-005, PTS-015, PTS-019, PTS-020, PTS-027, plus the verdict-layer subsets of PTS-004 and PTS-017) are listed in §7 Public Oracles rather than here')
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+PT-ID: CT-01
+COMMAND: baseline.sh family compose clean
+EXIT_CODE: 0
+STDOUT_TAIL: surface=compose
+agent=family
+scenario=clean
+components_admitted=5
+cc01_head_link=yes
+fv06_strict_increase=yes
+failed_validator=none
+fail_subclass=none
+reached_state=S8
+family_verdict=REPLAY_ADMISSIBLE
+anchor_document_ref=ANCHORDOC-CANON-0001
+tsa_label=attested_mechanism
+source_class=TRAINED
+accepted_head_digest_fpa=HEAD-DIGEST-CANON-0001
+accepted_head_digest_vra=HEAD-DIGEST-CANON-0001
+linked_irr_digest=IRR-DIGEST-CANON-0001
+rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+PT-ID: CT-02
+COMMAND: baseline.sh family compose fv03_unlabeled
+EXIT_CODE: 0
+STDOUT_TAIL: surface=compose
+agent=family
+scenario=fv03_unlabeled
+components_admitted=5
+cc01_head_link=yes
+fv06_strict_increase=yes
+failed_validator=FV-03
+fail_subclass=contam
+reached_state=SX
+family_verdict=CONTAMINATION_FAIL_CLOSED
+anchor_document_ref=ANCHORDOC-CANON-0001
+tsa_label=EMPTY
+source_class=EMPTY
+accepted_head_digest_fpa=HEAD-DIGEST-CANON-0001
+accepted_head_digest_vra=HEAD-DIGEST-CANON-0001
+linked_irr_digest=IRR-DIGEST-CANON-0001
+rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+PT-ID: CT-03
+COMMAND: baseline.sh family compose fv02_untrusted_anchor
+EXIT_CODE: 0
+STDOUT_TAIL: surface=compose
+agent=family
+scenario=fv02_untrusted_anchor
+components_admitted=5
+cc01_head_link=yes
+fv06_strict_increase=yes
+failed_validator=FV-02
+fail_subclass=none
+reached_state=SX
+family_verdict=CONTAMINATION_FAIL_CLOSED
+anchor_document_ref=EMPTY
+tsa_label=attested_mechanism
+source_class=TRAINED
+accepted_head_digest_fpa=HEAD-DIGEST-CANON-0001
+accepted_head_digest_vra=HEAD-DIGEST-CANON-0001
+linked_irr_digest=IRR-DIGEST-CANON-0001
+rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+PT-ID: CT-04
+COMMAND: baseline.sh family compose fv06_freshness_replay
+EXIT_CODE: 0
+STDOUT_TAIL: surface=compose
+agent=family
+scenario=fv06_freshness_replay
+components_admitted=5
+cc01_head_link=yes
+fv06_strict_increase=no
+failed_validator=FV-06
+fail_subclass=none
+reached_state=SH
+family_verdict=NONCOMPLIANT_HOLD
+anchor_document_ref=ANCHORDOC-CANON-0001
+tsa_label=attested_mechanism
+source_class=TRAINED
+accepted_head_digest_fpa=HEAD-DIGEST-CANON-0001
+accepted_head_digest_vra=HEAD-DIGEST-CANON-0001
+linked_irr_digest=IRR-DIGEST-CANON-0001
+rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+PT-ID: CT-05
+COMMAND: baseline.sh family compose clean
+EXIT_CODE: 0
+STDOUT_TAIL: surface=compose
+agent=family
+scenario=clean
+components_admitted=5
+cc01_head_link=yes
+fv06_strict_increase=yes
+failed_validator=none
+fail_subclass=none
+reached_state=S8
+family_verdict=REPLAY_ADMISSIBLE
+anchor_document_ref=ANCHORDOC-CANON-0001
+tsa_label=attested_mechanism
+source_class=TRAINED
+accepted_head_digest_fpa=HEAD-DIGEST-CANON-0001
+accepted_head_digest_vra=HEAD-DIGEST-CANON-0001
+linked_irr_digest=IRR-DIGEST-CANON-0001
+rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+COMMAND: baseline.sh family compose fv05_brokenlink
+EXIT_CODE: 0
+STDOUT_TAIL: surface=compose
+agent=family
+scenario=fv05_brokenlink
+components_admitted=5
+cc01_head_link=no
+fv06_strict_increase=yes
+failed_validator=FV-05
+fail_subclass=none
+reached_state=S4
+family_verdict=REPLAY_INCOMPLETE
+anchor_document_ref=ANCHORDOC-CANON-0001
+tsa_label=attested_mechanism
+source_class=TRAINED
+accepted_head_digest_fpa=HEAD-STALE-9999
+accepted_head_digest_vra=HEAD-DIGEST-CANON-0001
+linked_irr_digest=IRR-STALE-9999
+rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+PT-ID: CT-06
+COMMAND: baseline.sh family compose clean
+EXIT_CODE: 0
+STDOUT_TAIL: surface=compose
+agent=family
+scenario=clean
+components_admitted=5
+cc01_head_link=yes
+fv06_strict_increase=yes
+failed_validator=none
+fail_subclass=none
+reached_state=S8
+family_verdict=REPLAY_ADMISSIBLE
+anchor_document_ref=ANCHORDOC-CANON-0001
+tsa_label=attested_mechanism
+source_class=TRAINED
+accepted_head_digest_fpa=HEAD-DIGEST-CANON-0001
+accepted_head_digest_vra=HEAD-DIGEST-CANON-0001
+linked_irr_digest=IRR-DIGEST-CANON-0001
+rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+COMMAND: baseline.sh family compose fv07_antirollback
+EXIT_CODE: 0
+STDOUT_TAIL: surface=compose
+agent=family
+scenario=fv07_antirollback
+components_admitted=5
+cc01_head_link=yes
+fv06_strict_increase=yes
+failed_validator=FV-07
+fail_subclass=integrity
+reached_state=SX
+family_verdict=CONTAMINATION_FAIL_CLOSED
+anchor_document_ref=ANCHORDOC-CANON-0001
+tsa_label=attested_mechanism
+source_class=TRAINED
+accepted_head_digest_fpa=HEAD-DIGEST-CANON-0001
+accepted_head_digest_vra=HEAD-DIGEST-CANON-0001
+linked_irr_digest=IRR-DIGEST-CANON-0001
+rehydration_closure_ref=EMPTY
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+PT-ID: CT-07
+COMMAND: baseline.sh family compose clean
+EXIT_CODE: 0
+STDOUT_TAIL: surface=compose
+agent=family
+scenario=clean
+components_admitted=5
+cc01_head_link=yes
+fv06_strict_increase=yes
+failed_validator=none
+fail_subclass=none
+reached_state=S8
+family_verdict=REPLAY_ADMISSIBLE
+anchor_document_ref=ANCHORDOC-CANON-0001
+tsa_label=attested_mechanism
+source_class=TRAINED
+accepted_head_digest_fpa=HEAD-DIGEST-CANON-0001
+accepted_head_digest_vra=HEAD-DIGEST-CANON-0001
+linked_irr_digest=IRR-DIGEST-CANON-0001
+rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+COMMAND: baseline.sh family compose fv08_incomplete_replay
+EXIT_CODE: 0
+STDOUT_TAIL: surface=compose
+agent=family
+scenario=fv08_incomplete_replay
+components_admitted=5
+cc01_head_link=yes
+fv06_strict_increase=yes
+failed_validator=FV-08
+fail_subclass=none
+reached_state=S5
+family_verdict=REPLAY_INCOMPLETE
+anchor_document_ref=ANCHORDOC-CANON-0001
+tsa_label=attested_mechanism
+source_class=TRAINED
+accepted_head_digest_fpa=HEAD-DIGEST-CANON-0001
+accepted_head_digest_vra=HEAD-DIGEST-CANON-0001
+linked_irr_digest=IRR-DIGEST-CANON-0001
+rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+checkpoint_refs=EMPTY
+rollback_refs=EMPTY
+PT-ID: CT-08
+COMMAND: baseline.sh family compose clean
+EXIT_CODE: 0
+STDOUT_TAIL: surface=compose
+agent=family
+scenario=clean
+components_admitted=5
+cc01_head_link=yes
+fv06_strict_increase=yes
+failed_validator=none
+fail_subclass=none
+reached_state=S8
+family_verdict=REPLAY_ADMISSIBLE
+anchor_document_ref=ANCHORDOC-CANON-0001
+tsa_label=attested_mechanism
+source_class=TRAINED
+accepted_head_digest_fpa=HEAD-DIGEST-CANON-0001
+accepted_head_digest_vra=HEAD-DIGEST-CANON-0001
+linked_irr_digest=IRR-DIGEST-CANON-0001
+rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+PT-ID: CT-09
+COMMAND: baseline.sh family compose fv09_toolstate
+EXIT_CODE: 0
+STDOUT_TAIL: surface=compose
+agent=family
+scenario=fv09_toolstate
+components_admitted=5
+cc01_head_link=yes
+fv06_strict_increase=yes
+failed_validator=FV-09
+fail_subclass=none
+reached_state=SX
+family_verdict=CONTAMINATION_FAIL_CLOSED
+anchor_document_ref=ANCHORDOC-CANON-0001
+tsa_label=attested_mechanism
+source_class=TRAINED
+accepted_head_digest_fpa=HEAD-DIGEST-CANON-0001
+accepted_head_digest_vra=HEAD-DIGEST-CANON-0001
+linked_irr_digest=IRR-DIGEST-CANON-0001
+rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+PT-ID: CT-10
+COMMAND: baseline.sh family next_state SH HoldCaseWithNewFamilyClosureBundleAndAnchorUpdate true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=SH trigger=HoldCaseWithNewFamilyClosureBundleAndAnchorUpdate validator_passed=true result_state=SR
+PT-ID: CT-11
+COMMAND: baseline.sh family compose constrained
+EXIT_CODE: 0
+STDOUT_TAIL: surface=compose
+agent=family
+scenario=constrained
+components_admitted=5
+cc01_head_link=yes
+fv06_strict_increase=yes
+failed_validator=none
+fail_subclass=none
+reached_state=S8
+family_verdict=REPLAY_ADMISSIBLE_CONSTRAINED
+anchor_document_ref=ANCHORDOC-CANON-0001
+tsa_label=attested_mechanism
+source_class=TRAINED
+accepted_head_digest_fpa=HEAD-DIGEST-CANON-0001
+accepted_head_digest_vra=HEAD-DIGEST-CANON-0001
+linked_irr_digest=IRR-DIGEST-CANON-0001
+rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+COMMAND: baseline.sh family compose fv10_disclosure_collapse
+EXIT_CODE: 0
+STDOUT_TAIL: surface=compose
+agent=family
+scenario=fv10_disclosure_collapse
+components_admitted=5
+cc01_head_link=yes
+fv06_strict_increase=yes
+failed_validator=FV-10
+fail_subclass=none
+reached_state=S6
+family_verdict=INCIDENT_ONLY
+anchor_document_ref=ANCHORDOC-CANON-0001
+tsa_label=attested_mechanism
+source_class=TRAINED
+accepted_head_digest_fpa=HEAD-DIGEST-CANON-0001
+accepted_head_digest_vra=HEAD-DIGEST-CANON-0001
+linked_irr_digest=IRR-DIGEST-CANON-0001
+rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+PT-ID: CT-12
+COMMAND: baseline.sh family compose fv11_empty_outcomes
+EXIT_CODE: 0
+STDOUT_TAIL: surface=compose
+agent=family
+scenario=fv11_empty_outcomes
+components_admitted=5
+cc01_head_link=yes
+fv06_strict_increase=yes
+failed_validator=FV-11
+fail_subclass=none
+reached_state=S6
+family_verdict=INCIDENT_ONLY
+anchor_document_ref=ANCHORDOC-CANON-0001
+tsa_label=attested_mechanism
+source_class=TRAINED
+accepted_head_digest_fpa=HEAD-DIGEST-CANON-0001
+accepted_head_digest_vra=HEAD-DIGEST-CANON-0001
+linked_irr_digest=IRR-DIGEST-CANON-0001
+rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+COMMAND: baseline.sh family compose clean
+EXIT_CODE: 0
+STDOUT_TAIL: surface=compose
+agent=family
+scenario=clean
+components_admitted=5
+cc01_head_link=yes
+fv06_strict_increase=yes
+failed_validator=none
+fail_subclass=none
+reached_state=S8
+family_verdict=REPLAY_ADMISSIBLE
+anchor_document_ref=ANCHORDOC-CANON-0001
+tsa_label=attested_mechanism
+source_class=TRAINED
+accepted_head_digest_fpa=HEAD-DIGEST-CANON-0001
+accepted_head_digest_vra=HEAD-DIGEST-CANON-0001
+linked_irr_digest=IRR-DIGEST-CANON-0001
+rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+PT-ID: CT-13
+COMMAND: baseline.sh family compose fv04_reclass
+EXIT_CODE: 0
+STDOUT_TAIL: surface=compose
+agent=family
+scenario=fv04_reclass
+components_admitted=5
+cc01_head_link=yes
+fv06_strict_increase=yes
+failed_validator=FV-04
+fail_subclass=none
+reached_state=SX
+family_verdict=CONTAMINATION_FAIL_CLOSED
+anchor_document_ref=ANCHORDOC-CANON-0001
+tsa_label=attested_mechanism
+source_class=TRAINED
+accepted_head_digest_fpa=HEAD-DIGEST-CANON-0001
+accepted_head_digest_vra=HEAD-DIGEST-CANON-0001
+linked_irr_digest=IRR-DIGEST-CANON-0001
+rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+checkpoint_refs=CKPT-0001,CKPT-0002
+rollback_refs=RBK-0001
+PT-ID: CT-14
+COMMAND: baseline.sh family next_state SR ReadmissionBundleChangedCarriedPayload true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=SR trigger=ReadmissionBundleChangedCarriedPayload validator_passed=true result_state=S2
+COMMAND: baseline.sh family next_state SR ReadmissionBundleChangedAnchorDocumentRef true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=SR trigger=ReadmissionBundleChangedAnchorDocumentRef validator_passed=true result_state=S2
+COMMAND: baseline.sh family next_state SR ReadmissionBundleChangedPolicySnapshotId true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=SR trigger=ReadmissionBundleChangedPolicySnapshotId validator_passed=true result_state=S5
+COMMAND: baseline.sh family next_state SR ReadmissionBundleChangedComponentSet true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=SR trigger=ReadmissionBundleChangedComponentSet validator_passed=true result_state=S2
+COMMAND: baseline.sh family next_state SR ReadmissionBundleChangedRehydrationClosureRef true
+EXIT_CODE: 0
+STDOUT_TAIL: surface=next_state agent=family in_state=SR trigger=ReadmissionBundleChangedRehydrationClosureRef validator_passed=true result_state=S5

@@ -1,0 +1,3 @@
+{"agent":"FAM-SSCAR-FI-001","query":"health","vra_next":{"in":"s0_startup_readonly","trigger":"startup_complete","validator_passed":true,"result_state":"s1_snapshot_locked"}}
+RESULT state=s1_snapshot_locked
+RESULT fam_state=s1

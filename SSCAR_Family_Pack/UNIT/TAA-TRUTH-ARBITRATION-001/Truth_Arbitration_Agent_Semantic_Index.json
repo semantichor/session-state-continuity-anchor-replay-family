@@ -1,0 +1,4647 @@
+{
+  "metadata": {
+    "agent_name": "Truth Arbitration Agent",
+    "agent_version": "Final public-release specification",
+    "index_version": "2.0",
+    "source_documents": [
+      {
+        "title": "Truth Arbitration Agent Public Library Specification",
+        "status": "Final public-release specification",
+        "intended_use": "Normative specification for implementing, integrating, and auditing the Truth Arbitration Agent without dependence on unpublished internal materials."
+      }
+    ],
+    "derivation_scope": "Semantic Index of terms textually attested in the public-release specification.",
+    "publication_format": [
+      "D1-MD",
+      "D2-YAML",
+      "D2-JSON",
+      "D3-MD",
+      "D4-MD"
+    ],
+    "authorized_public_corpus": [
+      "Truth Arbitration Agent Public Library Specification"
+    ],
+    "excluded_sources_statement": "No non-public source is used.",
+    "source_ref_policy": "source_refs point only to sections of the public-release specification."
+  },
+  "entries": [
+    {
+      "term_id": "TAA-IDENTITY-001",
+      "preferred_label": "Truth Arbitration Agent",
+      "category": "Identity Terms",
+      "definition_short": "Closed normative agent for source provenance, labeling, conflict status, and admissibility of mechanism-level claims.",
+      "definition_operational": "Use this label only for the agent with restricted jurisdiction stated in the specification. It does not validate full material truth, software correctness, or act as an autonomous substantive content source.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §1",
+        "Truth Arbitration Agent Public Library Specification §3"
+      ],
+      "related_terms": [
+        "Authority Model",
+        "mechanism-level claims",
+        "admissibility"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "autonomous substantive content source",
+        "full material truth validator"
+      ],
+      "usage_constraints": [
+        "The agent identity is restricted to the rule set and active policy snapshot."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [
+        "Truth Arbitration Agent"
+      ],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-IDENTITY-002",
+      "preferred_label": "Semantic Contract",
+      "category": "Identity Terms",
+      "definition_short": "Contract defining canonical identity, verdict vocabulary, and the central invariant for the agent.",
+      "definition_operational": "Use as the semantic anchor for statement identity, verdict meanings, and Boundary-Qualified No Unlabeled Claims.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §2"
+      ],
+      "related_terms": [
+        "canonical_text",
+        "statement_id",
+        "verdict",
+        "Boundary-Qualified No Unlabeled Claims"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "implementation contract"
+      ],
+      "usage_constraints": [
+        "The Semantic Contract cannot be replaced by implementation convenience."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-IDENTITY-003",
+      "preferred_label": "Authority Model",
+      "category": "Identity Terms",
+      "definition_short": "Rule boundary that defines what the agent may and may not authorize.",
+      "definition_operational": "Use to distinguish permitted classification, labeling, linkage, conflict detection, and artifact emission from non-authorized external truth validation or policy override.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §3"
+      ],
+      "related_terms": [
+        "Gate Logic",
+        "ESCALATION_REQUEST",
+        "FAIL_CLOSED"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "external truth validation"
+      ],
+      "usage_constraints": [
+        "Authority is exhausted when provenance cannot be verified, policy snapshot consistency cannot be maintained, formal conflict is confirmed, or budgets are exceeded."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-IDENTITY-004",
+      "preferred_label": "source provenance",
+      "category": "Identity Terms",
+      "definition_short": "Source-origin aspect adjudicated by the agent for mechanism-level claims.",
+      "definition_operational": "Use only as the public specification concept tied to classification and admissibility of sources.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §1",
+        "Truth Arbitration Agent Public Library Specification §3"
+      ],
+      "related_terms": [
+        "SOURCE_CLASS",
+        "source_ref",
+        "Provenance Admissibility"
+      ],
+      "synonyms": [
+        "provenance classification"
+      ],
+      "non_synonyms": [
+        "external truth"
+      ],
+      "usage_constraints": [
+        "Source provenance is adjudicated for admissibility, not for broad content truth."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-IDENTITY-005",
+      "preferred_label": "labeling",
+      "category": "Identity Terms",
+      "definition_short": "Required labeling condition for mechanism-level claims.",
+      "definition_operational": "Use with tsa_label and source_class to determine whether a claim may enter gating, governed state, output contracts, and other commit-relevant records.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §1",
+        "Truth Arbitration Agent Public Library Specification §2.3"
+      ],
+      "related_terms": [
+        "tsa_label",
+        "source_class",
+        "Boundary-Qualified No Unlabeled Claims"
+      ],
+      "synonyms": [
+        "missing labeling"
+      ],
+      "non_synonyms": [
+        "optional annotation"
+      ],
+      "usage_constraints": [
+        "Missing labeling on a mechanism-level claim blocks progress."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-IDENTITY-006",
+      "preferred_label": "conflict status",
+      "category": "Identity Terms",
+      "definition_short": "State of conflict resolution or qualification for a claim or payload.",
+      "definition_operational": "Use to express whether formal or heuristic conflict checks have passed, failed, or remain qualified by residual risk.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §1",
+        "Truth Arbitration Agent Public Library Specification §7",
+        "Truth Arbitration Agent Public Library Specification §8"
+      ],
+      "related_terms": [
+        "V-006A Formal Conflict Check",
+        "V-006B Semantic Conflict Heuristic",
+        "residual_risk_statement"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "material truth status"
+      ],
+      "usage_constraints": [
+        "Conflict status is scoped to the declared formalism and emitted qualifiers."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-IDENTITY-007",
+      "preferred_label": "admissibility",
+      "category": "Identity Terms",
+      "definition_short": "Eligibility of a mechanism-level claim for consumption in the current scope.",
+      "definition_operational": "Use as the outcome dimension governed by verdicts, policy, provenance classification, conflict checks, and mandatory evidence closure.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §1",
+        "Truth Arbitration Agent Public Library Specification §2.2",
+        "Truth Arbitration Agent Public Library Specification §9"
+      ],
+      "related_terms": [
+        "verdict",
+        "ALLOW",
+        "DENY",
+        "FAIL_CLOSED"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "truth"
+      ],
+      "usage_constraints": [
+        "Admissibility is not a declaration of full material truth."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-IDENTITY-008",
+      "preferred_label": "mechanism-level claims",
+      "category": "Identity Terms",
+      "definition_short": "Claims that can affect governed state, gate logic, references, policies, or verdict-relevant outputs.",
+      "definition_operational": "Use for payloads that enter the mechanism-level adjudication path after boundary role validation.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §1",
+        "Truth Arbitration Agent Public Library Specification §2.3",
+        "Truth Arbitration Agent Public Library Specification §4.1"
+      ],
+      "related_terms": [
+        "mechanism_level",
+        "boundary_validated_role",
+        "Boundary-Qualified No Unlabeled Claims"
+      ],
+      "synonyms": [
+        "mechanism-level statements",
+        "mechanism content"
+      ],
+      "non_synonyms": [
+        "explanatory_only"
+      ],
+      "usage_constraints": [
+        "A payload suspected to introduce or modify terms, axioms, policies, ordering parameters, governed references, tool-access conditions, inhibit_flags, handoff constraints, or expressions that can become a verdict basis is treated as mechanism-level unless role validation closes otherwise."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-IDENTITY-009",
+      "preferred_label": "record identity",
+      "category": "Identity Terms",
+      "definition_short": "Identity assigned to a claim record rather than universal semantic identity across phrasings.",
+      "definition_operational": "Use to scope statement identity to canonical_text, scope_id, turn_id, and policy_snapshot_id.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §2.1",
+        "Truth Arbitration Agent Public Library Specification §13"
+      ],
+      "related_terms": [
+        "statement_id",
+        "canonical_text",
+        "semantic_normalization_profile"
+      ],
+      "synonyms": [
+        "claim identity"
+      ],
+      "non_synonyms": [
+        "universal semantic identity"
+      ],
+      "usage_constraints": [
+        "Do not treat record identity as complete semantic equivalence across different surface phrasings."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-IDENTITY-010",
+      "preferred_label": "canonical_text",
+      "category": "Identity Terms",
+      "definition_short": "Deterministically normalized text anchoring serialization and reconstruction identity.",
+      "definition_operational": "Use as the input component of statement_id after documented canonicalization.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §2.1",
+        "Truth Arbitration Agent Public Library Specification §7"
+      ],
+      "related_terms": [
+        "statement_id",
+        "semantic_normalization_profile",
+        "V-001 Statement Identity"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "natural-language paraphrase"
+      ],
+      "usage_constraints": [
+        "canonical_text anchors record identity; it does not by itself claim universal semantic identity."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-IDENTITY-011",
+      "preferred_label": "statement_id",
+      "category": "Identity Terms",
+      "definition_short": "Hash-based record identifier for a claim.",
+      "definition_operational": "Use as statement_id = H(canonical_text || scope_id || turn_id || policy_snapshot_id). It is emitted after canonicalization and required for evidence, output records, and machine-readable forms.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §2.1",
+        "Truth Arbitration Agent Public Library Specification §7",
+        "Truth Arbitration Agent Public Library Specification §10"
+      ],
+      "related_terms": [
+        "canonical_text",
+        "scope_id",
+        "turn_id",
+        "policy_snapshot_id",
+        "MRF-STATEMENT.json"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "semantic equivalence proof"
+      ],
+      "usage_constraints": [
+        "The formula is scoped to the record components and active policy snapshot."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [
+        "statement_id = H(canonical_text || scope_id || turn_id || policy_snapshot_id)"
+      ],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-IDENTITY-012",
+      "preferred_label": "scope_id",
+      "category": "Identity Terms",
+      "definition_short": "Identifier for the active scope of adjudication.",
+      "definition_operational": "Use as a component of statement identity, input/output contracts, evidence records, ordering, and per-scope serialization.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §2.1",
+        "Truth Arbitration Agent Public Library Specification §4.1",
+        "Truth Arbitration Agent Public Library Specification §11"
+      ],
+      "related_terms": [
+        "statement_id",
+        "session_id",
+        "turn_id",
+        "one in-flight flow"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "A scope has at most one in-flight adjudication flow unless a conformant concurrency discipline is used."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-IDENTITY-013",
+      "preferred_label": "turn_id",
+      "category": "Identity Terms",
+      "definition_short": "Identifier for the turn associated with a statement or payload.",
+      "definition_operational": "Use in statement identity, input records, output records, and evidence records.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §2.1",
+        "Truth Arbitration Agent Public Library Specification §4.1",
+        "Truth Arbitration Agent Public Library Specification §8"
+      ],
+      "related_terms": [
+        "statement_id",
+        "scope_id",
+        "policy_snapshot_id"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "turn_id participates in replay and offline reconstruction."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-IDENTITY-014",
+      "preferred_label": "policy_snapshot_id",
+      "category": "Identity Terms",
+      "definition_short": "Identifier for the policy snapshot frozen at intake.",
+      "definition_operational": "Use to ensure a verdict is emitted only under the same policy snapshot used during evaluation.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §2.1",
+        "Truth Arbitration Agent Public Library Specification §4.2",
+        "Truth Arbitration Agent Public Library Specification §11"
+      ],
+      "related_terms": [
+        "policy_hash_ref",
+        "V-007 Policy Snapshot Consistency",
+        "policy snapshot freeze"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "current policy without freeze"
+      ],
+      "usage_constraints": [
+        "Policy changes before verdict trigger re-evaluation."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-IDENTITY-015",
+      "preferred_label": "policy_hash_ref",
+      "category": "Identity Terms",
+      "definition_short": "Hash reference to the active policy snapshot used during evaluation.",
+      "definition_operational": "Use with policy_snapshot_id to detect drift and to make the decision path reconstructible.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §4.1",
+        "Truth Arbitration Agent Public Library Specification §4.2",
+        "Truth Arbitration Agent Public Library Specification §11"
+      ],
+      "related_terms": [
+        "policy_snapshot_id",
+        "POLICY_SNAPSHOT_DRIFT",
+        "V-007 Policy Snapshot Consistency"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "A verdict may not be emitted under any policy_hash_ref other than the one used during evaluation."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-IDENTITY-016",
+      "preferred_label": "semantic_normalization_profile",
+      "category": "Identity Terms",
+      "definition_short": "Declared profile for deterministic canonicalization.",
+      "definition_operational": "Use to document Unicode NFKC normalization, trimming, whitespace collapse, UTF-8 stabilization, and any additional serialization rules.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §2.1",
+        "Truth Arbitration Agent Public Library Specification §13"
+      ],
+      "related_terms": [
+        "canonical_text",
+        "statement_id",
+        "V-001 Statement Identity"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "implicit canonicalization"
+      ],
+      "usage_constraints": [
+        "If the profile cannot support a demonstrable semantic identity claim, complete conflict coverage is limited to the declared formalism."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-IDENTITY-017",
+      "preferred_label": "SOURCE_CLASS",
+      "category": "Identity Terms",
+      "definition_short": "Classified source category used in provenance admissibility.",
+      "definition_operational": "Use as a controlled input to the policy matrix together with tsa_label, boundary_validated_role, and policy.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §3",
+        "Truth Arbitration Agent Public Library Specification §5",
+        "Truth Arbitration Agent Public Library Specification §6",
+        "Truth Arbitration Agent Public Library Specification §7"
+      ],
+      "related_terms": [
+        "source_class",
+        "tsa_label",
+        "Provenance Admissibility"
+      ],
+      "synonyms": [
+        "source_class"
+      ],
+      "non_synonyms": [
+        "tsa_label"
+      ],
+      "usage_constraints": [
+        "TRAINED and UNTRUSTED are explicitly used as decision conditions; other classes depend on the active policy allowlist."
+      ],
+      "allowed_values": [
+        "TRAINED",
+        "UNTRUSTED"
+      ],
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-IDENTITY-018",
+      "preferred_label": "tsa_label",
+      "category": "Identity Terms",
+      "definition_short": "Policy-conformant label required for mechanism-level claims.",
+      "definition_operational": "Use with source_class after boundary validation. Missing tsa_label on a mechanism-level claim leads to FAIL_CLOSED.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §2.3",
+        "Truth Arbitration Agent Public Library Specification §4.1",
+        "Truth Arbitration Agent Public Library Specification §6",
+        "Truth Arbitration Agent Public Library Specification §7"
+      ],
+      "related_terms": [
+        "source_class",
+        "Boundary-Qualified No Unlabeled Claims",
+        "UNLABELED_CLAIM"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "source_class"
+      ],
+      "usage_constraints": [
+        "A tsa_label supplied before boundary validation is not sufficient unless locally validated under policy."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-IDENTITY-019",
+      "preferred_label": "source_ref",
+      "category": "Identity Terms",
+      "definition_short": "Reference to the source supporting a claim or record.",
+      "definition_operational": "Use in input, output, evidence, and provenance admissibility checks when required by policy.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §4.1",
+        "Truth Arbitration Agent Public Library Specification §4.2",
+        "Truth Arbitration Agent Public Library Specification §7",
+        "Truth Arbitration Agent Public Library Specification §8"
+      ],
+      "related_terms": [
+        "source_class",
+        "tsa_label",
+        "Evidence Contract"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "evidence_ref_list"
+      ],
+      "usage_constraints": [
+        "Missing policy-required source_ref causes FAIL_CLOSED."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-IDENTITY-020",
+      "preferred_label": "AXIOM_SET",
+      "category": "Identity Terms",
+      "definition_short": "Attested source set used for linkage validation.",
+      "definition_operational": "Use in AXIOM / TERM Linkage and readmission conditions.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §3",
+        "Truth Arbitration Agent Public Library Specification §7",
+        "Truth Arbitration Agent Public Library Specification §11"
+      ],
+      "related_terms": [
+        "V-004 AXIOM / TERM Linkage",
+        "TERM_BIND",
+        "POLICY_BIND"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Readmission does not inherit ALLOW across changes in AXIOM_SET."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-IDENTITY-021",
+      "preferred_label": "TERM_BIND",
+      "category": "Identity Terms",
+      "definition_short": "Linkage element checked with AXIOM_SET and POLICY_BIND.",
+      "definition_operational": "Use as a required linkage target for V-004.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §7"
+      ],
+      "related_terms": [
+        "AXIOM_SET",
+        "POLICY_BIND",
+        "V-004 AXIOM / TERM Linkage"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Invalid linkage leads to DENY."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-IDENTITY-022",
+      "preferred_label": "POLICY_BIND",
+      "category": "Identity Terms",
+      "definition_short": "Policy linkage element checked with AXIOM_SET and TERM_BIND.",
+      "definition_operational": "Use as a required linkage target for V-004.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §7"
+      ],
+      "related_terms": [
+        "AXIOM_SET",
+        "TERM_BIND",
+        "V-004 AXIOM / TERM Linkage"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Invalid linkage leads to DENY."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-BOUNDARY-001",
+      "preferred_label": "Boundary-Qualified No Unlabeled Claims",
+      "category": "Boundary Terms",
+      "definition_short": "Central invariant requiring mechanism-level claims to carry policy-conformant tsa_label and source_class after boundary validation.",
+      "definition_operational": "Use as the absolute no-unlabeled-claim property only after boundary role validation. It applies to gating, governed state changes, DECISION, FAIL_CLOSED, CHECKPOINT, ROLLBACK, REPORT, and output-contract activation.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §2.3",
+        "Truth Arbitration Agent Public Library Specification §14",
+        "Truth Arbitration Agent Public Library Specification §16.1"
+      ],
+      "related_terms": [
+        "tsa_label",
+        "source_class",
+        "boundary validation",
+        "mechanism-level claims"
+      ],
+      "synonyms": [
+        "No Unlabeled Claims"
+      ],
+      "non_synonyms": [
+        "general unlabeled text rule"
+      ],
+      "usage_constraints": [
+        "Do not apply as absolute before boundary role validation."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-BOUNDARY-002",
+      "preferred_label": "boundary validation",
+      "category": "Boundary Terms",
+      "definition_short": "Local validation step that determines whether the payload is mechanism-level before labeling obligations are applied.",
+      "definition_operational": "Use to prevent implicit trust in supplied statement_role and to route payloads into mechanism-level adjudication where required.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §2.3",
+        "Truth Arbitration Agent Public Library Specification §4.1",
+        "Truth Arbitration Agent Public Library Specification §5.1"
+      ],
+      "related_terms": [
+        "boundary_validated_role",
+        "input_statement_role",
+        "V-005 Boundary Role Consistency"
+      ],
+      "synonyms": [
+        "boundary role validation"
+      ],
+      "non_synonyms": [
+        "upstream assertion acceptance"
+      ],
+      "usage_constraints": [
+        "The agent shall not consume input_statement_role without successful local role-consistency validation."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-BOUNDARY-003",
+      "preferred_label": "statement_role",
+      "category": "Boundary Terms",
+      "definition_short": "Role assigned or proposed for a statement at the boundary.",
+      "definition_operational": "Use only after local confirmation; supplied statement_role is not implicitly trusted.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §2.3",
+        "Truth Arbitration Agent Public Library Specification §7",
+        "Truth Arbitration Agent Public Library Specification §13"
+      ],
+      "related_terms": [
+        "input_statement_role",
+        "boundary_validated_role",
+        "V-005 Boundary Role Consistency"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "boundary_validated_role"
+      ],
+      "usage_constraints": [
+        "Upstream may propose statement_role, but V-005 confirms boundary_validated_role locally."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-BOUNDARY-004",
+      "preferred_label": "input_statement_role",
+      "category": "Boundary Terms",
+      "definition_short": "Untrusted boundary assertion supplied in the Input Contract Record.",
+      "definition_operational": "Use as evidence for comparison with the locally computed boundary_validated_role.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §4.1",
+        "Truth Arbitration Agent Public Library Specification §8"
+      ],
+      "related_terms": [
+        "statement_role",
+        "boundary_validated_role",
+        "role_reclassification_reason"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "boundary_validated_role"
+      ],
+      "usage_constraints": [
+        "An explanatory_only input_statement_role cannot directly pass if mechanism content is detected."
+      ],
+      "allowed_values": [
+        "mechanism_level",
+        "explanatory_only"
+      ],
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-BOUNDARY-005",
+      "preferred_label": "boundary_validated_role",
+      "category": "Boundary Terms",
+      "definition_short": "Locally computed role of the payload after boundary validation.",
+      "definition_operational": "Use to decide whether the mechanism-level path, OUT_OF_SCOPE result, reclassification, or FAIL_CLOSED applies.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §4.1",
+        "Truth Arbitration Agent Public Library Specification §4.2",
+        "Truth Arbitration Agent Public Library Specification §6"
+      ],
+      "related_terms": [
+        "input_statement_role",
+        "mechanism_level",
+        "OUT_OF_SCOPE"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "input_statement_role"
+      ],
+      "usage_constraints": [
+        "If boundary_validated_role is not mechanism_level, OUT_OF_SCOPE is available only after successful role validation."
+      ],
+      "allowed_values": [
+        "mechanism_level"
+      ],
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-BOUNDARY-006",
+      "preferred_label": "mechanism_level",
+      "category": "Boundary Terms",
+      "definition_short": "Boundary role value for payloads that enter the mechanism-level adjudication path.",
+      "definition_operational": "Use when the payload can affect terms, axioms, policies, ordering, governed references, tool-access conditions, inhibit_flags, handoff constraints, or verdict basis.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §4.1",
+        "Truth Arbitration Agent Public Library Specification §5.1",
+        "Truth Arbitration Agent Public Library Specification §6"
+      ],
+      "related_terms": [
+        "mechanism-level claims",
+        "boundary_validated_role",
+        "explanatory_only"
+      ],
+      "synonyms": [
+        "mechanism-level"
+      ],
+      "non_synonyms": [
+        "explanatory_only"
+      ],
+      "usage_constraints": [
+        "Mechanism-level role triggers labeling, provenance admissibility, conflict, evidence, and gate checks."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-BOUNDARY-007",
+      "preferred_label": "explanatory_only",
+      "category": "Boundary Terms",
+      "definition_short": "Input role assertion for payloads claimed not to be mechanism-level.",
+      "definition_operational": "Use cautiously: if role validation detects mechanism content and policy forbids automatic reclassification, the result is FAIL_CLOSED.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §4.1",
+        "Truth Arbitration Agent Public Library Specification §5.1",
+        "Truth Arbitration Agent Public Library Specification §6"
+      ],
+      "related_terms": [
+        "input_statement_role",
+        "ROLE_BYPASS_SUSPECTED",
+        "RECLASSIFY"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "mechanism_level"
+      ],
+      "usage_constraints": [
+        "An explanatory_only assertion does not override local boundary validation."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-BOUNDARY-008",
+      "preferred_label": "role_validation_result",
+      "category": "Boundary Terms",
+      "definition_short": "Evidence field recording the result of role validation.",
+      "definition_operational": "Use in every verdict evidence record and especially for suspected bypass payloads.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §8"
+      ],
+      "related_terms": [
+        "Evidence Contract",
+        "boundary_validated_role",
+        "role_validator_refs"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Omission makes a bypass-suspected verdict non-reconstructible."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-BOUNDARY-009",
+      "preferred_label": "role_reclassification_reason",
+      "category": "Boundary Terms",
+      "definition_short": "Reason emitted when a payload is reclassified at the boundary.",
+      "definition_operational": "Use when input_statement_role differs from boundary_validated_role and the policy permits correction rather than immediate block.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §8"
+      ],
+      "related_terms": [
+        "RECLASSIFY",
+        "ROLE_BYPASS_SUSPECTED",
+        "V-005 Boundary Role Consistency"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Required when role reclassification occurs."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-BOUNDARY-010",
+      "preferred_label": "role_validator_refs",
+      "category": "Boundary Terms",
+      "definition_short": "References to role validators used in boundary validation.",
+      "definition_operational": "Use in role validation evidence to support replay and offline reconstruction.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §8"
+      ],
+      "related_terms": [
+        "V-005 Boundary Role Consistency",
+        "role_validation_result",
+        "Evidence Contract"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "For bypass-suspected payloads, omission makes the verdict non-reconstructible."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-DECISION-001",
+      "preferred_label": "verdict",
+      "category": "Decision Terms",
+      "definition_short": "Admissibility result emitted by the agent for a claim or payload.",
+      "definition_operational": "Use one of the declared verdict vocabulary values, with constraints and evidence appropriate to the decision path.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §2.2",
+        "Truth Arbitration Agent Public Library Specification §4.2",
+        "Truth Arbitration Agent Public Library Specification §8"
+      ],
+      "related_terms": [
+        "ALLOW",
+        "ALLOW_CONSTRAINED",
+        "DENY",
+        "FAIL_CLOSED",
+        "ESCALATE",
+        "OUT_OF_SCOPE"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "RECLASSIFY"
+      ],
+      "usage_constraints": [
+        "RECLASSIFY is a role-validation action, not a final admissibility verdict."
+      ],
+      "allowed_values": [
+        "ALLOW",
+        "ALLOW_CONSTRAINED",
+        "DENY",
+        "FAIL_CLOSED",
+        "ESCALATE",
+        "OUT_OF_SCOPE"
+      ],
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-DECISION-002",
+      "preferred_label": "ALLOW",
+      "category": "Decision Terms",
+      "definition_short": "Verdict admitting the claim for mechanism-level consumption in the current scope.",
+      "definition_operational": "Use only when all relevant blocking validators have passed and heuristic controls, where relevant, are above policy threshold.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §2.2",
+        "Truth Arbitration Agent Public Library Specification §5.1",
+        "Truth Arbitration Agent Public Library Specification §9"
+      ],
+      "related_terms": [
+        "verdict",
+        "V-006B Semantic Conflict Heuristic",
+        "Complete evidence and closed conflict"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "ALLOW_CONSTRAINED",
+        "ESCALATE"
+      ],
+      "usage_constraints": [
+        "Simple ALLOW is forbidden when only V-006B is available and the result is inconclusive or below threshold."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-DECISION-003",
+      "preferred_label": "ALLOW_CONSTRAINED",
+      "category": "Decision Terms",
+      "definition_short": "Verdict allowing use only under explicitly declared restrictions.",
+      "definition_operational": "Use when lower-strength validation leaves residual risk but policy permits conditional progress.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §2.2",
+        "Truth Arbitration Agent Public Library Specification §4.2",
+        "Truth Arbitration Agent Public Library Specification §8",
+        "Truth Arbitration Agent Public Library Specification §9"
+      ],
+      "related_terms": [
+        "residual_risk_statement",
+        "V-006B Semantic Conflict Heuristic",
+        "HEURISTIC_CONFLICT_UNCLOSED"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "ALLOW"
+      ],
+      "usage_constraints": [
+        "Restrictions and residual risk must be explicit."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-DECISION-004",
+      "preferred_label": "DENY",
+      "category": "Decision Terms",
+      "definition_short": "Verdict making the claim inadmissible for mechanism-level consumption in the current scope.",
+      "definition_operational": "Use when provenance is inadmissible, formal conflict severity calls for denial, or other declared policy conditions require inadmissibility rather than fail-closed blocking.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §2.2",
+        "Truth Arbitration Agent Public Library Specification §6",
+        "Truth Arbitration Agent Public Library Specification §7",
+        "Truth Arbitration Agent Public Library Specification §9"
+      ],
+      "related_terms": [
+        "verdict",
+        "FAIL_CLOSED",
+        "Provenance Admissibility"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "FAIL_CLOSED"
+      ],
+      "usage_constraints": [
+        "DENY is not the same as fail-closed progress blocking."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-DECISION-005",
+      "preferred_label": "FAIL_CLOSED",
+      "category": "Decision Terms",
+      "definition_short": "Verdict and state in which local progress is blocked.",
+      "definition_operational": "Use when blocking validators fail, required fields are missing, policy drift occurs, ordering is invalid, escalation artifacts are missing, or failure semantics require blocking.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §2.2",
+        "Truth Arbitration Agent Public Library Specification §5",
+        "Truth Arbitration Agent Public Library Specification §7",
+        "Truth Arbitration Agent Public Library Specification §9",
+        "Truth Arbitration Agent Public Library Specification §12"
+      ],
+      "related_terms": [
+        "inhibit_flags",
+        "root_reason_code",
+        "ESCALATION_REQUEST",
+        "NONCOMPLIANT_HOLD"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "DENY"
+      ],
+      "usage_constraints": [
+        "When an external actor is required, FAIL_CLOSED is incomplete without the required external remediation artifact."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-DECISION-006",
+      "preferred_label": "ESCALATE",
+      "category": "Decision Terms",
+      "definition_short": "Verdict requiring remediation, clearance, or external review by an authorized role.",
+      "definition_operational": "Use when the agent does not authorize local consumption and external review or remediation is required.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §2.2",
+        "Truth Arbitration Agent Public Library Specification §6",
+        "Truth Arbitration Agent Public Library Specification §9",
+        "Truth Arbitration Agent Public Library Specification §12"
+      ],
+      "related_terms": [
+        "ESCALATION_REQUEST",
+        "NONCOMPLIANT_HOLD",
+        "PERMANENT_BLOCK"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "ALLOW"
+      ],
+      "usage_constraints": [
+        "ESCALATE is not local authorization."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-DECISION-007",
+      "preferred_label": "OUT_OF_SCOPE",
+      "category": "Decision Terms",
+      "definition_short": "Verdict for payloads that are not mechanism-level after boundary role validation.",
+      "definition_operational": "Use only after boundary role validation confirms the payload does not enter the mechanism-level adjudication path.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §2.2",
+        "Truth Arbitration Agent Public Library Specification §6"
+      ],
+      "related_terms": [
+        "boundary_validated_role",
+        "mechanism_level",
+        "boundary validation"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "DENY"
+      ],
+      "usage_constraints": [
+        "OUT_OF_SCOPE is not the default before successful role validation."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-DECISION-008",
+      "preferred_label": "RECLASSIFY",
+      "category": "Decision Terms",
+      "definition_short": "Role-validation action routing a payload into the mechanism-level path.",
+      "definition_operational": "Use when role validation detects mechanism content and policy permits correction. It is not a final admissibility verdict.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §6",
+        "Truth Arbitration Agent Public Library Specification §7",
+        "Truth Arbitration Agent Public Library Specification §12"
+      ],
+      "related_terms": [
+        "V-005 Boundary Role Consistency",
+        "ROLE_BYPASS_SUSPECTED",
+        "mechanism_level"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "verdict"
+      ],
+      "usage_constraints": [
+        "RECLASSIFY must be followed by mechanism-level evaluation under policy."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-DECISION-009",
+      "preferred_label": "Decision Table",
+      "category": "Decision Terms",
+      "definition_short": "Total table for relevant decision combinations.",
+      "definition_operational": "Use to ensure no relevant combination of role, labels, provenance, policy snapshot, and conflict status remains unresolved.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §6",
+        "Truth Arbitration Agent Public Library Specification §15"
+      ],
+      "related_terms": [
+        "Decision object",
+        "Gate Logic Record",
+        "verdict"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "The table may be compressed through meta-rules but may not leave relevant combinations unresolved."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-DECISION-010",
+      "preferred_label": "Decision object",
+      "category": "Decision Terms",
+      "definition_short": "Named decision condition with an outcome.",
+      "definition_operational": "Use for DO-001 through DO-009 and any equivalent compressed meta-rule preserving totality.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §6"
+      ],
+      "related_terms": [
+        "Decision Table",
+        "DO-001 Unlabeled mechanism claim",
+        "DO-009 External clearance required"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Decision objects cannot be left unresolved."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-DECISION-011",
+      "preferred_label": "DO-001 Unlabeled mechanism claim",
+      "category": "Decision Terms",
+      "definition_short": "Decision object for a mechanism-level claim missing tsa_label.",
+      "definition_operational": "Use to route boundary_validated_role = mechanism_level and missing tsa_label to FAIL_CLOSED.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §6"
+      ],
+      "related_terms": [
+        "UNLABELED_CLAIM",
+        "FAIL_CLOSED",
+        "tsa_label"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Applies after boundary validation."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-DECISION-012",
+      "preferred_label": "DO-002 TRAINED in index-zero",
+      "category": "Decision Terms",
+      "definition_short": "Decision object for TRAINED source_class on the target concept in index-zero.",
+      "definition_operational": "Use to produce DENY or FAIL_CLOSED according to policy.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §6"
+      ],
+      "related_terms": [
+        "SOURCE_CLASS",
+        "TRAINED",
+        "DENY"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Outcome is policy-dependent between DENY and FAIL_CLOSED."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-DECISION-013",
+      "preferred_label": "DO-003 UNTRUSTED without reclassification",
+      "category": "Decision Terms",
+      "definition_short": "Decision object for UNTRUSTED source_class without reclassification decision.",
+      "definition_operational": "Use to route to DENY.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §6"
+      ],
+      "related_terms": [
+        "SOURCE_CLASS",
+        "UNTRUSTED",
+        "DENY"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Requires absence of a reclassification decision."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-DECISION-014",
+      "preferred_label": "DO-004 Suspected role mismatch",
+      "category": "Decision Terms",
+      "definition_short": "Decision object for explanatory_only input with detected mechanism content.",
+      "definition_operational": "Use to route to RECLASSIFY or FAIL_CLOSED according to policy.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §6"
+      ],
+      "related_terms": [
+        "input_statement_role",
+        "explanatory_only",
+        "RECLASSIFY",
+        "FAIL_CLOSED"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "This is a role-validation branch, not a final admissibility verdict by itself."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-DECISION-015",
+      "preferred_label": "DO-005 Confirmed formal conflict",
+      "category": "Decision Terms",
+      "definition_short": "Decision object for V-006A failure.",
+      "definition_operational": "Use to route to FAIL_CLOSED or DENY according to severity.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §6",
+        "Truth Arbitration Agent Public Library Specification §9"
+      ],
+      "related_terms": [
+        "V-006A Formal Conflict Check",
+        "FORMAL_CONFLICT_CONFIRMED",
+        "DENY",
+        "FAIL_CLOSED"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Formal conflict closure depends on configured severity threshold."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-DECISION-016",
+      "preferred_label": "DO-006 Probable heuristic conflict",
+      "category": "Decision Terms",
+      "definition_short": "Decision object for failed or under-threshold V-006B.",
+      "definition_operational": "Use to route to ALLOW_CONSTRAINED or ESCALATE when heuristic conflict is open or below threshold.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §6",
+        "Truth Arbitration Agent Public Library Specification §8",
+        "Truth Arbitration Agent Public Library Specification §9"
+      ],
+      "related_terms": [
+        "V-006B Semantic Conflict Heuristic",
+        "HEURISTIC_CONFLICT_UNCLOSED",
+        "ALLOW_CONSTRAINED",
+        "ESCALATE"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "ALLOW"
+      ],
+      "usage_constraints": [
+        "Simple ALLOW is forbidden in this branch."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-DECISION-017",
+      "preferred_label": "DO-007 Policy snapshot drift",
+      "category": "Decision Terms",
+      "definition_short": "Decision object for policy_hash_ref change mid-flight.",
+      "definition_operational": "Use to FAIL_CLOSED and re-evaluate.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §6",
+        "Truth Arbitration Agent Public Library Specification §11"
+      ],
+      "related_terms": [
+        "POLICY_SNAPSHOT_DRIFT",
+        "policy_hash_ref",
+        "V-007 Policy Snapshot Consistency"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Evaluation restarts under a new snapshot."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-DECISION-018",
+      "preferred_label": "DO-008 Complete evidence and closed conflict",
+      "category": "Decision Terms",
+      "definition_short": "Decision object for all blocking validators passing.",
+      "definition_operational": "Use to produce ALLOW only when evidence is complete and conflict is closed under policy.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §6"
+      ],
+      "related_terms": [
+        "ALLOW",
+        "Evidence Contract",
+        "conflict check"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Completeness covers evidence and blocking validations."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-DECISION-019",
+      "preferred_label": "DO-009 External clearance required",
+      "category": "Decision Terms",
+      "definition_short": "Decision object for failure semantics requiring an external actor.",
+      "definition_operational": "Use to emit ESCALATE plus ESCALATION_REQUEST.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §6",
+        "Truth Arbitration Agent Public Library Specification §9",
+        "Truth Arbitration Agent Public Library Specification §12"
+      ],
+      "related_terms": [
+        "ESCALATE",
+        "ESCALATION_REQUEST",
+        "clearance_needed"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "The escalation artifact is mandatory in the same adjudication path."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-STATE-001",
+      "preferred_label": "INTAKE",
+      "category": "State Terms",
+      "definition_short": "Workflow state that receives payload and boundary metadata.",
+      "definition_operational": "Use as the entry point for any valid input contract that enters the agent contract.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §5",
+        "Truth Arbitration Agent Public Library Specification §5.1"
+      ],
+      "related_terms": [
+        "Input Contract Record",
+        "ROLE_SCREENING",
+        "policy snapshot freeze"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "INTAKE precedes ROLE_SCREENING and policy snapshot freeze."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-STATE-002",
+      "preferred_label": "ROLE_SCREENING",
+      "category": "State Terms",
+      "definition_short": "Workflow state that validates boundary_validated_role and detects bypass patterns.",
+      "definition_operational": "Use after INTAKE to decide whether to continue to CANONICALIZING or FAIL_CLOSED.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §5"
+      ],
+      "related_terms": [
+        "boundary validation",
+        "CANONICALIZING",
+        "FAIL_CLOSED"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Applies to payloads suspected or declared as mechanism-level."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-STATE-003",
+      "preferred_label": "CANONICALIZING",
+      "category": "State Terms",
+      "definition_short": "Workflow state that generates canonical_text and statement_id.",
+      "definition_operational": "Use only under a valid semantic_normalization_profile.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §5"
+      ],
+      "related_terms": [
+        "canonical_text",
+        "statement_id",
+        "semantic_normalization_profile"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Outputs to EVALUATING."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-STATE-004",
+      "preferred_label": "EVALUATING",
+      "category": "State Terms",
+      "definition_short": "Workflow state that runs structural and policy-snapshot validators.",
+      "definition_operational": "Use to execute V-001 through V-005 before classification.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §5",
+        "Truth Arbitration Agent Public Library Specification §5.1"
+      ],
+      "related_terms": [
+        "V-001 Statement Identity",
+        "V-005 Boundary Role Consistency",
+        "CLASSIFYING"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Missing required label, source class, policy snapshot, source_ref, or snapshot consistency leads to FAIL_CLOSED."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-STATE-005",
+      "preferred_label": "CLASSIFYING",
+      "category": "State Terms",
+      "definition_short": "Workflow state applying the SOURCE_CLASS, tsa_label, boundary_validated_role, and policy matrix.",
+      "definition_operational": "Use to compute provenance admissibility and route to conflict checking or a blocking verdict.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §5"
+      ],
+      "related_terms": [
+        "SOURCE_CLASS",
+        "tsa_label",
+        "boundary_validated_role",
+        "CONFLICT_CHECKING"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "May output CONFLICT_CHECKING, DENY, ALLOW_CONSTRAINED, or FAIL_CLOSED."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-STATE-006",
+      "preferred_label": "CONFLICT_CHECKING",
+      "category": "State Terms",
+      "definition_short": "Workflow state running V-006A and/or V-006B according to the declared formalism.",
+      "definition_operational": "Use to resolve, qualify, deny, escalate, or fail closed based on conflict evidence.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §5",
+        "Truth Arbitration Agent Public Library Specification §5.1"
+      ],
+      "related_terms": [
+        "V-006A Formal Conflict Check",
+        "V-006B Semantic Conflict Heuristic",
+        "conflict_check_mode"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "ALLOW requires sufficient conflict_check_strength under policy."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-STATE-007",
+      "preferred_label": "DECIDED",
+      "category": "State Terms",
+      "definition_short": "Workflow state emitting verdict and evidence.",
+      "definition_operational": "Use when a complete decision record exists and the path can move to HANDOFF_READY or CLOSED.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §5"
+      ],
+      "related_terms": [
+        "verdict",
+        "Evidence Contract",
+        "HANDOFF_READY",
+        "CLOSED"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Decision record completeness is required."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-STATE-008",
+      "preferred_label": "NONCOMPLIANT_HOLD",
+      "category": "State Terms",
+      "definition_short": "Workflow state waiting for audited external clearance.",
+      "definition_operational": "Use after FAIL_CLOSED when remediation requires an external actor or new evidence.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §5",
+        "Truth Arbitration Agent Public Library Specification §5.1",
+        "Truth Arbitration Agent Public Library Specification §12"
+      ],
+      "related_terms": [
+        "FAIL_CLOSED",
+        "ESCALATION_REQUEST",
+        "CLEARANCE_RESPONSE"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Transition to this state must emit ESCALATION_REQUEST."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-STATE-009",
+      "preferred_label": "READMISSION_PENDING",
+      "category": "State Terms",
+      "definition_short": "Workflow state that restarts full evaluation under a new snapshot.",
+      "definition_operational": "Use after valid clearance and within readmission_budget.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §5",
+        "Truth Arbitration Agent Public Library Specification §12.1"
+      ],
+      "related_terms": [
+        "readmission_budget",
+        "policy snapshot freeze",
+        "ROLE_SCREENING"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Readmission does not inherit ALLOW across changes in policy, scope, source_ref, AXIOM_SET, or clearance epoch."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-STATE-010",
+      "preferred_label": "HANDOFF_READY",
+      "category": "State Terms",
+      "definition_short": "State or output position indicating the decision record is ready for execution-layer handoff.",
+      "definition_operational": "Use after DECIDED when closure is sufficient for downstream acceptance.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §5",
+        "Truth Arbitration Agent Public Library Specification §10"
+      ],
+      "related_terms": [
+        "DECIDED",
+        "MRF-HANDOFF-CHECK.json",
+        "Evidence Contract"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Requires semantic, evidence, failure, and policy snapshot closure."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-STATE-011",
+      "preferred_label": "CLOSED",
+      "category": "State Terms",
+      "definition_short": "Closed workflow condition after decision or failure handling completes.",
+      "definition_operational": "Use as the terminal non-handoff workflow output when no further local action is pending.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §5"
+      ],
+      "related_terms": [
+        "DECIDED",
+        "FAIL_CLOSED",
+        "NONCOMPLIANT_HOLD"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-TRANSITION-001",
+      "preferred_label": "policy snapshot freeze",
+      "category": "Transition Terms",
+      "definition_short": "Mandatory freezing of policy_snapshot_id and policy_hash_ref at intake.",
+      "definition_operational": "Use before boundary role validation and all subsequent adjudication steps.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §11",
+        "Truth Arbitration Agent Public Library Specification §13"
+      ],
+      "related_terms": [
+        "policy_snapshot_id",
+        "policy_hash_ref",
+        "V-007 Policy Snapshot Consistency"
+      ],
+      "synonyms": [
+        "snapshot freeze"
+      ],
+      "non_synonyms": [
+        "policy update without restart"
+      ],
+      "usage_constraints": [
+        "If active policy changes before verdict, V-007 fails and evaluation restarts."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-TRANSITION-002",
+      "preferred_label": "canonicalize",
+      "category": "Transition Terms",
+      "definition_short": "Transition action that produces canonical_text and statement_id.",
+      "definition_operational": "Use after boundary validation and before structural validators.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §11"
+      ],
+      "related_terms": [
+        "canonical_text",
+        "statement_id",
+        "CANONICALIZING"
+      ],
+      "synonyms": [
+        "canonicalization"
+      ],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Canonicalization must follow the semantic_normalization_profile."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-TRANSITION-003",
+      "preferred_label": "structural validators",
+      "category": "Transition Terms",
+      "definition_short": "Validator stage that checks identity, required fields, and policy-related structure.",
+      "definition_operational": "Use before provenance classification and conflict checks.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §11"
+      ],
+      "related_terms": [
+        "V-001 Statement Identity",
+        "V-002 Mandatory Fields Presence",
+        "V-007 Policy Snapshot Consistency"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Structural validator failure routes to FAIL_CLOSED according to Gate Logic."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-TRANSITION-004",
+      "preferred_label": "provenance classification",
+      "category": "Transition Terms",
+      "definition_short": "Classification stage for source-related admissibility.",
+      "definition_operational": "Use after structural validators and before conflict check.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §1",
+        "Truth Arbitration Agent Public Library Specification §11"
+      ],
+      "related_terms": [
+        "SOURCE_CLASS",
+        "Provenance Admissibility",
+        "source_ref"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "external truth validation"
+      ],
+      "usage_constraints": [
+        "Cannot degrade to ALLOW when provenance cannot be verified."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-TRANSITION-005",
+      "preferred_label": "conflict check",
+      "category": "Transition Terms",
+      "definition_short": "Transition stage that evaluates formal and/or heuristic conflict status.",
+      "definition_operational": "Use after provenance classification and before verdict.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §11"
+      ],
+      "related_terms": [
+        "V-006A Formal Conflict Check",
+        "V-006B Semantic Conflict Heuristic",
+        "conflict_check_mode"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "full material truth check"
+      ],
+      "usage_constraints": [
+        "Result must emit strength, confidence, and coverage when required."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-TRANSITION-006",
+      "preferred_label": "evidence emission",
+      "category": "Transition Terms",
+      "definition_short": "Emission of evidence artifacts after verdict.",
+      "definition_operational": "Use after verdict to support replay and offline reconstruction.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §11",
+        "Truth Arbitration Agent Public Library Specification §8"
+      ],
+      "related_terms": [
+        "Evidence Contract",
+        "DECISION",
+        "FAIL_CLOSED"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Evidence must include required closure fields for the verdict path."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-TRANSITION-007",
+      "preferred_label": "snapshot-at-intake",
+      "category": "Transition Terms",
+      "definition_short": "Concurrency technique using an intake snapshot to preserve ordering semantics.",
+      "definition_operational": "Use as one conformant way to realize one in-flight flow per scope when implementation is concurrent.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §5",
+        "Truth Arbitration Agent Public Library Specification §11"
+      ],
+      "related_terms": [
+        "compare-and-commit",
+        "one in-flight flow",
+        "Ordering / Serialization"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "unsynchronized concurrency"
+      ],
+      "usage_constraints": [
+        "Must be paired with a valid commit discipline if concurrent."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-TRANSITION-008",
+      "preferred_label": "compare-and-commit",
+      "category": "Transition Terms",
+      "definition_short": "Concurrency technique that compares the claim set at verdict time before committing a verdict.",
+      "definition_operational": "Use as an ordering control when explicit serialization is not used.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §5",
+        "Truth Arbitration Agent Public Library Specification §11",
+        "Truth Arbitration Agent Public Library Specification §12"
+      ],
+      "related_terms": [
+        "snapshot-at-intake",
+        "V-008 Ordering / Serialization",
+        "ORDERING_VIOLATION"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "best-effort concurrency"
+      ],
+      "usage_constraints": [
+        "Failure leads to FAIL_CLOSED under ordering rules."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-TRANSITION-009",
+      "preferred_label": "readmission",
+      "category": "Transition Terms",
+      "definition_short": "Controlled re-entry after failure handling and valid clearance.",
+      "definition_operational": "Use only after audited clearance, new snapshot freeze, and full re-evaluation under budget.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §1",
+        "Truth Arbitration Agent Public Library Specification §11",
+        "Truth Arbitration Agent Public Library Specification §12"
+      ],
+      "related_terms": [
+        "READMISSION_PENDING",
+        "readmission_budget",
+        "CLEARANCE_RESPONSE"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "automatic inherited allow"
+      ],
+      "usage_constraints": [
+        "Readmission shall not inherit ALLOW across policy, scope, source_ref, AXIOM_SET, or clearance epoch changes."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-TRANSITION-010",
+      "preferred_label": "re-entry",
+      "category": "Transition Terms",
+      "definition_short": "Entry back into evaluation after clearance.",
+      "definition_operational": "Use only after the clearance artifact closes the root cause and a new snapshot is frozen.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §12.1"
+      ],
+      "related_terms": [
+        "clearance_verdict",
+        "clearance_epoch",
+        "READMISSION_PENDING"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "readmission without clearance"
+      ],
+      "usage_constraints": [
+        "If clearance does not close the root cause, terminal ESCALATE or PERMANENT_BLOCK applies."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-VALIDATION-001",
+      "preferred_label": "Validator Catalogue",
+      "category": "Validation Terms",
+      "definition_short": "Catalogue of validators, their classes, scopes, and effects.",
+      "definition_operational": "Use to distinguish validator_id, validator_class, strength, coverage_scope, failure_effect, evidence_fields, and fallback semantics.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §7",
+        "Truth Arbitration Agent Public Library Specification §15"
+      ],
+      "related_terms": [
+        "V-001 Statement Identity",
+        "V-009 Escalation Artifact Emission",
+        "Gate Logic Record"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Validators with different strengths cannot emit indistinguishable artifacts without explicit confidence qualification."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-VALIDATION-002",
+      "preferred_label": "validator_id",
+      "category": "Validation Terms",
+      "definition_short": "Identifier assigned to a validator.",
+      "definition_operational": "Use to reference validators in decision evidence and validator_refs.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §7"
+      ],
+      "related_terms": [
+        "validator_refs",
+        "Validator Catalogue",
+        "evidence_fields"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-VALIDATION-003",
+      "preferred_label": "validator_class",
+      "category": "Validation Terms",
+      "definition_short": "Declared class of a validator.",
+      "definition_operational": "Use to distinguish deterministic, heuristic-hardening, formal_decidable, and heuristic validation.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §7"
+      ],
+      "related_terms": [
+        "strength",
+        "coverage_scope",
+        "fallback semantics"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Class affects confidence qualification and failure semantics."
+      ],
+      "allowed_values": [
+        "deterministic",
+        "heuristic-hardening",
+        "formal_decidable",
+        "heuristic"
+      ],
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-VALIDATION-004",
+      "preferred_label": "strength",
+      "category": "Validation Terms",
+      "definition_short": "Declared strength of a validator or conflict check.",
+      "definition_operational": "Use to determine whether a simple ALLOW is permitted or a constrained, escalated, denied, or fail-closed result is required.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §7",
+        "Truth Arbitration Agent Public Library Specification §8"
+      ],
+      "related_terms": [
+        "conflict_check_strength",
+        "V-006A Formal Conflict Check",
+        "V-006B Semantic Conflict Heuristic"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Different strengths require explicit confidence qualification."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-VALIDATION-005",
+      "preferred_label": "coverage_scope",
+      "category": "Validation Terms",
+      "definition_short": "Declared scope covered by a validator or conflict check.",
+      "definition_operational": "Use to state what the validator covers and whether residual risk remains outside that scope.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §7",
+        "Truth Arbitration Agent Public Library Specification §8"
+      ],
+      "related_terms": [
+        "conflict_check_coverage_scope",
+        "residual_risk_statement",
+        "coverage_scope"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Incomplete coverage must affect verdict and evidence."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-VALIDATION-006",
+      "preferred_label": "fallback semantics",
+      "category": "Validation Terms",
+      "definition_short": "Declared behavior when a validator fails or is inconclusive.",
+      "definition_operational": "Use to determine DENY, FAIL_CLOSED, ALLOW_CONSTRAINED, ESCALATE, or RECLASSIFY routing.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §7"
+      ],
+      "related_terms": [
+        "failure_effect",
+        "Gate Logic Record",
+        "verdict"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Fallback semantics must be explicit per validator."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-VALIDATION-007",
+      "preferred_label": "V-001 Statement Identity",
+      "category": "Validation Terms",
+      "definition_short": "Deterministic validator for canonical_text, statement_id, and serialization profile.",
+      "definition_operational": "Use to fail closed when statement identity cannot be established.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §7",
+        "Truth Arbitration Agent Public Library Specification §9"
+      ],
+      "related_terms": [
+        "canonical_text",
+        "statement_id",
+        "semantic_normalization_profile"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Failure produces FAIL_CLOSED."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-VALIDATION-008",
+      "preferred_label": "V-002 Mandatory Fields Presence",
+      "category": "Validation Terms",
+      "definition_short": "Deterministic validator for required fields across input, output, and evidence contracts.",
+      "definition_operational": "Use to fail closed when mandatory contract fields are absent.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §7",
+        "Truth Arbitration Agent Public Library Specification §9"
+      ],
+      "related_terms": [
+        "Input Contract Record",
+        "Output Contract Record",
+        "Evidence Contract"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Failure produces FAIL_CLOSED."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-VALIDATION-009",
+      "preferred_label": "V-003 Provenance Admissibility",
+      "category": "Validation Terms",
+      "definition_short": "Deterministic validator for tsa_label, source_class, source_ref, and policy allowlist validity.",
+      "definition_operational": "Use to produce DENY or FAIL_CLOSED on invalid provenance admissibility.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §7",
+        "Truth Arbitration Agent Public Library Specification §9"
+      ],
+      "related_terms": [
+        "tsa_label",
+        "SOURCE_CLASS",
+        "source_ref",
+        "policy allowlist"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Failure produces DENY or FAIL_CLOSED."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-VALIDATION-010",
+      "preferred_label": "V-004 AXIOM / TERM Linkage",
+      "category": "Validation Terms",
+      "definition_short": "Deterministic validator for linkage to AXIOM_SET, TERM_BIND, and POLICY_BIND.",
+      "definition_operational": "Use to deny claims with invalid linkage.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §7"
+      ],
+      "related_terms": [
+        "AXIOM_SET",
+        "TERM_BIND",
+        "POLICY_BIND"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Failure produces DENY."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-VALIDATION-011",
+      "preferred_label": "V-005 Boundary Role Consistency",
+      "category": "Validation Terms",
+      "definition_short": "Heuristic-hardening validator for statement_role at the boundary.",
+      "definition_operational": "Use to confirm or reclassify statement_role and to detect role bypass.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §7",
+        "Truth Arbitration Agent Public Library Specification §9",
+        "Truth Arbitration Agent Public Library Specification §13"
+      ],
+      "related_terms": [
+        "statement_role",
+        "boundary_validated_role",
+        "RECLASSIFY"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Failure or inconsistency routes to RECLASSIFY, ALLOW_CONSTRAINED, or FAIL_CLOSED according to policy."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-VALIDATION-012",
+      "preferred_label": "V-006A Formal Conflict Check",
+      "category": "Validation Terms",
+      "definition_short": "Formal_decidable validator detecting contradictions inside the declared formalism.",
+      "definition_operational": "Use to produce FAIL_CLOSED or DENY when formal conflict is confirmed.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §7",
+        "Truth Arbitration Agent Public Library Specification §9",
+        "Truth Arbitration Agent Public Library Specification §12"
+      ],
+      "related_terms": [
+        "FORMAL_CONFLICT_CONFIRMED",
+        "DO-005 Confirmed formal conflict",
+        "conflict_check_mode"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "V-006B Semantic Conflict Heuristic"
+      ],
+      "usage_constraints": [
+        "Failure produces FAIL_CLOSED or DENY according to severity."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-VALIDATION-013",
+      "preferred_label": "V-006B Semantic Conflict Heuristic",
+      "category": "Validation Terms",
+      "definition_short": "Heuristic validator detecting probable contradictions outside the fully decidable formalism.",
+      "definition_operational": "Use when formal conflict coverage is incomplete; below threshold it cannot support simple ALLOW.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §7",
+        "Truth Arbitration Agent Public Library Specification §8",
+        "Truth Arbitration Agent Public Library Specification §9",
+        "Truth Arbitration Agent Public Library Specification §12"
+      ],
+      "related_terms": [
+        "HEURISTIC_CONFLICT_UNCLOSED",
+        "ALLOW_CONSTRAINED",
+        "ESCALATE",
+        "residual_risk_statement"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "V-006A Formal Conflict Check"
+      ],
+      "usage_constraints": [
+        "If V-006B is the only available conflict check, simple ALLOW is forbidden below threshold."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-VALIDATION-014",
+      "preferred_label": "V-007 Policy Snapshot Consistency",
+      "category": "Validation Terms",
+      "definition_short": "Deterministic validator ensuring the verdict uses the policy snapshot captured at intake.",
+      "definition_operational": "Use to fail closed and re-evaluate if policy drift occurs.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §7",
+        "Truth Arbitration Agent Public Library Specification §9",
+        "Truth Arbitration Agent Public Library Specification §11"
+      ],
+      "related_terms": [
+        "policy_snapshot_id",
+        "policy_hash_ref",
+        "POLICY_SNAPSHOT_DRIFT"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Failure produces FAIL_CLOSED and re-evaluate."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-VALIDATION-015",
+      "preferred_label": "V-008 Ordering / Serialization",
+      "category": "Validation Terms",
+      "definition_short": "Deterministic validator ensuring one in-flight flow per scope or valid compare-and-commit discipline.",
+      "definition_operational": "Use to fail closed on ordering violations.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §7",
+        "Truth Arbitration Agent Public Library Specification §9",
+        "Truth Arbitration Agent Public Library Specification §11"
+      ],
+      "related_terms": [
+        "one in-flight flow",
+        "compare-and-commit",
+        "ORDERING_VIOLATION"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Failure produces FAIL_CLOSED."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-VALIDATION-016",
+      "preferred_label": "V-009 Escalation Artifact Emission",
+      "category": "Validation Terms",
+      "definition_short": "Deterministic validator ensuring ESCALATION_REQUEST is emitted when required.",
+      "definition_operational": "Use to fail closed if an external-actor path lacks the required escalation artifact.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §7",
+        "Truth Arbitration Agent Public Library Specification §9",
+        "Truth Arbitration Agent Public Library Specification §12"
+      ],
+      "related_terms": [
+        "ESCALATION_REQUEST",
+        "CLEARANCE_ARTIFACT_MISSING",
+        "External clearance required"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Failure produces FAIL_CLOSED."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-001",
+      "preferred_label": "Input Contract Record",
+      "category": "Evidence Terms",
+      "definition_short": "Minimum input record received by the agent.",
+      "definition_operational": "Use to carry input_id, session_id, scope_id, turn_id, payload, input_statement_role, labels if provided, source_ref, policy hash reference, producer_id, and producer_assertions.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §4.1"
+      ],
+      "related_terms": [
+        "payload",
+        "input_statement_role",
+        "source_ref",
+        "producer_assertions"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "input_statement_role remains untrusted until local validation."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-002",
+      "preferred_label": "Output Contract Record",
+      "category": "Evidence Terms",
+      "definition_short": "Minimum output record emitted by the agent.",
+      "definition_operational": "Use to carry decision_id, statement_id_list, boundary_validated_role, verdict, reason_code, validator_refs, labels, source references, policy data, order_ref, evidence_ref_list, and gate_impact.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §4.2"
+      ],
+      "related_terms": [
+        "decision_id",
+        "statement_id_list",
+        "verdict",
+        "gate_impact"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "ALLOW and ALLOW_CONSTRAINED require conflict qualifiers when conflict handling is not fully decidable."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-003",
+      "preferred_label": "Evidence Contract",
+      "category": "Evidence Terms",
+      "definition_short": "Required evidence fields emitted for every verdict and additional fields for role validation, conflict handling, and failure paths.",
+      "definition_operational": "Use as the offline reconstruction contract for all verdicts.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §8",
+        "Truth Arbitration Agent Public Library Specification §15"
+      ],
+      "related_terms": [
+        "decision_id",
+        "statement_id_list",
+        "residual_risk_statement",
+        "escalation_request_ref"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Any verdict missing required closure fields is partial or invalid."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-004",
+      "preferred_label": "DECISION",
+      "category": "Evidence Terms",
+      "definition_short": "Decision artifact emitted for mechanism-level use.",
+      "definition_operational": "Use as an observable artifact supporting replay and offline reconstruction.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §3",
+        "Truth Arbitration Agent Public Library Specification §5.2"
+      ],
+      "related_terms": [
+        "verdict",
+        "Evidence Contract",
+        "decision_id"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-005",
+      "preferred_label": "CONFLICT_EVENT",
+      "category": "Evidence Terms",
+      "definition_short": "Conflict artifact emitted when conflict status is detected or recorded.",
+      "definition_operational": "Use for mechanism-level conflict evidence and reconstruction.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §3",
+        "Truth Arbitration Agent Public Library Specification §10"
+      ],
+      "related_terms": [
+        "MRF-CONFLICT.json",
+        "conflict_check_mode",
+        "conflicting_statement_ids"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-006",
+      "preferred_label": "ESCALATION_REQUEST",
+      "category": "Evidence Terms",
+      "definition_short": "Normative request for external remediation.",
+      "definition_operational": "Use whenever an external actor is required by failure semantics or gate logic.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §3",
+        "Truth Arbitration Agent Public Library Specification §4.2",
+        "Truth Arbitration Agent Public Library Specification §9",
+        "Truth Arbitration Agent Public Library Specification §10",
+        "Truth Arbitration Agent Public Library Specification §12"
+      ],
+      "related_terms": [
+        "request_id",
+        "failure_ref",
+        "required_actor_role",
+        "required_evidence"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "FAIL_CLOSED log entry"
+      ],
+      "usage_constraints": [
+        "A FAIL_CLOSED log entry alone is not a sufficient interoperable output."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-007",
+      "preferred_label": "CLEARANCE_NEEDED_NOTIFICATION",
+      "category": "Evidence Terms",
+      "definition_short": "Artifact notifying that clearance is required.",
+      "definition_operational": "Use for ESCALATE or FAIL_CLOSED paths requiring an external actor when this notification is applicable.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §4.2"
+      ],
+      "related_terms": [
+        "ESCALATION_REQUEST",
+        "clearance_needed",
+        "cleared_only_by"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "It does not replace the required escalation request when that request is required."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-008",
+      "preferred_label": "CLEARANCE_RESPONSE",
+      "category": "Evidence Terms",
+      "definition_short": "Response artifact to an external clearance request.",
+      "definition_operational": "Use to record request_id, actor_id, evidence_refs, and clearance_verdict before readmission can proceed.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §5.2",
+        "Truth Arbitration Agent Public Library Specification §10",
+        "Truth Arbitration Agent Public Library Specification §12.1"
+      ],
+      "related_terms": [
+        "request_id",
+        "actor_id",
+        "evidence_refs",
+        "clearance_verdict"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "ESCALATION_REQUEST"
+      ],
+      "usage_constraints": [
+        "Re-entry requires valid clearance plus new snapshot freeze and full re-evaluation."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-009",
+      "preferred_label": "CHECKPOINT(LASTCLEAN)",
+      "category": "Evidence Terms",
+      "definition_short": "Observable checkpoint artifact for replay and rollback basis.",
+      "definition_operational": "Use as one of the minimum observable artifacts supporting offline reconstruction.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §5.2"
+      ],
+      "related_terms": [
+        "ROLLBACK",
+        "DECISION",
+        "FAIL_CLOSED"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-010",
+      "preferred_label": "ROLLBACK",
+      "category": "Evidence Terms",
+      "definition_short": "Observable rollback artifact for reconstruction and recovery.",
+      "definition_operational": "Use with CHECKPOINT(LASTCLEAN) and other evidence artifacts to support replay.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §2.3",
+        "Truth Arbitration Agent Public Library Specification §5.2"
+      ],
+      "related_terms": [
+        "CHECKPOINT(LASTCLEAN)",
+        "DECISION",
+        "FAIL_CLOSED"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-011",
+      "preferred_label": "decision_id",
+      "category": "Evidence Terms",
+      "definition_short": "Identifier for a decision record.",
+      "definition_operational": "Use in output and evidence contracts.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §4.2",
+        "Truth Arbitration Agent Public Library Specification §8"
+      ],
+      "related_terms": [
+        "DECISION",
+        "Output Contract Record",
+        "Evidence Contract"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-012",
+      "preferred_label": "statement_id_list",
+      "category": "Evidence Terms",
+      "definition_short": "List of statement identifiers covered by an output or evidence record.",
+      "definition_operational": "Use to bind a verdict to the statement records it adjudicates.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §4.2",
+        "Truth Arbitration Agent Public Library Specification §8"
+      ],
+      "related_terms": [
+        "statement_id",
+        "decision_id",
+        "MRF-DECISION.json"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-013",
+      "preferred_label": "reason_code",
+      "category": "Evidence Terms",
+      "definition_short": "Reason code explaining a verdict.",
+      "definition_operational": "Use in output and evidence records; concrete reason_code names may be specialized without changing the semantic core.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §4.2",
+        "Truth Arbitration Agent Public Library Specification §8",
+        "Truth Arbitration Agent Public Library Specification §16.2"
+      ],
+      "related_terms": [
+        "verdict",
+        "root_reason_code",
+        "Decision Table"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Must remain semantically coherent with the decision path."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-014",
+      "preferred_label": "validator_refs",
+      "category": "Evidence Terms",
+      "definition_short": "References to validators used by a decision.",
+      "definition_operational": "Use in Output Contract Record and MRF-DECISION.json.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §4.2",
+        "Truth Arbitration Agent Public Library Specification §10"
+      ],
+      "related_terms": [
+        "validator_id",
+        "Validator Catalogue",
+        "MRF-DECISION.json"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-015",
+      "preferred_label": "gate_impact",
+      "category": "Evidence Terms",
+      "definition_short": "Output field indicating impact on gate behavior.",
+      "definition_operational": "Use in Output Contract Record and MRF-DECISION.json to support execution-layer consumption.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §4.2",
+        "Truth Arbitration Agent Public Library Specification §10"
+      ],
+      "related_terms": [
+        "Gate Logic Record",
+        "MRF-DECISION.json",
+        "verdict"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-016",
+      "preferred_label": "evidence_ref_list",
+      "category": "Evidence Terms",
+      "definition_short": "Output field listing evidence references.",
+      "definition_operational": "Use to bind decision output to evidence artifacts.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §4.2"
+      ],
+      "related_terms": [
+        "Evidence Contract",
+        "source_ref",
+        "validator_refs"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-017",
+      "preferred_label": "conflict_check_mode",
+      "category": "Evidence Terms",
+      "definition_short": "Conflict evidence field stating the conflict-checking mode used.",
+      "definition_operational": "Use for ALLOW, ALLOW_CONSTRAINED, and conflict handling evidence.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §4.2",
+        "Truth Arbitration Agent Public Library Specification §8"
+      ],
+      "related_terms": [
+        "conflict_check_strength",
+        "conflict_check_confidence",
+        "conflict_check_coverage_scope"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Conflict mode affects verdict permissibility."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-018",
+      "preferred_label": "conflict_check_strength",
+      "category": "Evidence Terms",
+      "definition_short": "Conflict evidence field stating the strength of the conflict check.",
+      "definition_operational": "Use to determine whether simple ALLOW is supported or a constrained/escalated result is required.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §8"
+      ],
+      "related_terms": [
+        "strength",
+        "V-006A Formal Conflict Check",
+        "V-006B Semantic Conflict Heuristic"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-019",
+      "preferred_label": "conflict_check_confidence",
+      "category": "Evidence Terms",
+      "definition_short": "Conflict evidence field stating confidence in conflict results.",
+      "definition_operational": "Use when conflict handling is formal, heuristic, partial, or below threshold.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §4.2",
+        "Truth Arbitration Agent Public Library Specification §8"
+      ],
+      "related_terms": [
+        "conflict_check_mode",
+        "V-006B Semantic Conflict Heuristic",
+        "residual_risk_statement"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Below-threshold heuristic confidence forbids simple ALLOW."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-020",
+      "preferred_label": "conflict_check_coverage_scope",
+      "category": "Evidence Terms",
+      "definition_short": "Conflict evidence field stating what the conflict check covers.",
+      "definition_operational": "Use to qualify residual risk and to limit claims of conflict closure.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §4.2",
+        "Truth Arbitration Agent Public Library Specification §8"
+      ],
+      "related_terms": [
+        "coverage_scope",
+        "residual_risk_statement",
+        "declared formalism"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Complete conflict coverage remains limited to the declared formalism."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-021",
+      "preferred_label": "compared_claim_set_ref",
+      "category": "Evidence Terms",
+      "definition_short": "Reference to the claim set compared during conflict handling.",
+      "definition_operational": "Use in conflict evidence to make conflict comparison reconstructible.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §8"
+      ],
+      "related_terms": [
+        "conflict_check_mode",
+        "statement_id_list",
+        "Evidence Contract"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-022",
+      "preferred_label": "residual_risk_statement",
+      "category": "Evidence Terms",
+      "definition_short": "Statement of remaining risk when conflict handling is not fully closed.",
+      "definition_operational": "Use whenever conflict handling is not fully decidable across the entire payload or when V-006B leaves unresolved risk.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §4.2",
+        "Truth Arbitration Agent Public Library Specification §8"
+      ],
+      "related_terms": [
+        "ALLOW_CONSTRAINED",
+        "V-006B Semantic Conflict Heuristic",
+        "conflict_check_coverage_scope"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "simple ALLOW"
+      ],
+      "usage_constraints": [
+        "Required for qualified conflict handling."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-023",
+      "preferred_label": "inhibit_flags",
+      "category": "Evidence Terms",
+      "definition_short": "FAIL_CLOSED evidence field indicating blocked conditions.",
+      "definition_operational": "Use in FAIL_CLOSED outputs and failure evidence.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §2.2",
+        "Truth Arbitration Agent Public Library Specification §4.2",
+        "Truth Arbitration Agent Public Library Specification §8"
+      ],
+      "related_terms": [
+        "FAIL_CLOSED",
+        "root_reason_code",
+        "remediation_class"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-024",
+      "preferred_label": "root_reason_code",
+      "category": "Evidence Terms",
+      "definition_short": "FAIL_CLOSED evidence field stating the root reason for blocking.",
+      "definition_operational": "Use to support remediation and reconstruction.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §4.2",
+        "Truth Arbitration Agent Public Library Specification §8",
+        "Truth Arbitration Agent Public Library Specification §10"
+      ],
+      "related_terms": [
+        "reason_code",
+        "FAIL_CLOSED",
+        "MRF-FAIL_CLOSED.json"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-025",
+      "preferred_label": "clearance_needed",
+      "category": "Evidence Terms",
+      "definition_short": "Evidence field indicating that clearance is required.",
+      "definition_operational": "Use in FAIL_CLOSED and NONCOMPLIANT_HOLD paths.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §8",
+        "Truth Arbitration Agent Public Library Specification §10",
+        "Truth Arbitration Agent Public Library Specification §12"
+      ],
+      "related_terms": [
+        "cleared_only_by",
+        "ESCALATION_REQUEST",
+        "NONCOMPLIANT_HOLD"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-026",
+      "preferred_label": "cleared_only_by",
+      "category": "Evidence Terms",
+      "definition_short": "Evidence field identifying who may clear a failure path.",
+      "definition_operational": "Use to decide whether external actor handling and ESCALATION_REQUEST are required.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §4.2",
+        "Truth Arbitration Agent Public Library Specification §8",
+        "Truth Arbitration Agent Public Library Specification §12"
+      ],
+      "related_terms": [
+        "clearance_needed",
+        "required_actor_role",
+        "ESCALATION_REQUEST"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "If cleared_only_by implies an external actor, ESCALATION_REQUEST is emitted immediately."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-027",
+      "preferred_label": "remediation_class",
+      "category": "Evidence Terms",
+      "definition_short": "Evidence field describing the class of remediation required.",
+      "definition_operational": "Use in FAIL_CLOSED outputs and evidence to support proper clearance and readmission handling.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §4.2",
+        "Truth Arbitration Agent Public Library Specification §8"
+      ],
+      "related_terms": [
+        "FAIL_CLOSED",
+        "root_reason_code",
+        "clearance_needed"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-028",
+      "preferred_label": "escalation_request_ref",
+      "category": "Evidence Terms",
+      "definition_short": "Evidence reference to an ESCALATION_REQUEST artifact.",
+      "definition_operational": "Use in FAIL_CLOSED and NONCOMPLIANT_HOLD evidence where external handling is required.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §4.2",
+        "Truth Arbitration Agent Public Library Specification §8"
+      ],
+      "related_terms": [
+        "ESCALATION_REQUEST",
+        "CLEARANCE_ARTIFACT_MISSING",
+        "V-009 Escalation Artifact Emission"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Missing when required makes the gate structurally incomplete."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-029",
+      "preferred_label": "clearance_response_ref",
+      "category": "Evidence Terms",
+      "definition_short": "Evidence reference to a CLEARANCE_RESPONSE artifact.",
+      "definition_operational": "Use when clearance has been provided and readmission is being evaluated.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §8"
+      ],
+      "related_terms": [
+        "CLEARANCE_RESPONSE",
+        "READMISSION_PENDING",
+        "clearance_verdict"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-CONTROL-001",
+      "preferred_label": "Gate Logic Record",
+      "category": "Control Terms",
+      "definition_short": "Deterministic and total verdict function binding validators, decision objects, policy snapshot rules, and failure semantics.",
+      "definition_operational": "Use to convert validation and decision outcomes into a final verdict without unresolved branches.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §9"
+      ],
+      "related_terms": [
+        "Validator Catalogue",
+        "Decision Table",
+        "FAIL_CLOSED"
+      ],
+      "synonyms": [
+        "Gate Logic"
+      ],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "If no specialized branch applies and the decision path is structurally incomplete, the result is FAIL_CLOSED."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-CONTROL-002",
+      "preferred_label": "policy allowlist",
+      "category": "Control Terms",
+      "definition_short": "Policy-controlled allowlist used by Provenance Admissibility.",
+      "definition_operational": "Use with tsa_label, source_class, and source_ref to determine source admissibility.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §7"
+      ],
+      "related_terms": [
+        "V-003 Provenance Admissibility",
+        "SOURCE_CLASS",
+        "policy_snapshot_id"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Invalid policy allowlist status leads to DENY or FAIL_CLOSED."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-CONTROL-003",
+      "preferred_label": "Temporal and Ordering Contract",
+      "category": "Control Terms",
+      "definition_short": "Contract defining mandatory order, policy snapshot freeze, per-scope concurrency, and readmission reset rules.",
+      "definition_operational": "Use as the source for intake-to-verdict sequencing and concurrency validity.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §11"
+      ],
+      "related_terms": [
+        "mandatory minimum order",
+        "one in-flight flow",
+        "compare-and-commit"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Verdicts from a changed claim set are invalid."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-CONTROL-004",
+      "preferred_label": "mandatory minimum order",
+      "category": "Control Terms",
+      "definition_short": "Required ordering from intake through optional escalation or handoff.",
+      "definition_operational": "Use to sequence intake, policy snapshot freeze, boundary role validation, canonicalization, validators, classification, conflict check, verdict, evidence emission, and optional escalation or handoff.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §11"
+      ],
+      "related_terms": [
+        "Temporal and Ordering Contract",
+        "policy snapshot freeze",
+        "evidence emission"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "A verdict may not skip required predecessor stages."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-CONTROL-005",
+      "preferred_label": "one in-flight flow",
+      "category": "Control Terms",
+      "definition_short": "Per-scope sequentiality requirement.",
+      "definition_operational": "Use to ensure only one adjudication flow is active per scope unless serialization or compare-and-commit is used.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §5",
+        "Truth Arbitration Agent Public Library Specification §11"
+      ],
+      "related_terms": [
+        "scope_id",
+        "V-008 Ordering / Serialization",
+        "compare-and-commit"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Without a conformant ordering technique, produced verdicts are non-conformant."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-CONTROL-006",
+      "preferred_label": "offline reconstruction",
+      "category": "Control Terms",
+      "definition_short": "Ability to reconstruct agent decisions from emitted evidence without internal engine state.",
+      "definition_operational": "Use as an audit and replay requirement for all verdict paths.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §1",
+        "Truth Arbitration Agent Public Library Specification §8",
+        "Truth Arbitration Agent Public Library Specification §15"
+      ],
+      "related_terms": [
+        "Evidence Contract",
+        "replay",
+        "DECISION"
+      ],
+      "synonyms": [
+        "offline reconstructibility"
+      ],
+      "non_synonyms": [
+        "internal engine state dependency"
+      ],
+      "usage_constraints": [
+        "Missing closure fields make verdicts partial or invalid."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-CONTROL-007",
+      "preferred_label": "replay",
+      "category": "Control Terms",
+      "definition_short": "Ability to replay decision paths from emitted artifacts.",
+      "definition_operational": "Use with observable artifacts including DECISION, FAIL_CLOSED, CHECKPOINT(LASTCLEAN), ROLLBACK, ESCALATION_REQUEST, CLEARANCE_RESPONSE, and NONCOMPLIANT_HOLD.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §1",
+        "Truth Arbitration Agent Public Library Specification §5.2"
+      ],
+      "related_terms": [
+        "offline reconstruction",
+        "CHECKPOINT(LASTCLEAN)",
+        "ROLLBACK"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Every relevant transition must emit enough observable artifacts for replay."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-CONTROL-008",
+      "preferred_label": "Failure Semantics and Readmission",
+      "category": "Control Terms",
+      "definition_short": "Normative block and recovery rules for failure codes, clearance, and readmission.",
+      "definition_operational": "Use to map failures to required output, clearance, and terminal handling.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §12"
+      ],
+      "related_terms": [
+        "UNLABELED_CLAIM",
+        "READMISSION_PENDING",
+        "readmission_budget"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "FAIL_CLOSED is not the only externally meaningful failure output."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-CONTROL-009",
+      "preferred_label": "readmission_budget",
+      "category": "Control Terms",
+      "definition_short": "Budget limiting readmission loops.",
+      "definition_operational": "Use to prevent readmission loops without progress.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §5",
+        "Truth Arbitration Agent Public Library Specification §12"
+      ],
+      "related_terms": [
+        "READMISSION_PENDING",
+        "recurrence_counter",
+        "PERMANENT_BLOCK"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "When exhausted, terminal ESCALATE or PERMANENT_BLOCK applies according to policy."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-CONTROL-010",
+      "preferred_label": "recurrence_counter",
+      "category": "Control Terms",
+      "definition_short": "Counter used with readmission_budget to detect repeated readmission loops.",
+      "definition_operational": "Use to enforce terminal handling when loops do not progress.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §12"
+      ],
+      "related_terms": [
+        "readmission_budget",
+        "terminal ESCALATE",
+        "PERMANENT_BLOCK"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-CONTROL-011",
+      "preferred_label": "terminal ESCALATE",
+      "category": "Control Terms",
+      "definition_short": "Terminal escalation emitted when readmission cannot proceed.",
+      "definition_operational": "Use when budget is exhausted or clearance does not close the root cause and policy selects escalation rather than block.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §12",
+        "Truth Arbitration Agent Public Library Specification §12.1"
+      ],
+      "related_terms": [
+        "ESCALATE",
+        "readmission_budget",
+        "PERMANENT_BLOCK"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "local ALLOW"
+      ],
+      "usage_constraints": [
+        "Terminal handling prevents infinite readmission loops."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-CONTROL-012",
+      "preferred_label": "PERMANENT_BLOCK",
+      "category": "Control Terms",
+      "definition_short": "Terminal block emitted when readmission cannot proceed.",
+      "definition_operational": "Use when readmission_budget is exhausted or clearance does not close the root cause and policy selects permanent blocking.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §12",
+        "Truth Arbitration Agent Public Library Specification §12.1"
+      ],
+      "related_terms": [
+        "readmission_budget",
+        "terminal ESCALATE",
+        "READMISSION_PENDING"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "FAIL_CLOSED"
+      ],
+      "usage_constraints": [
+        "PERMANENT_BLOCK is terminal according to policy."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-CONTROL-013",
+      "preferred_label": "Conformance Conditions",
+      "category": "Control Terms",
+      "definition_short": "Conditions for implementation conformance.",
+      "definition_operational": "Use to verify fields, decision coverage, validators, role-bypass handling, conflict handling, escalation, clearance, terminal readmission handling, and offline reconstruction.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §15"
+      ],
+      "related_terms": [
+        "Semantic Contract",
+        "Validator Catalogue",
+        "Gate Logic Record",
+        "Evidence Contract"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "No open inconsistency may remain in boundary handling, validator semantics, policy snapshot semantics, conflict closure, fail-closed escalation, replay, or readmission semantics."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-CONTROL-014",
+      "preferred_label": "UNLABELED_CLAIM",
+      "category": "Control Terms",
+      "definition_short": "Failure code for a mechanism-level claim without conformant tsa_label or source_class.",
+      "definition_operational": "Use to FAIL_CLOSED with clearance by an authorized actor.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §12"
+      ],
+      "related_terms": [
+        "DO-001 Unlabeled mechanism claim",
+        "tsa_label",
+        "SOURCE_CLASS"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Applies to mechanism-level claims."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-CONTROL-015",
+      "preferred_label": "ROLE_BYPASS_SUSPECTED",
+      "category": "Control Terms",
+      "definition_short": "Failure code for explanatory_only input inconsistent with the payload.",
+      "definition_operational": "Use to FAIL_CLOSED or RECLASSIFY under policy.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §12"
+      ],
+      "related_terms": [
+        "explanatory_only",
+        "RECLASSIFY",
+        "V-005 Boundary Role Consistency"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-CONTROL-016",
+      "preferred_label": "FORMAL_CONFLICT_CONFIRMED",
+      "category": "Control Terms",
+      "definition_short": "Failure code for V-006A-confirmed contradiction.",
+      "definition_operational": "Use to produce DENY or FAIL_CLOSED.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §12"
+      ],
+      "related_terms": [
+        "V-006A Formal Conflict Check",
+        "DO-005 Confirmed formal conflict",
+        "DENY"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-CONTROL-017",
+      "preferred_label": "HEURISTIC_CONFLICT_UNCLOSED",
+      "category": "Control Terms",
+      "definition_short": "Failure code for probable semantic conflict that remains open or under-closed.",
+      "definition_operational": "Use to produce ALLOW_CONSTRAINED or ESCALATE; simple ALLOW is forbidden.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §12"
+      ],
+      "related_terms": [
+        "V-006B Semantic Conflict Heuristic",
+        "ALLOW_CONSTRAINED",
+        "ESCALATE"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "ALLOW"
+      ],
+      "usage_constraints": [
+        "Simple ALLOW is forbidden."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-CONTROL-018",
+      "preferred_label": "POLICY_SNAPSHOT_DRIFT",
+      "category": "Control Terms",
+      "definition_short": "Failure code for policy changes mid-flight.",
+      "definition_operational": "Use to FAIL_CLOSED and re-evaluate.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §12"
+      ],
+      "related_terms": [
+        "policy_snapshot_id",
+        "policy_hash_ref",
+        "V-007 Policy Snapshot Consistency"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-CONTROL-019",
+      "preferred_label": "ORDERING_VIOLATION",
+      "category": "Control Terms",
+      "definition_short": "Failure code for unserialized concurrent flow or failed compare-and-commit.",
+      "definition_operational": "Use to FAIL_CLOSED.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §12"
+      ],
+      "related_terms": [
+        "compare-and-commit",
+        "V-008 Ordering / Serialization",
+        "one in-flight flow"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-CONTROL-020",
+      "preferred_label": "CLEARANCE_ARTIFACT_MISSING",
+      "category": "Control Terms",
+      "definition_short": "Failure code for missing ESCALATION_REQUEST on an external-actor path.",
+      "definition_operational": "Use to FAIL_CLOSED structurally.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §12"
+      ],
+      "related_terms": [
+        "ESCALATION_REQUEST",
+        "V-009 Escalation Artifact Emission",
+        "escalation_request_ref"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-ABBREVIATION-001",
+      "preferred_label": "Machine-Readable Form Catalogue",
+      "category": "Abbreviation Terms",
+      "definition_short": "Catalogue of JSON forms for machine-readable records.",
+      "definition_operational": "Use to align statement, decision, conflict, fail-closed, escalation, clearance, and handoff records.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §10"
+      ],
+      "related_terms": [
+        "MRF-STATEMENT.json",
+        "MRF-DECISION.json",
+        "MRF-HANDOFF-CHECK.json"
+      ],
+      "synonyms": [
+        "MRF"
+      ],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Machine-readable forms must preserve the semantic contracts."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-ABBREVIATION-002",
+      "preferred_label": "MRF-STATEMENT.json",
+      "category": "Abbreviation Terms",
+      "definition_short": "Machine-readable canonical payload for a statement candidate.",
+      "definition_operational": "Use with input_statement_role, boundary_validated_role, canonical_text, and statement_id.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §10"
+      ],
+      "related_terms": [
+        "canonical_text",
+        "statement_id",
+        "boundary_validated_role"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-ABBREVIATION-003",
+      "preferred_label": "MRF-DECISION.json",
+      "category": "Abbreviation Terms",
+      "definition_short": "Machine-readable arbitration verdict.",
+      "definition_operational": "Use with verdict, reason_code, validator_refs, gate_impact, and policy_snapshot_id.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §10"
+      ],
+      "related_terms": [
+        "verdict",
+        "reason_code",
+        "validator_refs",
+        "gate_impact"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-ABBREVIATION-004",
+      "preferred_label": "MRF-CONFLICT.json",
+      "category": "Abbreviation Terms",
+      "definition_short": "Machine-readable conflict event.",
+      "definition_operational": "Use with conflict_mode, strength, confidence, and conflicting_statement_ids.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §10"
+      ],
+      "related_terms": [
+        "CONFLICT_EVENT",
+        "conflict_check_strength",
+        "conflict_check_confidence"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-ABBREVIATION-005",
+      "preferred_label": "MRF-FAIL_CLOSED.json",
+      "category": "Abbreviation Terms",
+      "definition_short": "Machine-readable block record.",
+      "definition_operational": "Use with inhibit_flags, root_reason_code, clearance_needed, and cleared_only_by.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §10"
+      ],
+      "related_terms": [
+        "FAIL_CLOSED",
+        "inhibit_flags",
+        "root_reason_code"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-ABBREVIATION-006",
+      "preferred_label": "MRF-ESCALATION_REQUEST.json",
+      "category": "Abbreviation Terms",
+      "definition_short": "Machine-readable external remediation request.",
+      "definition_operational": "Use with request_id, failure_ref, required_actor_role, required_evidence, and status.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §10"
+      ],
+      "related_terms": [
+        "ESCALATION_REQUEST",
+        "request_id",
+        "failure_ref"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-ABBREVIATION-007",
+      "preferred_label": "MRF-CLEARANCE_RESPONSE.json",
+      "category": "Abbreviation Terms",
+      "definition_short": "Machine-readable response to an external clearance request.",
+      "definition_operational": "Use with request_id, actor_id, evidence_refs, and clearance_verdict.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §10"
+      ],
+      "related_terms": [
+        "CLEARANCE_RESPONSE",
+        "clearance_verdict",
+        "evidence_refs"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-ABBREVIATION-008",
+      "preferred_label": "MRF-HANDOFF-CHECK.json",
+      "category": "Abbreviation Terms",
+      "definition_short": "Machine-readable acceptance record for the execution layer.",
+      "definition_operational": "Use to record semantic closure, evidence closure, failure closure, and policy snapshot closure.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §10"
+      ],
+      "related_terms": [
+        "HANDOFF_READY",
+        "semantic closure",
+        "evidence closure"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-030",
+      "preferred_label": "request_id",
+      "category": "Evidence Terms",
+      "definition_short": "Identifier for escalation or clearance request linkage.",
+      "definition_operational": "Use in ESCALATION_REQUEST and CLEARANCE_RESPONSE to bind request and response.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §10",
+        "Truth Arbitration Agent Public Library Specification §12.1"
+      ],
+      "related_terms": [
+        "ESCALATION_REQUEST",
+        "CLEARANCE_RESPONSE",
+        "failure_ref"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-031",
+      "preferred_label": "failure_ref",
+      "category": "Evidence Terms",
+      "definition_short": "Reference linking a clearance or escalation artifact to a failure.",
+      "definition_operational": "Use in ESCALATION_REQUEST and minimum clearance artifact contracts.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §10",
+        "Truth Arbitration Agent Public Library Specification §12.1"
+      ],
+      "related_terms": [
+        "ESCALATION_REQUEST",
+        "root_reason_code",
+        "clearance_verdict"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-032",
+      "preferred_label": "required_actor_role",
+      "category": "Evidence Terms",
+      "definition_short": "Actor role required to handle an escalation request.",
+      "definition_operational": "Use in MRF-ESCALATION_REQUEST.json for external remediation.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §10"
+      ],
+      "related_terms": [
+        "ESCALATION_REQUEST",
+        "cleared_only_by",
+        "required_evidence"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-033",
+      "preferred_label": "required_evidence",
+      "category": "Evidence Terms",
+      "definition_short": "Evidence required for external remediation.",
+      "definition_operational": "Use in escalation requests to specify what must be supplied.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §10"
+      ],
+      "related_terms": [
+        "ESCALATION_REQUEST",
+        "Evidence Contract",
+        "CLEARANCE_RESPONSE"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-034",
+      "preferred_label": "actor_id",
+      "category": "Evidence Terms",
+      "definition_short": "Identifier of the actor responding to clearance.",
+      "definition_operational": "Use in CLEARANCE_RESPONSE and minimum clearance artifact contracts.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §10",
+        "Truth Arbitration Agent Public Library Specification §12.1"
+      ],
+      "related_terms": [
+        "actor_role",
+        "CLEARANCE_RESPONSE",
+        "clearance_verdict"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-035",
+      "preferred_label": "actor_role",
+      "category": "Evidence Terms",
+      "definition_short": "Role of the actor providing clearance.",
+      "definition_operational": "Use when actor_id is not sufficient or when clearance is role-bound.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §12.1"
+      ],
+      "related_terms": [
+        "actor_id",
+        "required_actor_role",
+        "cleared_only_by"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-036",
+      "preferred_label": "evidence_refs",
+      "category": "Evidence Terms",
+      "definition_short": "References to evidence supplied in clearance response.",
+      "definition_operational": "Use in CLEARANCE_RESPONSE and clearance artifact contracts.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §10",
+        "Truth Arbitration Agent Public Library Specification §12.1"
+      ],
+      "related_terms": [
+        "CLEARANCE_RESPONSE",
+        "Evidence Contract",
+        "clearance_verdict"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-037",
+      "preferred_label": "clearance_verdict",
+      "category": "Evidence Terms",
+      "definition_short": "Verdict in a clearance response.",
+      "definition_operational": "Use to determine whether re-entry is permitted after failure handling.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §10",
+        "Truth Arbitration Agent Public Library Specification §12.1"
+      ],
+      "related_terms": [
+        "CLEARANCE_RESPONSE",
+        "re-entry",
+        "clearance_epoch"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Re-entry is permitted only after valid clearance and full re-evaluation."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-EVIDENCE-038",
+      "preferred_label": "clearance_epoch",
+      "category": "Evidence Terms",
+      "definition_short": "Epoch associated with clearance.",
+      "definition_operational": "Use to prevent readmission from inheriting ALLOW across clearance changes.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §11",
+        "Truth Arbitration Agent Public Library Specification §12.1"
+      ],
+      "related_terms": [
+        "clearance_verdict",
+        "readmission",
+        "policy snapshot freeze"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Readmission does not inherit ALLOW across clearance epoch changes."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-OPTIONALITY-001",
+      "preferred_label": "Optional Capabilities",
+      "category": "Optionality Terms",
+      "definition_short": "Capabilities that may strengthen or support operation without replacing required semantic obligations.",
+      "definition_operational": "Use only as non-substituting deployment-level or workflow support.",
+      "normative_status": "implementation_optional",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §14"
+      ],
+      "related_terms": [
+        "Non-Substitution Rule",
+        "hardware-backed attestation",
+        "quarantine/readmission workflow"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "semantic core"
+      ],
+      "usage_constraints": [
+        "Optional capabilities do not alter semantic arbitration logic."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-OPTIONALITY-002",
+      "preferred_label": "Non-Substitution Rule",
+      "category": "Optionality Terms",
+      "definition_short": "Rule that optional capabilities may not replace normative obligations.",
+      "definition_operational": "Use to prevent contextual escalation support, attestation, or quarantine/readmission workflow from replacing core requirements.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §14"
+      ],
+      "related_terms": [
+        "Optional Capabilities",
+        "Boundary-Qualified No Unlabeled Claims",
+        "validator semantics",
+        "gate closure"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "No optional capability may substitute for an active normative obligation in the semantic core."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-OPTIONALITY-003",
+      "preferred_label": "contextual escalation support",
+      "category": "Optionality Terms",
+      "definition_short": "Optional support that may improve risk grading.",
+      "definition_operational": "Use only to support escalation context; it does not replace hard blocks or V-006 qualifiers.",
+      "normative_status": "implementation_optional",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §14"
+      ],
+      "related_terms": [
+        "Optional Capabilities",
+        "V-006B Semantic Conflict Heuristic",
+        "No Unlabeled Claims"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "hard block"
+      ],
+      "usage_constraints": [
+        "Cannot replace the hard block for No Unlabeled Claims."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-OPTIONALITY-004",
+      "preferred_label": "hardware-backed attestation",
+      "category": "Optionality Terms",
+      "definition_short": "Optional deployment-level attestation that may strengthen provenance binding and clearance assurance.",
+      "definition_operational": "Use only as an assurance-strengthening mechanism; it does not replace semantic gate logic, validator semantics, admissibility rules, provenance admissibility, role validation, or conflict qualifiers.",
+      "normative_status": "implementation_optional",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §8",
+        "Truth Arbitration Agent Public Library Specification §14"
+      ],
+      "related_terms": [
+        "commit-boundary pairing",
+        "Provenance Admissibility",
+        "Non-Substitution Rule"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "semantic gate logic"
+      ],
+      "usage_constraints": [
+        "Does not alter semantic arbitration logic."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-OPTIONALITY-005",
+      "preferred_label": "commit-boundary pairing",
+      "category": "Optionality Terms",
+      "definition_short": "Optional pairing capability that may strengthen provenance binding.",
+      "definition_operational": "Use only as a non-substituting deployment-level support.",
+      "normative_status": "implementation_optional",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §14"
+      ],
+      "related_terms": [
+        "hardware-backed attestation",
+        "Optional Capabilities",
+        "Non-Substitution Rule"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "role validation"
+      ],
+      "usage_constraints": [
+        "Does not replace provenance admissibility, role validation, or conflict qualifiers."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-OPTIONALITY-006",
+      "preferred_label": "quarantine/readmission workflow",
+      "category": "Optionality Terms",
+      "definition_short": "Optional workflow supporting controlled recovery.",
+      "definition_operational": "Use only if it preserves audited ESCALATION_REQUEST, validated clearance, and readmission_budget.",
+      "normative_status": "implementation_optional",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §14"
+      ],
+      "related_terms": [
+        "readmission",
+        "ESCALATION_REQUEST",
+        "readmission_budget"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "readmission budget replacement"
+      ],
+      "usage_constraints": [
+        "Does not relax the requirement for audited ESCALATION_REQUEST, validated clearance, or readmission_budget."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-OPTIONALITY-007",
+      "preferred_label": "Stable semantic core",
+      "category": "Optionality Terms",
+      "definition_short": "Reuse guidance identifying elements that shall not be reinterpreted.",
+      "definition_operational": "Use to preserve identity, restricted jurisdiction, central invariant, authority boundaries, verdict vocabulary, escalation requirements, ordering, policy freeze, failure semantics, evidence closure, and offline reconstructibility.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §16.1"
+      ],
+      "related_terms": [
+        "Reuse and Adaptation Guidance",
+        "Boundary-Qualified No Unlabeled Claims",
+        "verdict"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Stable elements shall not be reinterpreted in downstream use."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-OPTIONALITY-008",
+      "preferred_label": "Parameterized elements",
+      "category": "Optionality Terms",
+      "definition_short": "Reuse guidance identifying elements that may be specialized without changing the semantic core.",
+      "definition_operational": "Use for concrete reason_code names, field naming, policy profiles, external roles, serialization details, and optional integrations that do not substitute for required logic.",
+      "normative_status": "derived",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §16.2"
+      ],
+      "related_terms": [
+        "reason_code",
+        "policy profiles",
+        "Optional Capabilities"
+      ],
+      "synonyms": [],
+      "non_synonyms": [
+        "Stable semantic core"
+      ],
+      "usage_constraints": [
+        "Specialization must preserve identical semantics."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-OPTIONALITY-009",
+      "preferred_label": "Non-reuse zones",
+      "category": "Optionality Terms",
+      "definition_short": "Reuse guidance identifying changes requiring full re-specification.",
+      "definition_operational": "Use when a variant expands jurisdiction, adds full material truth authority, removes boundary validation, relaxes No Unlabeled Claims, permits simple ALLOW on under-threshold heuristic-only conflict handling, removes required escalation request, or changes record identity semantics.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §16.3"
+      ],
+      "related_terms": [
+        "Stable semantic core",
+        "record identity",
+        "Boundary-Qualified No Unlabeled Claims"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Cannot reuse this specification without full re-specification in these zones."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-OPTIONALITY-010",
+      "preferred_label": "Required dependencies across sections",
+      "category": "Optionality Terms",
+      "definition_short": "Reuse guidance requiring coherence across major contracts and rules.",
+      "definition_operational": "Use to keep Semantic Contract, Authority Model, State Model, Decision Table, Validator Catalogue, Evidence Contract, Gate Logic, Failure Semantics, machine-readable forms, and ordering rules coherent.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §16.4"
+      ],
+      "related_terms": [
+        "Semantic Contract",
+        "Authority Model",
+        "Gate Logic Record"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Conformant reuse depends on cross-section coherence."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-OPTIONALITY-011",
+      "preferred_label": "Patch discipline",
+      "category": "Optionality Terms",
+      "definition_short": "Rule requiring consistent updates across affected rules, contracts, and machine-readable forms.",
+      "definition_operational": "Use when a patch affects identity, authority, boundary handling, decision objects, validator semantics, evidence fields, failure semantics, replay, readmission, or reuse conditions.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §16.5"
+      ],
+      "related_terms": [
+        "Required dependencies across sections",
+        "Machine-Readable Form Catalogue",
+        "Conformance Conditions"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Affected rules, contracts, and machine-readable forms must be updated consistently."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-OPTIONALITY-012",
+      "preferred_label": "Rendering and output compatibility",
+      "category": "Optionality Terms",
+      "definition_short": "Reuse guidance for rendering public library or controlled downstream outputs.",
+      "definition_operational": "Use only when the semantic core remains complete and unique and the downstream consumer does not need unpublished manual reconstruction.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §16.6"
+      ],
+      "related_terms": [
+        "Stable semantic core",
+        "offline reconstruction",
+        "Reuse and Adaptation Guidance"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Rendering is allowed only with complete and unique semantic core."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TAA-OPTIONALITY-013",
+      "preferred_label": "Reuse and Adaptation Guidance",
+      "category": "Optionality Terms",
+      "definition_short": "Guidance for stable reuse, specialization, non-reuse zones, dependencies, patches, and output compatibility.",
+      "definition_operational": "Use to govern downstream reuse of the public specification while preserving the semantic core.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Truth Arbitration Agent Public Library Specification §16"
+      ],
+      "related_terms": [
+        "Stable semantic core",
+        "Parameterized elements",
+        "Non-reuse zones"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Reuse depends on coherence across the specified sections."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    }
+  ],
+  "pre_publication_checkpoint": {
+    "D1_present": true,
+    "D2_YAML_present": true,
+    "D2_JSON_present": true,
+    "D3_present": true,
+    "D4_present": true,
+    "D1_and_D2_semantically_coherent": true,
+    "all_indexed_terms_textually_attested_in_publishable_specification": true,
+    "all_source_refs_publishable": true,
+    "no_non_public_source_reference_in_D1_D2_D3_D4": true,
+    "no_lexical_extension_beyond_publishable_specification": true,
+    "D3_covers_terms_and_categories": true,
+    "D4_addresses_internal_ambiguities_only": true,
+    "package_complete_and_cross_checked": true
+  }
+}

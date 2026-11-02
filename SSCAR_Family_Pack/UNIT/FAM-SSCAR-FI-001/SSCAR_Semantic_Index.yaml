@@ -1,0 +1,2597 @@
+metadata:
+  integrator_name: Session State Continuity & Anchor Replay Family Integrator
+  integrator_id: FAM-SSCAR-FI-001
+  package_version: 1.1.0
+  authorized_public_corpus:
+  - SSCAR_Specification
+  package_contents:
+  - D1
+  - D2-YAML
+  - D2-JSON
+  - D3
+  - D4
+  index_scope: Comprehensive — every normative coded item in the public specification is indexed. Vocabulary is
+    organized in 11 canonical categories; non-vocabulary normative items (Observability Rules, Reference Scenarios,
+    Acceptance Criteria) are organized in 3 supplementary categories; machine-readable handoff fields are organized
+    in 1 handoff category.
+  non_indexed_residue_statement: None. All FOR-*, SC-*, AC-*, primary decision-object IDs (DEC-*), and machine-readable
+    handoff fields are indexed.
+  category_order:
+  - Identity Terms
+  - Boundary Terms
+  - Control Terms
+  - Contract Terms
+  - Family Verdict Terms
+  - Optionality Terms
+  - Family Decision Terms
+  - Family Validation Terms
+  - State Terms
+  - Family Evidence Terms
+  - Family Observability Terms
+  - Family Conformance Scenarios
+  - Family Acceptance Criteria
+  - Machine-Readable Handoff Terms
+  - Abbreviation Terms
+  entry_count: 139
+entries:
+- term_id: CTRL-16
+  preferred_label: Authority source
+  category: Identity Terms
+  definition_short: Public source of authority for the family integrator.
+  definition_operational: Authority is expressed publicly as the criteria, limits, and rules stated in the specification,
+    not by undeclared sources or operator override.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §2 Semantic Core, Authority, and Boundary Rules / Authority source
+  related_terms:
+  - Jurisdiction
+  - Non-jurisdiction
+  - Delegated scope
+  - Misuse boundary
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: CTRL-17
+  preferred_label: Jurisdiction
+  category: Identity Terms
+  definition_short: Domain in which the family integrator has public authority.
+  definition_operational: Covers boundary cleanliness, carried-claim provenance admissibility, accepted-head and
+    anchor validation, verified rehydration closure, replay continuity and admissibility, and boundary-event evidence
+    reporting.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §2 Semantic Core, Authority, and Boundary Rules / Jurisdiction
+  related_terms:
+  - Non-jurisdiction
+  - family integrator
+  - Delegated scope
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: CTRL-18
+  preferred_label: Non-jurisdiction
+  category: Identity Terms
+  definition_short: Domain explicitly excluded from the authority of the family integrator.
+  definition_operational: The integrator does not classify external truth, issue policy overrides, grant operator
+    approval for tool-state, perform live restore, move continuity watermarks, or substitute local validators.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §2 Semantic Core, Authority, and Boundary Rules / Non-jurisdiction
+  related_terms:
+  - Jurisdiction
+  - Misuse boundary
+  - family integrator
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: ID-01
+  preferred_label: Session State Continuity & Anchor Replay Family Integrator
+  category: Identity Terms
+  definition_short: Family integrator defined by the public specification for inter-session continuity, semantic
+    replay, and verified rehydration.
+  definition_operational: Used as the display name of the target unit and as the canonical public name for the family
+    verdict, workflow, validators, and evidence bundle defined by the specification.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification Intro table / Display name
+  - SSCAR_Specification §1 Operational Objective and Required Control Coverage
+  related_terms:
+  - FAM-SSCAR-FI-001
+  - family integrator
+  - family verdict
+  - boundary event
+  synonyms:
+  - Display name
+  non_synonyms:
+  - component agent
+  usage_constraints:
+  - Refers to the family integrator, not to a component agent.
+  notes: ''
+- term_id: ID-02
+  preferred_label: FAM-SSCAR-FI-001
+  category: Identity Terms
+  definition_short: Public Integrator ID of the family integrator.
+  definition_operational: Uniquely identifies the family integrator in the public corpus and can serve as a stable
+    anchor for indexing, handoff, and validation.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification Intro table / Integrator ID
+  related_terms:
+  - Session State Continuity & Anchor Replay Family Integrator
+  synonyms:
+  - Integrator ID
+  non_synonyms: []
+  usage_constraints:
+  - Use as the stable public identifier of the integrator.
+  notes: ''
+- term_id: ID-03
+  preferred_label: Normative-critical family integrator
+  category: Identity Terms
+  definition_short: Public class of the integrator with normative-critical status.
+  definition_operational: Indicates that a failure directly affects admissible continuity, rehydration closure,
+    boundary cleanliness, and boundary-event audit reconstruction.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification Intro table / Integrator class
+  - SSCAR_Specification §1.1 Criticality
+  related_terms:
+  - family integrator
+  - family verdict
+  - fail-closed invariant
+  synonyms:
+  - Integrator class
+  non_synonyms: []
+  usage_constraints:
+  - The class expresses the normative criticality of the integrator.
+  notes: ''
+- term_id: ID-04
+  preferred_label: family integrator
+  category: Identity Terms
+  definition_short: Target unit of the specification, distinct from a component agent.
+  definition_operational: The specification governs the emergent family verdict, cross-domain closure, and family-level
+    reporting, without substituting local validators.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification Intro table / Target unit
+  - SSCAR_Specification §2 Semantic Core, Authority, and Boundary Rules / Delegated scope
+  related_terms:
+  - Session State Continuity & Anchor Replay Family Integrator
+  - family verdict
+  - local verdict
+  synonyms: []
+  non_synonyms:
+  - component agent
+  usage_constraints:
+  - Use for family-level closure and verdict semantics; not for a component agent.
+  notes: ''
+- term_id: ID-05
+  preferred_label: Full-closure mode
+  category: Identity Terms
+  definition_short: Operating mode in which semantic, temporal, failure, evidence, and handoff closure are mandatory.
+  definition_operational: Requires simultaneous closure of critical prerequisites before any positive verdict or
+    replay admission is allowed.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification Intro table / Operating mode
+  - SSCAR_Specification §2 / Family objective clause
+  related_terms:
+  - family verdict
+  - verified_rehydration_closure
+  - replay_continuity_bundle
+  - fail-closed invariant
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - Does not permit semantic replay on superficial or incomplete closure.
+  notes: ''
+- term_id: ID-06
+  preferred_label: Family objective clause
+  category: Identity Terms
+  definition_short: Clause that defines the simultaneous condition for admissible epistemic continuity.
+  definition_operational: Admissible epistemic continuity exists only when carried provenance, accepted head, verified
+    rehydration, anti-replay, and replay reconstruction closure are all closed simultaneously.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §2 Semantic Core, Authority, and Boundary Rules / Family objective
+    clause
+  related_terms:
+  - accepted head
+  - verified rehydration
+  - anti-replay
+  - replay reconstruction
+  synonyms:
+  - family objective clause
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: ID-07
+  preferred_label: family verdict
+  category: Identity Terms
+  definition_short: Emergent verdict of the family integrator, distinct from any local verdict.
+  definition_operational: Arises only after cross-domain closure between boundary validation, freshness, verified
+    rehydration, replay reconstruction, and evidence assembly.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §1 Operational Objective and Required Control Coverage
+  - SSCAR_Specification §4.1 Family verdict vocabulary
+  related_terms:
+  - local verdict
+  - session_replay_admissibility
+  - FamilyVerdict
+  - REPLAY_ADMISSIBLE
+  synonyms: []
+  non_synonyms:
+  - local verdict
+  usage_constraints:
+  - May not be inherited automatically from local outcomes.
+  notes: ''
+- term_id: CTRL-01
+  preferred_label: family boundary
+  category: Boundary Terms
+  definition_short: Operational frontier at which anchor document, carried payload, and verification bundles are
+    treated as family-verdict inputs.
+  definition_operational: The family boundary is the intersection of carried-artifact ingress screening across the
+    session boundary, accepted-head and freshness-anchor eligibility, persistent-context restoration and read-only
+    remount, and auditable replay with boundary-event evidence issuance.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §1.2 Family boundary
+  - SSCAR_Specification §2 / Family boundary clause
+  related_terms:
+  - Replay boundary
+  - Hold / readmission boundary
+  - boundary_validated_role
+  - untrusted input
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - At this boundary, anchor document and continuity payload remain untrusted and read-only until verification closes.
+  notes: ''
+- term_id: CTRL-02
+  preferred_label: Replay boundary
+  category: Boundary Terms
+  definition_short: Contract boundary for FamilyReplayRequest.
+  definition_operational: Binds accepted head, anchor digest, replay scope, and rehydration bundle to the conditions
+    under which replay can be admissible.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §3.1 Input contract / FIC-02 FamilyReplayRequest
+  related_terms:
+  - FamilyReplayRequest
+  - family boundary
+  - verified rehydration
+  - semantic replay
+  synonyms:
+  - 'Boundary: Replay boundary'
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: CTRL-03
+  preferred_label: Hold / readmission boundary
+  category: Boundary Terms
+  definition_short: Contract boundary for entering hold and for readmission review.
+  definition_operational: Delimits the hold case, new evidence or new policy state, anchor update, and hold-exit
+    references required for controlled resumption.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §3.1 Input contract / FIC-03 FamilyReadmissionReview
+  related_terms:
+  - FamilyReadmissionReview
+  - NONCOMPLIANT_HOLD
+  - READMISSION_REVIEW_GRANTED
+  - anchor_update_ref
+  synonyms:
+  - 'Boundary: Hold / readmission boundary'
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: CTRL-04
+  preferred_label: boundary_validated_role
+  category: Boundary Terms
+  definition_short: Admitted label required before a carried claim can enter family gate logic.
+  definition_operational: A carried claim may not enter family gate logic without an admitted boundary_validated_role,
+    tsa_label, and source_class, or an explicitly admitted equivalent.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §1.4 Cross-domain operating rules
+  related_terms:
+  - tsa_label
+  - source_class
+  - carried_claim_set_admissibility
+  - FV-03 — Carried Claim Provenance Admissibility
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - Required before family gate logic.
+  notes: ''
+- term_id: CTRL-13
+  preferred_label: untrusted input
+  category: Boundary Terms
+  definition_short: Status of anchor document and continuity payload before verification closure at the continuity
+    boundary.
+  definition_operational: Anchor documents and continuity payloads remain untrusted and read-only until boundary
+    validation closes completely.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §1.4 Cross-domain operating rules
+  - SSCAR_Specification §6 Failure Semantics / UNTRUSTED_ANCHOR_PROMOTED
+  related_terms:
+  - family boundary
+  - anchor document
+  - boundary_validated_role
+  - UNTRUSTED_ANCHOR_PROMOTED
+  synonyms:
+  - untrusted boundary payload
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: ID-08
+  preferred_label: boundary event
+  category: Boundary Terms
+  definition_short: Boundary event that must be reconstructed offline and supported by minimum evidence.
+  definition_operational: The event for which the evidence report, replay closure, and family verdict are issued,
+    with a bundle sufficient for offline reconstruction.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification Intro table / Primary role
+  - SSCAR_Specification §11 Evidence Contract / FEV-02 boundary_event_id
+  related_terms:
+  - BoundaryEventEvidenceReport
+  - replay reconstruction
+  - family verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: CTRL-05
+  preferred_label: accepted head
+  category: Control Terms
+  definition_short: Accepted endpoint that must be linked to a valid IRR for eligibility and replay admission.
+  definition_operational: Restore eligibility and anchor lock require an accepted head linked to a valid IRR; without
+    that linkage an unanchored tail remains ineligible.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §1.4 Cross-domain operating rules
+  - SSCAR_Specification §5 Temporal and Ordering Contract
+  - SSCAR_Specification §11 Evidence Contract / FEV-07 accepted_head_digest / linked_irr_digest
+  related_terms:
+  - IRR
+  - freshness anchor
+  - accepted_anchor_state
+  - ReplayAdmissionToken
+  synonyms:
+  - accepted_head_digest
+  non_synonyms:
+  - unanchored tail
+  usage_constraints:
+  - Mandatory for replay admissibility and for FIC-02 FamilyReplayRequest.
+  notes: ''
+- term_id: CTRL-06
+  preferred_label: freshness anchor
+  category: Control Terms
+  definition_short: Freshness anchor that must increase strictly for replay admissibility and readmission safety.
+  definition_operational: Restore eligibility and family replay require strict increase and compatibility with the
+    local continuity watermark; stagnation or monotonicity failure blocks a positive verdict.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §1.4 Cross-domain operating rules
+  - SSCAR_Specification §5 Temporal and Ordering Contract
+  - SSCAR_Specification §7 / FV-06 — Freshness / Anchor Strict Increase
+  related_terms:
+  - accepted head
+  - continuity watermark
+  - anchor_update_ref
+  - FRESHNESS_REPLAY_OR_STALE_ANCHOR
+  synonyms:
+  - freshness
+  - anchor
+  non_synonyms: []
+  usage_constraints:
+  - May not be substituted by host-only timestamps.
+  notes: ''
+- term_id: CTRL-07
+  preferred_label: verified rehydration
+  category: Control Terms
+  definition_short: Verified precondition for admissible semantic replay.
+  definition_operational: Replay may not proceed on superficial continuity; verified rehydration closure requires
+    read-only startup, snapshot stability, anti-rollback, and policy prerequisites to pass.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §1.4 Cross-domain operating rules
+  - SSCAR_Specification §7 / FV-07 — Verified Rehydration Closure
+  - SSCAR_Specification §17.3 Stable semantic core
+  related_terms:
+  - verified_rehydration_closure
+  - semantic replay
+  - read-only startup
+  - anti-rollback
+  synonyms:
+  - verified rehydration closure
+  non_synonyms: []
+  usage_constraints:
+  - A precondition for family replay.
+  notes: ''
+- term_id: CTRL-08
+  preferred_label: semantic replay
+  category: Control Terms
+  definition_short: Semantic replay of the boundary event after critical family closure.
+  definition_operational: May occur only after boundary screening, provenance classification, freshness and accepted-head
+    lock, verified rehydration closure, and replay reconstruction.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification Intro / Mission statement
+  - SSCAR_Specification §5 Temporal and Ordering Contract
+  related_terms:
+  - verified rehydration
+  - replay reconstruction
+  - family verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - Not admissible without verified rehydration and without a positive family verdict.
+  notes: ''
+- term_id: CTRL-09
+  preferred_label: replay reconstruction
+  category: Control Terms
+  definition_short: Checkpoint, rollback, and report reconstruction required for family replay.
+  definition_operational: Its sufficiency is tested by FV-08 and supports offline reconstructibility for the boundary
+    event and evidence report.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §1.3 Required control coverage
+  - SSCAR_Specification §7 / FV-08 — Replay Reconstruction Sufficiency
+  - SSCAR_Specification §17.3 Stable semantic core
+  related_terms:
+  - replay_continuity_bundle
+  - BoundaryEventEvidenceReport
+  - REPLAY_RECONSTRUCTION_INCOMPLETE
+  synonyms:
+  - replay reconstruction closure
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: CTRL-10
+  preferred_label: contamination
+  category: Control Terms
+  definition_short: Cross-domain contamination that blocks family replay.
+  definition_operational: Includes unlabeled claims, inadmissible provenance, a stale or non-monotonic anchor, an
+    unanchored accepted head, unauthorized tool-state, or unverified persistent state that influences the family
+    verdict.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §1.4 Cross-domain operating rules
+  - SSCAR_Specification §2 / Fail-closed invariant
+  - SSCAR_Specification §7 / FV-09 — Contamination Absence
+  related_terms:
+  - contamination_case
+  - CONTAMINATION_FAIL_CLOSED
+  - ContaminationIncidentNotice
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - If contamination exists, family replay is not admissible.
+  notes: ''
+- term_id: CTRL-11
+  preferred_label: anti-rollback
+  category: Control Terms
+  definition_short: Control that protects anchor ordering and verified rehydration closure against rollback failure.
+  definition_operational: Part of the read-only startup and snapshot stability prerequisites and contributes to
+    ordering, closure, and contamination blocking.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §1.3 Required control coverage
+  - SSCAR_Specification §5 Temporal and Ordering Contract
+  - SSCAR_Specification §7 / FV-07 — Verified Rehydration Closure
+  related_terms:
+  - verified rehydration
+  - freshness anchor
+  - REHYDRATION_PREREQ_FAIL
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: CTRL-12
+  preferred_label: continuity watermark
+  category: Control Terms
+  definition_short: Local compatibility marker for strict freshness increase.
+  definition_operational: Anchor strict increase must remain compatible with the local continuity watermark; otherwise
+    the case enters hold or replay incomplete according to remediability.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §1.3 Required control coverage
+  - SSCAR_Specification §7 / FV-06 — Freshness / Anchor Strict Increase
+  related_terms:
+  - freshness anchor
+  - NONCOMPLIANT_HOLD
+  - FRESHNESS_REPLAY_OR_STALE_ANCHOR
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: CTRL-14
+  preferred_label: Read-only startup
+  category: Control Terms
+  definition_short: Rehydration prerequisite in which startup and remount remain read-only until verification.
+  definition_operational: Part of the pass condition for FV-07 and blocks replay admission when read-only, snapshot,
+    anti-rollback, or policy prerequisites are not closed.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §1.2 Family boundary
+  - SSCAR_Specification §7 / FV-07 — Verified Rehydration Closure
+  related_terms:
+  - verified rehydration
+  - anti-rollback
+  - REHYDRATION_PREREQ_FAIL
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: CTRL-19
+  preferred_label: Fail-closed invariant
+  category: Control Terms
+  definition_short: Invariant that forbids replay admissibility when contamination, critical incompleteness, non-strict
+    freshness, or unverified rehydration exists.
+  definition_operational: Sets the minimum negative control condition for family replay and justifies hold, incomplete,
+    and fail-closed paths.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §2 Semantic Core, Authority, and Boundary Rules / Fail-closed invariant
+  - SSCAR_Specification §10 Gate Logic
+  related_terms:
+  - family verdict
+  - CONTAMINATION_FAIL_CLOSED
+  - NONCOMPLIANT_HOLD
+  - REPLAY_INCOMPLETE
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: DISCLOSURE_CLASS_COLLAPSE
+  preferred_label: DISCLOSURE_CLASS_COLLAPSE
+  category: Control Terms
+  definition_short: 'Public failure semantics code: True defects, bounded openness, and bounded handoff obligations were collapsed semantically.'
+  definition_operational: 'Describes a failure path of family replay; family effect: INCIDENT_ONLY until remediation.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §6 Failure Semantics
+  related_terms:
+  - INCIDENT_ONLY until remediation
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FAMILY_EVIDENCE_INSUFFICIENT
+  preferred_label: FAMILY_EVIDENCE_INSUFFICIENT
+  category: Control Terms
+  definition_short: 'Public failure semantics code: The boundary-event evidence report or family validator bundle does not support offline reconstruction.'
+  definition_operational: 'Describes a failure path of family replay; family effect: INCIDENT_ONLY.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §6 Failure Semantics
+  related_terms:
+  - INCIDENT_ONLY
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FRESHNESS_REPLAY_OR_STALE_ANCHOR
+  preferred_label: FRESHNESS_REPLAY_OR_STALE_ANCHOR
+  category: Control Terms
+  definition_short: 'Public failure semantics code: Freshness or anchor monotonicity failed, or the accepted head was outdated.'
+  definition_operational: 'Describes a failure path of family replay; family effect: NONCOMPLIANT_HOLD or REPLAY_INCOMPLETE.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §6 Failure Semantics
+  related_terms:
+  - NONCOMPLIANT_HOLD or REPLAY_INCOMPLETE
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: READMISSION_WITHOUT_CLOSURE
+  preferred_label: READMISSION_WITHOUT_CLOSURE
+  category: Control Terms
+  definition_short: 'Public failure semantics code: Readmission was requested without hold_exit_refs, anchor_update_ref, or a new bundle.'
+  definition_operational: 'Describes a failure path of family replay; family effect: NONCOMPLIANT_HOLD.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §6 Failure Semantics
+  related_terms:
+  - NONCOMPLIANT_HOLD
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: REHYDRATION_PREREQ_FAIL
+  preferred_label: REHYDRATION_PREREQ_FAIL
+  category: Control Terms
+  definition_short: 'Public failure semantics code: Read-only startup, snapshot stability, anti-rollback, signature, or policy prerequisites were not closed.'
+  definition_operational: 'Describes a failure path of family replay; family effect: CONTAMINATION_FAIL_CLOSED or NONCOMPLIANT_HOLD, depending on remediability.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §6 Failure Semantics
+  related_terms:
+  - CONTAMINATION_FAIL_CLOSED or NONCOMPLIANT_HOLD, depending on remediability
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: REPLAY_RECONSTRUCTION_INCOMPLETE
+  preferred_label: REPLAY_RECONSTRUCTION_INCOMPLETE
+  category: Control Terms
+  definition_short: 'Public failure semantics code: Checkpoint, rollback, or report closure was insufficient for family replay.'
+  definition_operational: 'Describes a failure path of family replay; family effect: REPLAY_INCOMPLETE.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §6 Failure Semantics
+  related_terms:
+  - REPLAY_INCOMPLETE
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: UNLABELED_CARRIED_MECHANISM_CLAIM
+  preferred_label: UNLABELED_CARRIED_MECHANISM_CLAIM
+  category: Control Terms
+  definition_short: 'Public failure semantics code: A carried mechanism-level claim lacked admitted tsa_label or source_class labeling.'
+  definition_operational: 'Describes a failure path of family replay; family effect: CONTAMINATION_FAIL_CLOSED.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §6 Failure Semantics
+  related_terms:
+  - CONTAMINATION_FAIL_CLOSED
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: UNTRUSTED_ANCHOR_PROMOTED
+  preferred_label: UNTRUSTED_ANCHOR_PROMOTED
+  category: Control Terms
+  definition_short: 'Public failure semantics code: An anchor document or carried payload influenced the verdict without complete boundary validation.'
+  definition_operational: 'Describes a failure path of family replay; family effect: CONTAMINATION_FAIL_CLOSED.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §6 Failure Semantics
+  related_terms:
+  - CONTAMINATION_FAIL_CLOSED
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: CTRL-15
+  preferred_label: source_control_bundles
+  category: Contract Terms
+  definition_short: Input field of FamilyContinuityIntake that carries admitted source control bundles for family
+    use.
+  definition_operational: Appears in FIC-01 and enters the family boundary contract as part of the continuity package
+    evaluated for closure and replay admissibility.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §3.1 Input contract / FIC-01 FamilyContinuityIntake
+  related_terms:
+  - FamilyContinuityIntake
+  - required control coverage
+  - family boundary
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FIC-01
+  preferred_label: FIC-01 FamilyContinuityIntake
+  category: Contract Terms
+  definition_short: Input contract for FamilyContinuityIntake.
+  definition_operational: 'Required fields: session_id; prior_session_ref; carried_payload; anchor_document_ref;
+    source_control_bundles; policy_snapshot_id. Boundary: Family boundary. Mandatory for any continuity evaluation.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §3.1 Input contract
+  related_terms:
+  - family boundary
+  - Replay boundary
+  - Hold / readmission boundary
+  synonyms:
+  - FIC-01
+  - FamilyContinuityIntake
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FIC-02
+  preferred_label: FIC-02 FamilyReplayRequest
+  category: Contract Terms
+  definition_short: Input contract for FamilyReplayRequest.
+  definition_operational: 'Required fields: session_id; accepted_head_digest; anchor_digest; replay_scope; rehydration_bundle_ref.
+    Boundary: Replay boundary. Replay is not admissible without an accepted head and a verified rehydration bundle.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §3.1 Input contract
+  related_terms:
+  - family boundary
+  - Replay boundary
+  - Hold / readmission boundary
+  synonyms:
+  - FIC-02
+  - FamilyReplayRequest
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FIC-03
+  preferred_label: FIC-03 FamilyReadmissionReview
+  category: Contract Terms
+  definition_short: Input contract for FamilyReadmissionReview.
+  definition_operational: 'Required fields: hold_case_id; new_evidence_refs or new_policy_ref; anchor_update_ref;
+    hold_exit_refs. Boundary: Hold / readmission boundary. Identical readmission on the same artifacts is forbidden.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §3.1 Input contract
+  related_terms:
+  - family boundary
+  - Replay boundary
+  - Hold / readmission boundary
+  synonyms:
+  - FIC-03
+  - FamilyReadmissionReview
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FOC-01
+  preferred_label: FOC-01 FamilyVerdict
+  category: Contract Terms
+  definition_short: Output contract for FamilyVerdict.
+  definition_operational: 'Required fields: family_decision_id; session_id; family_verdict; reason_code; family_validator_refs;
+    family_evidence_refs. Target boundary: Operator / execution layer.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §3.2 Output contract
+  related_terms:
+  - family verdict
+  - BoundaryEventEvidenceReport
+  - ReplayAdmissionToken
+  synonyms:
+  - FOC-01
+  - FamilyVerdict
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FOC-02
+  preferred_label: FOC-02 BoundaryEventEvidenceReport
+  category: Contract Terms
+  definition_short: Output contract for BoundaryEventEvidenceReport.
+  definition_operational: 'Required fields: report_id; boundary_event_id; carried_statement_refs; anchor_refs; freshness_refs;
+    replay_refs; disclosure_class_entries. Target boundary: Audit / reconstruction.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §3.2 Output contract
+  related_terms:
+  - family verdict
+  - BoundaryEventEvidenceReport
+  - ReplayAdmissionToken
+  synonyms:
+  - FOC-02
+  - BoundaryEventEvidenceReport
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FOC-03
+  preferred_label: FOC-03 ReplayAdmissionToken
+  category: Contract Terms
+  definition_short: Output contract for ReplayAdmissionToken.
+  definition_operational: 'Required fields: family_decision_id; accepted_head_digest; linked_irr_digest; rehydration_closure_ref;
+    admission_status. Target boundary: Execution layer.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §3.2 Output contract
+  related_terms:
+  - family verdict
+  - BoundaryEventEvidenceReport
+  - ReplayAdmissionToken
+  synonyms:
+  - FOC-03
+  - ReplayAdmissionToken
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FOC-04
+  preferred_label: FOC-04 ContaminationIncidentNotice
+  category: Contract Terms
+  definition_short: Output contract for ContaminationIncidentNotice.
+  definition_operational: 'Required fields: incident_id; root_reason_code; contaminating_ref_set; blocked_stage;
+    remediation_class. Target boundary: Operator / governance.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §3.2 Output contract
+  related_terms:
+  - family verdict
+  - BoundaryEventEvidenceReport
+  - ReplayAdmissionToken
+  synonyms:
+  - FOC-04
+  - ContaminationIncidentNotice
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FOC-05
+  preferred_label: FOC-05 FamilyHoldRecord
+  category: Contract Terms
+  definition_short: Output contract for FamilyHoldRecord.
+  definition_operational: 'Required fields: hold_case_id; hold_enter_refs; pending_requirements; readmission_budget;
+    cleared_only_by. Target boundary: Operator / assurance.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §3.2 Output contract
+  related_terms:
+  - family verdict
+  - BoundaryEventEvidenceReport
+  - ReplayAdmissionToken
+  synonyms:
+  - FOC-05
+  - FamilyHoldRecord
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: CONTAMINATION_FAIL_CLOSED
+  preferred_label: CONTAMINATION_FAIL_CLOSED
+  category: Family Verdict Terms
+  definition_short: 'Public family verdict token: Boundary contamination or inadmissible promotion of an artifact or claim immediately blocks family replay.'
+  definition_operational: Used in the family verdict vocabulary and in gate logic to express the admissible, constrained, incomplete, hold, fail-closed, or incident-only status of family replay.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §4.1 Family verdict vocabulary
+  - SSCAR_Specification §10 Gate Logic
+  related_terms:
+  - family verdict
+  - session_replay_admissibility
+  - BoundaryEventEvidenceReport
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: INCIDENT_ONLY
+  preferred_label: INCIDENT_ONLY
+  category: Family Verdict Terms
+  definition_short: 'Public family verdict token: Only incident and audit artifacts may be issued. No compliant replay output is permitted.'
+  definition_operational: Used in the family verdict vocabulary and in gate logic to express the admissible, constrained, incomplete, hold, fail-closed, or incident-only status of family replay.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §4.1 Family verdict vocabulary
+  - SSCAR_Specification §10 Gate Logic
+  related_terms:
+  - family verdict
+  - session_replay_admissibility
+  - BoundaryEventEvidenceReport
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: NONCOMPLIANT_HOLD
+  preferred_label: NONCOMPLIANT_HOLD
+  category: Family Verdict Terms
+  definition_short: 'Public family verdict token: Mandatory prerequisites exist but are not closed. Final verdict issuance is blocked pending a new family closure bundle.'
+  definition_operational: Used in the family verdict vocabulary and in gate logic to express the admissible, constrained, incomplete, hold, fail-closed, or incident-only status of family replay.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §4.1 Family verdict vocabulary
+  - SSCAR_Specification §10 Gate Logic
+  related_terms:
+  - family verdict
+  - session_replay_admissibility
+  - BoundaryEventEvidenceReport
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: REPLAY_ADMISSIBLE
+  preferred_label: REPLAY_ADMISSIBLE
+  category: Family Verdict Terms
+  definition_short: 'Public family verdict token: The boundary event may be replayed and semantically remounted. All blocking local and cross-domain validators have passed.'
+  definition_operational: Used in the family verdict vocabulary and in gate logic to express the admissible, constrained, incomplete, hold, fail-closed, or incident-only status of family replay.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §4.1 Family verdict vocabulary
+  - SSCAR_Specification §10 Gate Logic
+  related_terms:
+  - family verdict
+  - session_replay_admissibility
+  - BoundaryEventEvidenceReport
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: REPLAY_ADMISSIBLE_CONSTRAINED
+  preferred_label: REPLAY_ADMISSIBLE_CONSTRAINED
+  category: Family Verdict Terms
+  definition_short: 'Public family verdict token: Replay is admissible only under explicitly declared restrictions. Intentional gaps and handoff obligations remain marked.'
+  definition_operational: Used in the family verdict vocabulary and in gate logic to express the admissible, constrained, incomplete, hold, fail-closed, or incident-only status of family replay.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §4.1 Family verdict vocabulary
+  - SSCAR_Specification §10 Gate Logic
+  related_terms:
+  - family verdict
+  - session_replay_admissibility
+  - BoundaryEventEvidenceReport
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: REPLAY_INCOMPLETE
+  preferred_label: REPLAY_INCOMPLETE
+  category: Family Verdict Terms
+  definition_short: 'Public family verdict token: Continuity can be partially reconstructed, but closure is missing for at least one critical family decision object.'
+  definition_operational: Used in the family verdict vocabulary and in gate logic to express the admissible, constrained, incomplete, hold, fail-closed, or incident-only status of family replay.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §4.1 Family verdict vocabulary
+  - SSCAR_Specification §10 Gate Logic
+  related_terms:
+  - family verdict
+  - session_replay_admissibility
+  - BoundaryEventEvidenceReport
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: BOUNDED_EXECUTION_NEUTRAL_OPENNESS
+  preferred_label: BOUNDED_EXECUTION_NEUTRAL_OPENNESS
+  category: Optionality Terms
+  definition_short: 'Disclosure class with distinct normative meaning: An explicitly preserved openness that does not change the execution verdict or the family-level gate.'
+  definition_operational: Used to keep true defects, bounded execution-neutral openness, and bounded handoff obligations distinct in evidence and reporting.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §4.2 Continuity disclosure classes
+  - SSCAR_Specification §7 / FV-10 — Disclosure Class Preservation
+  related_terms:
+  - continuity_disclosure_class
+  - DISCLOSURE_CLASS_COLLAPSE
+  - disclosure_class_entries
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: BOUNDED_HANDOFF_OBLIGATION
+  preferred_label: BOUNDED_HANDOFF_OBLIGATION
+  category: Optionality Terms
+  definition_short: 'Disclosure class with distinct normative meaning: An explicit downstream obligation. It is neither a local defect nor silent omission.'
+  definition_operational: Used to keep true defects, bounded execution-neutral openness, and bounded handoff obligations distinct in evidence and reporting.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §4.2 Continuity disclosure classes
+  - SSCAR_Specification §7 / FV-10 — Disclosure Class Preservation
+  related_terms:
+  - continuity_disclosure_class
+  - DISCLOSURE_CLASS_COLLAPSE
+  - disclosure_class_entries
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: TRUE_DEFECT
+  preferred_label: TRUE_DEFECT
+  category: Optionality Terms
+  definition_short: 'Disclosure class with distinct normative meaning: Affects the correctness or admissibility of the family verdict and must be treated as a real defect.'
+  definition_operational: Used to keep true defects, bounded execution-neutral openness, and bounded handoff obligations distinct in evidence and reporting.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §4.2 Continuity disclosure classes
+  - SSCAR_Specification §7 / FV-10 — Disclosure Class Preservation
+  related_terms:
+  - continuity_disclosure_class
+  - DISCLOSURE_CLASS_COLLAPSE
+  - disclosure_class_entries
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: DEC-01
+  preferred_label: carried_claim_set_admissibility
+  category: Family Decision Terms
+  definition_short: The decision object that establishes whether the carried claim set can admissibly enter the family verdict.
+  definition_operational: 'Evaluated through provenance, role validation, and contamination absence, with linkage to carried_statement_refs, tsa/provenance refs, and contaminating_ref_set where applicable. Validator linkage: FV-03 / FV-04 / FV-09. Evidence linkage: FEV-04, FEV-05, FEV-14.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §2 Semantic Core, Authority, and Boundary Rules / Primary decision
+    objects
+  - SSCAR_Specification Appendix A. Decision-Object Traceability Matrix
+  related_terms:
+  - family verdict
+  - family_validator_outcomes
+  - BoundaryEventEvidenceReport
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: DEC-02
+  preferred_label: anchor_document_boundary_admissibility
+  category: Family Decision Terms
+  definition_short: The decision object that establishes whether the anchor document remains admissible at the family boundary.
+  definition_operational: 'Determines whether the anchor document may participate in the verdict only after boundary validation, as untrusted input treated read-only until closure. Validator linkage: FV-02 / FV-04. Evidence linkage: FEV-06.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §2 Semantic Core, Authority, and Boundary Rules / Primary decision
+    objects
+  - SSCAR_Specification Appendix A. Decision-Object Traceability Matrix
+  related_terms:
+  - family verdict
+  - family_validator_outcomes
+  - BoundaryEventEvidenceReport
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: DEC-03
+  preferred_label: accepted_anchor_state
+  category: Family Decision Terms
+  definition_short: The decision object that locks the accepted head and the strictly increasing anchor as the accepted state for replay.
+  definition_operational: 'Links the accepted head, a valid IRR, strict increase, and the anchor update into a blocking or admissible state for replay. Validator linkage: FV-05 / FV-06 / FV-07. Evidence linkage: FEV-06, FEV-07, FEV-08.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §2 Semantic Core, Authority, and Boundary Rules / Primary decision
+    objects
+  - SSCAR_Specification Appendix A. Decision-Object Traceability Matrix
+  related_terms:
+  - family verdict
+  - family_validator_outcomes
+  - BoundaryEventEvidenceReport
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: DEC-04
+  preferred_label: verified_rehydration_closure
+  category: Family Decision Terms
+  definition_short: The decision object that confirms the verified closure of the rehydration bundle.
+  definition_operational: 'It is closed only when read-only startup, snapshot stability, anti-rollback, chain or signature checks, and policy prerequisites pass. Validator linkage: FV-07. Evidence linkage: FEV-09.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §2 Semantic Core, Authority, and Boundary Rules / Primary decision
+    objects
+  - SSCAR_Specification Appendix A. Decision-Object Traceability Matrix
+  related_terms:
+  - family verdict
+  - family_validator_outcomes
+  - BoundaryEventEvidenceReport
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: DEC-05
+  preferred_label: replay_continuity_bundle
+  category: Family Decision Terms
+  definition_short: The decision object that groups the replay closure required for offline reconstruction.
+  definition_operational: 'Covers checkpoint_refs, rollback_refs, and replay_refs sufficient for family replay and the evidence report. Validator linkage: FV-08. Evidence linkage: FEV-10.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §2 Semantic Core, Authority, and Boundary Rules / Primary decision
+    objects
+  - SSCAR_Specification Appendix A. Decision-Object Traceability Matrix
+  related_terms:
+  - family verdict
+  - family_validator_outcomes
+  - BoundaryEventEvidenceReport
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: DEC-06
+  preferred_label: contamination_case
+  category: Family Decision Terms
+  definition_short: The decision object that describes the case in which contamination blocks family replay.
+  definition_operational: 'Gathers the root reason, contaminating_ref_set, and blocked_stage when an inadmissible artifact or claim influences the verdict. Validator linkage: FV-09. Evidence linkage: FEV-14 (with FOC-04 ContaminationIncidentNotice as bounded producer).'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §2 Semantic Core, Authority, and Boundary Rules / Primary decision
+    objects
+  - SSCAR_Specification Appendix A. Decision-Object Traceability Matrix
+  related_terms:
+  - family verdict
+  - family_validator_outcomes
+  - BoundaryEventEvidenceReport
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: DEC-07
+  preferred_label: continuity_disclosure_class
+  category: Family Decision Terms
+  definition_short: The decision object that keeps the classification among true defect, bounded openness, and bounded handoff obligation distinct.
+  definition_operational: 'Must be kept distinct in evidence and reporting; semantic collapse produces the incident-only path. Validator linkage: FV-10. Evidence linkage: FEV-11.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §2 Semantic Core, Authority, and Boundary Rules / Primary decision
+    objects
+  - SSCAR_Specification Appendix A. Decision-Object Traceability Matrix
+  related_terms:
+  - family verdict
+  - family_validator_outcomes
+  - BoundaryEventEvidenceReport
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: DEC-08
+  preferred_label: session_replay_admissibility
+  category: Family Decision Terms
+  definition_short: The final decision object for session-level replay admissibility.
+  definition_operational: 'Composes local outcomes and cross-domain closure into a family verdict, with linkage to the family validators and the family evidence bundle. Validator linkage: FV-02 through FV-12. Evidence linkage: FEV-01 through FEV-15.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §2 Semantic Core, Authority, and Boundary Rules / Primary decision
+    objects
+  - SSCAR_Specification Appendix A. Decision-Object Traceability Matrix
+  related_terms:
+  - family verdict
+  - family_validator_outcomes
+  - BoundaryEventEvidenceReport
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FD-01
+  preferred_label: FD-01 — ALLOW_FAMILY_SCREENING
+  category: Family Decision Terms
+  definition_short: Public decision rule for ALLOW_FAMILY_SCREENING.
+  definition_operational: 'Condition set: FIC-01 valid; FV-01 pass; FV-02 and FV-04 pending; FV-03 and FV-05 through
+    FV-12 pending Gate impact: S0 → S1.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §8 Decision Table
+  related_terms:
+  - S0 → S1
+  synonyms:
+  - FD-01
+  - ALLOW_FAMILY_SCREENING
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FD-01A
+  preferred_label: FD-01A — ALLOW_FAMILY_SCREENING
+  category: Family Decision Terms
+  definition_short: Public decision rule for ALLOW_FAMILY_SCREENING.
+  definition_operational: 'Condition set: FV-02 and FV-04 pass; FV-03 pending; FV-05 through FV-12 pending Gate
+    impact: S1 → S2.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §8 Decision Table
+  related_terms:
+  - S1 → S2
+  synonyms:
+  - FD-01A
+  - ALLOW_FAMILY_SCREENING
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FD-02
+  preferred_label: FD-02 — CARRIED_CLAIM_INADMISSIBLE
+  category: Family Decision Terms
+  definition_short: Public decision rule for CARRIED_CLAIM_INADMISSIBLE.
+  definition_operational: 'Condition set: Any inadmissible carried claim or unlabeled mechanism-level carried claim
+    Gate impact: Enter SX (resulting family verdict: CONTAMINATION_FAIL_CLOSED).'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §8 Decision Table
+  related_terms:
+  - Enter SX
+  - CONTAMINATION_FAIL_CLOSED
+  synonyms:
+  - FD-02
+  - CARRIED_CLAIM_INADMISSIBLE
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FD-03
+  preferred_label: FD-03 — LOCK_ACCEPTED_ANCHOR_STATE
+  category: Family Decision Terms
+  definition_short: Public decision rule for LOCK_ACCEPTED_ANCHOR_STATE.
+  definition_operational: 'Condition set: Accepted head present; freshness strictly increasing; policy compatible
+    Gate impact: S3 → S4.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §8 Decision Table
+  related_terms:
+  - S3 → S4
+  synonyms:
+  - FD-03
+  - LOCK_ACCEPTED_ANCHOR_STATE
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FD-04
+  preferred_label: FD-04 — ALLOW_REPLAY_RECONSTRUCTION
+  category: Family Decision Terms
+  definition_short: Public decision rule for ALLOW_REPLAY_RECONSTRUCTION.
+  definition_operational: 'Condition set: Verified rehydration closure passes Gate impact: S4 → S5.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §8 Decision Table
+  related_terms:
+  - S4 → S5
+  synonyms:
+  - FD-04
+  - ALLOW_REPLAY_RECONSTRUCTION
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FD-05
+  preferred_label: FD-05 — REPLAY_ADMISSIBLE or REPLAY_ADMISSIBLE_CONSTRAINED
+  category: Family Decision Terms
+  definition_short: Public decision rule for REPLAY_ADMISSIBLE or REPLAY_ADMISSIBLE_CONSTRAINED.
+  definition_operational: 'Condition set: Checkpoint, rollback, and report closure pass Gate impact: S5 → S8.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §8 Decision Table
+  related_terms:
+  - S5 → S8
+  synonyms:
+  - FD-05
+  - REPLAY_ADMISSIBLE or REPLAY_ADMISSIBLE_CONSTRAINED
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FD-06
+  preferred_label: FD-06 — INCIDENT_ONLY
+  category: Family Decision Terms
+  definition_short: Public decision rule for INCIDENT_ONLY.
+  definition_operational: 'Condition set: Family evidence closure fails Gate impact: S5 or S7 → incident path.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §8 Decision Table
+  related_terms:
+  - S5 or S7 → incident path
+  synonyms:
+  - FD-06
+  - INCIDENT_ONLY
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FD-07
+  preferred_label: FD-07 — NONCOMPLIANT_HOLD
+  category: Family Decision Terms
+  definition_short: Public decision rule for NONCOMPLIANT_HOLD.
+  definition_operational: 'Condition set: Freshness replay, missing hold-exit closure, or missing new evidence Gate
+    impact: Enter SH.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §8 Decision Table
+  related_terms:
+  - Enter SH
+  synonyms:
+  - FD-07
+  - NONCOMPLIANT_HOLD
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FD-08
+  preferred_label: FD-08 — CONTAMINATION_FAIL_CLOSED
+  category: Family Decision Terms
+  definition_short: Public decision rule for CONTAMINATION_FAIL_CLOSED.
+  definition_operational: 'Condition set: Critical contamination, anti-rollback failure, chain break, or untrusted
+    anchor promoted Gate impact: Enter SX.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §8 Decision Table
+  related_terms:
+  - Enter SX
+  synonyms:
+  - FD-08
+  - CONTAMINATION_FAIL_CLOSED
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FD-09
+  preferred_label: FD-09 — INCIDENT_ONLY
+  category: Family Decision Terms
+  definition_short: Public decision rule for INCIDENT_ONLY.
+  definition_operational: 'Condition set: Disclosure-class collapse only Gate impact: Report blocked; replay token
+    withheld.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §8 Decision Table
+  related_terms:
+  - Report blocked; replay token withheld
+  synonyms:
+  - FD-09
+  - INCIDENT_ONLY
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FD-10
+  preferred_label: FD-10 — READMISSION_REVIEW_GRANTED
+  category: Family Decision Terms
+  definition_short: Public decision rule for READMISSION_REVIEW_GRANTED.
+  definition_operational: 'Condition set: Hold case with new family closure bundle and anchor update Gate impact:
+    SH → SR.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §8 Decision Table
+  related_terms:
+  - SH → SR
+  synonyms:
+  - FD-10
+  - READMISSION_REVIEW_GRANTED
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FV-01
+  preferred_label: FV-01 — Required Control Coverage
+  category: Family Validation Terms
+  definition_short: Family validator for required control coverage.
+  definition_operational: 'Class: Deterministic. Pass condition: All required continuity-control domains are present,
+    coherent, and admitted for family use. Fail effect: Block integrator issuance.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §7 Validator Catalogue
+  related_terms:
+  - Block integrator issuance
+  synonyms:
+  - FV-01
+  - Required Control Coverage
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FV-02
+  preferred_label: FV-02 — Boundary Input Contract
+  category: Family Validation Terms
+  definition_short: Family validator for boundary input contract.
+  definition_operational: 'Class: Deterministic. Pass condition: The anchor document and carried payload satisfy
+    FIC-01 and remain untrusted until verification closes. Fail effect: CONTAMINATION_FAIL_CLOSED.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §7 Validator Catalogue
+  related_terms:
+  - CONTAMINATION_FAIL_CLOSED
+  synonyms:
+  - FV-02
+  - Boundary Input Contract
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FV-03
+  preferred_label: FV-03 — Carried Claim Provenance Admissibility
+  category: Family Validation Terms
+  definition_short: Family validator for carried claim provenance admissibility.
+  definition_operational: 'Class: Deterministic + semantic. Pass condition: Carried claims have statement identity,
+    tsa_label, source_class, and policy-compatible provenance. Fail effect: CONTAMINATION_FAIL_CLOSED or REPLAY_INCOMPLETE.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §7 Validator Catalogue
+  related_terms:
+  - CONTAMINATION_FAIL_CLOSED or REPLAY_INCOMPLETE
+  synonyms:
+  - FV-03
+  - Carried Claim Provenance Admissibility
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FV-04
+  preferred_label: FV-04 — Boundary Role Consistency
+  category: Family Validation Terms
+  definition_short: Family validator for boundary role consistency.
+  definition_operational: 'Class: Heuristic hardening. Pass condition: Explanatory-only payload is not consumed
+    as mechanism-level material without explicit reclassification. Fail effect: FAIL_CLOSED or local reclassification;
+    family flow blocks until closure.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §7 Validator Catalogue
+  related_terms:
+  - FAIL_CLOSED or local reclassification; family flow blocks until closure
+  synonyms:
+  - FV-04
+  - Boundary Role Consistency
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FV-05
+  preferred_label: FV-05 — Accepted Head / IRR Linkage
+  category: Family Validation Terms
+  definition_short: Family validator for accepted head / irr linkage.
+  definition_operational: 'Class: Deterministic. Pass condition: accepted_head_digest is linked to the latest valid
+    IRR. Fail effect: REPLAY_INCOMPLETE.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §7 Validator Catalogue
+  related_terms:
+  - REPLAY_INCOMPLETE
+  synonyms:
+  - FV-05
+  - Accepted Head / IRR Linkage
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FV-06
+  preferred_label: FV-06 — Freshness / Anchor Strict Increase
+  category: Family Validation Terms
+  definition_short: Family validator for freshness / anchor strict increase.
+  definition_operational: 'Class: Deterministic. Pass condition: The anchor is strictly increasing and compatible
+    with the local continuity watermark. Fail effect: NONCOMPLIANT_HOLD.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §7 Validator Catalogue
+  related_terms:
+  - NONCOMPLIANT_HOLD
+  synonyms:
+  - FV-06
+  - Freshness / Anchor Strict Increase
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FV-07
+  preferred_label: FV-07 — Verified Rehydration Closure
+  category: Family Validation Terms
+  definition_short: Family validator for verified rehydration closure.
+  definition_operational: 'Class: Deterministic. Pass condition: Read-only startup, snapshot stability, anti-rollback,
+    chain or signature checks, and policy prerequisites all pass. Fail effect: CONTAMINATION_FAIL_CLOSED or NONCOMPLIANT_HOLD.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §7 Validator Catalogue
+  related_terms:
+  - CONTAMINATION_FAIL_CLOSED or NONCOMPLIANT_HOLD
+  synonyms:
+  - FV-07
+  - Verified Rehydration Closure
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FV-08
+  preferred_label: FV-08 — Replay Reconstruction Sufficiency
+  category: Family Validation Terms
+  definition_short: Family validator for replay reconstruction sufficiency.
+  definition_operational: 'Class: Deterministic. Pass condition: Checkpoint reconstruction, rollback reconstruction,
+    and report sufficiency support family replay. Fail effect: REPLAY_INCOMPLETE.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §7 Validator Catalogue
+  related_terms:
+  - REPLAY_INCOMPLETE
+  synonyms:
+  - FV-08
+  - Replay Reconstruction Sufficiency
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FV-09
+  preferred_label: FV-09 — Contamination Absence
+  category: Family Validation Terms
+  definition_short: Family validator for contamination absence.
+  definition_operational: 'Class: Cross-domain deterministic. Pass condition: No unauthorized artifact or inadmissible
+    carried claim influences the verdict. Fail effect: CONTAMINATION_FAIL_CLOSED.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §7 Validator Catalogue
+  related_terms:
+  - CONTAMINATION_FAIL_CLOSED
+  synonyms:
+  - FV-09
+  - Contamination Absence
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FV-10
+  preferred_label: FV-10 — Disclosure Class Preservation
+  category: Family Validation Terms
+  definition_short: Family validator for disclosure class preservation.
+  definition_operational: 'Class: Deterministic. Pass condition: Every carried openness or defect is classified
+    and preserved distinctly. Fail effect: INCIDENT_ONLY.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §7 Validator Catalogue
+  related_terms:
+  - INCIDENT_ONLY
+  synonyms:
+  - FV-10
+  - Disclosure Class Preservation
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FV-11
+  preferred_label: FV-11 — Family Evidence Closure
+  category: Family Validation Terms
+  definition_short: Family validator for family evidence closure.
+  definition_operational: 'Class: Deterministic. Pass condition: The family validator bundle and boundary-event
+    evidence report are sufficient for offline reconstruction. Fail effect: INCIDENT_ONLY.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §7 Validator Catalogue
+  related_terms:
+  - INCIDENT_ONLY
+  synonyms:
+  - FV-11
+  - Family Evidence Closure
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FV-12
+  preferred_label: FV-12 — Family Readmission Closure
+  category: Family Validation Terms
+  definition_short: Family validator for family readmission closure.
+  definition_operational: 'Class: Deterministic. Pass condition: hold_exit_refs, anchor_update_ref, and policy stability
+    are present for readmission. Fail effect: NONCOMPLIANT_HOLD.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §7 Validator Catalogue
+  related_terms:
+  - NONCOMPLIANT_HOLD
+  synonyms:
+  - FV-12
+  - Family Readmission Closure
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: S0
+  preferred_label: S0 FAMILY_INTAKE
+  category: State Terms
+  definition_short: The continuity package has been received but not yet admitted.
+  definition_operational: 'Entry trigger: FIC-01 valid. Exit trigger: Admission.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §9 Workflow and State Transitions
+  related_terms:
+  - FIC-01 valid
+  - Admission
+  synonyms:
+  - S0
+  - FAMILY_INTAKE
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: S1
+  preferred_label: S1 SOURCE_COVERAGE_ADMITTED
+  category: State Terms
+  definition_short: Required control coverage is present and admitted.
+  definition_operational: 'Entry trigger: FV-01 pass. Exit trigger: Boundary screening.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §9 Workflow and State Transitions
+  related_terms:
+  - FV-01 pass
+  - Boundary screening
+  synonyms:
+  - S1
+  - SOURCE_COVERAGE_ADMITTED
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: S2
+  preferred_label: S2 BOUNDARY_SCREENED
+  category: State Terms
+  definition_short: Anchor and payload remain untrusted, but boundary contracts have passed.
+  definition_operational: 'Entry trigger: FV-02 and FV-04 pass. Exit trigger: Provenance classification.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §9 Workflow and State Transitions
+  related_terms:
+  - FV-02 and FV-04 pass
+  - Provenance classification
+  synonyms:
+  - S2
+  - BOUNDARY_SCREENED
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: S3
+  preferred_label: S3 PROVENANCE_CLASSIFIED
+  category: State Terms
+  definition_short: Carried claims have passed provenance and role validation.
+  definition_operational: 'Entry trigger: FV-03 pass. Exit trigger: Accepted-head / freshness lock.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §9 Workflow and State Transitions
+  related_terms:
+  - FV-03 pass
+  - Accepted-head / freshness lock
+  synonyms:
+  - S3
+  - PROVENANCE_CLASSIFIED
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: S4
+  preferred_label: S4 ANCHOR_LOCKED
+  category: State Terms
+  definition_short: Accepted head and strictly increasing anchor are locked.
+  definition_operational: 'Entry trigger: FV-05 and FV-06 pass. Exit trigger: Verified rehydration closure.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §9 Workflow and State Transitions
+  related_terms:
+  - FV-05 and FV-06 pass
+  - Verified rehydration closure
+  synonyms:
+  - S4
+  - ANCHOR_LOCKED
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: S5
+  preferred_label: S5 REHYDRATION_CLOSED
+  category: State Terms
+  definition_short: The rehydration bundle is fully verified.
+  definition_operational: 'Entry trigger: FV-07 pass. Exit trigger: Replay reconstruction.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §9 Workflow and State Transitions
+  related_terms:
+  - FV-07 pass
+  - Replay reconstruction
+  synonyms:
+  - S5
+  - REHYDRATION_CLOSED
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: S6
+  preferred_label: S6 REPLAY_RECONSTRUCTED
+  category: State Terms
+  definition_short: Replay reconstruction is sufficient for offline reconstruction.
+  definition_operational: 'Entry trigger: FV-08 pass. Exit trigger: Family report assembly.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §9 Workflow and State Transitions
+  related_terms:
+  - FV-08 pass
+  - Family report assembly
+  synonyms:
+  - S6
+  - REPLAY_RECONSTRUCTED
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: S7
+  preferred_label: S7 REPORT_READY
+  category: State Terms
+  definition_short: The boundary-event evidence report is complete.
+  definition_operational: 'Entry trigger: FV-10 and FV-11 pass. Exit trigger: Emit family verdict.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §9 Workflow and State Transitions
+  related_terms:
+  - FV-10 and FV-11 pass
+  - Emit family verdict
+  synonyms:
+  - S7
+  - REPORT_READY
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: S8
+  preferred_label: S8 REPLAY_ADMITTED
+  category: State Terms
+  definition_short: Family replay is admissible.
+  definition_operational: 'Entry trigger: Family verdict issued. Exit trigger: Handoff.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §9 Workflow and State Transitions
+  related_terms:
+  - Family verdict issued
+  - Handoff
+  synonyms:
+  - S8
+  - REPLAY_ADMITTED
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: SH
+  preferred_label: SH NONCOMPLIANT_HOLD
+  category: State Terms
+  definition_short: Closure is incomplete but remediable.
+  definition_operational: 'Entry trigger: Remediable failure of FV-06 or FV-12. Exit trigger: Readmission review.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §9 Workflow and State Transitions
+  related_terms:
+  - Remediable failure of FV-06 or FV-12
+  - Readmission review
+  synonyms:
+  - SH
+  - NONCOMPLIANT_HOLD
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: SR
+  preferred_label: SR READMISSION_REVIEW
+  category: State Terms
+  definition_short: A new bundle or new policy state is under evaluation.
+  definition_operational: 'Entry trigger: hold_exit_refs and anchor_update_ref present. Exit trigger: S2 or S5.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §9 Workflow and State Transitions
+  related_terms:
+  - hold_exit_refs and anchor_update_ref present
+  - S2 or S5
+  synonyms:
+  - SR
+  - READMISSION_REVIEW
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: SX
+  preferred_label: SX CONTAMINATION_FAIL_CLOSED
+  category: State Terms
+  definition_short: Critical contamination or unresolved prerequisite failure has occurred.
+  definition_operational: 'Entry trigger: Blocking failure of FV-02, FV-03, FV-07, or FV-09. Exit trigger: Incident-only
+    output.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §9 Workflow and State Transitions
+  related_terms:
+  - Blocking failure of FV-02, FV-03, FV-07, or FV-09
+  - Incident-only output
+  synonyms:
+  - SX
+  - CONTAMINATION_FAIL_CLOSED
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FEV-01
+  preferred_label: FEV-01 family_decision_id
+  category: Family Evidence Terms
+  definition_short: Unique identifier of the family verdict.
+  definition_operational: Public field of the Evidence Contract. Used for closure, offline reconstruction, and chain of custody in the boundary-event evidence bundle.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §11 Evidence Contract
+  - SSCAR_Specification Appendix A. Decision-Object Traceability Matrix
+  related_terms:
+  - BoundaryEventEvidenceReport
+  - family_validator_outcomes
+  - disclosure_class_entries
+  synonyms:
+  - FEV-01
+  - family_decision_id
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FEV-02
+  preferred_label: FEV-02 boundary_event_id
+  category: Family Evidence Terms
+  definition_short: Identifies the reconstructible boundary event.
+  definition_operational: Public field of the Evidence Contract. Used for closure, offline reconstruction, and chain of custody in the boundary-event evidence bundle.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §11 Evidence Contract
+  - SSCAR_Specification Appendix A. Decision-Object Traceability Matrix
+  related_terms:
+  - BoundaryEventEvidenceReport
+  - family_validator_outcomes
+  - disclosure_class_entries
+  synonyms:
+  - FEV-02
+  - boundary_event_id
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FEV-03
+  preferred_label: FEV-03 session_id / prior_session_ref
+  category: Family Evidence Terms
+  definition_short: Links the verdict to the current session and the prior source.
+  definition_operational: Public field of the Evidence Contract. Used for closure, offline reconstruction, and chain of custody in the boundary-event evidence bundle.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §11 Evidence Contract
+  - SSCAR_Specification Appendix A. Decision-Object Traceability Matrix
+  related_terms:
+  - BoundaryEventEvidenceReport
+  - family_validator_outcomes
+  - disclosure_class_entries
+  synonyms:
+  - FEV-03
+  - session_id / prior_session_ref
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FEV-04
+  preferred_label: FEV-04 carried_statement_refs
+  category: Family Evidence Terms
+  definition_short: Lists the carried claims that influenced the verdict.
+  definition_operational: Public field of the Evidence Contract. Used for closure, offline reconstruction, and chain of custody in the boundary-event evidence bundle.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §11 Evidence Contract
+  - SSCAR_Specification Appendix A. Decision-Object Traceability Matrix
+  related_terms:
+  - BoundaryEventEvidenceReport
+  - family_validator_outcomes
+  - disclosure_class_entries
+  synonyms:
+  - FEV-04
+  - carried_statement_refs
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FEV-05
+  preferred_label: FEV-05 tsa_refs / provenance_refs
+  category: Family Evidence Terms
+  definition_short: Proves provenance classification and admissibility.
+  definition_operational: Public field of the Evidence Contract. Used for closure, offline reconstruction, and chain of custody in the boundary-event evidence bundle.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §11 Evidence Contract
+  - SSCAR_Specification Appendix A. Decision-Object Traceability Matrix
+  related_terms:
+  - BoundaryEventEvidenceReport
+  - family_validator_outcomes
+  - disclosure_class_entries
+  synonyms:
+  - FEV-05
+  - tsa_refs / provenance_refs
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FEV-06
+  preferred_label: FEV-06 anchor_document_digest / anchor_document_ref
+  category: Family Evidence Terms
+  definition_short: Links the verdict to the anchor document treated as untrusted input.
+  definition_operational: Public field of the Evidence Contract. Used for closure, offline reconstruction, and chain of custody in the boundary-event evidence bundle.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §11 Evidence Contract
+  - SSCAR_Specification Appendix A. Decision-Object Traceability Matrix
+  related_terms:
+  - BoundaryEventEvidenceReport
+  - family_validator_outcomes
+  - disclosure_class_entries
+  synonyms:
+  - FEV-06
+  - anchor_document_digest / anchor_document_ref
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FEV-07
+  preferred_label: FEV-07 accepted_head_digest / linked_irr_digest
+  category: Family Evidence Terms
+  definition_short: Closes accepted-head visibility.
+  definition_operational: Public field of the Evidence Contract. Used for closure, offline reconstruction, and chain of custody in the boundary-event evidence bundle.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §11 Evidence Contract
+  - SSCAR_Specification Appendix A. Decision-Object Traceability Matrix
+  related_terms:
+  - BoundaryEventEvidenceReport
+  - family_validator_outcomes
+  - disclosure_class_entries
+  synonyms:
+  - FEV-07
+  - accepted_head_digest / linked_irr_digest
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FEV-08
+  preferred_label: FEV-08 freshness_before / freshness_after / anchor_update_ref
+  category: Family Evidence Terms
+  definition_short: Proves strict increase and readmission safety.
+  definition_operational: Public field of the Evidence Contract. Used for closure, offline reconstruction, and chain of custody in the boundary-event evidence bundle.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §11 Evidence Contract
+  - SSCAR_Specification Appendix A. Decision-Object Traceability Matrix
+  related_terms:
+  - BoundaryEventEvidenceReport
+  - family_validator_outcomes
+  - disclosure_class_entries
+  synonyms:
+  - FEV-08
+  - freshness_before / freshness_after / anchor_update_ref
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FEV-09
+  preferred_label: FEV-09 rehydration_closure_ref
+  category: Family Evidence Terms
+  definition_short: Links the verdict to the verified rehydration bundle.
+  definition_operational: Public field of the Evidence Contract. Used for closure, offline reconstruction, and chain of custody in the boundary-event evidence bundle.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §11 Evidence Contract
+  - SSCAR_Specification Appendix A. Decision-Object Traceability Matrix
+  related_terms:
+  - BoundaryEventEvidenceReport
+  - family_validator_outcomes
+  - disclosure_class_entries
+  synonyms:
+  - FEV-09
+  - rehydration_closure_ref
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FEV-10
+  preferred_label: FEV-10 replay_refs / checkpoint_refs / rollback_refs
+  category: Family Evidence Terms
+  definition_short: Proves replay reconstruction closure and reconstructibility.
+  definition_operational: Public field of the Evidence Contract. Used for closure, offline reconstruction, and chain of custody in the boundary-event evidence bundle.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §11 Evidence Contract
+  - SSCAR_Specification Appendix A. Decision-Object Traceability Matrix
+  related_terms:
+  - BoundaryEventEvidenceReport
+  - family_validator_outcomes
+  - disclosure_class_entries
+  synonyms:
+  - FEV-10
+  - replay_refs / checkpoint_refs / rollback_refs
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FEV-11
+  preferred_label: FEV-11 disclosure_class_entries
+  category: Family Evidence Terms
+  definition_short: Preserves real defects, bounded openness, and handoff obligations distinctly.
+  definition_operational: Public field of the Evidence Contract. Used for closure, offline reconstruction, and chain of custody in the boundary-event evidence bundle.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §11 Evidence Contract
+  - SSCAR_Specification Appendix A. Decision-Object Traceability Matrix
+  related_terms:
+  - BoundaryEventEvidenceReport
+  - family_validator_outcomes
+  - disclosure_class_entries
+  synonyms:
+  - FEV-11
+  - disclosure_class_entries
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FEV-12
+  preferred_label: FEV-12 family_validator_outcomes
+  category: Family Evidence Terms
+  definition_short: Supports replay of family-level admissibility.
+  definition_operational: Public field of the Evidence Contract. Used for closure, offline reconstruction, and chain of custody in the boundary-event evidence bundle.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §11 Evidence Contract
+  - SSCAR_Specification Appendix A. Decision-Object Traceability Matrix
+  related_terms:
+  - BoundaryEventEvidenceReport
+  - family_validator_outcomes
+  - disclosure_class_entries
+  synonyms:
+  - FEV-12
+  - family_validator_outcomes
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FEV-13
+  preferred_label: FEV-13 hold_enter_refs / hold_exit_refs
+  category: Family Evidence Terms
+  definition_short: Mandatory when a hold or readmission exists.
+  definition_operational: Public field of the Evidence Contract. Used for closure, offline reconstruction, and chain of custody in the boundary-event evidence bundle.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §11 Evidence Contract
+  - SSCAR_Specification Appendix A. Decision-Object Traceability Matrix
+  related_terms:
+  - BoundaryEventEvidenceReport
+  - family_validator_outcomes
+  - disclosure_class_entries
+  synonyms:
+  - FEV-13
+  - hold_enter_refs / hold_exit_refs
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FEV-14
+  preferred_label: FEV-14 contamination_flags / contaminating_ref_set
+  category: Family Evidence Terms
+  definition_short: Mandatory for contamination fail-closed cases.
+  definition_operational: Public field of the Evidence Contract. Used for closure, offline reconstruction, and chain of custody in the boundary-event evidence bundle.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §11 Evidence Contract
+  - SSCAR_Specification Appendix A. Decision-Object Traceability Matrix
+  related_terms:
+  - BoundaryEventEvidenceReport
+  - family_validator_outcomes
+  - disclosure_class_entries
+  synonyms:
+  - FEV-14
+  - contamination_flags / contaminating_ref_set
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FEV-15
+  preferred_label: FEV-15 report_signature / export_manifest_ref
+  category: Family Evidence Terms
+  definition_short: Mandatory for final output and chain of custody.
+  definition_operational: Public field of the Evidence Contract. Used for closure, offline reconstruction, and chain of custody in the boundary-event evidence bundle.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §11 Evidence Contract
+  - SSCAR_Specification Appendix A. Decision-Object Traceability Matrix
+  related_terms:
+  - BoundaryEventEvidenceReport
+  - family_validator_outcomes
+  - disclosure_class_entries
+  synonyms:
+  - FEV-15
+  - report_signature / export_manifest_ref
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: FOR-01
+  preferred_label: FOR-01 Material transition observability
+  category: Family Observability Terms
+  definition_short: Every material family-level transition emits an observable artifact.
+  definition_operational: A material family-level transition is one that crosses a §9 workflow state boundary, enters
+    SH/SR/SX/S8, or emits a §3.2 output artifact (FOC-01..05). The integrator must produce at least one observable
+    artifact for each such transition; silent state advancement is forbidden.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §13 Observability Rules
+  related_terms:
+  - family verdict
+  - BoundaryEventEvidenceReport
+  - family_validator_outcomes
+  synonyms:
+  - FOR-01
+  non_synonyms: []
+  usage_constraints:
+  - Observability is mandatory; deployment may not suppress emission.
+  notes: ''
+- term_id: FOR-02
+  preferred_label: FOR-02 Verdict requires validator outcomes
+  category: Family Observability Terms
+  definition_short: No family verdict exists without family_validator_outcomes.
+  definition_operational: A family verdict (FOC-01 FamilyVerdict) is admissible only if accompanied by a populated
+    family_validator_outcomes evidence record (FEV-12). Verdict emission without validator-outcome evidence is forbidden.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §13 Observability Rules
+  related_terms:
+  - family verdict
+  - FEV-12 family_validator_outcomes
+  - FOC-01 FamilyVerdict
+  synonyms:
+  - FOR-02
+  non_synonyms: []
+  usage_constraints:
+  - Mandatory pre-condition for any family verdict emission.
+  notes: ''
+- term_id: FOR-03
+  preferred_label: FOR-03 Hold records hold_enter_refs
+  category: Family Observability Terms
+  definition_short: Every hold records hold_enter_refs and pending requirements.
+  definition_operational: Entry into SH NONCOMPLIANT_HOLD requires emission of FOC-05 FamilyHoldRecord with non-empty
+    hold_enter_refs and a populated pending_requirements list. Hold cases without these fields are inadmissible.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §13 Observability Rules
+  related_terms:
+  - SH NONCOMPLIANT_HOLD
+  - FOC-05 FamilyHoldRecord
+  - FEV-13 hold_enter_refs
+  synonyms:
+  - FOR-03
+  non_synonyms: []
+  usage_constraints:
+  - Mandatory whenever the workflow enters SH.
+  notes: ''
+- term_id: FOR-04
+  preferred_label: FOR-04 Readmission records hold_exit and anchor_update
+  category: Family Observability Terms
+  definition_short: Every readmission records hold_exit_refs and anchor_update_ref.
+  definition_operational: Transition from SH to SR requires non-empty hold_exit_refs (FEV-13) and a strictly increasing
+    anchor_update_ref (FEV-08). Readmission attempts missing either field are inadmissible.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §13 Observability Rules
+  related_terms:
+  - SR READMISSION_REVIEW
+  - FIC-03 FamilyReadmissionReview
+  - FEV-08 anchor_update_ref
+  - FEV-13 hold_exit_refs
+  synonyms:
+  - FOR-04
+  non_synonyms: []
+  usage_constraints:
+  - Mandatory for every SH → SR transition.
+  notes: ''
+- term_id: FOR-05
+  preferred_label: FOR-05 Contamination records contaminating_ref_set
+  category: Family Observability Terms
+  definition_short: Every contamination case records contaminating_ref_set and blocked_stage.
+  definition_operational: Entry into SX CONTAMINATION_FAIL_CLOSED requires emission of FOC-04 ContaminationIncidentNotice
+    with a populated contaminating_ref_set (FEV-14) and a non-empty blocked_stage. Contamination cases without these
+    fields are inadmissible.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §13 Observability Rules
+  related_terms:
+  - SX CONTAMINATION_FAIL_CLOSED
+  - FOC-04 ContaminationIncidentNotice
+  - FEV-14 contamination_flags / contaminating_ref_set
+  synonyms:
+  - FOR-05
+  non_synonyms: []
+  usage_constraints:
+  - Mandatory whenever the workflow enters SX.
+  notes: ''
+- term_id: FOR-06
+  preferred_label: FOR-06 Disclosure entries on gaps and handoffs
+  category: Family Observability Terms
+  definition_short: disclosure_class_entries are mandatory whenever the report contains gaps or transfer obligations.
+  definition_operational: Whenever the BoundaryEventEvidenceReport (FOC-02) contains content classified as TRUE_DEFECT,
+    BOUNDED_EXECUTION_NEUTRAL_OPENNESS, or BOUNDED_HANDOFF_OBLIGATION, the corresponding disclosure_class_entries
+    (FEV-11) record must be populated. Reports containing such content without disclosure_class_entries collapse
+    the disclosure classes (DISCLOSURE_CLASS_COLLAPSE) and route to INCIDENT_ONLY.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §13 Observability Rules
+  related_terms:
+  - FEV-11 disclosure_class_entries
+  - TRUE_DEFECT
+  - BOUNDED_EXECUTION_NEUTRAL_OPENNESS
+  - BOUNDED_HANDOFF_OBLIGATION
+  - DISCLOSURE_CLASS_COLLAPSE
+  synonyms:
+  - FOR-06
+  non_synonyms: []
+  usage_constraints:
+  - Mandatory whenever a disclosure-class condition exists in the report.
+  notes: ''
+- term_id: SC-01
+  preferred_label: SC-01 Required control coverage complete
+  category: Family Conformance Scenarios
+  definition_short: 'Reference scenario: required control coverage is complete.'
+  definition_operational: 'Scenario in which all required continuity-control domains are present and admitted for
+    family use. Expected result: all required continuity-control domains are admitted. Minimum evidence: FV-01 evidence.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §15.2 Reference scenarios
+  related_terms:
+  - FV-01 Required Control Coverage
+  - S1 SOURCE_COVERAGE_ADMITTED
+  synonyms:
+  - SC-01
+  non_synonyms: []
+  usage_constraints:
+  - Used as the canonical positive-path coverage scenario for FV-01.
+  notes: ''
+- term_id: SC-02
+  preferred_label: SC-02 Carried mechanism-level claim lacks tsa_label or source_class
+  category: Family Conformance Scenarios
+  definition_short: 'Reference scenario: a carried mechanism-level claim lacks tsa_label or source_class.'
+  definition_operational: 'Scenario in which a carried mechanism-level claim is missing admitted tsa_label or source_class.
+    Expected result: CONTAMINATION_FAIL_CLOSED. Minimum evidence: tsa_refs and blocked_stage.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §15.2 Reference scenarios
+  related_terms:
+  - FV-03 Carried Claim Provenance Admissibility
+  - FD-02 CARRIED_CLAIM_INADMISSIBLE
+  - UNLABELED_CARRIED_MECHANISM_CLAIM
+  - CONTAMINATION_FAIL_CLOSED
+  synonyms:
+  - SC-02
+  non_synonyms: []
+  usage_constraints:
+  - Canonical negative-path scenario for FV-03 contamination branch.
+  notes: ''
+- term_id: SC-03
+  preferred_label: SC-03 Anchor document treated as trusted
+  category: Family Conformance Scenarios
+  definition_short: 'Reference scenario: an upstream assertion attempts to treat the anchor document as trusted.'
+  definition_operational: 'Scenario in which an upstream caller attempts to bypass boundary validation and treat
+    the anchor document as already-trusted input. Expected result: boundary revalidation and block until closure
+    (UNTRUSTED_ANCHOR_PROMOTED → CONTAMINATION_FAIL_CLOSED). Minimum evidence: boundary-validator evidence.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §15.2 Reference scenarios
+  related_terms:
+  - FV-02 Boundary Input Contract
+  - untrusted input
+  - UNTRUSTED_ANCHOR_PROMOTED
+  - CONTAMINATION_FAIL_CLOSED
+  synonyms:
+  - SC-03
+  non_synonyms: []
+  usage_constraints:
+  - Canonical negative-path scenario for FV-02 / boundary trust violation.
+  notes: ''
+- term_id: SC-04
+  preferred_label: SC-04 Freshness fail or anchor stagnates
+  category: Family Conformance Scenarios
+  definition_short: 'Reference scenario: freshness_new ≤ watermark or anchor stagnates.'
+  definition_operational: 'Scenario in which the freshness anchor is not strictly increasing relative to the local
+    continuity watermark, or the accepted head is outdated. Expected result: NONCOMPLIANT_HOLD. Minimum evidence:
+    freshness_before/after and hold_enter_refs.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §15.2 Reference scenarios
+  related_terms:
+  - FV-06 Freshness / Anchor Strict Increase
+  - FRESHNESS_REPLAY_OR_STALE_ANCHOR
+  - FD-07 NONCOMPLIANT_HOLD
+  - SH NONCOMPLIANT_HOLD
+  synonyms:
+  - SC-04
+  non_synonyms: []
+  usage_constraints:
+  - Canonical negative-path scenario for FV-06 freshness branch.
+  notes: ''
+- term_id: SC-05
+  preferred_label: SC-05 Snapshot mismatch or anti-rollback failure
+  category: Family Conformance Scenarios
+  definition_short: 'Reference scenario: snapshot mismatch or anti-rollback failure.'
+  definition_operational: 'Scenario in which snapshot stability is broken or anti-rollback verification fails during
+    rehydration. Expected result: CONTAMINATION_FAIL_CLOSED (non-remediable per FV-07 remediability test). Minimum
+    evidence: rehydration_closure_ref and anchor status.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §15.2 Reference scenarios
+  related_terms:
+  - FV-07 Verified Rehydration Closure
+  - anti-rollback
+  - REHYDRATION_PREREQ_FAIL
+  - CONTAMINATION_FAIL_CLOSED
+  synonyms:
+  - SC-05
+  non_synonyms: []
+  usage_constraints:
+  - Canonical negative-path scenario for FV-07 non-remediable branch.
+  notes: ''
+- term_id: SC-06
+  preferred_label: SC-06 Replay reconstruction incomplete
+  category: Family Conformance Scenarios
+  definition_short: 'Reference scenario: checkpoint, rollback, or report closure is incomplete.'
+  definition_operational: 'Scenario in which checkpoint reconstruction, rollback reconstruction, or report sufficiency
+    is insufficient to support family replay. Expected result: REPLAY_INCOMPLETE. Minimum evidence: replay_refs
+    and report-field evidence.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §15.2 Reference scenarios
+  related_terms:
+  - FV-08 Replay Reconstruction Sufficiency
+  - REPLAY_RECONSTRUCTION_INCOMPLETE
+  - REPLAY_INCOMPLETE
+  synonyms:
+  - SC-06
+  non_synonyms: []
+  usage_constraints:
+  - Canonical negative-path scenario for FV-08 replay closure.
+  notes: ''
+- term_id: SC-07
+  preferred_label: SC-07 Unauthorized tool-state in anchor payload
+  category: Family Conformance Scenarios
+  definition_short: 'Reference scenario: unauthorized tool-state appears inside the anchor payload.'
+  definition_operational: 'Scenario in which the anchor payload contains tool-state material not admitted by the
+    boundary contract. Expected result: contamination handling or local quarantine without replay admission. Minimum
+    evidence: tool-state evidence and contamination flags.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §15.2 Reference scenarios
+  related_terms:
+  - FV-09 Contamination Absence
+  - FOC-04 ContaminationIncidentNotice
+  - CONTAMINATION_FAIL_CLOSED
+  synonyms:
+  - SC-07
+  non_synonyms: []
+  usage_constraints:
+  - Canonical negative-path scenario for unauthorized tool-state contamination.
+  notes: ''
+- term_id: SC-08
+  preferred_label: SC-08 Family closure complete
+  category: Family Conformance Scenarios
+  definition_short: 'Reference scenario: family closure is complete.'
+  definition_operational: 'Scenario in which boundary screening, provenance classification, accepted-head/freshness
+    lock, verified rehydration closure, replay reconstruction, disclosure-class preservation, and family evidence
+    closure all pass. Expected result: REPLAY_ADMISSIBLE. Minimum evidence: complete family validator bundle (FEV-01..FEV-15
+    as applicable).'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §15.2 Reference scenarios
+  related_terms:
+  - S8 REPLAY_ADMITTED
+  - FOC-01 FamilyVerdict
+  - FOC-03 ReplayAdmissionToken
+  - REPLAY_ADMISSIBLE
+  synonyms:
+  - SC-08
+  non_synonyms: []
+  usage_constraints:
+  - Canonical positive-path terminal scenario.
+  notes: ''
+- term_id: SC-09
+  preferred_label: SC-09 Disclosure classes collapsed
+  category: Family Conformance Scenarios
+  definition_short: 'Reference scenario: disclosure classes are collapsed into a generic defect.'
+  definition_operational: 'Scenario in which TRUE_DEFECT, BOUNDED_EXECUTION_NEUTRAL_OPENNESS, and BOUNDED_HANDOFF_OBLIGATION
+    are merged or omitted in the report rather than recorded distinctly. Expected result: INCIDENT_ONLY until disclosure
+    classes are corrected. Minimum evidence: disclosure_class_entries.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §15.2 Reference scenarios
+  related_terms:
+  - FV-10 Disclosure Class Preservation
+  - DISCLOSURE_CLASS_COLLAPSE
+  - FD-09 INCIDENT_ONLY
+  - INCIDENT_ONLY
+  synonyms:
+  - SC-09
+  non_synonyms: []
+  usage_constraints:
+  - Canonical negative-path scenario for FV-10 disclosure preservation.
+  notes: ''
+- term_id: SC-10
+  preferred_label: SC-10 Hold case with new evidence and anchor update
+  category: Family Conformance Scenarios
+  definition_short: 'Reference scenario: a hold case receives new evidence and a new anchor update.'
+  definition_operational: 'Scenario in which a case in SH NONCOMPLIANT_HOLD is presented with new_evidence_refs
+    (or a new_policy_ref) and a strictly increasing anchor_update_ref. Expected result: READMISSION_REVIEW_GRANTED
+    with controlled resumption (SH → SR; identical readmission on the same artifacts is forbidden). Minimum evidence:
+    hold_exit_refs and anchor_update_ref.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §15.2 Reference scenarios
+  related_terms:
+  - FV-12 Family Readmission Closure
+  - FIC-03 FamilyReadmissionReview
+  - FD-10 READMISSION_REVIEW_GRANTED
+  - SR READMISSION_REVIEW
+  synonyms:
+  - SC-10
+  non_synonyms: []
+  usage_constraints:
+  - Canonical recovery-path scenario.
+  notes: ''
+- term_id: AC-01
+  preferred_label: AC-01 Control-domain coherence
+  category: Family Acceptance Criteria
+  definition_short: All required control domains and public specification artifacts exist and are internally coherent.
+  definition_operational: 'Acceptance criterion: the public specification covers all required control domains (boundary,
+    provenance, anchor, rehydration, replay, disclosure, evidence, readmission) without internal contradiction across
+    §1–§17.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §16 Acceptance Criteria
+  related_terms:
+  - Required control coverage
+  - FV-01 Required Control Coverage
+  synonyms:
+  - AC-01
+  non_synonyms: []
+  usage_constraints:
+  - Package-level conformance criterion; verified during freeze gate.
+  notes: ''
+- term_id: AC-02
+  preferred_label: AC-02 Continuity-bundle admission
+  category: Family Acceptance Criteria
+  definition_short: Every required source continuity bundle or equivalent control bundle is admitted explicitly
+    for family use.
+  definition_operational: 'Acceptance criterion: source continuity bundles enter family processing only via FIC-01
+    FamilyContinuityIntake with admitted source_control_bundles; ad-hoc admission paths are forbidden.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §16 Acceptance Criteria
+  related_terms:
+  - FIC-01 FamilyContinuityIntake
+  - source_control_bundles
+  synonyms:
+  - AC-02
+  non_synonyms: []
+  usage_constraints:
+  - Package-level conformance criterion.
+  notes: ''
+- term_id: AC-03
+  preferred_label: AC-03 Decision-rule full linkage
+  category: Family Acceptance Criteria
+  definition_short: Every family decision rule is linked to at least one family validator and at least one family
+    evidence field.
+  definition_operational: 'Acceptance criterion: each FD-* in §8 must trace to at least one FV-* in §7 and at least
+    one FEV-* in §11. Decision rules without validator-and-evidence linkage are inadmissible.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §16 Acceptance Criteria
+  related_terms:
+  - FD-01 through FD-10
+  - FV-01 through FV-12
+  - FEV-01 through FEV-15
+  synonyms:
+  - AC-03
+  non_synonyms: []
+  usage_constraints:
+  - Package-level conformance criterion; cross-checked against Appendix A.
+  notes: ''
+- term_id: AC-04
+  preferred_label: AC-04 State-model verdict and remediation coverage
+  category: Family Acceptance Criteria
+  definition_short: The state model covers every verdict and every declared remediation path.
+  definition_operational: 'Acceptance criterion: every canonical verdict (REPLAY_ADMISSIBLE, REPLAY_ADMISSIBLE_CONSTRAINED,
+    REPLAY_INCOMPLETE, NONCOMPLIANT_HOLD, CONTAMINATION_FAIL_CLOSED, INCIDENT_ONLY) is reachable through §9 workflow
+    paths or via the verdict-emission layer; every declared remediation path (SH → SR → S2/S5) is defined.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §16 Acceptance Criteria
+  related_terms:
+  - Family verdict vocabulary
+  - Workflow and State Transitions
+  - SR READMISSION_REVIEW
+  synonyms:
+  - AC-04
+  non_synonyms: []
+  usage_constraints:
+  - Package-level conformance criterion.
+  notes: ''
+- term_id: AC-05
+  preferred_label: AC-05 Offline reconstruction of representative event
+  category: Family Acceptance Criteria
+  definition_short: The family verdict can be reconstructed offline for at least one representative boundary event.
+  definition_operational: 'Acceptance criterion: using only the BoundaryEventEvidenceReport (FOC-02), the family
+    validator bundle, and the linked evidence fields, an external auditor must be able to reconstruct the family
+    verdict for at least one representative boundary event without access to the live runtime.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §16 Acceptance Criteria
+  related_terms:
+  - FOC-02 BoundaryEventEvidenceReport
+  - boundary event
+  - replay reconstruction
+  synonyms:
+  - AC-05
+  non_synonyms: []
+  usage_constraints:
+  - Package-level conformance criterion; replay-readiness gate.
+  notes: ''
+- term_id: AC-06
+  preferred_label: AC-06 Negative-path coverage
+  category: Family Acceptance Criteria
+  definition_short: Negative-path coverage exists for contamination, freshness replay, and incomplete replay closure.
+  definition_operational: 'Acceptance criterion: §15.2 reference scenarios include at least one scenario each for
+    contamination (SC-02, SC-03, SC-05, SC-07), freshness replay (SC-04), and incomplete replay closure (SC-06),
+    with corresponding workflow and verdict semantics defined.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §16 Acceptance Criteria
+  related_terms:
+  - SC-02
+  - SC-03
+  - SC-04
+  - SC-05
+  - SC-06
+  - SC-07
+  synonyms:
+  - AC-06
+  non_synonyms: []
+  usage_constraints:
+  - Package-level conformance criterion; technical-correctness gate.
+  notes: ''
+- term_id: AC-07
+  preferred_label: AC-07 No critical unresolved gap
+  category: Family Acceptance Criteria
+  definition_short: No critical unresolved gap remains on identity, authority, boundary, evidence, replay, or handoff
+    semantics.
+  definition_operational: 'Acceptance criterion: at the freeze gate, the package contains no TRUE_DEFECT classified
+    item affecting identity, authority, boundary, evidence, replay, or handoff semantics. Bounded execution-neutral
+    openness and bounded handoff obligations are permitted; true defects are not.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §16 Acceptance Criteria
+  related_terms:
+  - TRUE_DEFECT
+  - BOUNDED_EXECUTION_NEUTRAL_OPENNESS
+  - BOUNDED_HANDOFF_OBLIGATION
+  synonyms:
+  - AC-07
+  non_synonyms: []
+  usage_constraints:
+  - Package-level conformance criterion; freeze gate.
+  notes: ''
+- term_id: AC-08
+  preferred_label: AC-08 Implementation-owned items separated
+  category: Family Acceptance Criteria
+  definition_short: Implementation-owned open items are explicitly separated and do not affect the semantic core,
+    validator semantics, evidence closure, or handoff readiness.
+  definition_operational: 'Acceptance criterion: every implementation-owned open item (cryptographic suite, storage
+    backend, serialization, operator workflow, optional assurance components, hardware attestation, rollback execution
+    per §17) is explicitly listed and does not modify the §17.3 stable semantic core. Items that would alter the
+    semantic core, verdict vocabulary, validator semantics, evidence closure, or handoff rules are forbidden under
+    §17.5 non-reuse zones.'
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §16 Acceptance Criteria
+  - SSCAR_Specification §17 Implementation Boundaries, Optional Parameters, and Reuse Rules
+  related_terms:
+  - Stable semantic core
+  - Implementation boundaries
+  - Non-reuse zones
+  synonyms:
+  - AC-08
+  non_synonyms: []
+  usage_constraints:
+  - Package-level conformance criterion; execution-neutrality gate.
+  notes: ''
+- term_id: family_integrator_id
+  preferred_label: family_integrator_id
+  category: Machine-Readable Handoff Terms
+  definition_short: Machine-readable handoff field identifying the family integrator.
+  definition_operational: Appears in the §12 normative JSON shape for automated handoff and binds the handoff record
+    to the SSCAR family integrator. For this package the value is FAM-SSCAR-FI-001.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §12 Machine-Readable Form Catalogue
+  related_terms:
+  - FAM-SSCAR-FI-001
+  - family integrator
+  - FamilyVerdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - Use only as the machine-readable field binding automated handoff to the family integrator identity.
+  notes: ''
+- term_id: blocked_stage
+  preferred_label: blocked_stage
+  category: Machine-Readable Handoff Terms
+  definition_short: Machine-readable handoff field recording the stage blocked by fail-closed or incident handling.
+  definition_operational: Appears in the §12 normative JSON shape and in FOC-04 ContaminationIncidentNotice. It
+    identifies the workflow or gate stage at which processing was blocked for contamination, incident-only handling,
+    or equivalent protected routing.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §12 Machine-Readable Form Catalogue
+  - SSCAR_Specification §3.2 Output contract / FOC-04 ContaminationIncidentNotice
+  related_terms:
+  - FOC-04 ContaminationIncidentNotice
+  - CONTAMINATION_FAIL_CLOSED
+  - FEV-14 contamination_flags / contaminating_ref_set
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - Required for contamination incident notices and for machine-readable protected-routing traceability when a stage
+    is blocked.
+  notes: ''
+- term_id: readmission_case_id
+  preferred_label: readmission_case_id
+  category: Machine-Readable Handoff Terms
+  definition_short: Machine-readable handoff field identifying a readmission case.
+  definition_operational: Appears in the §12 normative JSON shape for automated handoff and links the machine-readable
+    record to a hold/readmission case when the workflow enters or resumes from NONCOMPLIANT_HOLD / READMISSION_REVIEW
+    handling.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §12 Machine-Readable Form Catalogue
+  related_terms:
+  - FIC-03 FamilyReadmissionReview
+  - SH NONCOMPLIANT_HOLD
+  - SR READMISSION_REVIEW
+  - FEV-13 hold_enter_refs / hold_exit_refs
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - Use when automated handoff must identify the readmission case associated with hold or readmission processing.
+  notes: ''
+- term_id: ABBR-01
+  preferred_label: IRR
+  category: Abbreviation Terms
+  definition_short: Public abbreviation used for the accepted head / IRR linkage and linked_irr_digest.
+  definition_operational: In ordering, the accepted head must be linked to the latest valid IRR, and ReplayAdmissionToken
+    preserves linked_irr_digest as evidence of that linkage.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification §1.3 Required control coverage
+  - SSCAR_Specification §1.4 Cross-domain operating rules
+  - SSCAR_Specification §3.2 Output contract / FOC-03 ReplayAdmissionToken
+  related_terms:
+  - accepted head
+  - ReplayAdmissionToken
+  - accepted_anchor_state
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''
+- term_id: ABBR-02
+  preferred_label: LLM
+  category: Abbreviation Terms
+  definition_short: Public abbreviation for the language model at the session level.
+  definition_operational: The specification governs cross-session epistemic continuity across LLM sessions, including
+    transitions between different LLM models.
+  normative_status: normative
+  source_refs:
+  - SSCAR_Specification Intro table / Primary role
+  - SSCAR_Specification Intro table / Mission statement
+  related_terms:
+  - Session State Continuity & Anchor Replay Family Integrator
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  notes: ''

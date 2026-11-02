@@ -1,0 +1,3080 @@
+==== NNT-FAM-SSCAR-FI-001 c acceptance run 2026-10-26T15:50:43Z ====
+PT-ID: PT-001
+COMMAND: "/build/c/baseline.exe" vra next_state S0 StartupComplete 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S0 StartupComplete vp=1] | state=S1
+
+
+PT-ID: PT-002
+COMMAND: "/build/c/baseline.exe" vra next_state S2 StructuralChecksDone 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S2 StructuralChecksDone vp=1] | state=S3
+
+
+PT-ID: PT-003
+COMMAND: "/build/c/baseline.exe" vra next_state S3 EligibilityChecksDone 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S3 EligibilityChecksDone vp=1] | state=S4
+
+
+PT-ID: PT-004
+COMMAND: "/build/c/baseline.exe" vra next_state S2 StructuralChecksDone 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S2 StructuralChecksDone vp=0] | state=S5
+
+
+PT-ID: PT-005
+COMMAND: "/build/c/baseline.exe" vra next_state S2 StructuralChecksDone 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S2 StructuralChecksDone vp=0] | state=S5
+
+
+PT-ID: PT-006
+COMMAND: "/build/c/baseline.exe" vra next_state S2 StructuralChecksDone 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S2 StructuralChecksDone vp=0] | state=S5
+
+
+PT-ID: PT-007
+COMMAND: "/build/c/baseline.exe" vra next_state S2 StructuralChecksDone 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S2 StructuralChecksDone vp=0] | state=S5
+
+
+PT-ID: PT-008
+COMMAND: "/build/c/baseline.exe" vra next_state S3 EligibilityChecksDone 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S3 EligibilityChecksDone vp=0] | state=S5
+
+
+PT-ID: PT-009
+COMMAND: "/build/c/baseline.exe" vra next_state S3 EligibilityChecksDone 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S3 EligibilityChecksDone vp=0] | state=S5
+
+
+PT-ID: PT-010
+COMMAND: "/build/c/baseline.exe" vra next_state S0 StartupComplete 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S0 StartupComplete vp=0] | state=S5
+
+
+PT-ID: PT-011
+COMMAND: "/build/c/baseline.exe" vra next_state S3 RollbackDetected 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S3 RollbackDetected vp=1] | state=S5
+
+
+PT-ID: PT-012
+COMMAND: "/build/c/baseline.exe" vra next_state S5 WalReplayNeeded 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S5 WalReplayNeeded vp=1] | state=S7
+
+
+PT-ID: PT-013
+COMMAND: "/build/c/baseline.exe" vra next_state S3 ToolStateInvalid 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S3 ToolStateInvalid vp=1] | state=S6
+
+
+PT-ID: PT-014
+COMMAND: "/build/c/baseline.exe" vra next_state S3 ToolStateInvalid 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S3 ToolStateInvalid vp=1] | state=S6
+
+COMMAND: "/build/c/baseline.exe" vra next_state S3 EligibilityChecksDone 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S3 EligibilityChecksDone vp=1] | state=S4
+
+
+PT-ID: PT-015
+COMMAND: "/build/c/baseline.exe" vra next_state S6 StartupComplete 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S6 StartupComplete vp=1] | state=S6
+
+
+PT-ID: PT-016
+COMMAND: "/build/c/baseline.exe" vra evidence chain
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=evidence query=[chain] | fields=validator_bundle_id,verified_head_digest,snapshot_id,policy_id,source_id,irr_digest,tool_activation_status,suppression_status,failure_code,failed_validator=V_CHAIN
+
+
+PT-ID: PT-017
+COMMAND: "/build/c/baseline.exe" vra evidence freshness
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=evidence query=[freshness] | fields=validator_bundle_id,verified_head_digest,snapshot_id,policy_id,source_id,irr_digest,tool_activation_status,suppression_status,freshness_value,failed_validator=V_FRESHNESS
+
+
+PT-ID: PT-018
+COMMAND: "/build/c/baseline.exe" vra evidence parse
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=evidence query=[parse] | fields=validator_bundle_id,verified_head_digest,snapshot_id,policy_id,source_id,irr_digest,tool_activation_status,suppression_status,failure_code,failed_validator=V_PARSE
+
+
+PT-ID: PT-019
+COMMAND: "/build/c/baseline.exe" vra evidence recovery
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=evidence query=[recovery] | fields=validator_bundle_id,verified_head_digest,snapshot_id,policy_id,source_id,irr_digest,tool_activation_status,suppression_status,recovery_phase,recovery_phase_producer=V_WAL_PHASE
+
+
+PT-ID: PT-020
+COMMAND: "/build/c/baseline.exe" vra evidence readmission
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=evidence query=[readmission] | fields=validator_bundle_id,verified_head_digest,snapshot_id,policy_id,source_id,irr_digest,tool_activation_status,suppression_status,readmission_token_id
+
+
+PT-ID: PT-021
+COMMAND: "/build/c/baseline.exe" vra evidence frame
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=evidence query=[frame] | fields=validator_bundle_id,verified_head_digest,snapshot_id,policy_id,source_id,irr_digest,tool_activation_status,suppression_status,failure_code,failed_validator=V_FRAME,validator_bundle_id_producer=ExecutionLayer,failure_explanation_producer=GateLogic,tool_activation_status_producer=ToolGate
+
+
+PT-ID: PT-022
+COMMAND: "/build/c/baseline.exe" vra vocab verdict_vs_state
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=vocab query=[verdict_vs_state] | distinct=1 verdicts=ALLOW,DENY,QUARANTINE,ESCALATE,READMISSION_PENDING
+
+
+PT-ID: PT-023
+COMMAND: "/build/c/baseline.exe" vra vocab negative
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=vocab query=[negative] | distinct=1 verdicts=ALLOW,DENY,QUARANTINE,ESCALATE,READMISSION_PENDING
+
+
+PT-ID: PT-024
+COMMAND: "/build/c/baseline.exe" vra next_state S8 AuthorityRelease 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S8 AuthorityRelease vp=1] | state=S1
+
+
+PT-ID: PT-025
+COMMAND: "/build/c/baseline.exe" vra evidence freshness
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=evidence query=[freshness] | fields=validator_bundle_id,verified_head_digest,snapshot_id,policy_id,source_id,irr_digest,tool_activation_status,suppression_status,freshness_value,failed_validator=V_FRESHNESS
+
+
+PT-ID: PT-026
+COMMAND: "/build/c/baseline.exe" vra evidence recovery
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=evidence query=[recovery] | fields=validator_bundle_id,verified_head_digest,snapshot_id,policy_id,source_id,irr_digest,tool_activation_status,suppression_status,recovery_phase,recovery_phase_producer=V_WAL_PHASE
+
+
+PT-ID: PT-027
+COMMAND: "/build/c/baseline.exe" vra next_state S3 ToolStateInvalid 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S3 ToolStateInvalid vp=1] | state=S6
+
+
+PT-ID: PT-028
+COMMAND: "/build/c/baseline.exe" vra attest V_COMPAT
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=attest query=[V_COMPAT] | enforcement_point=import_admissibility compat_status=recorded evidence=present
+
+
+PT-ID: PT-029
+COMMAND: "/build/c/baseline.exe" vra attest V_WRITER_LOCK
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=attest query=[V_WRITER_LOCK] | enforcement_point=persistence_control writer_lock_status=recorded contention_status=recorded evidence=present
+
+
+PT-ID: PTS-BDA-001
+COMMAND: "/build/c/baseline.exe" bda next_state IDLE INPUT_RECEIVED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[IDLE INPUT_RECEIVED vp=1] | state=INGEST_VALIDATE verdict=NONE
+
+
+PT-ID: PTS-BDA-002
+COMMAND: "/build/c/baseline.exe" bda next_state INGEST_VALIDATE VALIDATION_PASS 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[INGEST_VALIDATE VALIDATION_PASS vp=1] | state=FILTER_REVIEW verdict=NONE
+
+
+PT-ID: PTS-BDA-003
+COMMAND: "/build/c/baseline.exe" bda next_state FILTER_REVIEW NO_ESCALATION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[FILTER_REVIEW NO_ESCALATION vp=1] | state=READY_FOR_RELEASE verdict=ALLOW
+
+
+PT-ID: PTS-BDA-004
+COMMAND: "/build/c/baseline.exe" bda next_state FINALIZATION_REVIEW EVIDENCE_OK 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[FINALIZATION_REVIEW EVIDENCE_OK vp=1] | state=IDLE verdict=ALLOW
+
+
+PT-ID: PTS-BDA-005
+COMMAND: "/build/c/baseline.exe" bda next_state INGEST_VALIDATE VALIDATION_FAIL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[INGEST_VALIDATE VALIDATION_FAIL vp=1] | state=OUTPUT_BLOCKED verdict=BLOCK
+
+
+PT-ID: PTS-BDA-006
+COMMAND: "/build/c/baseline.exe" bda next_state FILTER_REVIEW TOOL_STATE_DETECTED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[FILTER_REVIEW TOOL_STATE_DETECTED vp=1] | state=TOOL_STATE_QUARANTINED verdict=QUARANTINE
+
+
+PT-ID: PTS-BDA-007
+COMMAND: "/build/c/baseline.exe" bda next_state INGEST_VALIDATE VALIDATION_FAIL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[INGEST_VALIDATE VALIDATION_FAIL vp=1] | state=OUTPUT_BLOCKED verdict=BLOCK
+
+
+PT-ID: PTS-BDA-008
+COMMAND: "/build/c/baseline.exe" bda next_state TOOL_STATE_QUARANTINED APPROVAL_GRANTED 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[TOOL_STATE_QUARANTINED APPROVAL_GRANTED vp=0] | state=TOOL_STATE_QUARANTINED verdict=NONE
+
+
+PT-ID: PTS-BDA-009
+COMMAND: "/build/c/baseline.exe" bda decide FRESHNESS_REPLAY
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=decide query=[FRESHNESS_REPLAY] | state=OUTPUT_BLOCKED verdict=BLOCK
+
+
+PT-ID: PTS-BDA-010
+COMMAND: "/build/c/baseline.exe" bda decide MISSING_RECEIPT
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=decide query=[MISSING_RECEIPT] | state=OUTPUT_BLOCKED verdict=BLOCK
+
+
+PT-ID: PTS-BDA-011
+COMMAND: "/build/c/baseline.exe" bda attest conflict_evidence
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=attest query=[conflict_evidence] | verdict=BLOCK gate_use=denied conflict_evidence=recorded
+
+
+PT-ID: PTS-BDA-012
+COMMAND: "/build/c/baseline.exe" bda vocab verdict_fidelity
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=vocab query=[verdict_fidelity] | count=7 distinct=1 verdicts=ALLOW,ALLOW_CONSTRAINED,BLOCK,QUARANTINE,FAIL_CLOSED,NONCOMPLIANT_HOLD,READMIT state_OUTPUT_BLOCKED!=verdict_BLOCK FAIL_CLOSED!=NONCOMPLIANT_HOLD OUTPUT_BLOCKED!=NONCOMPLIANT_HOLD
+
+
+PT-ID: PTS-BDA-013
+COMMAND: "/build/c/baseline.exe" bda next_state FILTER_REVIEW CPW_CRITICAL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[FILTER_REVIEW CPW_CRITICAL vp=1] | state=OUTPUT_BLOCKED verdict=FAIL_CLOSED
+
+
+PT-ID: PTS-BDA-014
+COMMAND: "/build/c/baseline.exe" bda decide VAL01_FAIL
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=decide query=[VAL01_FAIL] | state=OUTPUT_BLOCKED verdict=BLOCK
+
+COMMAND: "/build/c/baseline.exe" bda decide VAL05_FAIL
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=decide query=[VAL05_FAIL] | state=NONCOMPLIANT_HOLD verdict=NONCOMPLIANT_HOLD
+
+
+PT-ID: PTS-BDA-015
+COMMAND: "/build/c/baseline.exe" bda next_state FILTER_REVIEW CPW_CRITICAL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[FILTER_REVIEW CPW_CRITICAL vp=1] | state=OUTPUT_BLOCKED verdict=FAIL_CLOSED
+
+
+PT-ID: PTS-BDA-016
+COMMAND: "/build/c/baseline.exe" bda next_state FINALIZATION_REVIEW CPW_CRITICAL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[FINALIZATION_REVIEW CPW_CRITICAL vp=1] | state=OUTPUT_BLOCKED verdict=FAIL_CLOSED
+
+
+PT-ID: PTS-BDA-017
+COMMAND: "/build/c/baseline.exe" bda next_state TOOL_STATE_QUARANTINED CPW_CRITICAL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[TOOL_STATE_QUARANTINED CPW_CRITICAL vp=1] | state=OUTPUT_BLOCKED verdict=FAIL_CLOSED
+
+
+PT-ID: PTS-BDA-018
+COMMAND: "/build/c/baseline.exe" bda next_state OUTPUT_BLOCKED READMISSION_APPROVED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[OUTPUT_BLOCKED READMISSION_APPROVED vp=1] | state=IDLE verdict=READMIT
+
+
+PT-ID: PTS-BDA-019
+COMMAND: "/build/c/baseline.exe" bda next_state NONCOMPLIANT_HOLD COMPLIANCE_RESTORED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[NONCOMPLIANT_HOLD COMPLIANCE_RESTORED vp=1] | state=IDLE verdict=READMIT
+
+
+PT-ID: PTS-BDA-020
+COMMAND: "/build/c/baseline.exe" bda next_state OUTPUT_BLOCKED READMISSION_APPROVED 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[OUTPUT_BLOCKED READMISSION_APPROVED vp=0] | state=OUTPUT_BLOCKED verdict=NONE
+
+
+PT-ID: PTS-BDA-021
+COMMAND: "/build/c/baseline.exe" bda next_state IDLE INPUT_RECEIVED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[IDLE INPUT_RECEIVED vp=1] | state=INGEST_VALIDATE verdict=NONE
+
+
+PT-ID: PTS-BDA-022
+COMMAND: "/build/c/baseline.exe" bda evidence closure
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=evidence query=[closure] | fields=decision_id,session_id,boundary_side,decision_object,input_digest,policy_hash,validator_results,statement_refs,verdict,reason_code,order_index,hash_prev,hash_curr
+
+
+PT-ID: PTS-BDA-023
+COMMAND: "/build/c/baseline.exe" bda evidence mandatory
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=evidence query=[mandatory] | fields=decision_id,session_id,boundary_side,decision_object,input_digest,policy_hash,validator_results,statement_refs,verdict,reason_code,order_index,hash_prev,hash_curr
+
+
+PT-ID: PTS-BDA-024
+COMMAND: "/build/c/baseline.exe" bda evidence approval
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=evidence query=[approval] | fields=decision_id,session_id,boundary_side,decision_object,input_digest,policy_hash,validator_results,statement_refs,verdict,reason_code,order_index,hash_prev,hash_curr,approval_ref
+
+
+PT-ID: PTS-BDA-025
+COMMAND: "/build/c/baseline.exe" bda evidence finalization
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=evidence query=[finalization] | fields=decision_id,session_id,boundary_side,decision_object,input_digest,policy_hash,validator_results,statement_refs,verdict,reason_code,order_index,hash_prev,hash_curr,evidence_ref,verif_counter_anchor
+
+
+PT-ID: PTS-BDA-026
+COMMAND: "/build/c/baseline.exe" bda evidence rollback
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=evidence query=[rollback] | fields=decision_id,session_id,boundary_side,decision_object,input_digest,policy_hash,validator_results,statement_refs,verdict,reason_code,order_index,hash_prev,hash_curr,rollback_ref
+
+
+PT-ID: PTS-BDA-027
+COMMAND: (no invocation -- SKIP: BDA Conformance Tests §5 Minimal Run Note, 'Bounded external obligations not locally runnable': "authorized non-validator producer grounding".)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-BDA-028
+COMMAND: "/build/c/baseline.exe" bda next_state READY_FOR_RELEASE CPW_CRITICAL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[READY_FOR_RELEASE CPW_CRITICAL vp=1] | state=OUTPUT_BLOCKED verdict=FAIL_CLOSED
+
+
+PT-ID: PTS-BDA-029
+COMMAND: (no invocation -- SKIP: BDA Conformance Tests §5 Minimal Run Note, 'Bounded external obligations not locally runnable': "distributed enforcement legitimacy where not exposed by local transition function".)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-BDA-030
+COMMAND: "/build/c/baseline.exe" bda vocab fidelity
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=vocab query=[fidelity] | count=7 distinct=1 verdicts=ALLOW,ALLOW_CONSTRAINED,BLOCK,QUARANTINE,FAIL_CLOSED,NONCOMPLIANT_HOLD,READMIT state_OUTPUT_BLOCKED!=verdict_BLOCK FAIL_CLOSED!=NONCOMPLIANT_HOLD OUTPUT_BLOCKED!=NONCOMPLIANT_HOLD
+
+
+PT-ID: PTS-BDA-031
+COMMAND: "/build/c/baseline.exe" bda vocab separation
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=vocab query=[separation] | count=7 distinct=1 verdicts=ALLOW,ALLOW_CONSTRAINED,BLOCK,QUARANTINE,FAIL_CLOSED,NONCOMPLIANT_HOLD,READMIT state_OUTPUT_BLOCKED!=verdict_BLOCK FAIL_CLOSED!=NONCOMPLIANT_HOLD OUTPUT_BLOCKED!=NONCOMPLIANT_HOLD
+
+
+PT-ID: PTS-BDA-032
+COMMAND: "/build/c/baseline.exe" bda param
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=param query=[] | D02=BLOCK D03=QUARANTINE D08=ALLOW D09=QUARANTINE within_canonical=1
+
+
+PT-ID: PTS-BDA-033
+COMMAND: "/build/c/baseline.exe" bda decide CPW_CRITICAL
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=decide query=[CPW_CRITICAL] | state=OUTPUT_BLOCKED verdict=FAIL_CLOSED
+
+
+PT-ID: PTS-BDA-034
+COMMAND: "/build/c/baseline.exe" bda evidence approval
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=evidence query=[approval] | fields=decision_id,session_id,boundary_side,decision_object,input_digest,policy_hash,validator_results,statement_refs,verdict,reason_code,order_index,hash_prev,hash_curr,approval_ref
+
+
+PT-ID: PTS-BDA-035
+COMMAND: "/build/c/baseline.exe" bda next_state FINALIZATION_REVIEW EVIDENCE_OK 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[FINALIZATION_REVIEW EVIDENCE_OK vp=1] | state=IDLE verdict=ALLOW
+
+COMMAND: "/build/c/baseline.exe" bda next_state FINALIZATION_REVIEW EVIDENCE_FAIL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[FINALIZATION_REVIEW EVIDENCE_FAIL vp=1] | state=NONCOMPLIANT_HOLD verdict=NONCOMPLIANT_HOLD
+
+
+PT-ID: PTS-BDA-036
+COMMAND: "/build/c/baseline.exe" bda attest projection_limitation
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=attest query=[projection_limitation] | state_route=may_be_shared verdict_semantics=distinct_downstream
+
+
+PT-ID: TAA-PT-001
+COMMAND: "/build/c/baseline.exe" taa next_state INTAKE INTAKE_TO_ROLE_SCREENING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[INTAKE INTAKE_TO_ROLE_SCREENING vp=1] | state=ROLE_SCREENING verdict=NONE
+
+
+PT-ID: TAA-PT-002
+COMMAND: "/build/c/baseline.exe" taa next_state EVALUATING EVALUATING_TO_CLASSIFYING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[EVALUATING EVALUATING_TO_CLASSIFYING vp=1] | state=CLASSIFYING verdict=NONE
+
+
+PT-ID: TAA-PT-003
+COMMAND: "/build/c/baseline.exe" taa next_state DECIDED DECIDED_TO_HANDOFF_READY 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[DECIDED DECIDED_TO_HANDOFF_READY vp=1] | state=HANDOFF_READY verdict=NONE
+
+
+PT-ID: TAA-PT-004
+COMMAND: "/build/c/baseline.exe" taa next_state EVALUATING EVALUATING_TO_CLASSIFYING 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[EVALUATING EVALUATING_TO_CLASSIFYING vp=0] | state=FAIL_CLOSED verdict=NONE
+
+
+PT-ID: TAA-PT-005
+COMMAND: "/build/c/baseline.exe" taa evidence allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[allow_constrained] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,conflict_check_mode,conflict_check_strength,conflict_check_confidence,conflict_check_coverage_scope,compared_claim_set_ref,residual_risk_statement
+
+
+PT-ID: TAA-PT-006
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION vp=1] | state=DECIDED verdict=ESCALATE
+
+COMMAND: "/build/c/baseline.exe" taa evidence fail_closed
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[fail_closed] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,inhibit_flags,root_reason_code,clearance_needed,cleared_only_by,remediation_class,escalation_request_ref,request_id,failure_ref,required_actor_role,required_evidence,status
+
+
+PT-ID: TAA-PT-007
+COMMAND: "/build/c/baseline.exe" taa next_state ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING vp=1] | state=CANONICALIZING verdict=NONE
+
+
+PT-ID: TAA-PT-008
+COMMAND: "/build/c/baseline.exe" taa next_state CLASSIFYING CLASSIFYING_TO_DENY_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CLASSIFYING CLASSIFYING_TO_DENY_DECISION vp=1] | state=DECIDED verdict=DENY
+
+COMMAND: "/build/c/baseline.exe" taa next_state EVALUATING EVALUATING_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[EVALUATING EVALUATING_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: TAA-PT-009
+COMMAND: "/build/c/baseline.exe" taa next_state INTAKE STRUCTURAL_INCOMPLETENESS_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[INTAKE STRUCTURAL_INCOMPLETENESS_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: TAA-PT-010
+COMMAND: "/build/c/baseline.exe" taa next_state CLASSIFYING POLICY_SNAPSHOT_DRIFT_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CLASSIFYING POLICY_SNAPSHOT_DRIFT_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: TAA-PT-011
+COMMAND: "/build/c/baseline.exe" taa next_state EVALUATING CONFLICT_CHECKING_TO_ALLOW_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[EVALUATING CONFLICT_CHECKING_TO_ALLOW_DECISION vp=1] | state=FAIL_CLOSED verdict=ALLOW
+
+
+PT-ID: TAA-PT-012
+COMMAND: "/build/c/baseline.exe" taa next_state FAIL_CLOSED FAIL_CLOSED_TO_NONCOMPLIANT_HOLD 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[FAIL_CLOSED FAIL_CLOSED_TO_NONCOMPLIANT_HOLD vp=1] | state=NONCOMPLIANT_HOLD verdict=NONE
+
+COMMAND: "/build/c/baseline.exe" taa next_state NONCOMPLIANT_HOLD NONCOMPLIANT_HOLD_TO_READMISSION_PENDING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[NONCOMPLIANT_HOLD NONCOMPLIANT_HOLD_TO_READMISSION_PENDING vp=1] | state=READMISSION_PENDING verdict=NONE
+
+
+PT-ID: TAA-PT-013
+COMMAND: "/build/c/baseline.exe" taa next_state READMISSION_PENDING READMISSION_PENDING_TO_ROLE_SCREENING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[READMISSION_PENDING READMISSION_PENDING_TO_ROLE_SCREENING vp=1] | state=ROLE_SCREENING verdict=NONE
+
+
+PT-ID: TAA-PT-014
+COMMAND: "/build/c/baseline.exe" taa next_state CLOSED ANY_NON_REOPEN 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CLOSED ANY_NON_REOPEN vp=1] | state=CLOSED verdict=NONE
+
+
+PT-ID: TAA-PT-015
+COMMAND: "/build/c/baseline.exe" taa evidence closure
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[closure] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,semantic_closure,evidence_closure,failure_closure,policy_snapshot_closure
+
+
+PT-ID: TAA-PT-016
+COMMAND: "/build/c/baseline.exe" taa evidence base
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[base] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp
+
+
+PT-ID: TAA-PT-017
+COMMAND: "/build/c/baseline.exe" taa evidence allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[allow_constrained] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,conflict_check_mode,conflict_check_strength,conflict_check_confidence,conflict_check_coverage_scope,compared_claim_set_ref,residual_risk_statement
+
+
+PT-ID: TAA-PT-018
+COMMAND: "/build/c/baseline.exe" taa evidence fail_closed
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[fail_closed] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,inhibit_flags,root_reason_code,clearance_needed,cleared_only_by,remediation_class,escalation_request_ref,request_id,failure_ref,required_actor_role,required_evidence,status
+
+
+PT-ID: TAA-PT-019
+COMMAND: "/build/c/baseline.exe" taa next_state DECIDED CLEARANCE_ARTIFACT_MISSING_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[DECIDED CLEARANCE_ARTIFACT_MISSING_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: TAA-PT-020
+COMMAND: (no invocation -- SKIP: TAA Conformance Tests record-kind: "Declarative conformance claim (not a buyer-runnable unit test)"; Minimal run note: "the 1 declarative record (VP-GEN-020 / TAA-PT-020-DECL) is preserved as a buyer obligation rather than a runnable assertion.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: TAA-PT-021
+COMMAND: "/build/c/baseline.exe" taa vocab verdict_set
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=vocab query=[verdict_set] | count=6 verdicts=ALLOW,ALLOW_CONSTRAINED,DENY,FAIL_CLOSED,ESCALATE,OUT_OF_SCOPE reclassify=action_not_verdict
+
+
+PT-ID: TAA-PT-022
+COMMAND: "/build/c/baseline.exe" taa next_state ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING vp=1] | state=CANONICALIZING verdict=NONE
+
+COMMAND: "/build/c/baseline.exe" taa next_state ROLE_SCREENING ROLE_SCREENING_TO_OUT_OF_SCOPE_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[ROLE_SCREENING ROLE_SCREENING_TO_OUT_OF_SCOPE_DECISION vp=1] | state=DECIDED verdict=OUT_OF_SCOPE
+
+
+PT-ID: TAA-PT-023
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION vp=1] | state=DECIDED verdict=DENY
+
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: TAA-PT-024
+COMMAND: "/build/c/baseline.exe" taa next_state EVALUATING EVALUATING_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[EVALUATING EVALUATING_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: TAA-PT-025
+COMMAND: "/build/c/baseline.exe" taa evidence allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[allow_constrained] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,conflict_check_mode,conflict_check_strength,conflict_check_confidence,conflict_check_coverage_scope,compared_claim_set_ref,residual_risk_statement
+
+
+PT-ID: TAA-PT-026
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_DECISION vp=1] | state=DECIDED verdict=ALLOW
+
+
+PT-ID: TAA-PT-027
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_DECISION vp=1] | state=DECIDED verdict=ALLOW
+
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION vp=1] | state=DECIDED verdict=DENY
+
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION vp=1] | state=DECIDED verdict=ESCALATE
+
+
+PT-ID: VP-GEN-001
+COMMAND: "/build/c/baseline.exe" taa next_state INTAKE INTAKE_TO_ROLE_SCREENING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[INTAKE INTAKE_TO_ROLE_SCREENING vp=1] | state=ROLE_SCREENING verdict=NONE
+
+
+PT-ID: VP-GEN-002
+COMMAND: "/build/c/baseline.exe" taa next_state EVALUATING EVALUATING_TO_CLASSIFYING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[EVALUATING EVALUATING_TO_CLASSIFYING vp=1] | state=CLASSIFYING verdict=NONE
+
+
+PT-ID: VP-GEN-003
+COMMAND: "/build/c/baseline.exe" taa next_state DECIDED DECIDED_TO_HANDOFF_READY 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[DECIDED DECIDED_TO_HANDOFF_READY vp=1] | state=HANDOFF_READY verdict=NONE
+
+
+PT-ID: VP-GEN-004
+COMMAND: "/build/c/baseline.exe" taa next_state EVALUATING EVALUATING_TO_CLASSIFYING 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[EVALUATING EVALUATING_TO_CLASSIFYING vp=0] | state=FAIL_CLOSED verdict=NONE
+
+
+PT-ID: VP-GEN-005
+COMMAND: "/build/c/baseline.exe" taa evidence allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[allow_constrained] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,conflict_check_mode,conflict_check_strength,conflict_check_confidence,conflict_check_coverage_scope,compared_claim_set_ref,residual_risk_statement
+
+
+PT-ID: VP-GEN-006
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION vp=1] | state=DECIDED verdict=ESCALATE
+
+COMMAND: "/build/c/baseline.exe" taa evidence fail_closed
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[fail_closed] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,inhibit_flags,root_reason_code,clearance_needed,cleared_only_by,remediation_class,escalation_request_ref,request_id,failure_ref,required_actor_role,required_evidence,status
+
+
+PT-ID: VP-GEN-007
+COMMAND: "/build/c/baseline.exe" taa next_state ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING vp=1] | state=CANONICALIZING verdict=NONE
+
+
+PT-ID: VP-GEN-008
+COMMAND: "/build/c/baseline.exe" taa next_state CLASSIFYING CLASSIFYING_TO_DENY_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CLASSIFYING CLASSIFYING_TO_DENY_DECISION vp=1] | state=DECIDED verdict=DENY
+
+COMMAND: "/build/c/baseline.exe" taa next_state EVALUATING EVALUATING_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[EVALUATING EVALUATING_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: VP-GEN-009
+COMMAND: "/build/c/baseline.exe" taa next_state INTAKE STRUCTURAL_INCOMPLETENESS_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[INTAKE STRUCTURAL_INCOMPLETENESS_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: VP-GEN-010
+COMMAND: "/build/c/baseline.exe" taa next_state CLASSIFYING POLICY_SNAPSHOT_DRIFT_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CLASSIFYING POLICY_SNAPSHOT_DRIFT_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: VP-GEN-011
+COMMAND: "/build/c/baseline.exe" taa next_state EVALUATING CONFLICT_CHECKING_TO_ALLOW_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[EVALUATING CONFLICT_CHECKING_TO_ALLOW_DECISION vp=1] | state=FAIL_CLOSED verdict=ALLOW
+
+
+PT-ID: VP-GEN-012
+COMMAND: "/build/c/baseline.exe" taa next_state FAIL_CLOSED FAIL_CLOSED_TO_NONCOMPLIANT_HOLD 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[FAIL_CLOSED FAIL_CLOSED_TO_NONCOMPLIANT_HOLD vp=1] | state=NONCOMPLIANT_HOLD verdict=NONE
+
+COMMAND: "/build/c/baseline.exe" taa next_state NONCOMPLIANT_HOLD NONCOMPLIANT_HOLD_TO_READMISSION_PENDING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[NONCOMPLIANT_HOLD NONCOMPLIANT_HOLD_TO_READMISSION_PENDING vp=1] | state=READMISSION_PENDING verdict=NONE
+
+
+PT-ID: VP-GEN-013
+COMMAND: "/build/c/baseline.exe" taa next_state READMISSION_PENDING READMISSION_PENDING_TO_ROLE_SCREENING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[READMISSION_PENDING READMISSION_PENDING_TO_ROLE_SCREENING vp=1] | state=ROLE_SCREENING verdict=NONE
+
+
+PT-ID: VP-GEN-014
+COMMAND: "/build/c/baseline.exe" taa next_state CLOSED ANY_NON_REOPEN 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CLOSED ANY_NON_REOPEN vp=1] | state=CLOSED verdict=NONE
+
+
+PT-ID: VP-GEN-015
+COMMAND: "/build/c/baseline.exe" taa evidence closure
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[closure] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,semantic_closure,evidence_closure,failure_closure,policy_snapshot_closure
+
+
+PT-ID: VP-GEN-016
+COMMAND: "/build/c/baseline.exe" taa evidence base
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[base] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp
+
+
+PT-ID: VP-GEN-017
+COMMAND: "/build/c/baseline.exe" taa evidence allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[allow_constrained] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,conflict_check_mode,conflict_check_strength,conflict_check_confidence,conflict_check_coverage_scope,compared_claim_set_ref,residual_risk_statement
+
+
+PT-ID: VP-GEN-018
+COMMAND: "/build/c/baseline.exe" taa evidence fail_closed
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[fail_closed] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,inhibit_flags,root_reason_code,clearance_needed,cleared_only_by,remediation_class,escalation_request_ref,request_id,failure_ref,required_actor_role,required_evidence,status
+
+
+PT-ID: VP-GEN-019
+COMMAND: "/build/c/baseline.exe" taa next_state DECIDED CLEARANCE_ARTIFACT_MISSING_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[DECIDED CLEARANCE_ARTIFACT_MISSING_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: VP-GEN-020
+COMMAND: (no invocation -- SKIP: TAA Conformance Tests record-kind: "Declarative conformance claim (not a buyer-runnable unit test)"; Minimal run note: "the 1 declarative record (VP-GEN-020 / TAA-PT-020-DECL) is preserved as a buyer obligation rather than a runnable assertion.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: VP-GEN-021
+COMMAND: "/build/c/baseline.exe" taa vocab verdict_set
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=vocab query=[verdict_set] | count=6 verdicts=ALLOW,ALLOW_CONSTRAINED,DENY,FAIL_CLOSED,ESCALATE,OUT_OF_SCOPE reclassify=action_not_verdict
+
+
+PT-ID: VP-GEN-022
+COMMAND: "/build/c/baseline.exe" taa next_state ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING vp=1] | state=CANONICALIZING verdict=NONE
+
+COMMAND: "/build/c/baseline.exe" taa next_state ROLE_SCREENING ROLE_SCREENING_TO_OUT_OF_SCOPE_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[ROLE_SCREENING ROLE_SCREENING_TO_OUT_OF_SCOPE_DECISION vp=1] | state=DECIDED verdict=OUT_OF_SCOPE
+
+
+PT-ID: VP-GEN-023
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION vp=1] | state=DECIDED verdict=DENY
+
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: VP-GEN-024
+COMMAND: "/build/c/baseline.exe" taa next_state EVALUATING EVALUATING_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[EVALUATING EVALUATING_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: VP-GEN-025
+COMMAND: "/build/c/baseline.exe" taa evidence allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[allow_constrained] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,conflict_check_mode,conflict_check_strength,conflict_check_confidence,conflict_check_coverage_scope,compared_claim_set_ref,residual_risk_statement
+
+
+PT-ID: VP-GEN-026
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_DECISION vp=1] | state=DECIDED verdict=ALLOW
+
+
+PT-ID: VP-GEN-027
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_DECISION vp=1] | state=DECIDED verdict=ALLOW
+
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION vp=1] | state=DECIDED verdict=DENY
+
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION vp=1] | state=DECIDED verdict=ESCALATE
+
+
+PT-ID: ARA-T001
+COMMAND: "/build/c/baseline.exe" ara next_state S0_INGESTED EV_PARSE_OK 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S0_INGESTED EV_PARSE_OK vp=1] | state=S1
+
+
+PT-ID: ARA-T002
+COMMAND: "/build/c/baseline.exe" ara next_state S2_VERIFIED replay_fold_complete 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S2_VERIFIED replay_fold_complete vp=1] | state=S3
+
+
+PT-ID: ARA-T003
+COMMAND: "/build/c/baseline.exe" ara next_state S4_CHECKPOINT_RESOLVED EV_REPORT_BOUND 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S4_CHECKPOINT_RESOLVED EV_REPORT_BOUND vp=1] | state=S5
+
+
+PT-ID: ARA-T004
+COMMAND: "/build/c/baseline.exe" ara next_state S2_VERIFIED EV_SIGNATURE_FAIL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S2_VERIFIED EV_SIGNATURE_FAIL vp=1] | state=SX
+
+COMMAND: "/build/c/baseline.exe" ara next_state S2_VERIFIED EV_CHAIN_BREAK 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S2_VERIFIED EV_CHAIN_BREAK vp=0] | state=SX chain_status=BROKEN
+
+
+PT-ID: ARA-T005
+COMMAND: "/build/c/baseline.exe" ara decide REPORT_INSUFFICIENT
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=decide query=[REPORT_INSUFFICIENT] | verdict=INCIDENT_ONLY finalization=blocked
+
+
+PT-ID: ARA-T006
+COMMAND: "/build/c/baseline.exe" ara next_state S2_VERIFIED EV_EVIDENCE_FAIL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S2_VERIFIED EV_EVIDENCE_FAIL vp=1] | state=SH
+
+
+PT-ID: ARA-T007
+COMMAND: "/build/c/baseline.exe" ara decide CHECKPOINT_UNVERIFIED
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=decide query=[CHECKPOINT_UNVERIFIED] | rollback=INVALID verdict=PARTIAL
+
+
+PT-ID: ARA-T008
+COMMAND: "/build/c/baseline.exe" ara next_state S2_VERIFIED EV_SIGNATURE_FAIL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S2_VERIFIED EV_SIGNATURE_FAIL vp=1] | state=SX
+
+COMMAND: "/build/c/baseline.exe" ara next_state S2_VERIFIED EV_CHAIN_BREAK 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S2_VERIFIED EV_CHAIN_BREAK vp=1] | state=SX chain_status=BROKEN
+
+COMMAND: "/build/c/baseline.exe" ara next_state S2_VERIFIED EV_COUNTER_REPLAY 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S2_VERIFIED EV_COUNTER_REPLAY vp=1] | state=SH
+
+
+PT-ID: ARA-T009
+COMMAND: "/build/c/baseline.exe" ara next_state S2_VERIFIED EV_SIGNATURE_FAIL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S2_VERIFIED EV_SIGNATURE_FAIL vp=1] | state=SX
+
+
+PT-ID: ARA-T010
+COMMAND: "/build/c/baseline.exe" ara next_state S4_CHECKPOINT_RESOLVED EV_CHAIN_BREAK 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S4_CHECKPOINT_RESOLVED EV_CHAIN_BREAK vp=0] | state=SX chain_status=BROKEN
+
+
+PT-ID: ARA-T011
+COMMAND: "/build/c/baseline.exe" ara next_state S3_RECONSTRUCTED EV_SIGNATURE_FAIL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S3_RECONSTRUCTED EV_SIGNATURE_FAIL vp=1] | state=SX
+
+COMMAND: "/build/c/baseline.exe" ara next_state S3_RECONSTRUCTED EV_EVIDENCE_FAIL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S3_RECONSTRUCTED EV_EVIDENCE_FAIL vp=1] | state=SH
+
+
+PT-ID: ARA-T012
+COMMAND: "/build/c/baseline.exe" ara next_state SH_HOLD_ACTIVE EV_READMISSION_GRANTED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[SH_HOLD_ACTIVE EV_READMISSION_GRANTED vp=1] | state=S6
+
+
+PT-ID: ARA-T013
+COMMAND: "/build/c/baseline.exe" ara next_state SH_HOLD_ACTIVE EV_READMISSION_GRANTED 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[SH_HOLD_ACTIVE EV_READMISSION_GRANTED vp=0] | state=SH
+
+
+PT-ID: ARA-T014
+COMMAND: "/build/c/baseline.exe" ara next_state S5_REPORT_READY OUT_OF_ORDER_POSITIVE 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S5_REPORT_READY OUT_OF_ORDER_POSITIVE vp=1] | state=S5
+
+
+PT-ID: ARA-T015
+COMMAND: "/build/c/baseline.exe" ara evidence final
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=evidence query=[final] | fields=bundle_digest,policy_profile_id/policy_hash,validator_outcomes,hash_continuity_refs,signature_refs,checkpoint_refs,rollback_refs,report_fields_ref,report_signature/export_manifest_ref
+
+
+PT-ID: ARA-T016
+COMMAND: "/build/c/baseline.exe" ara evidence base
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=evidence query=[base] | fields=bundle_digest,policy_profile_id/policy_hash,validator_outcomes,hash_continuity_refs,signature_refs,checkpoint_refs,rollback_refs,report_fields_ref
+
+
+PT-ID: ARA-T017
+COMMAND: "/build/c/baseline.exe" ara evidence hold
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=evidence query=[hold] | fields=bundle_digest,policy_profile_id/policy_hash,validator_outcomes,hash_continuity_refs,signature_refs,checkpoint_refs,rollback_refs,report_fields_ref,hold_enter_refs,hold_exit_refs,anchor_update_ref,boot_or_verif_refs
+
+
+PT-ID: ARA-T018
+COMMAND: "/build/c/baseline.exe" ara evidence base
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=evidence query=[base] | fields=bundle_digest,policy_profile_id/policy_hash,validator_outcomes,hash_continuity_refs,signature_refs,checkpoint_refs,rollback_refs,report_fields_ref
+
+
+PT-ID: ARA-T019
+COMMAND: "/build/c/baseline.exe" ara gate V10
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=gate query=[V10] | gate=QUARANTINE admitted_to_reconstruction=no incident_export=emitted
+
+
+PT-ID: ARA-T020
+COMMAND: "/build/c/baseline.exe" ara attest distributed
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=attest query=[distributed] | V-10=gate_enforcement_bounded orphaned=0 classification=transparent collapse=none
+
+
+PT-ID: ARA-T021
+COMMAND: "/build/c/baseline.exe" ara vocab fidelity
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=vocab query=[fidelity] | count=5 verdicts=REPLAYABLE,PARTIAL,REJECTED,BROKEN,INCIDENT_ONLY BROKEN!=REJECTED SX!=SH INCIDENT_ONLY!=FAIL_CLOSED distinct=1
+
+
+PT-ID: ARA-T022
+COMMAND: "/build/c/baseline.exe" ara vocab separation
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=vocab query=[separation] | count=5 verdicts=REPLAYABLE,PARTIAL,REJECTED,BROKEN,INCIDENT_ONLY BROKEN!=REJECTED SX!=SH INCIDENT_ONLY!=FAIL_CLOSED distinct=1
+
+
+PT-ID: ARA-T023
+COMMAND: "/build/c/baseline.exe" ara param
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=param query=[] | policy_unresolved=BLOCKED_or_SX S6_resume=S2_or_S4 within_envelope=1
+
+
+PT-ID: ARA-T024
+COMMAND: "/build/c/baseline.exe" ara next_state S3_RECONSTRUCTED EV_LASTCLEAN_FOUND 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S3_RECONSTRUCTED EV_LASTCLEAN_FOUND vp=1] | state=S4
+
+
+PT-ID: ARA-T025
+COMMAND: "/build/c/baseline.exe" ara evidence hold
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=evidence query=[hold] | fields=bundle_digest,policy_profile_id/policy_hash,validator_outcomes,hash_continuity_refs,signature_refs,checkpoint_refs,rollback_refs,report_fields_ref,hold_enter_refs,hold_exit_refs,anchor_update_ref,boot_or_verif_refs
+
+
+PT-ID: ARA-T026
+COMMAND: "/build/c/baseline.exe" ara next_state S4_CHECKPOINT_RESOLVED EV_REPORT_BOUND 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S4_CHECKPOINT_RESOLVED EV_REPORT_BOUND vp=1] | state=S5
+
+
+PT-ID: ARA-T027
+COMMAND: "/build/c/baseline.exe" ara attest transparent
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=attest query=[transparent] | V-10=gate_enforcement_bounded orphaned=0 classification=transparent collapse=none
+
+
+PT-ID: FPA-D-01
+COMMAND: (no invocation -- SKIP: FPA Conformance Tests §F.D "Declarative obligations (not locally runnable on the published surface)"; §H Minimal Run Note: "Bounded external obligations not locally runnable: FPA-D-01 through FPA-D-06.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-02
+COMMAND: (no invocation -- SKIP: FPA Conformance Tests §F.D "Declarative obligations (not locally runnable on the published surface)"; §H Minimal Run Note: "Bounded external obligations not locally runnable: FPA-D-01 through FPA-D-06.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-03
+COMMAND: (no invocation -- SKIP: FPA Conformance Tests §F.D "Declarative obligations (not locally runnable on the published surface)"; §H Minimal Run Note: "Bounded external obligations not locally runnable: FPA-D-01 through FPA-D-06.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-04
+COMMAND: (no invocation -- SKIP: FPA Conformance Tests §F.D "Declarative obligations (not locally runnable on the published surface)"; §H Minimal Run Note: "Bounded external obligations not locally runnable: FPA-D-01 through FPA-D-06.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-05
+COMMAND: (no invocation -- SKIP: FPA Conformance Tests §F.D "Declarative obligations (not locally runnable on the published surface)"; §H Minimal Run Note: "Bounded external obligations not locally runnable: FPA-D-01 through FPA-D-06.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-06
+COMMAND: (no invocation -- SKIP: FPA Conformance Tests §F.D "Declarative obligations (not locally runnable on the published surface)"; §H Minimal Run Note: "Bounded external obligations not locally runnable: FPA-D-01 through FPA-D-06.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-T-01
+COMMAND: "/build/c/baseline.exe" fpa next_state IDLE TransferPacketReceived 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[IDLE TransferPacketReceived vp=1] | state=S1
+
+
+PT-ID: FPA-T-02
+COMMAND: "/build/c/baseline.exe" fpa next_state RECEIVED StructureValid 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[RECEIVED StructureValid vp=1] | state=S2
+
+
+PT-ID: FPA-T-03
+COMMAND: "/build/c/baseline.exe" fpa next_state RESTORATION_ELIGIBLE RestoreAdmitted 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[RESTORATION_ELIGIBLE RestoreAdmitted vp=1] | state=S0
+
+
+PT-ID: FPA-T-04
+COMMAND: "/build/c/baseline.exe" fpa next_state RECEIVED StructureValid 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[RECEIVED StructureValid vp=0] | state=S8
+
+COMMAND: "/build/c/baseline.exe" fpa next_state RECEIVED StructureInvalid 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[RECEIVED StructureInvalid vp=1] | state=S8
+
+
+PT-ID: FPA-T-06
+COMMAND: "/build/c/baseline.exe" fpa next_state VERIFIED EvidencePending 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[VERIFIED EvidencePending vp=0] | state=S7
+
+
+PT-ID: FPA-T-08a
+COMMAND: "/build/c/baseline.exe" fpa next_state VERIFIED FreshnessFail 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[VERIFIED FreshnessFail vp=1] | state=S8
+
+
+PT-ID: FPA-T-08b
+COMMAND: "/build/c/baseline.exe" fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed vp=0] | state=S8
+
+
+PT-ID: FPA-T-08c
+COMMAND: "/build/c/baseline.exe" fpa vocab taxonomy
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=vocab query=[taxonomy] | count=6 verdicts=ACCEPT,REJECT,QUARANTINE,RESTORATION_ELIGIBLE,READMIT,FAIL_CLOSED REJECT!=FAIL_CLOSED verdict_RESTORATION_ELIGIBLE!=state_S6 distinct=1
+
+
+PT-ID: FPA-T-09
+COMMAND: "/build/c/baseline.exe" fpa next_state VERIFIED FreshnessPass 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[VERIFIED FreshnessPass vp=0] | state=S8
+
+
+PT-ID: FPA-T-10
+COMMAND: "/build/c/baseline.exe" fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed vp=0] | state=S8
+
+
+PT-ID: FPA-T-11
+COMMAND: "/build/c/baseline.exe" fpa next_state IRR_COMMITTED FreshnessPass 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[IRR_COMMITTED FreshnessPass vp=1] | state=S8
+
+
+PT-ID: FPA-T-12
+COMMAND: "/build/c/baseline.exe" fpa next_state QUARANTINED ReadmissionApproved 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[QUARANTINED ReadmissionApproved vp=1] | state=S2
+
+
+PT-ID: FPA-T-13a
+COMMAND: "/build/c/baseline.exe" fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed vp=1] | state=S6
+
+
+PT-ID: FPA-T-13b
+COMMAND: "/build/c/baseline.exe" fpa next_state RESTORATION_ELIGIBLE RestoreAdmitted 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[RESTORATION_ELIGIBLE RestoreAdmitted vp=1] | state=S0
+
+
+PT-ID: FPA-T-14
+COMMAND: "/build/c/baseline.exe" fpa next_state REJECTED FreshnessPass 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[REJECTED FreshnessPass vp=1] | state=S8
+
+
+PT-ID: FPA-T-15
+COMMAND: "/build/c/baseline.exe" fpa evidence deny_restore
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=evidence query=[deny_restore] | fields=decision_id,agent_id,source_id,ledger_uuid,decision_object,policy_id,policy_version,reason_code,semantic_verdict,gate_class,packet_hash,freshness_value,watermark_before,watermark_after,ssm_validation_result,reason_code=DENY_RESTORE,semantic_verdict=FAIL_CLOSED,gate_class=BLOCK
+
+
+PT-ID: FPA-T-16
+COMMAND: "/build/c/baseline.exe" fpa evidence accept
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=evidence query=[accept] | fields=decision_id,agent_id,source_id,ledger_uuid,decision_object,policy_id,policy_version,reason_code,semantic_verdict,gate_class,packet_hash,freshness_value,watermark_before,watermark_after,ssm_validation_result,semantic_verdict=ACCEPT,gate_class=RELEASE,irr_digest,prev_receipt_digest
+
+
+PT-ID: FPA-T-17A
+COMMAND: "/build/c/baseline.exe" fpa param tvc
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=param query=[tvc] | when_true=tvc_validation_result=Some when_false=None
+
+
+PT-ID: FPA-T-17B
+COMMAND: "/build/c/baseline.exe" fpa param evidence
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=param query=[evidence] | when_true=evidence_validation_result=Some when_false=None
+
+
+PT-ID: FPA-T-17C
+COMMAND: "/build/c/baseline.exe" fpa param transport
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=param query=[transport] | when_true=transport_validation_result=Some when_false=None
+
+
+PT-ID: FPA-T-17D
+COMMAND: "/build/c/baseline.exe" fpa evidence receipt_linkage
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=evidence query=[receipt_linkage] | fields=decision_id,agent_id,source_id,ledger_uuid,decision_object,policy_id,policy_version,reason_code,semantic_verdict,gate_class,packet_hash,freshness_value,watermark_before,watermark_after,ssm_validation_result,irr_digest,prev_receipt_digest
+
+
+PT-ID: FPA-T-18
+COMMAND: "/build/c/baseline.exe" fpa evidence accept
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=evidence query=[accept] | fields=decision_id,agent_id,source_id,ledger_uuid,decision_object,policy_id,policy_version,reason_code,semantic_verdict,gate_class,packet_hash,freshness_value,watermark_before,watermark_after,ssm_validation_result,semantic_verdict=ACCEPT,gate_class=RELEASE,irr_digest,prev_receipt_digest
+
+
+PT-ID: FPA-T-21
+COMMAND: "/build/c/baseline.exe" fpa vocab labels
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=vocab query=[labels] | count=6 verdicts=ACCEPT,REJECT,QUARANTINE,RESTORATION_ELIGIBLE,READMIT,FAIL_CLOSED REJECT!=FAIL_CLOSED verdict_RESTORATION_ELIGIBLE!=state_S6 distinct=1
+
+
+PT-ID: FPA-T-23
+COMMAND: "/build/c/baseline.exe" fpa param recoverable
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=param query=[recoverable] | when_true=EvidencePending->S7_QUARANTINED when_false=FreshnessPass+fail->S8_REJECTED
+
+
+PT-ID: FPA-T-24
+COMMAND: "/build/c/baseline.exe" fpa next_state VERIFIED FreshnessPass 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[VERIFIED FreshnessPass vp=1] | state=S3
+
+
+PT-ID: FPA-T-25
+COMMAND: "/build/c/baseline.exe" fpa param quarantine_evidence
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=param query=[quarantine_evidence] | when_true=evidence_validation_result=Some,verdict=QUARANTINE,gate_class=ESCALATION
+
+
+PT-ID: FPA-T-26
+COMMAND: "/build/c/baseline.exe" fpa next_state FRESHNESS_ELIGIBLE IRRAppended 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[FRESHNESS_ELIGIBLE IRRAppended vp=1] | state=S4
+
+
+PT-ID: FPA-T-PR-01
+COMMAND: "/build/c/baseline.exe" fpa next_state VERIFIED FreshnessFail 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[VERIFIED FreshnessFail vp=1] | state=S8
+
+
+PT-ID: FPA-T-PR-02
+COMMAND: "/build/c/baseline.exe" fpa next_state FRESHNESS_ELIGIBLE IRRAppended 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[FRESHNESS_ELIGIBLE IRRAppended vp=1] | state=S4
+
+COMMAND: "/build/c/baseline.exe" fpa next_state IRR_COMMITTED WatermarkPersisted 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[IRR_COMMITTED WatermarkPersisted vp=1] | state=S5
+
+COMMAND: "/build/c/baseline.exe" fpa next_state FRESHNESS_ELIGIBLE WatermarkPersisted 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[FRESHNESS_ELIGIBLE WatermarkPersisted vp=1] | state=S8
+
+
+PT-ID: FPA-T-PR-03
+COMMAND: "/build/c/baseline.exe" fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed vp=1] | state=S6
+
+
+PT-ID: FPA-T-PR-09
+COMMAND: "/build/c/baseline.exe" fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed vp=1] | state=S6
+
+COMMAND: "/build/c/baseline.exe" fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed vp=0] | state=S8
+
+
+PT-ID: FPA-T-PR-10
+COMMAND: "/build/c/baseline.exe" fpa next_state IDLE RestoreAdmitted 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[IDLE RestoreAdmitted vp=1] | state=S8
+
+
+PT-ID: FPA-T-PR-12
+COMMAND: "/build/c/baseline.exe" fpa next_state QUARANTINED ReadmissionApproved 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[QUARANTINED ReadmissionApproved vp=1] | state=S2
+
+COMMAND: "/build/c/baseline.exe" fpa next_state IDLE ReadmissionApproved 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[IDLE ReadmissionApproved vp=1] | state=S8
+
+
+PT-ID: FPA-T-PR-13
+COMMAND: "/build/c/baseline.exe" fpa next_state VERIFIED FreshnessPass 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[VERIFIED FreshnessPass vp=1] | state=S3
+
+COMMAND: "/build/c/baseline.exe" fpa next_state FRESHNESS_ELIGIBLE IRRAppended 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[FRESHNESS_ELIGIBLE IRRAppended vp=1] | state=S4
+
+
+PT-ID: FPA-T-PR-14
+COMMAND: "/build/c/baseline.exe" fpa next_state IRR_COMMITTED WatermarkPersisted 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[IRR_COMMITTED WatermarkPersisted vp=0] | state=S8
+
+
+PT-ID: PTS-001
+COMMAND: "/build/c/baseline.exe" sscar next_state S0 Fv01Pass 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S0 Fv01Pass vp=1] | state=S1
+
+
+PT-ID: PTS-002
+COMMAND: "/build/c/baseline.exe" sscar next_state S2 Fv03Pass 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S2 Fv03Pass vp=1] | state=S3
+
+
+PT-ID: PTS-003
+COMMAND: "/build/c/baseline.exe" sscar next_state S7 FamilyVerdictIssued 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S7 FamilyVerdictIssued vp=1] | state=S8
+
+COMMAND: "/build/c/baseline.exe" sscar verdict full_closure
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=verdict query=[full_closure] | verdict=REPLAY_ADMISSIBLE
+
+COMMAND: "/build/c/baseline.exe" sscar foc FOC-01
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=foc query=[FOC-01] | fields=family_decision_id,session_id,family_verdict,reason_code,family_validator_refs,family_evidence_refs
+
+
+PT-ID: PTS-004a
+COMMAND: "/build/c/baseline.exe" sscar next_state S1 Fv02AndFv04Pass 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S1 Fv02AndFv04Pass vp=0] | state=SX
+
+
+PT-ID: PTS-004b
+COMMAND: "/build/c/baseline.exe" sscar next_state S2 UnlabeledMechanismLevelCarriedClaim 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S2 UnlabeledMechanismLevelCarriedClaim vp=0] | state=SX
+
+
+PT-ID: PTS-005
+COMMAND: (no invocation -- SKIP: SSCAR Conformance Tests §5 closed enumeration: "7 declarative records (PTS-005, PTS-015, PTS-019, PTS-020, PTS-027, plus the verdict-layer subsets of PTS-004 and PTS-017) are listed in §7 Public Oracles rather than here.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-006
+COMMAND: "/build/c/baseline.exe" sscar next_state S3 FreshnessReplay 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S3 FreshnessReplay vp=0] | state=SH
+
+COMMAND: "/build/c/baseline.exe" sscar verdict fv06_fail
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=verdict query=[fv06_fail] | verdict=NONCOMPLIANT_HOLD
+
+COMMAND: "/build/c/baseline.exe" sscar foc FOC-05
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=foc query=[FOC-05] | fields=hold_case_id,hold_enter_refs,pending_requirements,readmission_budget,cleared_only_by freshness_before freshness_after hold_exit_refs anchor_update_ref=strictly_increasing
+
+
+PT-ID: PTS-007
+COMMAND: "/build/c/baseline.exe" sscar param fv04_reclass
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=param query=[fv04_reclass] | family_flow=blocks_at_S2 verdict_change=none reclassification=explicit_policy_bound
+
+
+PT-ID: PTS-008
+COMMAND: "/build/c/baseline.exe" sscar next_state S3 FreshnessReplay 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S3 FreshnessReplay vp=0] | state=SH
+
+COMMAND: "/build/c/baseline.exe" sscar next_state S3 CriticalContamination 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S3 CriticalContamination vp=0] | state=SX
+
+
+PT-ID: PTS-009
+COMMAND: "/build/c/baseline.exe" sscar next_state S3 CriticalContamination 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S3 CriticalContamination vp=0] | state=SX
+
+COMMAND: "/build/c/baseline.exe" sscar next_state S5 CriticalContamination 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S5 CriticalContamination vp=0] | state=SX
+
+COMMAND: "/build/c/baseline.exe" sscar next_state S0 CriticalContamination 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S0 CriticalContamination vp=0] | state=SX
+
+
+PT-ID: PTS-010
+COMMAND: "/build/c/baseline.exe" sscar next_state S5 AntiRollbackFailure 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S5 AntiRollbackFailure vp=0] | state=SX
+
+
+PT-ID: PTS-011
+COMMAND: "/build/c/baseline.exe" sscar next_state S3 ChainBreak 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S3 ChainBreak vp=0] | state=SX
+
+COMMAND: "/build/c/baseline.exe" sscar next_state S3 UntrustedAnchorPromoted 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S3 UntrustedAnchorPromoted vp=0] | state=SX
+
+
+PT-ID: PTS-012
+COMMAND: "/build/c/baseline.exe" sscar next_state SH HoldCaseWithNewFamilyClosureBundleAndAnchorUpdate 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[SH HoldCaseWithNewFamilyClosureBundleAndAnchorUpdate vp=1] | state=SR
+
+
+PT-ID: PTS-013
+COMMAND: "/build/c/baseline.exe" sscar next_state SR ReadmissionBundleChangedCarriedPayload 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[SR ReadmissionBundleChangedCarriedPayload vp=1] | state=S2
+
+
+PT-ID: PTS-014
+COMMAND: "/build/c/baseline.exe" sscar next_state S8 Handoff 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S8 Handoff vp=1] | state=S8
+
+COMMAND: "/build/c/baseline.exe" sscar next_state SX IncidentOnlyOutput 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[SX IncidentOnlyOutput vp=1] | state=SX
+
+
+PT-ID: PTS-015
+COMMAND: (no invocation -- SKIP: SSCAR Conformance Tests §5 closed enumeration: "7 declarative records (PTS-005, PTS-015, PTS-019, PTS-020, PTS-027, plus the verdict-layer subsets of PTS-004 and PTS-017) are listed in §7 Public Oracles rather than here.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-016
+COMMAND: "/build/c/baseline.exe" sscar evidence all
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=evidence query=[all] | fields=family_decision_id,boundary_event_id,session_id/prior_session_ref,carried_statement_refs,tsa_refs/provenance_refs,anchor_document_digest/anchor_document_ref,accepted_head_digest/linked_irr_digest,freshness_before/freshness_after/anchor_update_ref,rehydration_closure_ref,replay_refs/checkpoint_refs/rollback_refs,disclosure_class_entries,family_validator_outcomes,hold_enter_refs/hold_exit_refs,contamination_flags/contaminating_ref_set,report_signature/export_manifest_ref
+
+
+PT-ID: PTS-017a
+COMMAND: "/build/c/baseline.exe" sscar foc FOC-04
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=foc query=[FOC-04] | fields=incident_id,root_reason_code,contaminating_ref_set,blocked_stage,remediation_class tsa_refs=present
+
+
+PT-ID: PTS-017b
+COMMAND: "/build/c/baseline.exe" sscar foc FOC-05
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=foc query=[FOC-05] | fields=hold_case_id,hold_enter_refs,pending_requirements,readmission_budget,cleared_only_by freshness_before freshness_after hold_exit_refs anchor_update_ref=strictly_increasing
+
+
+PT-ID: PTS-017d
+COMMAND: "/build/c/baseline.exe" sscar foc FOC-05
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=foc query=[FOC-05] | fields=hold_case_id,hold_enter_refs,pending_requirements,readmission_budget,cleared_only_by freshness_before freshness_after hold_exit_refs anchor_update_ref=strictly_increasing
+
+
+PT-ID: PTS-018
+COMMAND: "/build/c/baseline.exe" sscar foc FOC-04
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=foc query=[FOC-04] | fields=incident_id,root_reason_code,contaminating_ref_set,blocked_stage,remediation_class tsa_refs=present
+
+COMMAND: "/build/c/baseline.exe" sscar foc FOC-05
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=foc query=[FOC-05] | fields=hold_case_id,hold_enter_refs,pending_requirements,readmission_budget,cleared_only_by freshness_before freshness_after hold_exit_refs anchor_update_ref=strictly_increasing
+
+
+PT-ID: PTS-019
+COMMAND: (no invocation -- SKIP: SSCAR Conformance Tests §5 closed enumeration: "7 declarative records (PTS-005, PTS-015, PTS-019, PTS-020, PTS-027, plus the verdict-layer subsets of PTS-004 and PTS-017) are listed in §7 Public Oracles rather than here.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-020
+COMMAND: (no invocation -- SKIP: SSCAR Conformance Tests §5 closed enumeration: "7 declarative records (PTS-005, PTS-015, PTS-019, PTS-020, PTS-027, plus the verdict-layer subsets of PTS-004 and PTS-017) are listed in §7 Public Oracles rather than here.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-021
+COMMAND: "/build/c/baseline.exe" sscar vocab types
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=vocab query=[types] | count=6 verdicts=REPLAY_ADMISSIBLE,REPLAY_ADMISSIBLE_CONSTRAINED,REPLAY_INCOMPLETE,NONCOMPLIANT_HOLD,CONTAMINATION_FAIL_CLOSED,INCIDENT_ONLY FamilyWorkflowState!=FamilyNormativeVerdict type_disjoint=1
+
+
+PT-ID: PTS-022
+COMMAND: "/build/c/baseline.exe" sscar next_state S3 FreshnessReplay 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S3 FreshnessReplay vp=0] | state=SH
+
+COMMAND: "/build/c/baseline.exe" sscar verdict fv06_fail
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=verdict query=[fv06_fail] | verdict=NONCOMPLIANT_HOLD
+
+COMMAND: "/build/c/baseline.exe" sscar next_state S3 CriticalContamination 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S3 CriticalContamination vp=0] | state=SX
+
+COMMAND: "/build/c/baseline.exe" sscar verdict fv09_fail
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=verdict query=[fv09_fail] | verdict=CONTAMINATION_FAIL_CLOSED
+
+
+PT-ID: PTS-023
+COMMAND: "/build/c/baseline.exe" sscar param sr_reentry
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=param query=[sr_reentry] | carried_payload->S2 anchor_document_ref->S2 source_control_bundles->S2 policy_snapshot_id->S5 rehydration_closure_ref->S5 third_point=forbidden
+
+
+PT-ID: PTS-024
+COMMAND: "/build/c/baseline.exe" sscar derive
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=derive query=[FV-07] | state=S5 dual_source=§9_S4_entry+§7_FV-07
+
+
+PT-ID: PTS-025
+COMMAND: "/build/c/baseline.exe" sscar next_state S4 AntiRollbackFailure 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S4 AntiRollbackFailure vp=0] | state=SX
+
+COMMAND: "/build/c/baseline.exe" sscar verdict fv07_integrity
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=verdict query=[fv07_integrity] | verdict=CONTAMINATION_FAIL_CLOSED
+
+COMMAND: "/build/c/baseline.exe" sscar evidence all
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=evidence query=[all] | fields=family_decision_id,boundary_event_id,session_id/prior_session_ref,carried_statement_refs,tsa_refs/provenance_refs,anchor_document_digest/anchor_document_ref,accepted_head_digest/linked_irr_digest,freshness_before/freshness_after/anchor_update_ref,rehydration_closure_ref,replay_refs/checkpoint_refs/rollback_refs,disclosure_class_entries,family_validator_outcomes,hold_enter_refs/hold_exit_refs,contamination_flags/contaminating_ref_set,report_signature/export_manifest_ref
+
+
+PT-ID: PTS-026
+COMMAND: "/build/c/baseline.exe" sscar next_state S1 Fv02AndFv04Pass 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S1 Fv02AndFv04Pass vp=0] | state=SX
+
+
+PT-ID: PTS-027
+COMMAND: (no invocation -- SKIP: SSCAR Conformance Tests §5 closed enumeration: "7 declarative records (PTS-005, PTS-015, PTS-019, PTS-020, PTS-027, plus the verdict-layer subsets of PTS-004 and PTS-017) are listed in §7 Public Oracles rather than here.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: CT-01
+COMMAND: "/build/c/baseline.exe" sscar ct CT-01
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-01] | components=5 set={ARA,BDA,FPA,TAA,VRA} state=S1 FV-01=pass
+
+
+PT-ID: CT-02
+COMMAND: "/build/c/baseline.exe" sscar ct CT-02
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-02] | state=SX verdict=CONTAMINATION_FAIL_CLOSED blocked_stage=provenance_classification contaminating_ref_set=populated replay_admission=none
+
+
+PT-ID: CT-03
+COMMAND: "/build/c/baseline.exe" sscar ct CT-03
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-03] | FV-02=untrusted_until_verification advance_past_S2=no trust_assertion=logged_not_influential if_promoted=CONTAMINATION_FAIL_CLOSED
+
+
+PT-ID: CT-04
+COMMAND: "/build/c/baseline.exe" sscar ct CT-04
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-04] | fpa_state=S8 state=SH verdict=NONCOMPLIANT_HOLD hold_enter_refs=populated pending_requirements=strict_increase_anchor_update_ref
+
+
+PT-ID: CT-05
+COMMAND: "/build/c/baseline.exe" sscar ct CT-05
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-05] | accepted_head_digest=byte_identical linked_irr_digest=latest_valid FV-05=fail verdict=REPLAY_INCOMPLETE
+
+
+PT-ID: CT-06
+COMMAND: "/build/c/baseline.exe" sscar ct CT-06
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-06] | state=SX verdict=CONTAMINATION_FAIL_CLOSED anti_rollback=fail remediable=no (not NONCOMPLIANT_HOLD)
+
+
+PT-ID: CT-07
+COMMAND: "/build/c/baseline.exe" sscar ct CT-07
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-07] | replay_refs=incomplete lineage_complete=no verdict=REPLAY_INCOMPLETE projection=non_advancement_past_S6
+
+
+PT-ID: CT-08
+COMMAND: "/build/c/baseline.exe" sscar ct CT-08
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-08] | fv01..fv12=pass state=S8 verdict=REPLAY_ADMISSIBLE report_signature=present replay_admission_token=emitted emergent=full_composition
+
+
+PT-ID: CT-09
+COMMAND: "/build/c/baseline.exe" sscar ct CT-09
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-09] | tool_state_activation=flag structural_restoration=not_authority state=SX verdict=CONTAMINATION_FAIL_CLOSED contaminating_ref_set=populated
+
+
+PT-ID: CT-10
+COMMAND: "/build/c/baseline.exe" sscar ct CT-10
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-10] | FV-12=hold_exit_refs_nonempty anchor_update_ref=strict_increase policy_snapshot_id=stable state=SR identical_readmission=rejected
+
+
+PT-ID: CT-11
+COMMAND: "/build/c/baseline.exe" sscar ct CT-11
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-11] | wellformed=REPLAY_ADMISSIBLE_CONSTRAINED misclassified=INCIDENT_ONLY classes_distinct=1
+
+
+PT-ID: CT-12
+COMMAND: "/build/c/baseline.exe" sscar ct CT-12
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-12] | empty_outcomes=emission_blocked partial_outcomes_verdict=INCIDENT_ONLY wellformed=emission_allowed family_evidence_refs=bound_nonempty
+
+
+PT-ID: CT-13
+COMMAND: "/build/c/baseline.exe" sscar ct CT-13
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-13] | FV-04=mechanism_use_of_explanatory_only verdict=CONTAMINATION_FAIL_CLOSED reclassification=explicit_or_fail_closed flow=blocks_at_S2 handoff=bounded
+
+
+PT-ID: CT-14
+COMMAND: "/build/c/baseline.exe" sscar ct CT-14
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-14] | carried=S2 anchordoc=S2 policy=S5 componentset=S2 rehydration=S5 third_point=forbidden operator_discretion=no
+
+
+==== NNT-FAM-SSCAR-FI-001 c acceptance run 2026-10-26T15:52:04Z ====
+PT-ID: PT-001
+COMMAND: "/build/c/baseline.exe" vra next_state S0 StartupComplete 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S0 StartupComplete vp=1] | state=S1
+
+
+PT-ID: PT-002
+COMMAND: "/build/c/baseline.exe" vra next_state S2 StructuralChecksDone 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S2 StructuralChecksDone vp=1] | state=S3
+
+
+PT-ID: PT-003
+COMMAND: "/build/c/baseline.exe" vra next_state S3 EligibilityChecksDone 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S3 EligibilityChecksDone vp=1] | state=S4
+
+
+PT-ID: PT-004
+COMMAND: "/build/c/baseline.exe" vra next_state S2 StructuralChecksDone 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S2 StructuralChecksDone vp=0] | state=S5
+
+
+PT-ID: PT-005
+COMMAND: "/build/c/baseline.exe" vra next_state S2 StructuralChecksDone 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S2 StructuralChecksDone vp=0] | state=S5
+
+
+PT-ID: PT-006
+COMMAND: "/build/c/baseline.exe" vra next_state S2 StructuralChecksDone 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S2 StructuralChecksDone vp=0] | state=S5
+
+
+PT-ID: PT-007
+COMMAND: "/build/c/baseline.exe" vra next_state S2 StructuralChecksDone 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S2 StructuralChecksDone vp=0] | state=S5
+
+
+PT-ID: PT-008
+COMMAND: "/build/c/baseline.exe" vra next_state S3 EligibilityChecksDone 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S3 EligibilityChecksDone vp=0] | state=S5
+
+
+PT-ID: PT-009
+COMMAND: "/build/c/baseline.exe" vra next_state S3 EligibilityChecksDone 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S3 EligibilityChecksDone vp=0] | state=S5
+
+
+PT-ID: PT-010
+COMMAND: "/build/c/baseline.exe" vra next_state S0 StartupComplete 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S0 StartupComplete vp=0] | state=S5
+
+
+PT-ID: PT-011
+COMMAND: "/build/c/baseline.exe" vra next_state S3 RollbackDetected 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S3 RollbackDetected vp=1] | state=S5
+
+
+PT-ID: PT-012
+COMMAND: "/build/c/baseline.exe" vra next_state S5 WalReplayNeeded 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S5 WalReplayNeeded vp=1] | state=S7
+
+
+PT-ID: PT-013
+COMMAND: "/build/c/baseline.exe" vra next_state S3 ToolStateInvalid 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S3 ToolStateInvalid vp=1] | state=S6
+
+
+PT-ID: PT-014
+COMMAND: "/build/c/baseline.exe" vra next_state S3 ToolStateInvalid 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S3 ToolStateInvalid vp=1] | state=S6
+
+COMMAND: "/build/c/baseline.exe" vra next_state S3 EligibilityChecksDone 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S3 EligibilityChecksDone vp=1] | state=S4
+
+
+PT-ID: PT-015
+COMMAND: "/build/c/baseline.exe" vra next_state S6 StartupComplete 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S6 StartupComplete vp=1] | state=S6
+
+
+PT-ID: PT-016
+COMMAND: "/build/c/baseline.exe" vra evidence chain
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=evidence query=[chain] | fields=validator_bundle_id,verified_head_digest,snapshot_id,policy_id,source_id,irr_digest,tool_activation_status,suppression_status,failure_code,failed_validator=V_CHAIN
+
+
+PT-ID: PT-017
+COMMAND: "/build/c/baseline.exe" vra evidence freshness
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=evidence query=[freshness] | fields=validator_bundle_id,verified_head_digest,snapshot_id,policy_id,source_id,irr_digest,tool_activation_status,suppression_status,freshness_value,failed_validator=V_FRESHNESS
+
+
+PT-ID: PT-018
+COMMAND: "/build/c/baseline.exe" vra evidence parse
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=evidence query=[parse] | fields=validator_bundle_id,verified_head_digest,snapshot_id,policy_id,source_id,irr_digest,tool_activation_status,suppression_status,failure_code,failed_validator=V_PARSE
+
+
+PT-ID: PT-019
+COMMAND: "/build/c/baseline.exe" vra evidence recovery
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=evidence query=[recovery] | fields=validator_bundle_id,verified_head_digest,snapshot_id,policy_id,source_id,irr_digest,tool_activation_status,suppression_status,recovery_phase,recovery_phase_producer=V_WAL_PHASE
+
+
+PT-ID: PT-020
+COMMAND: "/build/c/baseline.exe" vra evidence readmission
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=evidence query=[readmission] | fields=validator_bundle_id,verified_head_digest,snapshot_id,policy_id,source_id,irr_digest,tool_activation_status,suppression_status,readmission_token_id
+
+
+PT-ID: PT-021
+COMMAND: "/build/c/baseline.exe" vra evidence frame
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=evidence query=[frame] | fields=validator_bundle_id,verified_head_digest,snapshot_id,policy_id,source_id,irr_digest,tool_activation_status,suppression_status,failure_code,failed_validator=V_FRAME,validator_bundle_id_producer=ExecutionLayer,failure_explanation_producer=GateLogic,tool_activation_status_producer=ToolGate
+
+
+PT-ID: PT-022
+COMMAND: "/build/c/baseline.exe" vra vocab verdict_vs_state
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=vocab query=[verdict_vs_state] | distinct=1 verdicts=ALLOW,DENY,QUARANTINE,ESCALATE,READMISSION_PENDING
+
+
+PT-ID: PT-023
+COMMAND: "/build/c/baseline.exe" vra vocab negative
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=vocab query=[negative] | distinct=1 verdicts=ALLOW,DENY,QUARANTINE,ESCALATE,READMISSION_PENDING
+
+
+PT-ID: PT-024
+COMMAND: "/build/c/baseline.exe" vra next_state S8 AuthorityRelease 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S8 AuthorityRelease vp=1] | state=S1
+
+
+PT-ID: PT-025
+COMMAND: "/build/c/baseline.exe" vra evidence freshness
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=evidence query=[freshness] | fields=validator_bundle_id,verified_head_digest,snapshot_id,policy_id,source_id,irr_digest,tool_activation_status,suppression_status,freshness_value,failed_validator=V_FRESHNESS
+
+
+PT-ID: PT-026
+COMMAND: "/build/c/baseline.exe" vra evidence recovery
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=evidence query=[recovery] | fields=validator_bundle_id,verified_head_digest,snapshot_id,policy_id,source_id,irr_digest,tool_activation_status,suppression_status,recovery_phase,recovery_phase_producer=V_WAL_PHASE
+
+
+PT-ID: PT-027
+COMMAND: "/build/c/baseline.exe" vra next_state S3 ToolStateInvalid 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=next_state query=[S3 ToolStateInvalid vp=1] | state=S6
+
+
+PT-ID: PT-028
+COMMAND: "/build/c/baseline.exe" vra attest V_COMPAT
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=attest query=[V_COMPAT] | enforcement_point=import_admissibility compat_status=recorded evidence=present
+
+
+PT-ID: PT-029
+COMMAND: "/build/c/baseline.exe" vra attest V_WRITER_LOCK
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=vra surface=attest query=[V_WRITER_LOCK] | enforcement_point=persistence_control writer_lock_status=recorded contention_status=recorded evidence=present
+
+
+PT-ID: PTS-BDA-001
+COMMAND: "/build/c/baseline.exe" bda next_state IDLE INPUT_RECEIVED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[IDLE INPUT_RECEIVED vp=1] | state=INGEST_VALIDATE verdict=NONE
+
+
+PT-ID: PTS-BDA-002
+COMMAND: "/build/c/baseline.exe" bda next_state INGEST_VALIDATE VALIDATION_PASS 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[INGEST_VALIDATE VALIDATION_PASS vp=1] | state=FILTER_REVIEW verdict=NONE
+
+
+PT-ID: PTS-BDA-003
+COMMAND: "/build/c/baseline.exe" bda next_state FILTER_REVIEW NO_ESCALATION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[FILTER_REVIEW NO_ESCALATION vp=1] | state=READY_FOR_RELEASE verdict=ALLOW
+
+
+PT-ID: PTS-BDA-004
+COMMAND: "/build/c/baseline.exe" bda next_state FINALIZATION_REVIEW EVIDENCE_OK 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[FINALIZATION_REVIEW EVIDENCE_OK vp=1] | state=IDLE verdict=ALLOW
+
+
+PT-ID: PTS-BDA-005
+COMMAND: "/build/c/baseline.exe" bda next_state INGEST_VALIDATE VALIDATION_FAIL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[INGEST_VALIDATE VALIDATION_FAIL vp=1] | state=OUTPUT_BLOCKED verdict=BLOCK
+
+
+PT-ID: PTS-BDA-006
+COMMAND: "/build/c/baseline.exe" bda next_state FILTER_REVIEW TOOL_STATE_DETECTED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[FILTER_REVIEW TOOL_STATE_DETECTED vp=1] | state=TOOL_STATE_QUARANTINED verdict=QUARANTINE
+
+
+PT-ID: PTS-BDA-007
+COMMAND: "/build/c/baseline.exe" bda next_state INGEST_VALIDATE VALIDATION_FAIL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[INGEST_VALIDATE VALIDATION_FAIL vp=1] | state=OUTPUT_BLOCKED verdict=BLOCK
+
+
+PT-ID: PTS-BDA-008
+COMMAND: "/build/c/baseline.exe" bda next_state TOOL_STATE_QUARANTINED APPROVAL_GRANTED 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[TOOL_STATE_QUARANTINED APPROVAL_GRANTED vp=0] | state=TOOL_STATE_QUARANTINED verdict=NONE
+
+
+PT-ID: PTS-BDA-009
+COMMAND: "/build/c/baseline.exe" bda decide FRESHNESS_REPLAY
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=decide query=[FRESHNESS_REPLAY] | state=OUTPUT_BLOCKED verdict=BLOCK
+
+
+PT-ID: PTS-BDA-010
+COMMAND: "/build/c/baseline.exe" bda decide MISSING_RECEIPT
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=decide query=[MISSING_RECEIPT] | state=OUTPUT_BLOCKED verdict=BLOCK
+
+
+PT-ID: PTS-BDA-011
+COMMAND: "/build/c/baseline.exe" bda attest conflict_evidence
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=attest query=[conflict_evidence] | verdict=BLOCK gate_use=denied conflict_evidence=recorded
+
+
+PT-ID: PTS-BDA-012
+COMMAND: "/build/c/baseline.exe" bda vocab verdict_fidelity
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=vocab query=[verdict_fidelity] | count=7 distinct=1 verdicts=ALLOW,ALLOW_CONSTRAINED,BLOCK,QUARANTINE,FAIL_CLOSED,NONCOMPLIANT_HOLD,READMIT state_OUTPUT_BLOCKED!=verdict_BLOCK FAIL_CLOSED!=NONCOMPLIANT_HOLD OUTPUT_BLOCKED!=NONCOMPLIANT_HOLD
+
+
+PT-ID: PTS-BDA-013
+COMMAND: "/build/c/baseline.exe" bda next_state FILTER_REVIEW CPW_CRITICAL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[FILTER_REVIEW CPW_CRITICAL vp=1] | state=OUTPUT_BLOCKED verdict=FAIL_CLOSED
+
+
+PT-ID: PTS-BDA-014
+COMMAND: "/build/c/baseline.exe" bda decide VAL01_FAIL
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=decide query=[VAL01_FAIL] | state=OUTPUT_BLOCKED verdict=BLOCK
+
+COMMAND: "/build/c/baseline.exe" bda decide VAL05_FAIL
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=decide query=[VAL05_FAIL] | state=NONCOMPLIANT_HOLD verdict=NONCOMPLIANT_HOLD
+
+
+PT-ID: PTS-BDA-015
+COMMAND: "/build/c/baseline.exe" bda next_state FILTER_REVIEW CPW_CRITICAL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[FILTER_REVIEW CPW_CRITICAL vp=1] | state=OUTPUT_BLOCKED verdict=FAIL_CLOSED
+
+
+PT-ID: PTS-BDA-016
+COMMAND: "/build/c/baseline.exe" bda next_state FINALIZATION_REVIEW CPW_CRITICAL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[FINALIZATION_REVIEW CPW_CRITICAL vp=1] | state=OUTPUT_BLOCKED verdict=FAIL_CLOSED
+
+
+PT-ID: PTS-BDA-017
+COMMAND: "/build/c/baseline.exe" bda next_state TOOL_STATE_QUARANTINED CPW_CRITICAL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[TOOL_STATE_QUARANTINED CPW_CRITICAL vp=1] | state=OUTPUT_BLOCKED verdict=FAIL_CLOSED
+
+
+PT-ID: PTS-BDA-018
+COMMAND: "/build/c/baseline.exe" bda next_state OUTPUT_BLOCKED READMISSION_APPROVED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[OUTPUT_BLOCKED READMISSION_APPROVED vp=1] | state=IDLE verdict=READMIT
+
+
+PT-ID: PTS-BDA-019
+COMMAND: "/build/c/baseline.exe" bda next_state NONCOMPLIANT_HOLD COMPLIANCE_RESTORED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[NONCOMPLIANT_HOLD COMPLIANCE_RESTORED vp=1] | state=IDLE verdict=READMIT
+
+
+PT-ID: PTS-BDA-020
+COMMAND: "/build/c/baseline.exe" bda next_state OUTPUT_BLOCKED READMISSION_APPROVED 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[OUTPUT_BLOCKED READMISSION_APPROVED vp=0] | state=OUTPUT_BLOCKED verdict=NONE
+
+
+PT-ID: PTS-BDA-021
+COMMAND: "/build/c/baseline.exe" bda next_state IDLE INPUT_RECEIVED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[IDLE INPUT_RECEIVED vp=1] | state=INGEST_VALIDATE verdict=NONE
+
+
+PT-ID: PTS-BDA-022
+COMMAND: "/build/c/baseline.exe" bda evidence closure
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=evidence query=[closure] | fields=decision_id,session_id,boundary_side,decision_object,input_digest,policy_hash,validator_results,statement_refs,verdict,reason_code,order_index,hash_prev,hash_curr
+
+
+PT-ID: PTS-BDA-023
+COMMAND: "/build/c/baseline.exe" bda evidence mandatory
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=evidence query=[mandatory] | fields=decision_id,session_id,boundary_side,decision_object,input_digest,policy_hash,validator_results,statement_refs,verdict,reason_code,order_index,hash_prev,hash_curr
+
+
+PT-ID: PTS-BDA-024
+COMMAND: "/build/c/baseline.exe" bda evidence approval
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=evidence query=[approval] | fields=decision_id,session_id,boundary_side,decision_object,input_digest,policy_hash,validator_results,statement_refs,verdict,reason_code,order_index,hash_prev,hash_curr,approval_ref
+
+
+PT-ID: PTS-BDA-025
+COMMAND: "/build/c/baseline.exe" bda evidence finalization
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=evidence query=[finalization] | fields=decision_id,session_id,boundary_side,decision_object,input_digest,policy_hash,validator_results,statement_refs,verdict,reason_code,order_index,hash_prev,hash_curr,evidence_ref,verif_counter_anchor
+
+
+PT-ID: PTS-BDA-026
+COMMAND: "/build/c/baseline.exe" bda evidence rollback
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=evidence query=[rollback] | fields=decision_id,session_id,boundary_side,decision_object,input_digest,policy_hash,validator_results,statement_refs,verdict,reason_code,order_index,hash_prev,hash_curr,rollback_ref
+
+
+PT-ID: PTS-BDA-027
+COMMAND: (no invocation -- SKIP: BDA Conformance Tests §5 Minimal Run Note, 'Bounded external obligations not locally runnable': "authorized non-validator producer grounding".)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-BDA-028
+COMMAND: "/build/c/baseline.exe" bda next_state READY_FOR_RELEASE CPW_CRITICAL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[READY_FOR_RELEASE CPW_CRITICAL vp=1] | state=OUTPUT_BLOCKED verdict=FAIL_CLOSED
+
+
+PT-ID: PTS-BDA-029
+COMMAND: (no invocation -- SKIP: BDA Conformance Tests §5 Minimal Run Note, 'Bounded external obligations not locally runnable': "distributed enforcement legitimacy where not exposed by local transition function".)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-BDA-030
+COMMAND: "/build/c/baseline.exe" bda vocab fidelity
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=vocab query=[fidelity] | count=7 distinct=1 verdicts=ALLOW,ALLOW_CONSTRAINED,BLOCK,QUARANTINE,FAIL_CLOSED,NONCOMPLIANT_HOLD,READMIT state_OUTPUT_BLOCKED!=verdict_BLOCK FAIL_CLOSED!=NONCOMPLIANT_HOLD OUTPUT_BLOCKED!=NONCOMPLIANT_HOLD
+
+
+PT-ID: PTS-BDA-031
+COMMAND: "/build/c/baseline.exe" bda vocab separation
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=vocab query=[separation] | count=7 distinct=1 verdicts=ALLOW,ALLOW_CONSTRAINED,BLOCK,QUARANTINE,FAIL_CLOSED,NONCOMPLIANT_HOLD,READMIT state_OUTPUT_BLOCKED!=verdict_BLOCK FAIL_CLOSED!=NONCOMPLIANT_HOLD OUTPUT_BLOCKED!=NONCOMPLIANT_HOLD
+
+
+PT-ID: PTS-BDA-032
+COMMAND: "/build/c/baseline.exe" bda param
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=param query=[] | D02=BLOCK D03=QUARANTINE D08=ALLOW D09=QUARANTINE within_canonical=1
+
+
+PT-ID: PTS-BDA-033
+COMMAND: "/build/c/baseline.exe" bda decide CPW_CRITICAL
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=decide query=[CPW_CRITICAL] | state=OUTPUT_BLOCKED verdict=FAIL_CLOSED
+
+
+PT-ID: PTS-BDA-034
+COMMAND: "/build/c/baseline.exe" bda evidence approval
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=evidence query=[approval] | fields=decision_id,session_id,boundary_side,decision_object,input_digest,policy_hash,validator_results,statement_refs,verdict,reason_code,order_index,hash_prev,hash_curr,approval_ref
+
+
+PT-ID: PTS-BDA-035
+COMMAND: "/build/c/baseline.exe" bda next_state FINALIZATION_REVIEW EVIDENCE_OK 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[FINALIZATION_REVIEW EVIDENCE_OK vp=1] | state=IDLE verdict=ALLOW
+
+COMMAND: "/build/c/baseline.exe" bda next_state FINALIZATION_REVIEW EVIDENCE_FAIL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=next_state query=[FINALIZATION_REVIEW EVIDENCE_FAIL vp=1] | state=NONCOMPLIANT_HOLD verdict=NONCOMPLIANT_HOLD
+
+
+PT-ID: PTS-BDA-036
+COMMAND: "/build/c/baseline.exe" bda attest projection_limitation
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=bda surface=attest query=[projection_limitation] | state_route=may_be_shared verdict_semantics=distinct_downstream
+
+
+PT-ID: TAA-PT-001
+COMMAND: "/build/c/baseline.exe" taa next_state INTAKE INTAKE_TO_ROLE_SCREENING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[INTAKE INTAKE_TO_ROLE_SCREENING vp=1] | state=ROLE_SCREENING verdict=NONE
+
+
+PT-ID: TAA-PT-002
+COMMAND: "/build/c/baseline.exe" taa next_state EVALUATING EVALUATING_TO_CLASSIFYING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[EVALUATING EVALUATING_TO_CLASSIFYING vp=1] | state=CLASSIFYING verdict=NONE
+
+
+PT-ID: TAA-PT-003
+COMMAND: "/build/c/baseline.exe" taa next_state DECIDED DECIDED_TO_HANDOFF_READY 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[DECIDED DECIDED_TO_HANDOFF_READY vp=1] | state=HANDOFF_READY verdict=NONE
+
+
+PT-ID: TAA-PT-004
+COMMAND: "/build/c/baseline.exe" taa next_state EVALUATING EVALUATING_TO_CLASSIFYING 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[EVALUATING EVALUATING_TO_CLASSIFYING vp=0] | state=FAIL_CLOSED verdict=NONE
+
+
+PT-ID: TAA-PT-005
+COMMAND: "/build/c/baseline.exe" taa evidence allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[allow_constrained] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,conflict_check_mode,conflict_check_strength,conflict_check_confidence,conflict_check_coverage_scope,compared_claim_set_ref,residual_risk_statement
+
+
+PT-ID: TAA-PT-006
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION vp=1] | state=DECIDED verdict=ESCALATE
+
+COMMAND: "/build/c/baseline.exe" taa evidence fail_closed
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[fail_closed] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,inhibit_flags,root_reason_code,clearance_needed,cleared_only_by,remediation_class,escalation_request_ref,request_id,failure_ref,required_actor_role,required_evidence,status
+
+
+PT-ID: TAA-PT-007
+COMMAND: "/build/c/baseline.exe" taa next_state ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING vp=1] | state=CANONICALIZING verdict=NONE
+
+
+PT-ID: TAA-PT-008
+COMMAND: "/build/c/baseline.exe" taa next_state CLASSIFYING CLASSIFYING_TO_DENY_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CLASSIFYING CLASSIFYING_TO_DENY_DECISION vp=1] | state=DECIDED verdict=DENY
+
+COMMAND: "/build/c/baseline.exe" taa next_state EVALUATING EVALUATING_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[EVALUATING EVALUATING_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: TAA-PT-009
+COMMAND: "/build/c/baseline.exe" taa next_state INTAKE STRUCTURAL_INCOMPLETENESS_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[INTAKE STRUCTURAL_INCOMPLETENESS_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: TAA-PT-010
+COMMAND: "/build/c/baseline.exe" taa next_state CLASSIFYING POLICY_SNAPSHOT_DRIFT_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CLASSIFYING POLICY_SNAPSHOT_DRIFT_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: TAA-PT-011
+COMMAND: "/build/c/baseline.exe" taa next_state EVALUATING CONFLICT_CHECKING_TO_ALLOW_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[EVALUATING CONFLICT_CHECKING_TO_ALLOW_DECISION vp=1] | state=FAIL_CLOSED verdict=ALLOW
+
+
+PT-ID: TAA-PT-012
+COMMAND: "/build/c/baseline.exe" taa next_state FAIL_CLOSED FAIL_CLOSED_TO_NONCOMPLIANT_HOLD 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[FAIL_CLOSED FAIL_CLOSED_TO_NONCOMPLIANT_HOLD vp=1] | state=NONCOMPLIANT_HOLD verdict=NONE
+
+COMMAND: "/build/c/baseline.exe" taa next_state NONCOMPLIANT_HOLD NONCOMPLIANT_HOLD_TO_READMISSION_PENDING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[NONCOMPLIANT_HOLD NONCOMPLIANT_HOLD_TO_READMISSION_PENDING vp=1] | state=READMISSION_PENDING verdict=NONE
+
+
+PT-ID: TAA-PT-013
+COMMAND: "/build/c/baseline.exe" taa next_state READMISSION_PENDING READMISSION_PENDING_TO_ROLE_SCREENING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[READMISSION_PENDING READMISSION_PENDING_TO_ROLE_SCREENING vp=1] | state=ROLE_SCREENING verdict=NONE
+
+
+PT-ID: TAA-PT-014
+COMMAND: "/build/c/baseline.exe" taa next_state CLOSED ANY_NON_REOPEN 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CLOSED ANY_NON_REOPEN vp=1] | state=CLOSED verdict=NONE
+
+
+PT-ID: TAA-PT-015
+COMMAND: "/build/c/baseline.exe" taa evidence closure
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[closure] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,semantic_closure,evidence_closure,failure_closure,policy_snapshot_closure
+
+
+PT-ID: TAA-PT-016
+COMMAND: "/build/c/baseline.exe" taa evidence base
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[base] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp
+
+
+PT-ID: TAA-PT-017
+COMMAND: "/build/c/baseline.exe" taa evidence allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[allow_constrained] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,conflict_check_mode,conflict_check_strength,conflict_check_confidence,conflict_check_coverage_scope,compared_claim_set_ref,residual_risk_statement
+
+
+PT-ID: TAA-PT-018
+COMMAND: "/build/c/baseline.exe" taa evidence fail_closed
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[fail_closed] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,inhibit_flags,root_reason_code,clearance_needed,cleared_only_by,remediation_class,escalation_request_ref,request_id,failure_ref,required_actor_role,required_evidence,status
+
+
+PT-ID: TAA-PT-019
+COMMAND: "/build/c/baseline.exe" taa next_state DECIDED CLEARANCE_ARTIFACT_MISSING_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[DECIDED CLEARANCE_ARTIFACT_MISSING_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: TAA-PT-020
+COMMAND: (no invocation -- SKIP: TAA Conformance Tests record-kind: "Declarative conformance claim (not a buyer-runnable unit test)"; Minimal run note: "the 1 declarative record (VP-GEN-020 / TAA-PT-020-DECL) is preserved as a buyer obligation rather than a runnable assertion.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: TAA-PT-021
+COMMAND: "/build/c/baseline.exe" taa vocab verdict_set
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=vocab query=[verdict_set] | count=6 verdicts=ALLOW,ALLOW_CONSTRAINED,DENY,FAIL_CLOSED,ESCALATE,OUT_OF_SCOPE reclassify=action_not_verdict
+
+
+PT-ID: TAA-PT-022
+COMMAND: "/build/c/baseline.exe" taa next_state ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING vp=1] | state=CANONICALIZING verdict=NONE
+
+COMMAND: "/build/c/baseline.exe" taa next_state ROLE_SCREENING ROLE_SCREENING_TO_OUT_OF_SCOPE_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[ROLE_SCREENING ROLE_SCREENING_TO_OUT_OF_SCOPE_DECISION vp=1] | state=DECIDED verdict=OUT_OF_SCOPE
+
+
+PT-ID: TAA-PT-023
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION vp=1] | state=DECIDED verdict=DENY
+
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: TAA-PT-024
+COMMAND: "/build/c/baseline.exe" taa next_state EVALUATING EVALUATING_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[EVALUATING EVALUATING_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: TAA-PT-025
+COMMAND: "/build/c/baseline.exe" taa evidence allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[allow_constrained] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,conflict_check_mode,conflict_check_strength,conflict_check_confidence,conflict_check_coverage_scope,compared_claim_set_ref,residual_risk_statement
+
+
+PT-ID: TAA-PT-026
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_DECISION vp=1] | state=DECIDED verdict=ALLOW
+
+
+PT-ID: TAA-PT-027
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_DECISION vp=1] | state=DECIDED verdict=ALLOW
+
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION vp=1] | state=DECIDED verdict=DENY
+
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION vp=1] | state=DECIDED verdict=ESCALATE
+
+
+PT-ID: VP-GEN-001
+COMMAND: "/build/c/baseline.exe" taa next_state INTAKE INTAKE_TO_ROLE_SCREENING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[INTAKE INTAKE_TO_ROLE_SCREENING vp=1] | state=ROLE_SCREENING verdict=NONE
+
+
+PT-ID: VP-GEN-002
+COMMAND: "/build/c/baseline.exe" taa next_state EVALUATING EVALUATING_TO_CLASSIFYING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[EVALUATING EVALUATING_TO_CLASSIFYING vp=1] | state=CLASSIFYING verdict=NONE
+
+
+PT-ID: VP-GEN-003
+COMMAND: "/build/c/baseline.exe" taa next_state DECIDED DECIDED_TO_HANDOFF_READY 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[DECIDED DECIDED_TO_HANDOFF_READY vp=1] | state=HANDOFF_READY verdict=NONE
+
+
+PT-ID: VP-GEN-004
+COMMAND: "/build/c/baseline.exe" taa next_state EVALUATING EVALUATING_TO_CLASSIFYING 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[EVALUATING EVALUATING_TO_CLASSIFYING vp=0] | state=FAIL_CLOSED verdict=NONE
+
+
+PT-ID: VP-GEN-005
+COMMAND: "/build/c/baseline.exe" taa evidence allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[allow_constrained] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,conflict_check_mode,conflict_check_strength,conflict_check_confidence,conflict_check_coverage_scope,compared_claim_set_ref,residual_risk_statement
+
+
+PT-ID: VP-GEN-006
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION vp=1] | state=DECIDED verdict=ESCALATE
+
+COMMAND: "/build/c/baseline.exe" taa evidence fail_closed
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[fail_closed] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,inhibit_flags,root_reason_code,clearance_needed,cleared_only_by,remediation_class,escalation_request_ref,request_id,failure_ref,required_actor_role,required_evidence,status
+
+
+PT-ID: VP-GEN-007
+COMMAND: "/build/c/baseline.exe" taa next_state ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING vp=1] | state=CANONICALIZING verdict=NONE
+
+
+PT-ID: VP-GEN-008
+COMMAND: "/build/c/baseline.exe" taa next_state CLASSIFYING CLASSIFYING_TO_DENY_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CLASSIFYING CLASSIFYING_TO_DENY_DECISION vp=1] | state=DECIDED verdict=DENY
+
+COMMAND: "/build/c/baseline.exe" taa next_state EVALUATING EVALUATING_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[EVALUATING EVALUATING_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: VP-GEN-009
+COMMAND: "/build/c/baseline.exe" taa next_state INTAKE STRUCTURAL_INCOMPLETENESS_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[INTAKE STRUCTURAL_INCOMPLETENESS_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: VP-GEN-010
+COMMAND: "/build/c/baseline.exe" taa next_state CLASSIFYING POLICY_SNAPSHOT_DRIFT_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CLASSIFYING POLICY_SNAPSHOT_DRIFT_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: VP-GEN-011
+COMMAND: "/build/c/baseline.exe" taa next_state EVALUATING CONFLICT_CHECKING_TO_ALLOW_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[EVALUATING CONFLICT_CHECKING_TO_ALLOW_DECISION vp=1] | state=FAIL_CLOSED verdict=ALLOW
+
+
+PT-ID: VP-GEN-012
+COMMAND: "/build/c/baseline.exe" taa next_state FAIL_CLOSED FAIL_CLOSED_TO_NONCOMPLIANT_HOLD 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[FAIL_CLOSED FAIL_CLOSED_TO_NONCOMPLIANT_HOLD vp=1] | state=NONCOMPLIANT_HOLD verdict=NONE
+
+COMMAND: "/build/c/baseline.exe" taa next_state NONCOMPLIANT_HOLD NONCOMPLIANT_HOLD_TO_READMISSION_PENDING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[NONCOMPLIANT_HOLD NONCOMPLIANT_HOLD_TO_READMISSION_PENDING vp=1] | state=READMISSION_PENDING verdict=NONE
+
+
+PT-ID: VP-GEN-013
+COMMAND: "/build/c/baseline.exe" taa next_state READMISSION_PENDING READMISSION_PENDING_TO_ROLE_SCREENING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[READMISSION_PENDING READMISSION_PENDING_TO_ROLE_SCREENING vp=1] | state=ROLE_SCREENING verdict=NONE
+
+
+PT-ID: VP-GEN-014
+COMMAND: "/build/c/baseline.exe" taa next_state CLOSED ANY_NON_REOPEN 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CLOSED ANY_NON_REOPEN vp=1] | state=CLOSED verdict=NONE
+
+
+PT-ID: VP-GEN-015
+COMMAND: "/build/c/baseline.exe" taa evidence closure
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[closure] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,semantic_closure,evidence_closure,failure_closure,policy_snapshot_closure
+
+
+PT-ID: VP-GEN-016
+COMMAND: "/build/c/baseline.exe" taa evidence base
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[base] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp
+
+
+PT-ID: VP-GEN-017
+COMMAND: "/build/c/baseline.exe" taa evidence allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[allow_constrained] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,conflict_check_mode,conflict_check_strength,conflict_check_confidence,conflict_check_coverage_scope,compared_claim_set_ref,residual_risk_statement
+
+
+PT-ID: VP-GEN-018
+COMMAND: "/build/c/baseline.exe" taa evidence fail_closed
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[fail_closed] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,inhibit_flags,root_reason_code,clearance_needed,cleared_only_by,remediation_class,escalation_request_ref,request_id,failure_ref,required_actor_role,required_evidence,status
+
+
+PT-ID: VP-GEN-019
+COMMAND: "/build/c/baseline.exe" taa next_state DECIDED CLEARANCE_ARTIFACT_MISSING_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[DECIDED CLEARANCE_ARTIFACT_MISSING_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: VP-GEN-020
+COMMAND: (no invocation -- SKIP: TAA Conformance Tests record-kind: "Declarative conformance claim (not a buyer-runnable unit test)"; Minimal run note: "the 1 declarative record (VP-GEN-020 / TAA-PT-020-DECL) is preserved as a buyer obligation rather than a runnable assertion.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: VP-GEN-021
+COMMAND: "/build/c/baseline.exe" taa vocab verdict_set
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=vocab query=[verdict_set] | count=6 verdicts=ALLOW,ALLOW_CONSTRAINED,DENY,FAIL_CLOSED,ESCALATE,OUT_OF_SCOPE reclassify=action_not_verdict
+
+
+PT-ID: VP-GEN-022
+COMMAND: "/build/c/baseline.exe" taa next_state ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING vp=1] | state=CANONICALIZING verdict=NONE
+
+COMMAND: "/build/c/baseline.exe" taa next_state ROLE_SCREENING ROLE_SCREENING_TO_OUT_OF_SCOPE_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[ROLE_SCREENING ROLE_SCREENING_TO_OUT_OF_SCOPE_DECISION vp=1] | state=DECIDED verdict=OUT_OF_SCOPE
+
+
+PT-ID: VP-GEN-023
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION vp=1] | state=DECIDED verdict=DENY
+
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: VP-GEN-024
+COMMAND: "/build/c/baseline.exe" taa next_state EVALUATING EVALUATING_TO_FAIL_CLOSED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[EVALUATING EVALUATING_TO_FAIL_CLOSED vp=1] | state=FAIL_CLOSED verdict=FAIL_CLOSED
+
+
+PT-ID: VP-GEN-025
+COMMAND: "/build/c/baseline.exe" taa evidence allow_constrained
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=evidence query=[allow_constrained] | fields=decision_id,statement_id_list,verdict,reason_code,tsa_label,source_class,source_ref,boundary_validated_role,role_validation_result,policy_snapshot_id,policy_hash_ref,scope_id,turn_id,order_ref,logical_timestamp,conflict_check_mode,conflict_check_strength,conflict_check_confidence,conflict_check_coverage_scope,compared_claim_set_ref,residual_risk_statement
+
+
+PT-ID: VP-GEN-026
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_DECISION vp=1] | state=DECIDED verdict=ALLOW
+
+
+PT-ID: VP-GEN-027
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_DECISION vp=1] | state=DECIDED verdict=ALLOW
+
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION vp=1] | state=DECIDED verdict=DENY
+
+COMMAND: "/build/c/baseline.exe" taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=taa surface=next_state query=[CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION vp=1] | state=DECIDED verdict=ESCALATE
+
+
+PT-ID: ARA-T001
+COMMAND: "/build/c/baseline.exe" ara next_state S0_INGESTED EV_PARSE_OK 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S0_INGESTED EV_PARSE_OK vp=1] | state=S1
+
+
+PT-ID: ARA-T002
+COMMAND: "/build/c/baseline.exe" ara next_state S2_VERIFIED replay_fold_complete 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S2_VERIFIED replay_fold_complete vp=1] | state=S3
+
+
+PT-ID: ARA-T003
+COMMAND: "/build/c/baseline.exe" ara next_state S4_CHECKPOINT_RESOLVED EV_REPORT_BOUND 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S4_CHECKPOINT_RESOLVED EV_REPORT_BOUND vp=1] | state=S5
+
+
+PT-ID: ARA-T004
+COMMAND: "/build/c/baseline.exe" ara next_state S2_VERIFIED EV_SIGNATURE_FAIL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S2_VERIFIED EV_SIGNATURE_FAIL vp=1] | state=SX
+
+COMMAND: "/build/c/baseline.exe" ara next_state S2_VERIFIED EV_CHAIN_BREAK 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S2_VERIFIED EV_CHAIN_BREAK vp=0] | state=SX chain_status=BROKEN
+
+
+PT-ID: ARA-T005
+COMMAND: "/build/c/baseline.exe" ara decide REPORT_INSUFFICIENT
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=decide query=[REPORT_INSUFFICIENT] | verdict=INCIDENT_ONLY finalization=blocked
+
+
+PT-ID: ARA-T006
+COMMAND: "/build/c/baseline.exe" ara next_state S2_VERIFIED EV_EVIDENCE_FAIL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S2_VERIFIED EV_EVIDENCE_FAIL vp=1] | state=SH
+
+
+PT-ID: ARA-T007
+COMMAND: "/build/c/baseline.exe" ara decide CHECKPOINT_UNVERIFIED
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=decide query=[CHECKPOINT_UNVERIFIED] | rollback=INVALID verdict=PARTIAL
+
+
+PT-ID: ARA-T008
+COMMAND: "/build/c/baseline.exe" ara next_state S2_VERIFIED EV_SIGNATURE_FAIL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S2_VERIFIED EV_SIGNATURE_FAIL vp=1] | state=SX
+
+COMMAND: "/build/c/baseline.exe" ara next_state S2_VERIFIED EV_CHAIN_BREAK 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S2_VERIFIED EV_CHAIN_BREAK vp=1] | state=SX chain_status=BROKEN
+
+COMMAND: "/build/c/baseline.exe" ara next_state S2_VERIFIED EV_COUNTER_REPLAY 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S2_VERIFIED EV_COUNTER_REPLAY vp=1] | state=SH
+
+
+PT-ID: ARA-T009
+COMMAND: "/build/c/baseline.exe" ara next_state S2_VERIFIED EV_SIGNATURE_FAIL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S2_VERIFIED EV_SIGNATURE_FAIL vp=1] | state=SX
+
+
+PT-ID: ARA-T010
+COMMAND: "/build/c/baseline.exe" ara next_state S4_CHECKPOINT_RESOLVED EV_CHAIN_BREAK 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S4_CHECKPOINT_RESOLVED EV_CHAIN_BREAK vp=0] | state=SX chain_status=BROKEN
+
+
+PT-ID: ARA-T011
+COMMAND: "/build/c/baseline.exe" ara next_state S3_RECONSTRUCTED EV_SIGNATURE_FAIL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S3_RECONSTRUCTED EV_SIGNATURE_FAIL vp=1] | state=SX
+
+COMMAND: "/build/c/baseline.exe" ara next_state S3_RECONSTRUCTED EV_EVIDENCE_FAIL 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S3_RECONSTRUCTED EV_EVIDENCE_FAIL vp=1] | state=SH
+
+
+PT-ID: ARA-T012
+COMMAND: "/build/c/baseline.exe" ara next_state SH_HOLD_ACTIVE EV_READMISSION_GRANTED 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[SH_HOLD_ACTIVE EV_READMISSION_GRANTED vp=1] | state=S6
+
+
+PT-ID: ARA-T013
+COMMAND: "/build/c/baseline.exe" ara next_state SH_HOLD_ACTIVE EV_READMISSION_GRANTED 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[SH_HOLD_ACTIVE EV_READMISSION_GRANTED vp=0] | state=SH
+
+
+PT-ID: ARA-T014
+COMMAND: "/build/c/baseline.exe" ara next_state S5_REPORT_READY OUT_OF_ORDER_POSITIVE 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S5_REPORT_READY OUT_OF_ORDER_POSITIVE vp=1] | state=S5
+
+
+PT-ID: ARA-T015
+COMMAND: "/build/c/baseline.exe" ara evidence final
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=evidence query=[final] | fields=bundle_digest,policy_profile_id/policy_hash,validator_outcomes,hash_continuity_refs,signature_refs,checkpoint_refs,rollback_refs,report_fields_ref,report_signature/export_manifest_ref
+
+
+PT-ID: ARA-T016
+COMMAND: "/build/c/baseline.exe" ara evidence base
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=evidence query=[base] | fields=bundle_digest,policy_profile_id/policy_hash,validator_outcomes,hash_continuity_refs,signature_refs,checkpoint_refs,rollback_refs,report_fields_ref
+
+
+PT-ID: ARA-T017
+COMMAND: "/build/c/baseline.exe" ara evidence hold
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=evidence query=[hold] | fields=bundle_digest,policy_profile_id/policy_hash,validator_outcomes,hash_continuity_refs,signature_refs,checkpoint_refs,rollback_refs,report_fields_ref,hold_enter_refs,hold_exit_refs,anchor_update_ref,boot_or_verif_refs
+
+
+PT-ID: ARA-T018
+COMMAND: "/build/c/baseline.exe" ara evidence base
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=evidence query=[base] | fields=bundle_digest,policy_profile_id/policy_hash,validator_outcomes,hash_continuity_refs,signature_refs,checkpoint_refs,rollback_refs,report_fields_ref
+
+
+PT-ID: ARA-T019
+COMMAND: "/build/c/baseline.exe" ara gate V10
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=gate query=[V10] | gate=QUARANTINE admitted_to_reconstruction=no incident_export=emitted
+
+
+PT-ID: ARA-T020
+COMMAND: "/build/c/baseline.exe" ara attest distributed
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=attest query=[distributed] | V-10=gate_enforcement_bounded orphaned=0 classification=transparent collapse=none
+
+
+PT-ID: ARA-T021
+COMMAND: "/build/c/baseline.exe" ara vocab fidelity
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=vocab query=[fidelity] | count=5 verdicts=REPLAYABLE,PARTIAL,REJECTED,BROKEN,INCIDENT_ONLY BROKEN!=REJECTED SX!=SH INCIDENT_ONLY!=FAIL_CLOSED distinct=1
+
+
+PT-ID: ARA-T022
+COMMAND: "/build/c/baseline.exe" ara vocab separation
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=vocab query=[separation] | count=5 verdicts=REPLAYABLE,PARTIAL,REJECTED,BROKEN,INCIDENT_ONLY BROKEN!=REJECTED SX!=SH INCIDENT_ONLY!=FAIL_CLOSED distinct=1
+
+
+PT-ID: ARA-T023
+COMMAND: "/build/c/baseline.exe" ara param
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=param query=[] | policy_unresolved=BLOCKED_or_SX S6_resume=S2_or_S4 within_envelope=1
+
+
+PT-ID: ARA-T024
+COMMAND: "/build/c/baseline.exe" ara next_state S3_RECONSTRUCTED EV_LASTCLEAN_FOUND 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S3_RECONSTRUCTED EV_LASTCLEAN_FOUND vp=1] | state=S4
+
+
+PT-ID: ARA-T025
+COMMAND: "/build/c/baseline.exe" ara evidence hold
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=evidence query=[hold] | fields=bundle_digest,policy_profile_id/policy_hash,validator_outcomes,hash_continuity_refs,signature_refs,checkpoint_refs,rollback_refs,report_fields_ref,hold_enter_refs,hold_exit_refs,anchor_update_ref,boot_or_verif_refs
+
+
+PT-ID: ARA-T026
+COMMAND: "/build/c/baseline.exe" ara next_state S4_CHECKPOINT_RESOLVED EV_REPORT_BOUND 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=next_state query=[S4_CHECKPOINT_RESOLVED EV_REPORT_BOUND vp=1] | state=S5
+
+
+PT-ID: ARA-T027
+COMMAND: "/build/c/baseline.exe" ara attest transparent
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=ara surface=attest query=[transparent] | V-10=gate_enforcement_bounded orphaned=0 classification=transparent collapse=none
+
+
+PT-ID: FPA-D-01
+COMMAND: (no invocation -- SKIP: FPA Conformance Tests §F.D "Declarative obligations (not locally runnable on the published surface)"; §H Minimal Run Note: "Bounded external obligations not locally runnable: FPA-D-01 through FPA-D-06.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-02
+COMMAND: (no invocation -- SKIP: FPA Conformance Tests §F.D "Declarative obligations (not locally runnable on the published surface)"; §H Minimal Run Note: "Bounded external obligations not locally runnable: FPA-D-01 through FPA-D-06.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-03
+COMMAND: (no invocation -- SKIP: FPA Conformance Tests §F.D "Declarative obligations (not locally runnable on the published surface)"; §H Minimal Run Note: "Bounded external obligations not locally runnable: FPA-D-01 through FPA-D-06.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-04
+COMMAND: (no invocation -- SKIP: FPA Conformance Tests §F.D "Declarative obligations (not locally runnable on the published surface)"; §H Minimal Run Note: "Bounded external obligations not locally runnable: FPA-D-01 through FPA-D-06.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-05
+COMMAND: (no invocation -- SKIP: FPA Conformance Tests §F.D "Declarative obligations (not locally runnable on the published surface)"; §H Minimal Run Note: "Bounded external obligations not locally runnable: FPA-D-01 through FPA-D-06.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-06
+COMMAND: (no invocation -- SKIP: FPA Conformance Tests §F.D "Declarative obligations (not locally runnable on the published surface)"; §H Minimal Run Note: "Bounded external obligations not locally runnable: FPA-D-01 through FPA-D-06.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-T-01
+COMMAND: "/build/c/baseline.exe" fpa next_state IDLE TransferPacketReceived 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[IDLE TransferPacketReceived vp=1] | state=RECEIVED
+
+
+PT-ID: FPA-T-02
+COMMAND: "/build/c/baseline.exe" fpa next_state RECEIVED StructureValid 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[RECEIVED StructureValid vp=1] | state=VERIFIED
+
+
+PT-ID: FPA-T-03
+COMMAND: "/build/c/baseline.exe" fpa next_state RESTORATION_ELIGIBLE RestoreAdmitted 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[RESTORATION_ELIGIBLE RestoreAdmitted vp=1] | state=IDLE
+
+
+PT-ID: FPA-T-04
+COMMAND: "/build/c/baseline.exe" fpa next_state RECEIVED StructureValid 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[RECEIVED StructureValid vp=0] | state=REJECTED
+
+COMMAND: "/build/c/baseline.exe" fpa next_state RECEIVED StructureInvalid 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[RECEIVED StructureInvalid vp=1] | state=REJECTED
+
+
+PT-ID: FPA-T-06
+COMMAND: "/build/c/baseline.exe" fpa next_state VERIFIED EvidencePending 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[VERIFIED EvidencePending vp=0] | state=QUARANTINED
+
+
+PT-ID: FPA-T-08a
+COMMAND: "/build/c/baseline.exe" fpa next_state VERIFIED FreshnessFail 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[VERIFIED FreshnessFail vp=1] | state=REJECTED
+
+
+PT-ID: FPA-T-08b
+COMMAND: "/build/c/baseline.exe" fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed vp=0] | state=REJECTED
+
+
+PT-ID: FPA-T-08c
+COMMAND: "/build/c/baseline.exe" fpa vocab taxonomy
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=vocab query=[taxonomy] | count=6 verdicts=ACCEPT,REJECT,QUARANTINE,RESTORATION_ELIGIBLE,READMIT,FAIL_CLOSED REJECT!=FAIL_CLOSED verdict_RESTORATION_ELIGIBLE!=state_S6 distinct=1
+
+
+PT-ID: FPA-T-09
+COMMAND: "/build/c/baseline.exe" fpa next_state VERIFIED FreshnessPass 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[VERIFIED FreshnessPass vp=0] | state=REJECTED
+
+
+PT-ID: FPA-T-10
+COMMAND: "/build/c/baseline.exe" fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed vp=0] | state=REJECTED
+
+
+PT-ID: FPA-T-11
+COMMAND: "/build/c/baseline.exe" fpa next_state IRR_COMMITTED FreshnessPass 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[IRR_COMMITTED FreshnessPass vp=1] | state=REJECTED
+
+
+PT-ID: FPA-T-12
+COMMAND: "/build/c/baseline.exe" fpa next_state QUARANTINED ReadmissionApproved 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[QUARANTINED ReadmissionApproved vp=1] | state=VERIFIED
+
+
+PT-ID: FPA-T-13a
+COMMAND: "/build/c/baseline.exe" fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed vp=1] | state=RESTORATION_ELIGIBLE
+
+
+PT-ID: FPA-T-13b
+COMMAND: "/build/c/baseline.exe" fpa next_state RESTORATION_ELIGIBLE RestoreAdmitted 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[RESTORATION_ELIGIBLE RestoreAdmitted vp=1] | state=IDLE
+
+
+PT-ID: FPA-T-14
+COMMAND: "/build/c/baseline.exe" fpa next_state REJECTED FreshnessPass 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[REJECTED FreshnessPass vp=1] | state=REJECTED
+
+
+PT-ID: FPA-T-15
+COMMAND: "/build/c/baseline.exe" fpa evidence deny_restore
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=evidence query=[deny_restore] | fields=decision_id,agent_id,source_id,ledger_uuid,decision_object,policy_id,policy_version,reason_code,semantic_verdict,gate_class,packet_hash,freshness_value,watermark_before,watermark_after,ssm_validation_result,reason_code=DENY_RESTORE,semantic_verdict=FAIL_CLOSED,gate_class=BLOCK
+
+
+PT-ID: FPA-T-16
+COMMAND: "/build/c/baseline.exe" fpa evidence accept
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=evidence query=[accept] | fields=decision_id,agent_id,source_id,ledger_uuid,decision_object,policy_id,policy_version,reason_code,semantic_verdict,gate_class,packet_hash,freshness_value,watermark_before,watermark_after,ssm_validation_result,semantic_verdict=ACCEPT,gate_class=RELEASE,irr_digest,prev_receipt_digest
+
+
+PT-ID: FPA-T-17A
+COMMAND: "/build/c/baseline.exe" fpa param tvc
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=param query=[tvc] | when_true=tvc_validation_result=Some when_false=None
+
+
+PT-ID: FPA-T-17B
+COMMAND: "/build/c/baseline.exe" fpa param evidence
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=param query=[evidence] | when_true=evidence_validation_result=Some when_false=None
+
+
+PT-ID: FPA-T-17C
+COMMAND: "/build/c/baseline.exe" fpa param transport
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=param query=[transport] | when_true=transport_validation_result=Some when_false=None
+
+
+PT-ID: FPA-T-17D
+COMMAND: "/build/c/baseline.exe" fpa evidence receipt_linkage
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=evidence query=[receipt_linkage] | fields=decision_id,agent_id,source_id,ledger_uuid,decision_object,policy_id,policy_version,reason_code,semantic_verdict,gate_class,packet_hash,freshness_value,watermark_before,watermark_after,ssm_validation_result,irr_digest,prev_receipt_digest
+
+
+PT-ID: FPA-T-18
+COMMAND: "/build/c/baseline.exe" fpa evidence accept
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=evidence query=[accept] | fields=decision_id,agent_id,source_id,ledger_uuid,decision_object,policy_id,policy_version,reason_code,semantic_verdict,gate_class,packet_hash,freshness_value,watermark_before,watermark_after,ssm_validation_result,semantic_verdict=ACCEPT,gate_class=RELEASE,irr_digest,prev_receipt_digest
+
+
+PT-ID: FPA-T-21
+COMMAND: "/build/c/baseline.exe" fpa vocab labels
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=vocab query=[labels] | count=6 verdicts=ACCEPT,REJECT,QUARANTINE,RESTORATION_ELIGIBLE,READMIT,FAIL_CLOSED REJECT!=FAIL_CLOSED verdict_RESTORATION_ELIGIBLE!=state_S6 distinct=1
+
+
+PT-ID: FPA-T-23
+COMMAND: "/build/c/baseline.exe" fpa param recoverable
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=param query=[recoverable] | when_true=EvidencePending->S7_QUARANTINED when_false=FreshnessPass+fail->S8_REJECTED
+
+
+PT-ID: FPA-T-24
+COMMAND: "/build/c/baseline.exe" fpa next_state VERIFIED FreshnessPass 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[VERIFIED FreshnessPass vp=1] | state=FRESHNESS_ELIGIBLE
+
+
+PT-ID: FPA-T-25
+COMMAND: "/build/c/baseline.exe" fpa param quarantine_evidence
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=param query=[quarantine_evidence] | when_true=evidence_validation_result=Some,verdict=QUARANTINE,gate_class=ESCALATION
+
+
+PT-ID: FPA-T-26
+COMMAND: "/build/c/baseline.exe" fpa next_state FRESHNESS_ELIGIBLE IRRAppended 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[FRESHNESS_ELIGIBLE IRRAppended vp=1] | state=IRR_COMMITTED
+
+
+PT-ID: FPA-T-PR-01
+COMMAND: "/build/c/baseline.exe" fpa next_state VERIFIED FreshnessFail 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[VERIFIED FreshnessFail vp=1] | state=REJECTED
+
+
+PT-ID: FPA-T-PR-02
+COMMAND: "/build/c/baseline.exe" fpa next_state FRESHNESS_ELIGIBLE IRRAppended 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[FRESHNESS_ELIGIBLE IRRAppended vp=1] | state=IRR_COMMITTED
+
+COMMAND: "/build/c/baseline.exe" fpa next_state IRR_COMMITTED WatermarkPersisted 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[IRR_COMMITTED WatermarkPersisted vp=1] | state=WATERMARK_COMMITTED
+
+COMMAND: "/build/c/baseline.exe" fpa next_state FRESHNESS_ELIGIBLE WatermarkPersisted 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[FRESHNESS_ELIGIBLE WatermarkPersisted vp=1] | state=REJECTED
+
+
+PT-ID: FPA-T-PR-03
+COMMAND: "/build/c/baseline.exe" fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed vp=1] | state=RESTORATION_ELIGIBLE
+
+
+PT-ID: FPA-T-PR-09
+COMMAND: "/build/c/baseline.exe" fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed vp=1] | state=RESTORATION_ELIGIBLE
+
+COMMAND: "/build/c/baseline.exe" fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed vp=0] | state=REJECTED
+
+
+PT-ID: FPA-T-PR-10
+COMMAND: "/build/c/baseline.exe" fpa next_state IDLE RestoreAdmitted 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[IDLE RestoreAdmitted vp=1] | state=REJECTED
+
+
+PT-ID: FPA-T-PR-12
+COMMAND: "/build/c/baseline.exe" fpa next_state QUARANTINED ReadmissionApproved 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[QUARANTINED ReadmissionApproved vp=1] | state=VERIFIED
+
+COMMAND: "/build/c/baseline.exe" fpa next_state IDLE ReadmissionApproved 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[IDLE ReadmissionApproved vp=1] | state=REJECTED
+
+
+PT-ID: FPA-T-PR-13
+COMMAND: "/build/c/baseline.exe" fpa next_state VERIFIED FreshnessPass 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[VERIFIED FreshnessPass vp=1] | state=FRESHNESS_ELIGIBLE
+
+COMMAND: "/build/c/baseline.exe" fpa next_state FRESHNESS_ELIGIBLE IRRAppended 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[FRESHNESS_ELIGIBLE IRRAppended vp=1] | state=IRR_COMMITTED
+
+
+PT-ID: FPA-T-PR-14
+COMMAND: "/build/c/baseline.exe" fpa next_state IRR_COMMITTED WatermarkPersisted 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=fpa surface=next_state query=[IRR_COMMITTED WatermarkPersisted vp=0] | state=REJECTED
+
+
+PT-ID: PTS-001
+COMMAND: "/build/c/baseline.exe" sscar next_state S0 Fv01Pass 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S0 Fv01Pass vp=1] | state=S1
+
+
+PT-ID: PTS-002
+COMMAND: "/build/c/baseline.exe" sscar next_state S2 Fv03Pass 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S2 Fv03Pass vp=1] | state=S3
+
+
+PT-ID: PTS-003
+COMMAND: "/build/c/baseline.exe" sscar next_state S7 FamilyVerdictIssued 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S7 FamilyVerdictIssued vp=1] | state=S8
+
+COMMAND: "/build/c/baseline.exe" sscar verdict full_closure
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=verdict query=[full_closure] | verdict=REPLAY_ADMISSIBLE
+
+COMMAND: "/build/c/baseline.exe" sscar foc FOC-01
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=foc query=[FOC-01] | fields=family_decision_id,session_id,family_verdict,reason_code,family_validator_refs,family_evidence_refs
+
+
+PT-ID: PTS-004a
+COMMAND: "/build/c/baseline.exe" sscar next_state S1 Fv02AndFv04Pass 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S1 Fv02AndFv04Pass vp=0] | state=SX
+
+
+PT-ID: PTS-004b
+COMMAND: "/build/c/baseline.exe" sscar next_state S2 UnlabeledMechanismLevelCarriedClaim 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S2 UnlabeledMechanismLevelCarriedClaim vp=0] | state=SX
+
+
+PT-ID: PTS-005
+COMMAND: (no invocation -- SKIP: SSCAR Conformance Tests §5 closed enumeration: "7 declarative records (PTS-005, PTS-015, PTS-019, PTS-020, PTS-027, plus the verdict-layer subsets of PTS-004 and PTS-017) are listed in §7 Public Oracles rather than here.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-006
+COMMAND: "/build/c/baseline.exe" sscar next_state S3 FreshnessReplay 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S3 FreshnessReplay vp=0] | state=SH
+
+COMMAND: "/build/c/baseline.exe" sscar verdict fv06_fail
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=verdict query=[fv06_fail] | verdict=NONCOMPLIANT_HOLD
+
+COMMAND: "/build/c/baseline.exe" sscar foc FOC-05
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=foc query=[FOC-05] | fields=hold_case_id,hold_enter_refs,pending_requirements,readmission_budget,cleared_only_by freshness_before freshness_after hold_exit_refs anchor_update_ref=strictly_increasing
+
+
+PT-ID: PTS-007
+COMMAND: "/build/c/baseline.exe" sscar param fv04_reclass
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=param query=[fv04_reclass] | family_flow=blocks_at_S2 verdict_change=none reclassification=explicit_policy_bound
+
+
+PT-ID: PTS-008
+COMMAND: "/build/c/baseline.exe" sscar next_state S3 FreshnessReplay 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S3 FreshnessReplay vp=0] | state=SH
+
+COMMAND: "/build/c/baseline.exe" sscar next_state S3 CriticalContamination 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S3 CriticalContamination vp=0] | state=SX
+
+
+PT-ID: PTS-009
+COMMAND: "/build/c/baseline.exe" sscar next_state S3 CriticalContamination 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S3 CriticalContamination vp=0] | state=SX
+
+COMMAND: "/build/c/baseline.exe" sscar next_state S5 CriticalContamination 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S5 CriticalContamination vp=0] | state=SX
+
+COMMAND: "/build/c/baseline.exe" sscar next_state S0 CriticalContamination 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S0 CriticalContamination vp=0] | state=SX
+
+
+PT-ID: PTS-010
+COMMAND: "/build/c/baseline.exe" sscar next_state S5 AntiRollbackFailure 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S5 AntiRollbackFailure vp=0] | state=SX
+
+
+PT-ID: PTS-011
+COMMAND: "/build/c/baseline.exe" sscar next_state S3 ChainBreak 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S3 ChainBreak vp=0] | state=SX
+
+COMMAND: "/build/c/baseline.exe" sscar next_state S3 UntrustedAnchorPromoted 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S3 UntrustedAnchorPromoted vp=0] | state=SX
+
+
+PT-ID: PTS-012
+COMMAND: "/build/c/baseline.exe" sscar next_state SH HoldCaseWithNewFamilyClosureBundleAndAnchorUpdate 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[SH HoldCaseWithNewFamilyClosureBundleAndAnchorUpdate vp=1] | state=SR
+
+
+PT-ID: PTS-013
+COMMAND: "/build/c/baseline.exe" sscar next_state SR ReadmissionBundleChangedCarriedPayload 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[SR ReadmissionBundleChangedCarriedPayload vp=1] | state=S2
+
+
+PT-ID: PTS-014
+COMMAND: "/build/c/baseline.exe" sscar next_state S8 Handoff 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S8 Handoff vp=1] | state=S8
+
+COMMAND: "/build/c/baseline.exe" sscar next_state SX IncidentOnlyOutput 1
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[SX IncidentOnlyOutput vp=1] | state=SX
+
+
+PT-ID: PTS-015
+COMMAND: (no invocation -- SKIP: SSCAR Conformance Tests §5 closed enumeration: "7 declarative records (PTS-005, PTS-015, PTS-019, PTS-020, PTS-027, plus the verdict-layer subsets of PTS-004 and PTS-017) are listed in §7 Public Oracles rather than here.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-016
+COMMAND: "/build/c/baseline.exe" sscar evidence all
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=evidence query=[all] | fields=family_decision_id,boundary_event_id,session_id/prior_session_ref,carried_statement_refs,tsa_refs/provenance_refs,anchor_document_digest/anchor_document_ref,accepted_head_digest/linked_irr_digest,freshness_before/freshness_after/anchor_update_ref,rehydration_closure_ref,replay_refs/checkpoint_refs/rollback_refs,disclosure_class_entries,family_validator_outcomes,hold_enter_refs/hold_exit_refs,contamination_flags/contaminating_ref_set,report_signature/export_manifest_ref
+
+
+PT-ID: PTS-017a
+COMMAND: "/build/c/baseline.exe" sscar foc FOC-04
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=foc query=[FOC-04] | fields=incident_id,root_reason_code,contaminating_ref_set,blocked_stage,remediation_class tsa_refs=present
+
+
+PT-ID: PTS-017b
+COMMAND: "/build/c/baseline.exe" sscar foc FOC-05
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=foc query=[FOC-05] | fields=hold_case_id,hold_enter_refs,pending_requirements,readmission_budget,cleared_only_by freshness_before freshness_after hold_exit_refs anchor_update_ref=strictly_increasing
+
+
+PT-ID: PTS-017d
+COMMAND: "/build/c/baseline.exe" sscar foc FOC-05
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=foc query=[FOC-05] | fields=hold_case_id,hold_enter_refs,pending_requirements,readmission_budget,cleared_only_by freshness_before freshness_after hold_exit_refs anchor_update_ref=strictly_increasing
+
+
+PT-ID: PTS-018
+COMMAND: "/build/c/baseline.exe" sscar foc FOC-04
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=foc query=[FOC-04] | fields=incident_id,root_reason_code,contaminating_ref_set,blocked_stage,remediation_class tsa_refs=present
+
+COMMAND: "/build/c/baseline.exe" sscar foc FOC-05
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=foc query=[FOC-05] | fields=hold_case_id,hold_enter_refs,pending_requirements,readmission_budget,cleared_only_by freshness_before freshness_after hold_exit_refs anchor_update_ref=strictly_increasing
+
+
+PT-ID: PTS-019
+COMMAND: (no invocation -- SKIP: SSCAR Conformance Tests §5 closed enumeration: "7 declarative records (PTS-005, PTS-015, PTS-019, PTS-020, PTS-027, plus the verdict-layer subsets of PTS-004 and PTS-017) are listed in §7 Public Oracles rather than here.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-020
+COMMAND: (no invocation -- SKIP: SSCAR Conformance Tests §5 closed enumeration: "7 declarative records (PTS-005, PTS-015, PTS-019, PTS-020, PTS-027, plus the verdict-layer subsets of PTS-004 and PTS-017) are listed in §7 Public Oracles rather than here.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-021
+COMMAND: "/build/c/baseline.exe" sscar vocab types
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=vocab query=[types] | count=6 verdicts=REPLAY_ADMISSIBLE,REPLAY_ADMISSIBLE_CONSTRAINED,REPLAY_INCOMPLETE,NONCOMPLIANT_HOLD,CONTAMINATION_FAIL_CLOSED,INCIDENT_ONLY FamilyWorkflowState!=FamilyNormativeVerdict type_disjoint=1
+
+
+PT-ID: PTS-022
+COMMAND: "/build/c/baseline.exe" sscar next_state S3 FreshnessReplay 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S3 FreshnessReplay vp=0] | state=SH
+
+COMMAND: "/build/c/baseline.exe" sscar verdict fv06_fail
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=verdict query=[fv06_fail] | verdict=NONCOMPLIANT_HOLD
+
+COMMAND: "/build/c/baseline.exe" sscar next_state S3 CriticalContamination 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S3 CriticalContamination vp=0] | state=SX
+
+COMMAND: "/build/c/baseline.exe" sscar verdict fv09_fail
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=verdict query=[fv09_fail] | verdict=CONTAMINATION_FAIL_CLOSED
+
+
+PT-ID: PTS-023
+COMMAND: "/build/c/baseline.exe" sscar param sr_reentry
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=param query=[sr_reentry] | carried_payload->S2 anchor_document_ref->S2 source_control_bundles->S2 policy_snapshot_id->S5 rehydration_closure_ref->S5 third_point=forbidden
+
+
+PT-ID: PTS-024
+COMMAND: "/build/c/baseline.exe" sscar derive
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=derive query=[FV-07] | state=S5 dual_source=§9_S4_entry+§7_FV-07
+
+
+PT-ID: PTS-025
+COMMAND: "/build/c/baseline.exe" sscar next_state S4 AntiRollbackFailure 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S4 AntiRollbackFailure vp=0] | state=SX
+
+COMMAND: "/build/c/baseline.exe" sscar verdict fv07_integrity
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=verdict query=[fv07_integrity] | verdict=CONTAMINATION_FAIL_CLOSED
+
+COMMAND: "/build/c/baseline.exe" sscar evidence all
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=evidence query=[all] | fields=family_decision_id,boundary_event_id,session_id/prior_session_ref,carried_statement_refs,tsa_refs/provenance_refs,anchor_document_digest/anchor_document_ref,accepted_head_digest/linked_irr_digest,freshness_before/freshness_after/anchor_update_ref,rehydration_closure_ref,replay_refs/checkpoint_refs/rollback_refs,disclosure_class_entries,family_validator_outcomes,hold_enter_refs/hold_exit_refs,contamination_flags/contaminating_ref_set,report_signature/export_manifest_ref
+
+
+PT-ID: PTS-026
+COMMAND: "/build/c/baseline.exe" sscar next_state S1 Fv02AndFv04Pass 0
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=next_state query=[S1 Fv02AndFv04Pass vp=0] | state=SX
+
+
+PT-ID: PTS-027
+COMMAND: (no invocation -- SKIP: SSCAR Conformance Tests §5 closed enumeration: "7 declarative records (PTS-005, PTS-015, PTS-019, PTS-020, PTS-027, plus the verdict-layer subsets of PTS-004 and PTS-017) are listed in §7 Public Oracles rather than here.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: CT-01
+COMMAND: "/build/c/baseline.exe" sscar ct CT-01
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-01] | components=5 set={ARA,BDA,FPA,TAA,VRA} state=S1 FV-01=pass
+
+
+PT-ID: CT-02
+COMMAND: "/build/c/baseline.exe" sscar ct CT-02
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-02] | state=SX verdict=CONTAMINATION_FAIL_CLOSED blocked_stage=provenance_classification contaminating_ref_set=populated replay_admission=none
+
+
+PT-ID: CT-03
+COMMAND: "/build/c/baseline.exe" sscar ct CT-03
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-03] | FV-02=untrusted_until_verification advance_past_S2=no trust_assertion=logged_not_influential if_promoted=CONTAMINATION_FAIL_CLOSED
+
+
+PT-ID: CT-04
+COMMAND: "/build/c/baseline.exe" sscar ct CT-04
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-04] | fpa_state=REJECTED state=SH verdict=NONCOMPLIANT_HOLD hold_enter_refs=populated pending_requirements=strict_increase_anchor_update_ref
+
+
+PT-ID: CT-05
+COMMAND: "/build/c/baseline.exe" sscar ct CT-05
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-05] | accepted_head_digest=byte_identical linked_irr_digest=latest_valid FV-05=fail verdict=REPLAY_INCOMPLETE
+
+
+PT-ID: CT-06
+COMMAND: "/build/c/baseline.exe" sscar ct CT-06
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-06] | state=SX verdict=CONTAMINATION_FAIL_CLOSED anti_rollback=fail remediable=no (not NONCOMPLIANT_HOLD)
+
+
+PT-ID: CT-07
+COMMAND: "/build/c/baseline.exe" sscar ct CT-07
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-07] | replay_refs=incomplete lineage_complete=no verdict=REPLAY_INCOMPLETE projection=non_advancement_past_S6
+
+
+PT-ID: CT-08
+COMMAND: "/build/c/baseline.exe" sscar ct CT-08
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-08] | fv01..fv12=pass state=S8 verdict=REPLAY_ADMISSIBLE report_signature=present replay_admission_token=emitted emergent=full_composition
+
+
+PT-ID: CT-09
+COMMAND: "/build/c/baseline.exe" sscar ct CT-09
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-09] | tool_state_activation=flag structural_restoration=not_authority state=SX verdict=CONTAMINATION_FAIL_CLOSED contaminating_ref_set=populated
+
+
+PT-ID: CT-10
+COMMAND: "/build/c/baseline.exe" sscar ct CT-10
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-10] | FV-12=hold_exit_refs_nonempty anchor_update_ref=strict_increase policy_snapshot_id=stable state=SR identical_readmission=rejected
+
+
+PT-ID: CT-11
+COMMAND: "/build/c/baseline.exe" sscar ct CT-11
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-11] | wellformed=REPLAY_ADMISSIBLE_CONSTRAINED misclassified=INCIDENT_ONLY classes_distinct=1
+
+
+PT-ID: CT-12
+COMMAND: "/build/c/baseline.exe" sscar ct CT-12
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-12] | empty_outcomes=emission_blocked partial_outcomes_verdict=INCIDENT_ONLY wellformed=emission_allowed family_evidence_refs=bound_nonempty
+
+
+PT-ID: CT-13
+COMMAND: "/build/c/baseline.exe" sscar ct CT-13
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-13] | FV-04=mechanism_use_of_explanatory_only verdict=CONTAMINATION_FAIL_CLOSED reclassification=explicit_or_fail_closed flow=blocks_at_S2 handoff=bounded
+
+
+PT-ID: CT-14
+COMMAND: "/build/c/baseline.exe" sscar ct CT-14
+EXIT_CODE: 0
+STDOUT_TAIL: RESULT agent=sscar surface=ct query=[CT-14] | carried=S2 anchordoc=S2 policy=S5 componentset=S2 rehydration=S5 third_point=forbidden operator_discretion=no
+
+

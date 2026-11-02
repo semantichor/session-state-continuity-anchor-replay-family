@@ -1,0 +1,19 @@
+#  health-probe — real captured execution of the simplest declared family transition (FD-01 S0->S1) + FamilyEvidenceBundle
+surface=next_state agent=family in_state=S0 trigger=Fv01Pass validator_passed=true result_state=S1
+FEV-01_family_decision_id=FAM-DEC-0001
+FEV-02_boundary_event_id=BEVT-0001
+FEV-03_session_id=SESS-0001/prior:SESS-0000
+FEV-04_carried_statement_refs=STMT-CANON-0001
+FEV-05_tsa_refs=attested_mechanism/TRAINED
+FEV-06_anchor_document_ref=ANCHORDOC-CANON-0001
+FEV-07_accepted_head_digest=HEAD-DIGEST-CANON-0001/IRR-DIGEST-CANON-0001
+FEV-08_freshness=10/11/ANCHOR-UPD-0002
+FEV-09_rehydration_closure_ref=REHYD-CLOSURE-CANON-0001
+FEV-10_replay_refs=RPLY-0001,RPLY-0002/CKPT-0001,CKPT-0002/RBK-0001
+FEV-11_disclosure_class_entries=none
+FEV-12_family_validator_outcomes=FV-01..FV-12:pass
+FEV-13_hold_refs=none
+FEV-14_contamination_flags=none
+FEV-15_report_signature=RSIG-FAM-0001/EXM-FAM-0001
+surface=evidence
+agent=family

@@ -1,0 +1,1627 @@
+PT-ID: PT-001
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.next_state", "state": "S0 STARTUP_READONLY", "trigger": "StartupComplete", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S1 SNAPSHOT_LOCKED"}
+
+
+PT-ID: PT-002
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.next_state", "state": "S2 STRUCTURAL_VERIFIED", "trigger": "StructuralChecksDone", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S3 ELIGIBLE_HEAD_SELECTED"}
+
+
+PT-ID: PT-003
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.next_state", "state": "S3 ELIGIBLE_HEAD_SELECTED", "trigger": "EligibilityChecksDone", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S4 REHYDRATED_VALIDATED"}
+
+
+PT-ID: PT-004
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.next_state", "state": "S2 STRUCTURAL_VERIFIED", "trigger": "StructuralChecksDone", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S5 FAIL_SAFE"}
+
+
+PT-ID: PT-005
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.next_state", "state": "S2 STRUCTURAL_VERIFIED", "trigger": "StructuralChecksDone", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S5 FAIL_SAFE"}
+
+
+PT-ID: PT-006
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.next_state", "state": "S2 STRUCTURAL_VERIFIED", "trigger": "StructuralChecksDone", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S5 FAIL_SAFE"}
+
+
+PT-ID: PT-007
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.next_state", "state": "S2 STRUCTURAL_VERIFIED", "trigger": "StructuralChecksDone", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S5 FAIL_SAFE"}
+
+
+PT-ID: PT-008
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.next_state", "state": "S3 ELIGIBLE_HEAD_SELECTED", "trigger": "EligibilityChecksDone", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S5 FAIL_SAFE"}
+
+
+PT-ID: PT-009
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.next_state", "state": "S3 ELIGIBLE_HEAD_SELECTED", "trigger": "EligibilityChecksDone", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S5 FAIL_SAFE"}
+
+
+PT-ID: PT-010
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.next_state", "state": "S0 STARTUP_READONLY", "trigger": "StartupComplete", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S5 FAIL_SAFE"}
+
+
+PT-ID: PT-011
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.next_state", "state": "S3 ELIGIBLE_HEAD_SELECTED", "trigger": "RollbackDetected", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S5 FAIL_SAFE"}
+
+
+PT-ID: PT-012
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.next_state", "state": "S5 FAIL_SAFE", "trigger": "WalReplayNeeded", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S7 RECOVERY_REPLAY"}
+
+
+PT-ID: PT-013
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.next_state", "state": "S3 ELIGIBLE_HEAD_SELECTED", "trigger": "ToolStateInvalid", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S6 TOOL_QUARANTINE"}
+
+
+PT-ID: PT-014
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.next_state", "state": "S3 ELIGIBLE_HEAD_SELECTED", "trigger": "ToolStateInvalid", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S6 TOOL_QUARANTINE"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.next_state", "state": "S3 ELIGIBLE_HEAD_SELECTED", "trigger": "EligibilityChecksDone", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S4 REHYDRATED_VALIDATED"}
+
+
+PT-ID: PT-015
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.next_state", "state": "S6 TOOL_QUARANTINE", "trigger": "StartupComplete", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S6 TOOL_QUARANTINE"}
+
+
+PT-ID: PT-016
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.evidence", "kind": "deny_chain"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"validator_bundle_id": "validator_bundle_id:vra", "verified_head_digest": "verified_head_digest:vra", "snapshot_id": "snapshot_id:vra", "policy_id": "policy_id:vra", "source_id": "source_id:vra", "freshness_value": "freshness_value:vra", "irr_digest": "irr_digest:vra", "failed_validator": "V_CHAIN", "failure_code": "CHAIN_BREAK", "suppression_status": "suppression_status:vra", "tool_activation_status": "tool_activation_status:vra", "recovery_phase": "recovery_phase:vra", "readmission_token_id": "readmission_token_id:vra", "validator_bundle_id_producer": "ExecutionLayer", "failure_explanation_producer": "GateLogic", "tool_activation_status_producer": "ToolGate"}}
+
+
+PT-ID: PT-017
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.evidence", "kind": "deny_freshness"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"validator_bundle_id": "validator_bundle_id:vra", "verified_head_digest": "verified_head_digest:vra", "snapshot_id": "snapshot_id:vra", "policy_id": "policy_id:vra", "source_id": "source_id:vra", "freshness_value": "freshness_value:vra", "irr_digest": "irr_digest:vra", "failed_validator": "V_FRESHNESS", "failure_code": "FRESHNESS_DOWNGRADE", "suppression_status": "suppression_status:vra", "tool_activation_status": "tool_activation_status:vra", "recovery_phase": "recovery_phase:vra", "readmission_token_id": "readmission_token_id:vra", "validator_bundle_id_producer": "ExecutionLayer", "failure_explanation_producer": "GateLogic", "tool_activation_status_producer": "ToolGate"}}
+
+
+PT-ID: PT-018
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.evidence", "kind": "deny_parse"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"validator_bundle_id": "validator_bundle_id:vra", "verified_head_digest": "verified_head_digest:vra", "snapshot_id": "snapshot_id:vra", "policy_id": "policy_id:vra", "source_id": "source_id:vra", "freshness_value": "freshness_value:vra", "irr_digest": "irr_digest:vra", "failed_validator": "V_PARSE", "failure_code": "PARSE_AMBIGUITY", "suppression_status": "suppression_status:vra", "tool_activation_status": "tool_activation_status:vra", "recovery_phase": "recovery_phase:vra", "readmission_token_id": "readmission_token_id:vra", "validator_bundle_id_producer": "ExecutionLayer", "failure_explanation_producer": "GateLogic", "tool_activation_status_producer": "ToolGate"}}
+
+
+PT-ID: PT-019
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.evidence", "kind": "recovery"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"validator_bundle_id": "validator_bundle_id:vra", "verified_head_digest": "verified_head_digest:vra", "snapshot_id": "snapshot_id:vra", "policy_id": "policy_id:vra", "source_id": "source_id:vra", "freshness_value": "freshness_value:vra", "irr_digest": "irr_digest:vra", "failed_validator": "failed_validator:vra", "failure_code": "failure_code:vra", "suppression_status": "suppression_status:vra", "tool_activation_status": "tool_activation_status:vra", "recovery_phase": "recovery_phase:vra", "readmission_token_id": "readmission_token_id:vra", "validator_bundle_id_producer": "ExecutionLayer", "failure_explanation_producer": "GateLogic", "tool_activation_status_producer": "ToolGate", "recovery_phase_producer": "V_WAL_PHASE"}}
+
+
+PT-ID: PT-020
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.evidence", "kind": "readmission"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"validator_bundle_id": "validator_bundle_id:vra", "verified_head_digest": "verified_head_digest:vra", "snapshot_id": "snapshot_id:vra", "policy_id": "policy_id:vra", "source_id": "source_id:vra", "freshness_value": "freshness_value:vra", "irr_digest": "irr_digest:vra", "failed_validator": "failed_validator:vra", "failure_code": "failure_code:vra", "suppression_status": "suppression_status:vra", "tool_activation_status": "tool_activation_status:vra", "recovery_phase": "recovery_phase:vra", "readmission_token_id": "readmission_token_id:vra", "validator_bundle_id_producer": "ExecutionLayer", "failure_explanation_producer": "GateLogic", "tool_activation_status_producer": "ToolGate"}}
+
+
+PT-ID: PT-021
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.evidence", "kind": "deny_frame"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"validator_bundle_id": "validator_bundle_id:vra", "verified_head_digest": "verified_head_digest:vra", "snapshot_id": "snapshot_id:vra", "policy_id": "policy_id:vra", "source_id": "source_id:vra", "freshness_value": "freshness_value:vra", "irr_digest": "irr_digest:vra", "failed_validator": "V_FRAME", "failure_code": "FRAME_CORRUPT", "suppression_status": "suppression_status:vra", "tool_activation_status": "tool_activation_status:vra", "recovery_phase": "recovery_phase:vra", "readmission_token_id": "readmission_token_id:vra", "validator_bundle_id_producer": "ExecutionLayer", "failure_explanation_producer": "GateLogic", "tool_activation_status_producer": "ToolGate"}}
+
+
+PT-ID: PT-022
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.taxonomy"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"verdict_tag": "QUARANTINE", "state_tag": "S6 TOOL_QUARANTINE", "distinct": true, "deny": "DENY", "escalate": "ESCALATE", "quarantine": "QUARANTINE", "pairwise_distinct": true}
+
+
+PT-ID: PT-023
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.taxonomy"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"verdict_tag": "QUARANTINE", "state_tag": "S6 TOOL_QUARANTINE", "distinct": true, "deny": "DENY", "escalate": "ESCALATE", "quarantine": "QUARANTINE", "pairwise_distinct": true}
+
+
+PT-ID: PT-024
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.next_state", "state": "S8 READMISSION_PENDING", "trigger": "AuthorityRelease", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S1 SNAPSHOT_LOCKED"}
+
+
+PT-ID: PT-025
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.evidence", "kind": "deny_freshness"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"validator_bundle_id": "validator_bundle_id:vra", "verified_head_digest": "verified_head_digest:vra", "snapshot_id": "snapshot_id:vra", "policy_id": "policy_id:vra", "source_id": "source_id:vra", "freshness_value": "freshness_value:vra", "irr_digest": "irr_digest:vra", "failed_validator": "V_FRESHNESS", "failure_code": "FRESHNESS_DOWNGRADE", "suppression_status": "suppression_status:vra", "tool_activation_status": "tool_activation_status:vra", "recovery_phase": "recovery_phase:vra", "readmission_token_id": "readmission_token_id:vra", "validator_bundle_id_producer": "ExecutionLayer", "failure_explanation_producer": "GateLogic", "tool_activation_status_producer": "ToolGate"}}
+
+
+PT-ID: PT-026
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.evidence", "kind": "recovery"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"validator_bundle_id": "validator_bundle_id:vra", "verified_head_digest": "verified_head_digest:vra", "snapshot_id": "snapshot_id:vra", "policy_id": "policy_id:vra", "source_id": "source_id:vra", "freshness_value": "freshness_value:vra", "irr_digest": "irr_digest:vra", "failed_validator": "failed_validator:vra", "failure_code": "failure_code:vra", "suppression_status": "suppression_status:vra", "tool_activation_status": "tool_activation_status:vra", "recovery_phase": "recovery_phase:vra", "readmission_token_id": "readmission_token_id:vra", "validator_bundle_id_producer": "ExecutionLayer", "failure_explanation_producer": "GateLogic", "tool_activation_status_producer": "ToolGate", "recovery_phase_producer": "V_WAL_PHASE"}}
+
+
+PT-ID: PT-027
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.next_state", "state": "S3 ELIGIBLE_HEAD_SELECTED", "trigger": "ToolStateInvalid", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S6 TOOL_QUARANTINE"}
+
+
+PT-ID: PT-028
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.declarative", "check": "V_COMPAT"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"enforcement_point": "import_admissibility/policy_compatibility", "deployment_profile": "dp-001", "compat_status": "compatible", "evidence_preserved": true}
+
+
+PT-ID: PT-029
+COMMAND: "python" "baseline.py"  # stdin={"op": "vra.declarative", "check": "V_WRITER_LOCK"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"enforcement_point": "persistence_control_plane", "writer_lock_status": "held", "contention_status": "none", "single_writer_enforced": true}
+
+
+PT-ID: PTS-BDA-001
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "IDLE", "trigger": "INPUT_RECEIVED"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "INGEST_VALIDATE", "verdict": null, "reason_code": "ingress_opened"}
+
+
+PT-ID: PTS-BDA-002
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "INGEST_VALIDATE", "trigger": "VALIDATION_PASS", "guard_result": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "FILTER_REVIEW", "verdict": null, "reason_code": "ingest_validators_pass"}
+
+
+PT-ID: PTS-BDA-003
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "FILTER_REVIEW", "trigger": "NO_ESCALATION", "guard_result": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "READY_FOR_RELEASE", "verdict": null, "reason_code": "no_escalation"}
+
+
+PT-ID: PTS-BDA-004
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "FINALIZATION_REVIEW", "trigger": "EVIDENCE_OK", "guard_result": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "IDLE", "verdict": null, "reason_code": "finalization_success"}
+
+
+PT-ID: PTS-BDA-005
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "INGEST_VALIDATE", "trigger": "VALIDATION_FAIL", "guard_result": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "OUTPUT_BLOCKED", "verdict": "BLOCK", "reason_code": "validation_fail"}
+
+
+PT-ID: PTS-BDA-006
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "FILTER_REVIEW", "trigger": "TOOL_STATE_DETECTED", "guard_result": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "TOOL_STATE_QUARANTINED", "verdict": "QUARANTINE", "reason_code": "tool_state_no_approval"}
+
+
+PT-ID: PTS-BDA-007
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "INGEST_VALIDATE", "trigger": "VALIDATION_FAIL", "guard_result": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "OUTPUT_BLOCKED", "verdict": "BLOCK", "reason_code": "validation_fail"}
+
+
+PT-ID: PTS-BDA-008
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "TOOL_STATE_QUARANTINED", "trigger": "APPROVAL_GRANTED", "guard_result": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "TOOL_STATE_QUARANTINED", "verdict": "QUARANTINE", "reason_code": "approval_absent"}
+
+
+PT-ID: PTS-BDA-009
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "INGEST_VALIDATE", "trigger": "VALIDATION_FAIL", "guard_result": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "OUTPUT_BLOCKED", "verdict": "BLOCK", "reason_code": "validation_fail"}
+
+
+PT-ID: PTS-BDA-010
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "INGEST_VALIDATE", "trigger": "VALIDATION_FAIL", "guard_result": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "OUTPUT_BLOCKED", "verdict": "BLOCK", "reason_code": "validation_fail"}
+
+
+PT-ID: PTS-BDA-011
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.statement", "tsa_label": null, "source_class": null}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "OUTPUT_BLOCKED", "verdict": "BLOCK", "reason_code": "unlabeled_gate_statement/CONFLICT"}
+
+
+PT-ID: PTS-BDA-012
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.taxonomy"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"verdicts": ["ALLOW", "ALLOW_CONSTRAINED", "BLOCK", "QUARANTINE", "FAIL_CLOSED", "NONCOMPLIANT_HOLD", "READMIT"], "count": 7, "pairwise_distinct": true, "block_ne_quarantine": true, "failclosed_ne_hold": true, "allow_ne_constrained": true}
+
+
+PT-ID: PTS-BDA-013
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "FILTER_REVIEW", "trigger": "CPW_CRITICAL"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "OUTPUT_BLOCKED", "verdict": "FAIL_CLOSED", "reason_code": "cpw_critical"}
+
+
+PT-ID: PTS-BDA-014
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "INGEST_VALIDATE", "trigger": "VALIDATION_FAIL", "guard_result": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "OUTPUT_BLOCKED", "verdict": "BLOCK", "reason_code": "validation_fail"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "FINALIZATION_REVIEW", "trigger": "EVIDENCE_FAIL", "guard_result": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "NONCOMPLIANT_HOLD", "verdict": "NONCOMPLIANT_HOLD", "reason_code": "evidence_fail_or_counter_replay"}
+
+
+PT-ID: PTS-BDA-015
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "FILTER_REVIEW", "trigger": "CPW_CRITICAL"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "OUTPUT_BLOCKED", "verdict": "FAIL_CLOSED", "reason_code": "cpw_critical"}
+
+
+PT-ID: PTS-BDA-016
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "FINALIZATION_REVIEW", "trigger": "CPW_CRITICAL"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "OUTPUT_BLOCKED", "verdict": "FAIL_CLOSED", "reason_code": "cpw_critical"}
+
+
+PT-ID: PTS-BDA-017
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "TOOL_STATE_QUARANTINED", "trigger": "CPW_CRITICAL"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "OUTPUT_BLOCKED", "verdict": "FAIL_CLOSED", "reason_code": "cpw_critical"}
+
+
+PT-ID: PTS-BDA-018
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "OUTPUT_BLOCKED", "trigger": "READMISSION_APPROVED", "guard_result": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "IDLE", "verdict": "READMIT", "reason_code": "readmit"}
+
+
+PT-ID: PTS-BDA-019
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "NONCOMPLIANT_HOLD", "trigger": "COMPLIANCE_RESTORED", "guard_result": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "IDLE", "verdict": "READMIT", "reason_code": "hold_exit"}
+
+
+PT-ID: PTS-BDA-020
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "OUTPUT_BLOCKED", "trigger": "READMISSION_APPROVED", "guard_result": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "OUTPUT_BLOCKED", "verdict": "BLOCK", "reason_code": "readmission_prereq_fail"}
+
+
+PT-ID: PTS-BDA-021
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "OUTPUT_BLOCKED", "trigger": "READMISSION_APPROVED", "guard_result": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "IDLE", "verdict": "READMIT", "reason_code": "readmit"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "IDLE", "trigger": "INPUT_RECEIVED"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "INGEST_VALIDATE", "verdict": null, "reason_code": "ingress_opened"}
+
+
+PT-ID: PTS-BDA-022
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.evidence"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:bda", "session_id": "session_id:bda", "boundary_side": "boundary_side:bda", "decision_object": "decision_object:bda", "input_digest": "input_digest:bda", "policy_hash": "policy_hash:bda", "validator_results": "validator_results:bda", "statement_refs": "statement_refs:bda", "verdict": "verdict:bda", "reason_code": "reason_code:bda", "order_index": "order_index:bda", "hash_prev": "hash_prev:bda", "hash_curr": "hash_curr:bda"}}
+
+
+PT-ID: PTS-BDA-023
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.evidence"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:bda", "session_id": "session_id:bda", "boundary_side": "boundary_side:bda", "decision_object": "decision_object:bda", "input_digest": "input_digest:bda", "policy_hash": "policy_hash:bda", "validator_results": "validator_results:bda", "statement_refs": "statement_refs:bda", "verdict": "verdict:bda", "reason_code": "reason_code:bda", "order_index": "order_index:bda", "hash_prev": "hash_prev:bda", "hash_curr": "hash_curr:bda"}}
+
+
+PT-ID: PTS-BDA-024
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.evidence", "activated": ["approval_ref"]}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:bda", "session_id": "session_id:bda", "boundary_side": "boundary_side:bda", "decision_object": "decision_object:bda", "input_digest": "input_digest:bda", "policy_hash": "policy_hash:bda", "validator_results": "validator_results:bda", "statement_refs": "statement_refs:bda", "verdict": "verdict:bda", "reason_code": "reason_code:bda", "order_index": "order_index:bda", "hash_prev": "hash_prev:bda", "hash_curr": "hash_curr:bda", "approval_ref": "approval_ref:bda"}}
+
+
+PT-ID: PTS-BDA-025
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.evidence", "activated": ["evidence_ref", "verif_counter_anchor"]}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:bda", "session_id": "session_id:bda", "boundary_side": "boundary_side:bda", "decision_object": "decision_object:bda", "input_digest": "input_digest:bda", "policy_hash": "policy_hash:bda", "validator_results": "validator_results:bda", "statement_refs": "statement_refs:bda", "verdict": "verdict:bda", "reason_code": "reason_code:bda", "order_index": "order_index:bda", "hash_prev": "hash_prev:bda", "hash_curr": "hash_curr:bda", "evidence_ref": "evidence_ref:bda", "verif_counter_anchor": "verif_counter_anchor:bda"}}
+
+
+PT-ID: PTS-BDA-026
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.evidence", "activated": ["rollback_ref"]}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:bda", "session_id": "session_id:bda", "boundary_side": "boundary_side:bda", "decision_object": "decision_object:bda", "input_digest": "input_digest:bda", "policy_hash": "policy_hash:bda", "validator_results": "validator_results:bda", "statement_refs": "statement_refs:bda", "verdict": "verdict:bda", "reason_code": "reason_code:bda", "order_index": "order_index:bda", "hash_prev": "hash_prev:bda", "hash_curr": "hash_curr:bda", "rollback_ref": "rollback_ref:bda"}}
+
+
+PT-ID: PTS-BDA-027
+COMMAND: (no invocation -- SKIP: Boundary_Defense_Agent_Conformance_Tests.md §5 Minimal Run Note — 'Bounded external obligations not locally runnable': 'authorized non-validator producer grounding' (whole-assertion coverage).)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-BDA-028
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "READY_FOR_RELEASE", "trigger": "CPW_CRITICAL", "guard_result": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "OUTPUT_BLOCKED", "verdict": "FAIL_CLOSED", "reason_code": "cpw_critical"}
+
+
+PT-ID: PTS-BDA-029
+COMMAND: (no invocation -- SKIP: Boundary_Defense_Agent_Conformance_Tests.md §5 Minimal Run Note — 'Bounded external obligations not locally runnable': 'distributed enforcement legitimacy where not exposed by local transition function'.)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-BDA-030
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.taxonomy"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"verdicts": ["ALLOW", "ALLOW_CONSTRAINED", "BLOCK", "QUARANTINE", "FAIL_CLOSED", "NONCOMPLIANT_HOLD", "READMIT"], "count": 7, "pairwise_distinct": true, "block_ne_quarantine": true, "failclosed_ne_hold": true, "allow_ne_constrained": true}
+
+
+PT-ID: PTS-BDA-031
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.taxonomy"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"verdicts": ["ALLOW", "ALLOW_CONSTRAINED", "BLOCK", "QUARANTINE", "FAIL_CLOSED", "NONCOMPLIANT_HOLD", "READMIT"], "count": 7, "pairwise_distinct": true, "block_ne_quarantine": true, "failclosed_ne_hold": true, "allow_ne_constrained": true}
+
+
+PT-ID: PTS-BDA-032
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "INGEST_VALIDATE", "trigger": "VALIDATION_FAIL", "guard_result": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "OUTPUT_BLOCKED", "verdict": "BLOCK", "reason_code": "validation_fail"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "FILTER_REVIEW", "trigger": "TOOL_STATE_DETECTED", "guard_result": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "TOOL_STATE_QUARANTINED", "verdict": "QUARANTINE", "reason_code": "tool_state_no_approval"}
+
+
+PT-ID: PTS-BDA-033
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "FILTER_REVIEW", "trigger": "CPW_CRITICAL"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "OUTPUT_BLOCKED", "verdict": "FAIL_CLOSED", "reason_code": "cpw_critical"}
+
+
+PT-ID: PTS-BDA-034
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "TOOL_STATE_QUARANTINED", "trigger": "APPROVAL_GRANTED", "guard_result": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "READY_FOR_RELEASE", "verdict": null, "reason_code": "approval_ref_present"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.evidence", "activated": ["approval_ref"]}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:bda", "session_id": "session_id:bda", "boundary_side": "boundary_side:bda", "decision_object": "decision_object:bda", "input_digest": "input_digest:bda", "policy_hash": "policy_hash:bda", "validator_results": "validator_results:bda", "statement_refs": "statement_refs:bda", "verdict": "verdict:bda", "reason_code": "reason_code:bda", "order_index": "order_index:bda", "hash_prev": "hash_prev:bda", "hash_curr": "hash_curr:bda", "approval_ref": "approval_ref:bda"}}
+
+
+PT-ID: PTS-BDA-035
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "FINALIZATION_REVIEW", "trigger": "EVIDENCE_OK", "guard_result": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "IDLE", "verdict": null, "reason_code": "finalization_success"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.next_state", "state": "FINALIZATION_REVIEW", "trigger": "EVIDENCE_FAIL", "guard_result": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "NONCOMPLIANT_HOLD", "verdict": "NONCOMPLIANT_HOLD", "reason_code": "evidence_fail_or_counter_replay"}
+
+
+PT-ID: PTS-BDA-036
+COMMAND: "python" "baseline.py"  # stdin={"op": "bda.taxonomy"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"verdicts": ["ALLOW", "ALLOW_CONSTRAINED", "BLOCK", "QUARANTINE", "FAIL_CLOSED", "NONCOMPLIANT_HOLD", "READMIT"], "count": 7, "pairwise_distinct": true, "block_ne_quarantine": true, "failclosed_ne_hold": true, "allow_ne_constrained": true}
+
+
+PT-ID: TAA-PT-001
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "INTAKE", "trigger": "INTAKE_TO_ROLE_SCREENING", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "ROLE_SCREENING", "verdict": null}
+
+
+PT-ID: VP-GEN-001
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "INTAKE", "trigger": "INTAKE_TO_ROLE_SCREENING", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "ROLE_SCREENING", "verdict": null}
+
+
+PT-ID: TAA-PT-002
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "EVALUATING", "trigger": "EVALUATING_TO_CLASSIFYING", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "CLASSIFYING", "verdict": null}
+
+
+PT-ID: VP-GEN-002
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "EVALUATING", "trigger": "EVALUATING_TO_CLASSIFYING", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "CLASSIFYING", "verdict": null}
+
+
+PT-ID: TAA-PT-003
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "DECIDED", "trigger": "DECIDED_TO_HANDOFF_READY", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "HANDOFF_READY", "verdict": null}
+
+
+PT-ID: VP-GEN-003
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "DECIDED", "trigger": "DECIDED_TO_HANDOFF_READY", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "HANDOFF_READY", "verdict": null}
+
+
+PT-ID: TAA-PT-004
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "EVALUATING", "trigger": "EVALUATING_TO_CLASSIFYING", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "FAIL_CLOSED", "verdict": null}
+
+
+PT-ID: VP-GEN-004
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "EVALUATING", "trigger": "EVALUATING_TO_CLASSIFYING", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "FAIL_CLOSED", "verdict": null}
+
+
+PT-ID: TAA-PT-005
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CONFLICT_CHECKING", "trigger": "CONFLICT_CHECKING_TO_ALLOW_CONSTRAINED_DECISION", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "DECIDED", "verdict": "ALLOW_CONSTRAINED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.evidence", "kind": "allow_constrained"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:taa", "statement_id_list": "statement_id_list:taa", "verdict": "ALLOW_CONSTRAINED", "reason_code": "reason_code:taa", "tsa_label": "tsa_label:taa", "source_class": "source_class:taa", "source_ref": "source_ref:taa", "boundary_validated_role": "boundary_validated_role:taa", "role_validation_result": "role_validation_result:taa", "policy_snapshot_id": "policy_snapshot_id:taa", "policy_hash_ref": "policy_hash_ref:taa", "scope_id": "scope_id:taa", "turn_id": "turn_id:taa", "order_ref": "order_ref:taa", "logical_timestamp": "logical_timestamp:taa", "semantic_closure": "closed", "evidence_closure": "closed", "failure_closure": "closed", "policy_snapshot_closure": "closed", "conflict_check_mode": "conflict_check_mode:taa", "conflict_check_strength": "conflict_check_strength:taa", "conflict_check_confidence": "conflict_check_confidence:taa", "conflict_check_coverage_scope": "conflict_check_coverage_scope:taa", "compared_claim_set_ref": "compared_claim_set_ref:taa", "residual_risk_statement": "residual_risk_statement:taa", "gate_impact": "conditional_progress_only"}}
+
+
+PT-ID: VP-GEN-005
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CONFLICT_CHECKING", "trigger": "CONFLICT_CHECKING_TO_ALLOW_CONSTRAINED_DECISION", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "DECIDED", "verdict": "ALLOW_CONSTRAINED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.evidence", "kind": "allow_constrained"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:taa", "statement_id_list": "statement_id_list:taa", "verdict": "ALLOW_CONSTRAINED", "reason_code": "reason_code:taa", "tsa_label": "tsa_label:taa", "source_class": "source_class:taa", "source_ref": "source_ref:taa", "boundary_validated_role": "boundary_validated_role:taa", "role_validation_result": "role_validation_result:taa", "policy_snapshot_id": "policy_snapshot_id:taa", "policy_hash_ref": "policy_hash_ref:taa", "scope_id": "scope_id:taa", "turn_id": "turn_id:taa", "order_ref": "order_ref:taa", "logical_timestamp": "logical_timestamp:taa", "semantic_closure": "closed", "evidence_closure": "closed", "failure_closure": "closed", "policy_snapshot_closure": "closed", "conflict_check_mode": "conflict_check_mode:taa", "conflict_check_strength": "conflict_check_strength:taa", "conflict_check_confidence": "conflict_check_confidence:taa", "conflict_check_coverage_scope": "conflict_check_coverage_scope:taa", "compared_claim_set_ref": "compared_claim_set_ref:taa", "residual_risk_statement": "residual_risk_statement:taa", "gate_impact": "conditional_progress_only"}}
+
+
+PT-ID: TAA-PT-006
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CONFLICT_CHECKING", "trigger": "CONFLICT_CHECKING_TO_ESCALATE_DECISION", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "DECIDED", "verdict": "ESCALATE"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.evidence", "kind": "fail_closed_escalation"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:taa", "statement_id_list": "statement_id_list:taa", "verdict": "FAIL_CLOSED", "reason_code": "reason_code:taa", "tsa_label": "tsa_label:taa", "source_class": "source_class:taa", "source_ref": "source_ref:taa", "boundary_validated_role": "boundary_validated_role:taa", "role_validation_result": "role_validation_result:taa", "policy_snapshot_id": "policy_snapshot_id:taa", "policy_hash_ref": "policy_hash_ref:taa", "scope_id": "scope_id:taa", "turn_id": "turn_id:taa", "order_ref": "order_ref:taa", "logical_timestamp": "logical_timestamp:taa", "semantic_closure": "closed", "evidence_closure": "closed", "failure_closure": "closed", "policy_snapshot_closure": "closed", "request_id": "request_id:taa", "failure_ref": "failure_ref:taa", "required_actor_role": "required_actor_role:taa", "required_evidence": "required_evidence:taa", "status": "status:taa", "escalation_request_ref": "escalation_request_ref:taa", "inhibit_flags": "inhibit_flags:taa", "root_reason_code": "UNLABELED_CLAIM"}}
+
+
+PT-ID: VP-GEN-006
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CONFLICT_CHECKING", "trigger": "CONFLICT_CHECKING_TO_ESCALATE_DECISION", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "DECIDED", "verdict": "ESCALATE"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.evidence", "kind": "fail_closed_escalation"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:taa", "statement_id_list": "statement_id_list:taa", "verdict": "FAIL_CLOSED", "reason_code": "reason_code:taa", "tsa_label": "tsa_label:taa", "source_class": "source_class:taa", "source_ref": "source_ref:taa", "boundary_validated_role": "boundary_validated_role:taa", "role_validation_result": "role_validation_result:taa", "policy_snapshot_id": "policy_snapshot_id:taa", "policy_hash_ref": "policy_hash_ref:taa", "scope_id": "scope_id:taa", "turn_id": "turn_id:taa", "order_ref": "order_ref:taa", "logical_timestamp": "logical_timestamp:taa", "semantic_closure": "closed", "evidence_closure": "closed", "failure_closure": "closed", "policy_snapshot_closure": "closed", "request_id": "request_id:taa", "failure_ref": "failure_ref:taa", "required_actor_role": "required_actor_role:taa", "required_evidence": "required_evidence:taa", "status": "status:taa", "escalation_request_ref": "escalation_request_ref:taa", "inhibit_flags": "inhibit_flags:taa", "root_reason_code": "UNLABELED_CLAIM"}}
+
+
+PT-ID: TAA-PT-007
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "ROLE_SCREENING", "trigger": "ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "CANONICALIZING", "verdict": null}
+
+
+PT-ID: VP-GEN-007
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "ROLE_SCREENING", "trigger": "ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "CANONICALIZING", "verdict": null}
+
+
+PT-ID: TAA-PT-008
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CLASSIFYING", "trigger": "CLASSIFYING_TO_DENY_DECISION", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "DECIDED", "verdict": "DENY"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "EVALUATING", "trigger": "EVALUATING_TO_FAIL_CLOSED", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "FAIL_CLOSED", "verdict": null}
+
+
+PT-ID: VP-GEN-008
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CLASSIFYING", "trigger": "CLASSIFYING_TO_DENY_DECISION", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "DECIDED", "verdict": "DENY"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "EVALUATING", "trigger": "EVALUATING_TO_FAIL_CLOSED", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "FAIL_CLOSED", "verdict": null}
+
+
+PT-ID: TAA-PT-009
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "INTAKE", "trigger": "STRUCTURAL_INCOMPLETENESS_TO_FAIL_CLOSED", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "FAIL_CLOSED", "verdict": null}
+
+
+PT-ID: VP-GEN-009
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "INTAKE", "trigger": "STRUCTURAL_INCOMPLETENESS_TO_FAIL_CLOSED", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "FAIL_CLOSED", "verdict": null}
+
+
+PT-ID: TAA-PT-010
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CLASSIFYING", "trigger": "POLICY_SNAPSHOT_DRIFT_TO_FAIL_CLOSED", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "FAIL_CLOSED", "verdict": null}
+
+
+PT-ID: VP-GEN-010
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CLASSIFYING", "trigger": "POLICY_SNAPSHOT_DRIFT_TO_FAIL_CLOSED", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "FAIL_CLOSED", "verdict": null}
+
+
+PT-ID: TAA-PT-011
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "EVALUATING", "trigger": "CONFLICT_CHECKING_TO_ALLOW_DECISION", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "FAIL_CLOSED", "verdict": "ALLOW"}
+
+
+PT-ID: VP-GEN-011
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "EVALUATING", "trigger": "CONFLICT_CHECKING_TO_ALLOW_DECISION", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "FAIL_CLOSED", "verdict": "ALLOW"}
+
+
+PT-ID: TAA-PT-012
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "FAIL_CLOSED", "trigger": "FAIL_CLOSED_TO_NONCOMPLIANT_HOLD", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "NONCOMPLIANT_HOLD", "verdict": null}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "NONCOMPLIANT_HOLD", "trigger": "NONCOMPLIANT_HOLD_TO_READMISSION_PENDING", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "READMISSION_PENDING", "verdict": null}
+
+
+PT-ID: VP-GEN-012
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "FAIL_CLOSED", "trigger": "FAIL_CLOSED_TO_NONCOMPLIANT_HOLD", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "NONCOMPLIANT_HOLD", "verdict": null}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "NONCOMPLIANT_HOLD", "trigger": "NONCOMPLIANT_HOLD_TO_READMISSION_PENDING", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "READMISSION_PENDING", "verdict": null}
+
+
+PT-ID: TAA-PT-013
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "READMISSION_PENDING", "trigger": "READMISSION_PENDING_TO_ROLE_SCREENING", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "ROLE_SCREENING", "verdict": null}
+
+
+PT-ID: VP-GEN-013
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "READMISSION_PENDING", "trigger": "READMISSION_PENDING_TO_ROLE_SCREENING", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "ROLE_SCREENING", "verdict": null}
+
+
+PT-ID: TAA-PT-014
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CLOSED", "trigger": "DECIDED_TO_HANDOFF_READY", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "CLOSED", "verdict": null}
+
+
+PT-ID: VP-GEN-014
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CLOSED", "trigger": "DECIDED_TO_HANDOFF_READY", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "CLOSED", "verdict": null}
+
+
+PT-ID: TAA-PT-015
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.evidence", "kind": "allow"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:taa", "statement_id_list": "statement_id_list:taa", "verdict": "ALLOW", "reason_code": "reason_code:taa", "tsa_label": "tsa_label:taa", "source_class": "source_class:taa", "source_ref": "source_ref:taa", "boundary_validated_role": "boundary_validated_role:taa", "role_validation_result": "role_validation_result:taa", "policy_snapshot_id": "policy_snapshot_id:taa", "policy_hash_ref": "policy_hash_ref:taa", "scope_id": "scope_id:taa", "turn_id": "turn_id:taa", "order_ref": "order_ref:taa", "logical_timestamp": "logical_timestamp:taa", "semantic_closure": "closed", "evidence_closure": "closed", "failure_closure": "closed", "policy_snapshot_closure": "closed"}}
+
+
+PT-ID: VP-GEN-015
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.evidence", "kind": "allow"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:taa", "statement_id_list": "statement_id_list:taa", "verdict": "ALLOW", "reason_code": "reason_code:taa", "tsa_label": "tsa_label:taa", "source_class": "source_class:taa", "source_ref": "source_ref:taa", "boundary_validated_role": "boundary_validated_role:taa", "role_validation_result": "role_validation_result:taa", "policy_snapshot_id": "policy_snapshot_id:taa", "policy_hash_ref": "policy_hash_ref:taa", "scope_id": "scope_id:taa", "turn_id": "turn_id:taa", "order_ref": "order_ref:taa", "logical_timestamp": "logical_timestamp:taa", "semantic_closure": "closed", "evidence_closure": "closed", "failure_closure": "closed", "policy_snapshot_closure": "closed"}}
+
+
+PT-ID: TAA-PT-016
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.evidence", "kind": "allow"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:taa", "statement_id_list": "statement_id_list:taa", "verdict": "ALLOW", "reason_code": "reason_code:taa", "tsa_label": "tsa_label:taa", "source_class": "source_class:taa", "source_ref": "source_ref:taa", "boundary_validated_role": "boundary_validated_role:taa", "role_validation_result": "role_validation_result:taa", "policy_snapshot_id": "policy_snapshot_id:taa", "policy_hash_ref": "policy_hash_ref:taa", "scope_id": "scope_id:taa", "turn_id": "turn_id:taa", "order_ref": "order_ref:taa", "logical_timestamp": "logical_timestamp:taa", "semantic_closure": "closed", "evidence_closure": "closed", "failure_closure": "closed", "policy_snapshot_closure": "closed"}}
+
+
+PT-ID: VP-GEN-016
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.evidence", "kind": "allow"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:taa", "statement_id_list": "statement_id_list:taa", "verdict": "ALLOW", "reason_code": "reason_code:taa", "tsa_label": "tsa_label:taa", "source_class": "source_class:taa", "source_ref": "source_ref:taa", "boundary_validated_role": "boundary_validated_role:taa", "role_validation_result": "role_validation_result:taa", "policy_snapshot_id": "policy_snapshot_id:taa", "policy_hash_ref": "policy_hash_ref:taa", "scope_id": "scope_id:taa", "turn_id": "turn_id:taa", "order_ref": "order_ref:taa", "logical_timestamp": "logical_timestamp:taa", "semantic_closure": "closed", "evidence_closure": "closed", "failure_closure": "closed", "policy_snapshot_closure": "closed"}}
+
+
+PT-ID: TAA-PT-017
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.evidence", "kind": "allow_constrained"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:taa", "statement_id_list": "statement_id_list:taa", "verdict": "ALLOW_CONSTRAINED", "reason_code": "reason_code:taa", "tsa_label": "tsa_label:taa", "source_class": "source_class:taa", "source_ref": "source_ref:taa", "boundary_validated_role": "boundary_validated_role:taa", "role_validation_result": "role_validation_result:taa", "policy_snapshot_id": "policy_snapshot_id:taa", "policy_hash_ref": "policy_hash_ref:taa", "scope_id": "scope_id:taa", "turn_id": "turn_id:taa", "order_ref": "order_ref:taa", "logical_timestamp": "logical_timestamp:taa", "semantic_closure": "closed", "evidence_closure": "closed", "failure_closure": "closed", "policy_snapshot_closure": "closed", "conflict_check_mode": "conflict_check_mode:taa", "conflict_check_strength": "conflict_check_strength:taa", "conflict_check_confidence": "conflict_check_confidence:taa", "conflict_check_coverage_scope": "conflict_check_coverage_scope:taa", "compared_claim_set_ref": "compared_claim_set_ref:taa", "residual_risk_statement": "residual_risk_statement:taa", "gate_impact": "conditional_progress_only"}}
+
+
+PT-ID: VP-GEN-017
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.evidence", "kind": "allow_constrained"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:taa", "statement_id_list": "statement_id_list:taa", "verdict": "ALLOW_CONSTRAINED", "reason_code": "reason_code:taa", "tsa_label": "tsa_label:taa", "source_class": "source_class:taa", "source_ref": "source_ref:taa", "boundary_validated_role": "boundary_validated_role:taa", "role_validation_result": "role_validation_result:taa", "policy_snapshot_id": "policy_snapshot_id:taa", "policy_hash_ref": "policy_hash_ref:taa", "scope_id": "scope_id:taa", "turn_id": "turn_id:taa", "order_ref": "order_ref:taa", "logical_timestamp": "logical_timestamp:taa", "semantic_closure": "closed", "evidence_closure": "closed", "failure_closure": "closed", "policy_snapshot_closure": "closed", "conflict_check_mode": "conflict_check_mode:taa", "conflict_check_strength": "conflict_check_strength:taa", "conflict_check_confidence": "conflict_check_confidence:taa", "conflict_check_coverage_scope": "conflict_check_coverage_scope:taa", "compared_claim_set_ref": "compared_claim_set_ref:taa", "residual_risk_statement": "residual_risk_statement:taa", "gate_impact": "conditional_progress_only"}}
+
+
+PT-ID: TAA-PT-018
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.evidence", "kind": "fail_closed_escalation"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:taa", "statement_id_list": "statement_id_list:taa", "verdict": "FAIL_CLOSED", "reason_code": "reason_code:taa", "tsa_label": "tsa_label:taa", "source_class": "source_class:taa", "source_ref": "source_ref:taa", "boundary_validated_role": "boundary_validated_role:taa", "role_validation_result": "role_validation_result:taa", "policy_snapshot_id": "policy_snapshot_id:taa", "policy_hash_ref": "policy_hash_ref:taa", "scope_id": "scope_id:taa", "turn_id": "turn_id:taa", "order_ref": "order_ref:taa", "logical_timestamp": "logical_timestamp:taa", "semantic_closure": "closed", "evidence_closure": "closed", "failure_closure": "closed", "policy_snapshot_closure": "closed", "request_id": "request_id:taa", "failure_ref": "failure_ref:taa", "required_actor_role": "required_actor_role:taa", "required_evidence": "required_evidence:taa", "status": "status:taa", "escalation_request_ref": "escalation_request_ref:taa", "inhibit_flags": "inhibit_flags:taa", "root_reason_code": "UNLABELED_CLAIM"}}
+
+
+PT-ID: VP-GEN-018
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.evidence", "kind": "fail_closed_escalation"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:taa", "statement_id_list": "statement_id_list:taa", "verdict": "FAIL_CLOSED", "reason_code": "reason_code:taa", "tsa_label": "tsa_label:taa", "source_class": "source_class:taa", "source_ref": "source_ref:taa", "boundary_validated_role": "boundary_validated_role:taa", "role_validation_result": "role_validation_result:taa", "policy_snapshot_id": "policy_snapshot_id:taa", "policy_hash_ref": "policy_hash_ref:taa", "scope_id": "scope_id:taa", "turn_id": "turn_id:taa", "order_ref": "order_ref:taa", "logical_timestamp": "logical_timestamp:taa", "semantic_closure": "closed", "evidence_closure": "closed", "failure_closure": "closed", "policy_snapshot_closure": "closed", "request_id": "request_id:taa", "failure_ref": "failure_ref:taa", "required_actor_role": "required_actor_role:taa", "required_evidence": "required_evidence:taa", "status": "status:taa", "escalation_request_ref": "escalation_request_ref:taa", "inhibit_flags": "inhibit_flags:taa", "root_reason_code": "UNLABELED_CLAIM"}}
+
+
+PT-ID: TAA-PT-019
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "DECIDED", "trigger": "CLEARANCE_ARTIFACT_MISSING_TO_FAIL_CLOSED", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "FAIL_CLOSED", "verdict": null}
+
+
+PT-ID: VP-GEN-019
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "DECIDED", "trigger": "CLEARANCE_ARTIFACT_MISSING_TO_FAIL_CLOSED", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "FAIL_CLOSED", "verdict": null}
+
+
+PT-ID: TAA-PT-020
+COMMAND: (no invocation -- SKIP: Truth_Arbitration_Agent_Conformance_Tests.md §1 Declarative public conformance record — 'Record kind: Declarative conformance claim (not a buyer-runnable unit test)'; §4 Minimal run note bounded-external list.)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: VP-GEN-020
+COMMAND: (no invocation -- SKIP: Truth_Arbitration_Agent_Conformance_Tests.md §1 Declarative public conformance record — 'Record kind: Declarative conformance claim (not a buyer-runnable unit test)'; §4 Minimal run note bounded-external list.)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: TAA-PT-021
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.verdict_set"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"verdicts": ["ALLOW", "ALLOW_CONSTRAINED", "DENY", "FAIL_CLOSED", "ESCALATE", "OUT_OF_SCOPE"], "count": 6}
+
+
+PT-ID: VP-GEN-021
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.verdict_set"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"verdicts": ["ALLOW", "ALLOW_CONSTRAINED", "DENY", "FAIL_CLOSED", "ESCALATE", "OUT_OF_SCOPE"], "count": 6}
+
+
+PT-ID: TAA-PT-022
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "ROLE_SCREENING", "trigger": "ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "CANONICALIZING", "verdict": null}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "ROLE_SCREENING", "trigger": "ROLE_SCREENING_TO_OUT_OF_SCOPE_DECISION", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "DECIDED", "verdict": "OUT_OF_SCOPE"}
+
+
+PT-ID: VP-GEN-022
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "ROLE_SCREENING", "trigger": "ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "CANONICALIZING", "verdict": null}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "ROLE_SCREENING", "trigger": "ROLE_SCREENING_TO_OUT_OF_SCOPE_DECISION", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "DECIDED", "verdict": "OUT_OF_SCOPE"}
+
+
+PT-ID: TAA-PT-023
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CONFLICT_CHECKING", "trigger": "CONFLICT_CHECKING_TO_DENY_DECISION", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "DECIDED", "verdict": "DENY"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CONFLICT_CHECKING", "trigger": "CONFLICT_CHECKING_TO_FAIL_CLOSED", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "FAIL_CLOSED", "verdict": null}
+
+
+PT-ID: VP-GEN-023
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CONFLICT_CHECKING", "trigger": "CONFLICT_CHECKING_TO_DENY_DECISION", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "DECIDED", "verdict": "DENY"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CONFLICT_CHECKING", "trigger": "CONFLICT_CHECKING_TO_FAIL_CLOSED", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "FAIL_CLOSED", "verdict": null}
+
+
+PT-ID: TAA-PT-024
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "EVALUATING", "trigger": "EVALUATING_TO_FAIL_CLOSED", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "FAIL_CLOSED", "verdict": null}
+
+
+PT-ID: VP-GEN-024
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "EVALUATING", "trigger": "EVALUATING_TO_FAIL_CLOSED", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "FAIL_CLOSED", "verdict": null}
+
+
+PT-ID: TAA-PT-025
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.evidence", "kind": "allow_constrained"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:taa", "statement_id_list": "statement_id_list:taa", "verdict": "ALLOW_CONSTRAINED", "reason_code": "reason_code:taa", "tsa_label": "tsa_label:taa", "source_class": "source_class:taa", "source_ref": "source_ref:taa", "boundary_validated_role": "boundary_validated_role:taa", "role_validation_result": "role_validation_result:taa", "policy_snapshot_id": "policy_snapshot_id:taa", "policy_hash_ref": "policy_hash_ref:taa", "scope_id": "scope_id:taa", "turn_id": "turn_id:taa", "order_ref": "order_ref:taa", "logical_timestamp": "logical_timestamp:taa", "semantic_closure": "closed", "evidence_closure": "closed", "failure_closure": "closed", "policy_snapshot_closure": "closed", "conflict_check_mode": "conflict_check_mode:taa", "conflict_check_strength": "conflict_check_strength:taa", "conflict_check_confidence": "conflict_check_confidence:taa", "conflict_check_coverage_scope": "conflict_check_coverage_scope:taa", "compared_claim_set_ref": "compared_claim_set_ref:taa", "residual_risk_statement": "residual_risk_statement:taa", "gate_impact": "conditional_progress_only"}}
+
+
+PT-ID: VP-GEN-025
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.evidence", "kind": "allow_constrained"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:taa", "statement_id_list": "statement_id_list:taa", "verdict": "ALLOW_CONSTRAINED", "reason_code": "reason_code:taa", "tsa_label": "tsa_label:taa", "source_class": "source_class:taa", "source_ref": "source_ref:taa", "boundary_validated_role": "boundary_validated_role:taa", "role_validation_result": "role_validation_result:taa", "policy_snapshot_id": "policy_snapshot_id:taa", "policy_hash_ref": "policy_hash_ref:taa", "scope_id": "scope_id:taa", "turn_id": "turn_id:taa", "order_ref": "order_ref:taa", "logical_timestamp": "logical_timestamp:taa", "semantic_closure": "closed", "evidence_closure": "closed", "failure_closure": "closed", "policy_snapshot_closure": "closed", "conflict_check_mode": "conflict_check_mode:taa", "conflict_check_strength": "conflict_check_strength:taa", "conflict_check_confidence": "conflict_check_confidence:taa", "conflict_check_coverage_scope": "conflict_check_coverage_scope:taa", "compared_claim_set_ref": "compared_claim_set_ref:taa", "residual_risk_statement": "residual_risk_statement:taa", "gate_impact": "conditional_progress_only"}}
+
+
+PT-ID: TAA-PT-026
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "INTAKE", "trigger": "INTAKE_TO_ROLE_SCREENING", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "ROLE_SCREENING", "verdict": null}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CONFLICT_CHECKING", "trigger": "CONFLICT_CHECKING_TO_DENY_DECISION", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "DECIDED", "verdict": "DENY"}
+
+
+PT-ID: VP-GEN-026
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "INTAKE", "trigger": "INTAKE_TO_ROLE_SCREENING", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "ROLE_SCREENING", "verdict": null}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CONFLICT_CHECKING", "trigger": "CONFLICT_CHECKING_TO_DENY_DECISION", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "DECIDED", "verdict": "DENY"}
+
+
+PT-ID: TAA-PT-027
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CONFLICT_CHECKING", "trigger": "CONFLICT_CHECKING_TO_ALLOW_DECISION", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "DECIDED", "verdict": "ALLOW"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CONFLICT_CHECKING", "trigger": "CONFLICT_CHECKING_TO_ALLOW_CONSTRAINED_DECISION", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "DECIDED", "verdict": "ALLOW_CONSTRAINED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CONFLICT_CHECKING", "trigger": "CONFLICT_CHECKING_TO_DENY_DECISION", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "DECIDED", "verdict": "DENY"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CONFLICT_CHECKING", "trigger": "CONFLICT_CHECKING_TO_ESCALATE_DECISION", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "DECIDED", "verdict": "ESCALATE"}
+
+
+PT-ID: VP-GEN-027
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CONFLICT_CHECKING", "trigger": "CONFLICT_CHECKING_TO_ALLOW_DECISION", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "DECIDED", "verdict": "ALLOW"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CONFLICT_CHECKING", "trigger": "CONFLICT_CHECKING_TO_ALLOW_CONSTRAINED_DECISION", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "DECIDED", "verdict": "ALLOW_CONSTRAINED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CONFLICT_CHECKING", "trigger": "CONFLICT_CHECKING_TO_DENY_DECISION", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "DECIDED", "verdict": "DENY"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "taa.next_state", "state": "CONFLICT_CHECKING", "trigger": "CONFLICT_CHECKING_TO_ESCALATE_DECISION", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "DECIDED", "verdict": "ESCALATE"}
+
+
+PT-ID: ARA-T001
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.next_state", "state": "S0 INGESTED", "event": "EV_PARSE_OK", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S1 PARSED", "verdict": null}
+
+
+PT-ID: ARA-T002
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.next_state", "state": "S2 VERIFIED", "event": "replay_fold_complete", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S3 RECONSTRUCTED", "verdict": null}
+
+
+PT-ID: ARA-T003
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.next_state", "state": "S4 CHECKPOINT_RESOLVED", "event": "EV_REPORT_BOUND", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S5 REPORT_READY", "verdict": null}
+
+
+PT-ID: ARA-T004
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.next_state", "state": "S0 INGESTED", "event": "EV_SIGNATURE_FAIL", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SX FAIL_CLOSED", "verdict": null}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.next_state", "state": "S0 INGESTED", "event": "EV_CHAIN_BREAK", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SX FAIL_CLOSED", "verdict": "BROKEN"}
+
+
+PT-ID: ARA-T005
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.next_state", "state": "S4 CHECKPOINT_RESOLVED", "event": "EV_REPORT_BOUND", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S4 CHECKPOINT_RESOLVED", "verdict": null}
+
+
+PT-ID: ARA-T006
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.next_state", "state": "S2 VERIFIED", "event": "EV_EVIDENCE_FAIL", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SH HOLD_ACTIVE", "verdict": null}
+
+
+PT-ID: ARA-T007
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.next_state", "state": "S3 RECONSTRUCTED", "event": "EV_LASTCLEAN_FOUND", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S3 RECONSTRUCTED", "verdict": null}
+
+
+PT-ID: ARA-T008
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.next_state", "state": "S2 VERIFIED", "event": "EV_SIGNATURE_FAIL", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SX FAIL_CLOSED", "verdict": null}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.next_state", "state": "S2 VERIFIED", "event": "EV_CHAIN_BREAK", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SX FAIL_CLOSED", "verdict": "BROKEN"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.next_state", "state": "S2 VERIFIED", "event": "EV_COUNTER_REPLAY", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SH HOLD_ACTIVE", "verdict": null}
+
+
+PT-ID: ARA-T009
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.next_state", "state": "S2 VERIFIED", "event": "EV_SIGNATURE_FAIL", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SX FAIL_CLOSED", "verdict": null}
+
+
+PT-ID: ARA-T010
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.next_state", "state": "S4 CHECKPOINT_RESOLVED", "event": "EV_CHAIN_BREAK", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SX FAIL_CLOSED", "verdict": "BROKEN"}
+
+
+PT-ID: ARA-T011
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.next_state", "state": "S2 VERIFIED", "event": "EV_SIGNATURE_FAIL", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SX FAIL_CLOSED", "verdict": null}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.next_state", "state": "S2 VERIFIED", "event": "EV_EVIDENCE_FAIL", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SH HOLD_ACTIVE", "verdict": null}
+
+
+PT-ID: ARA-T012
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.next_state", "state": "SH HOLD_ACTIVE", "event": "EV_READMISSION_GRANTED", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S6 READMITTED", "verdict": null}
+
+
+PT-ID: ARA-T013
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.next_state", "state": "SH HOLD_ACTIVE", "event": "EV_READMISSION_GRANTED", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SH HOLD_ACTIVE", "verdict": null}
+
+
+PT-ID: ARA-T014
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.next_state", "state": "S5 REPORT_READY", "event": "EV_REPORT_BOUND", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S5 REPORT_READY", "verdict": null}
+
+
+PT-ID: ARA-T015
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.evidence", "kind": "finalizable"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"bundle_digest": "bundle_digest:ara", "policy_profile_id": "policy_profile_id:ara", "validator_outcomes": "validator_outcomes:ara", "hash_continuity_refs": "hash_continuity_refs:ara", "signature_refs": "signature_refs:ara", "checkpoint_refs": "checkpoint_refs:ara", "rollback_refs": "rollback_refs:ara", "report_fields_ref": "report_fields_ref:ara", "report_signature": "report_signature:ara", "export_manifest_ref": "export_manifest_ref:ara"}}
+
+
+PT-ID: ARA-T016
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.evidence", "kind": "finalizable"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"bundle_digest": "bundle_digest:ara", "policy_profile_id": "policy_profile_id:ara", "validator_outcomes": "validator_outcomes:ara", "hash_continuity_refs": "hash_continuity_refs:ara", "signature_refs": "signature_refs:ara", "checkpoint_refs": "checkpoint_refs:ara", "rollback_refs": "rollback_refs:ara", "report_fields_ref": "report_fields_ref:ara", "report_signature": "report_signature:ara", "export_manifest_ref": "export_manifest_ref:ara"}}
+
+
+PT-ID: ARA-T017
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.evidence", "kind": "readmission"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"bundle_digest": "bundle_digest:ara", "policy_profile_id": "policy_profile_id:ara", "validator_outcomes": "validator_outcomes:ara", "hash_continuity_refs": "hash_continuity_refs:ara", "signature_refs": "signature_refs:ara", "checkpoint_refs": "checkpoint_refs:ara", "rollback_refs": "rollback_refs:ara", "report_fields_ref": "report_fields_ref:ara", "report_signature": "report_signature:ara", "export_manifest_ref": "export_manifest_ref:ara", "hold_enter_refs": "hold_enter_refs:ara", "hold_exit_refs": "hold_exit_refs:ara", "anchor_update_ref": "anchor_update_ref:ara"}}
+
+
+PT-ID: ARA-T018
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.evidence", "kind": "finalizable"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"bundle_digest": "bundle_digest:ara", "policy_profile_id": "policy_profile_id:ara", "validator_outcomes": "validator_outcomes:ara", "hash_continuity_refs": "hash_continuity_refs:ara", "signature_refs": "signature_refs:ara", "checkpoint_refs": "checkpoint_refs:ara", "rollback_refs": "rollback_refs:ara", "report_fields_ref": "report_fields_ref:ara", "report_signature": "report_signature:ara", "export_manifest_ref": "export_manifest_ref:ara"}}
+
+
+PT-ID: ARA-T019
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.gate", "authorized": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"gate_status": "QUARANTINE", "admitted": false, "reason_code": "TOOL_STATE_EXCLUDED"}
+
+
+PT-ID: ARA-T020
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.gate", "authorized": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"gate_status": "QUARANTINE", "admitted": false, "reason_code": "TOOL_STATE_EXCLUDED"}
+
+
+PT-ID: ARA-T021
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.taxonomy"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"verdicts": ["REPLAYABLE", "PARTIAL", "REJECTED", "BROKEN", "INCIDENT_ONLY"], "count": 5, "pairwise_distinct": true, "broken_ne_rejected": true, "sx_ne_sh": true, "incident_ne_failclosed": true}
+
+
+PT-ID: ARA-T022
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.taxonomy"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"verdicts": ["REPLAYABLE", "PARTIAL", "REJECTED", "BROKEN", "INCIDENT_ONLY"], "count": 5, "pairwise_distinct": true, "broken_ne_rejected": true, "sx_ne_sh": true, "incident_ne_failclosed": true}
+
+
+PT-ID: ARA-T023
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.policy_branch", "resolvable": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"state": "SX FAIL_CLOSED", "verdict": "BLOCKED"}
+
+
+PT-ID: ARA-T024
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.next_state", "state": "S3 RECONSTRUCTED", "event": "EV_LASTCLEAN_FOUND", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S4 CHECKPOINT_RESOLVED", "verdict": null}
+
+
+PT-ID: ARA-T025
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.evidence", "kind": "readmission"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"bundle_digest": "bundle_digest:ara", "policy_profile_id": "policy_profile_id:ara", "validator_outcomes": "validator_outcomes:ara", "hash_continuity_refs": "hash_continuity_refs:ara", "signature_refs": "signature_refs:ara", "checkpoint_refs": "checkpoint_refs:ara", "rollback_refs": "rollback_refs:ara", "report_fields_ref": "report_fields_ref:ara", "report_signature": "report_signature:ara", "export_manifest_ref": "export_manifest_ref:ara", "hold_enter_refs": "hold_enter_refs:ara", "hold_exit_refs": "hold_exit_refs:ara", "anchor_update_ref": "anchor_update_ref:ara"}}
+
+
+PT-ID: ARA-T026
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.next_state", "state": "S4 CHECKPOINT_RESOLVED", "event": "EV_REPORT_BOUND", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S5 REPORT_READY", "verdict": null}
+
+
+PT-ID: ARA-T027
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.gate", "authorized": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"gate_status": "QUARANTINE", "admitted": false, "reason_code": "TOOL_STATE_EXCLUDED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "ara.policy_branch", "resolvable": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"state": "SX FAIL_CLOSED", "verdict": "BLOCKED"}
+
+
+PT-ID: FPA-D-01
+COMMAND: (no invocation -- SKIP: Freshness_Portability_Agent_Conformance_Tests.md §F.D Declarative obligations (VP-GEN-004 action token REJECT_INVALID) + §H Minimal Run Note: 'Every declarative obligation in §F.D is documented in the buyer's conformance record as a non-runnable but required obligation.')
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-02
+COMMAND: (no invocation -- SKIP: Freshness_Portability_Agent_Conformance_Tests.md §F.D Declarative obligations (VP-GEN-013 non-inheritance to tool-state) + §H Minimal Run Note: 'Every declarative obligation in §F.D is documented in the buyer's conformance record as a non-runnable but required obligation.')
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-03
+COMMAND: (no invocation -- SKIP: Freshness_Portability_Agent_Conformance_Tests.md §F.D Declarative obligations (VP-GEN-019/027 VAL-011 gate-logic enforcement) + §H Minimal Run Note: 'Every declarative obligation in §F.D is documented in the buyer's conformance record as a non-runnable but required obligation.')
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-04
+COMMAND: (no invocation -- SKIP: Freshness_Portability_Agent_Conformance_Tests.md §F.D Declarative obligations (VP-GEN-020 distributed enforcement legitimacy) + §H Minimal Run Note: 'Every declarative obligation in §F.D is documented in the buyer's conformance record as a non-runnable but required obligation.')
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-05
+COMMAND: (no invocation -- SKIP: Freshness_Portability_Agent_Conformance_Tests.md §F.D Declarative obligations (FPA-PR-14 watermark monotonic security finding) + §H Minimal Run Note: 'Every declarative obligation in §F.D is documented in the buyer's conformance record as a non-runnable but required obligation.')
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-06
+COMMAND: (no invocation -- SKIP: Freshness_Portability_Agent_Conformance_Tests.md §F.D Declarative obligations (IRR append-only two-step effectivity) + §H Minimal Run Note: 'Every declarative obligation in §F.D is documented in the buyer's conformance record as a non-runnable but required obligation.')
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-T-01
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "IDLE", "trigger": "TransferPacketReceived", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "RECEIVED"}
+
+
+PT-ID: FPA-T-02
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "RECEIVED", "trigger": "StructureValid", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "VERIFIED"}
+
+
+PT-ID: FPA-T-03
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "RESTORATION_ELIGIBLE", "trigger": "RestoreAdmitted", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "IDLE"}
+
+
+PT-ID: FPA-T-04
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "RECEIVED", "trigger": "StructureValid", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "REJECTED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "RECEIVED", "trigger": "StructureInvalid", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "REJECTED"}
+
+
+PT-ID: FPA-T-06
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "VERIFIED", "trigger": "EvidencePending", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "QUARANTINED"}
+
+
+PT-ID: FPA-T-08a
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "VERIFIED", "trigger": "FreshnessFail", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "REJECTED"}
+
+
+PT-ID: FPA-T-08b
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "WATERMARK_COMMITTED", "trigger": "RestoreRequest_GenesisConfirmed", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "REJECTED"}
+
+
+PT-ID: FPA-T-08c
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.taxonomy"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"verdicts": ["ACCEPT", "REJECT", "QUARANTINE", "RESTORATION_ELIGIBLE", "READMIT", "FAIL_CLOSED"], "count": 6, "pairwise_distinct": true, "restoration_eligible_verdict": "RESTORATION_ELIGIBLE", "restoration_eligible_state": "RESTORATION_ELIGIBLE", "verdict_state_distinct": true, "reject_ne_failclosed": true}
+
+
+PT-ID: FPA-T-09
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "VERIFIED", "trigger": "FreshnessPass", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "REJECTED"}
+
+
+PT-ID: FPA-T-10
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "WATERMARK_COMMITTED", "trigger": "RestoreRequest_GenesisConfirmed", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "REJECTED"}
+
+
+PT-ID: FPA-T-11
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "IRR_COMMITTED", "trigger": "FreshnessPass", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "REJECTED"}
+
+
+PT-ID: FPA-T-12
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "QUARANTINED", "trigger": "ReadmissionApproved", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "VERIFIED"}
+
+
+PT-ID: FPA-T-13a
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "WATERMARK_COMMITTED", "trigger": "RestoreRequest_GenesisConfirmed", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "RESTORATION_ELIGIBLE"}
+
+
+PT-ID: FPA-T-13b
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "RESTORATION_ELIGIBLE", "trigger": "RestoreAdmitted", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "IDLE"}
+
+
+PT-ID: FPA-T-14
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "REJECTED", "trigger": "FreshnessPass", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "REJECTED"}
+
+
+PT-ID: FPA-T-15
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.evidence", "kind": "deny_restore"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:fpa", "agent_id": "agent_id:fpa", "source_id": "source_id:fpa", "ledger_uuid": "ledger_uuid:fpa", "decision_object": "decision_object:fpa", "policy_id": "policy_id:fpa", "policy_version": "policy_version:fpa", "reason_code": "DENY_RESTORE", "semantic_verdict": "FAIL_CLOSED", "gate_class": "BLOCK"}}
+
+
+PT-ID: FPA-T-16
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.evidence", "kind": "accept"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:fpa", "agent_id": "agent_id:fpa", "source_id": "source_id:fpa", "ledger_uuid": "ledger_uuid:fpa", "decision_object": "decision_object:fpa", "policy_id": "policy_id:fpa", "policy_version": "policy_version:fpa", "reason_code": "APPEND_IRR", "semantic_verdict": "ACCEPT", "gate_class": "RELEASE", "packet_hash": "packet_hash:fpa", "freshness_value": "freshness_value:fpa", "watermark_before": "watermark_before:fpa", "watermark_after": "watermark_after:fpa", "ssm_validation_result": "ssm_validation_result:fpa", "irr_digest": "irr_digest:fpa", "prev_receipt_digest": "prev_receipt_digest:fpa"}}
+
+
+PT-ID: FPA-T-17A
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.evidence", "kind": "accept", "activated": ["tvc_validation_result"]}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:fpa", "agent_id": "agent_id:fpa", "source_id": "source_id:fpa", "ledger_uuid": "ledger_uuid:fpa", "decision_object": "decision_object:fpa", "policy_id": "policy_id:fpa", "policy_version": "policy_version:fpa", "reason_code": "APPEND_IRR", "semantic_verdict": "ACCEPT", "gate_class": "RELEASE", "packet_hash": "packet_hash:fpa", "freshness_value": "freshness_value:fpa", "watermark_before": "watermark_before:fpa", "watermark_after": "watermark_after:fpa", "ssm_validation_result": "ssm_validation_result:fpa", "irr_digest": "irr_digest:fpa", "prev_receipt_digest": "prev_receipt_digest:fpa", "tvc_validation_result": "tvc_validation_result:fpa"}}
+
+
+PT-ID: FPA-T-17B
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.evidence", "kind": "accept", "activated": ["evidence_validation_result"]}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:fpa", "agent_id": "agent_id:fpa", "source_id": "source_id:fpa", "ledger_uuid": "ledger_uuid:fpa", "decision_object": "decision_object:fpa", "policy_id": "policy_id:fpa", "policy_version": "policy_version:fpa", "reason_code": "APPEND_IRR", "semantic_verdict": "ACCEPT", "gate_class": "RELEASE", "packet_hash": "packet_hash:fpa", "freshness_value": "freshness_value:fpa", "watermark_before": "watermark_before:fpa", "watermark_after": "watermark_after:fpa", "ssm_validation_result": "ssm_validation_result:fpa", "irr_digest": "irr_digest:fpa", "prev_receipt_digest": "prev_receipt_digest:fpa", "evidence_validation_result": "evidence_validation_result:fpa"}}
+
+
+PT-ID: FPA-T-17C
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.evidence", "kind": "accept", "activated": ["transport_validation_result"]}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:fpa", "agent_id": "agent_id:fpa", "source_id": "source_id:fpa", "ledger_uuid": "ledger_uuid:fpa", "decision_object": "decision_object:fpa", "policy_id": "policy_id:fpa", "policy_version": "policy_version:fpa", "reason_code": "APPEND_IRR", "semantic_verdict": "ACCEPT", "gate_class": "RELEASE", "packet_hash": "packet_hash:fpa", "freshness_value": "freshness_value:fpa", "watermark_before": "watermark_before:fpa", "watermark_after": "watermark_after:fpa", "ssm_validation_result": "ssm_validation_result:fpa", "irr_digest": "irr_digest:fpa", "prev_receipt_digest": "prev_receipt_digest:fpa", "transport_validation_result": "transport_validation_result:fpa"}}
+
+
+PT-ID: FPA-T-17D
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.evidence", "kind": "accept"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:fpa", "agent_id": "agent_id:fpa", "source_id": "source_id:fpa", "ledger_uuid": "ledger_uuid:fpa", "decision_object": "decision_object:fpa", "policy_id": "policy_id:fpa", "policy_version": "policy_version:fpa", "reason_code": "APPEND_IRR", "semantic_verdict": "ACCEPT", "gate_class": "RELEASE", "packet_hash": "packet_hash:fpa", "freshness_value": "freshness_value:fpa", "watermark_before": "watermark_before:fpa", "watermark_after": "watermark_after:fpa", "ssm_validation_result": "ssm_validation_result:fpa", "irr_digest": "irr_digest:fpa", "prev_receipt_digest": "prev_receipt_digest:fpa"}}
+
+
+PT-ID: FPA-T-18
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.evidence", "kind": "accept"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:fpa", "agent_id": "agent_id:fpa", "source_id": "source_id:fpa", "ledger_uuid": "ledger_uuid:fpa", "decision_object": "decision_object:fpa", "policy_id": "policy_id:fpa", "policy_version": "policy_version:fpa", "reason_code": "APPEND_IRR", "semantic_verdict": "ACCEPT", "gate_class": "RELEASE", "packet_hash": "packet_hash:fpa", "freshness_value": "freshness_value:fpa", "watermark_before": "watermark_before:fpa", "watermark_after": "watermark_after:fpa", "ssm_validation_result": "ssm_validation_result:fpa", "irr_digest": "irr_digest:fpa", "prev_receipt_digest": "prev_receipt_digest:fpa"}}
+
+
+PT-ID: FPA-T-21
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.taxonomy"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"verdicts": ["ACCEPT", "REJECT", "QUARANTINE", "RESTORATION_ELIGIBLE", "READMIT", "FAIL_CLOSED"], "count": 6, "pairwise_distinct": true, "restoration_eligible_verdict": "RESTORATION_ELIGIBLE", "restoration_eligible_state": "RESTORATION_ELIGIBLE", "verdict_state_distinct": true, "reject_ne_failclosed": true}
+
+
+PT-ID: FPA-T-23
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "VERIFIED", "trigger": "EvidencePending", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "QUARANTINED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "VERIFIED", "trigger": "FreshnessPass", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "REJECTED"}
+
+
+PT-ID: FPA-T-24
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "VERIFIED", "trigger": "FreshnessPass", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "FRESHNESS_ELIGIBLE"}
+
+
+PT-ID: FPA-T-25
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.evidence", "kind": "quarantine"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"decision_id": "decision_id:fpa", "agent_id": "agent_id:fpa", "source_id": "source_id:fpa", "ledger_uuid": "ledger_uuid:fpa", "decision_object": "decision_object:fpa", "policy_id": "policy_id:fpa", "policy_version": "policy_version:fpa", "reason_code": "reason_code:fpa", "semantic_verdict": "QUARANTINE", "gate_class": "ESCALATION", "evidence_validation_result": "evidence_validation_result:fpa"}}
+
+
+PT-ID: FPA-T-26
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "FRESHNESS_ELIGIBLE", "trigger": "IRRAppended", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "IRR_COMMITTED"}
+
+
+PT-ID: FPA-T-PR-01
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "VERIFIED", "trigger": "FreshnessFail", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "REJECTED"}
+
+
+PT-ID: FPA-T-PR-02
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "FRESHNESS_ELIGIBLE", "trigger": "IRRAppended", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "IRR_COMMITTED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "IRR_COMMITTED", "trigger": "WatermarkPersisted", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "WATERMARK_COMMITTED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "FRESHNESS_ELIGIBLE", "trigger": "WatermarkPersisted", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "REJECTED"}
+
+
+PT-ID: FPA-T-PR-03
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "WATERMARK_COMMITTED", "trigger": "RestoreRequest_GenesisConfirmed", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "RESTORATION_ELIGIBLE"}
+
+
+PT-ID: FPA-T-PR-09
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "WATERMARK_COMMITTED", "trigger": "RestoreRequest_GenesisConfirmed", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "RESTORATION_ELIGIBLE"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "WATERMARK_COMMITTED", "trigger": "RestoreRequest_GenesisConfirmed", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "REJECTED"}
+
+
+PT-ID: FPA-T-PR-10
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "IDLE", "trigger": "RestoreAdmitted", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "REJECTED"}
+
+
+PT-ID: FPA-T-PR-12
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "QUARANTINED", "trigger": "ReadmissionApproved", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "VERIFIED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "IDLE", "trigger": "ReadmissionApproved", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "REJECTED"}
+
+
+PT-ID: FPA-T-PR-13
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "VERIFIED", "trigger": "FreshnessPass", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "FRESHNESS_ELIGIBLE"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "FRESHNESS_ELIGIBLE", "trigger": "IRRAppended", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "IRR_COMMITTED"}
+
+
+PT-ID: FPA-T-PR-14
+COMMAND: "python" "baseline.py"  # stdin={"op": "fpa.next_state", "state": "IRR_COMMITTED", "trigger": "WatermarkPersisted", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "REJECTED"}
+
+
+PT-ID: PTS-001
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "S0 FAMILY_INTAKE", "trigger": "Fv01Pass", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S1 SOURCE_COVERAGE_ADMITTED"}
+
+
+PT-ID: PTS-002
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "S2 BOUNDARY_SCREENED", "trigger": "Fv03Pass", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S3 PROVENANCE_CLASSIFIED"}
+
+
+PT-ID: PTS-003
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "REPLAY_ADMISSIBLE", "terminal_state": "S8 REPLAY_ADMITTED", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "REPLAY_ADMISSIBLE", "reason_code": "REPLAY_ADMISSIBLE", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}, "FOC-02": {"report_id": "rep-001", "boundary_event_id": "bev-001", "carried_statement_refs": ["cs-001"], "anchor_refs": ["ar-001"], "freshness_refs": ["fr-001"], "replay_refs": ["rr-001"], "disclosure_class_entries": []}, "FOC-03": {"family_decision_id": "fdid-001", "accepted_head_digest": "ahd-001", "linked_irr_digest": "irr-001", "rehydration_closure_ref": "rcr-001", "admission_status": "ADMITTED"}}}
+
+
+PT-ID: PTS-004a
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "S1 SOURCE_COVERAGE_ADMITTED", "trigger": "Fv02AndFv04Pass", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SX CONTAMINATION_FAIL_CLOSED"}
+
+
+PT-ID: PTS-004b
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "S2 BOUNDARY_SCREENED", "trigger": "UnlabeledMechanismLevelCarriedClaim", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SX CONTAMINATION_FAIL_CLOSED"}
+
+
+PT-ID: PTS-005
+COMMAND: (no invocation -- SKIP: SSCAR_Conformance_Tests.md §5 note — closed enumeration: declarative record listed in §7 Public Oracles (ORC-VERDICT-SET verdict-layer subset), not the §5 buyer-runnable table.)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-006
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "S3 PROVENANCE_CLASSIFIED", "trigger": "FreshnessReplay", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SH NONCOMPLIANT_HOLD"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.verdict", "outcomes": [{"id": "FV-06", "status": "fail"}]}
+EXIT_CODE: 0
+STDOUT_TAIL: {"verdict": "NONCOMPLIANT_HOLD"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {"freshness_strictly_increasing": false}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "NONCOMPLIANT_HOLD", "terminal_state": "SH NONCOMPLIANT_HOLD", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "fail", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "fail", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "NONCOMPLIANT_HOLD", "reason_code": "NONCOMPLIANT_HOLD", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}, "FOC-05": {"hold_case_id": "hc-001", "hold_enter_refs": ["he-001"], "pending_requirements": ["anchor_update_ref"], "readmission_budget": 3, "cleared_only_by": "authorized_external_actor"}}}
+
+
+PT-ID: PTS-007
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.reclassify", "explicit_reclassification": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"blocks_at": "S2 BOUNDARY_SCREENED", "verdict_change": false, "policy_executed": true, "disclosure_class": "BOUNDED_HANDOFF_OBLIGATION", "advanced_without_reclassification": false}
+
+
+PT-ID: PTS-008
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "S3 PROVENANCE_CLASSIFIED", "trigger": "FreshnessReplay", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SH NONCOMPLIANT_HOLD"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "S4 ANCHOR_LOCKED", "trigger": "CriticalContamination", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SX CONTAMINATION_FAIL_CLOSED"}
+
+
+PT-ID: PTS-009
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "S3 PROVENANCE_CLASSIFIED", "trigger": "CriticalContamination", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SX CONTAMINATION_FAIL_CLOSED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "S5 REHYDRATION_CLOSED", "trigger": "CriticalContamination", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SX CONTAMINATION_FAIL_CLOSED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "S0 FAMILY_INTAKE", "trigger": "CriticalContamination", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SX CONTAMINATION_FAIL_CLOSED"}
+
+
+PT-ID: PTS-010
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "S5 REHYDRATION_CLOSED", "trigger": "AntiRollbackFailure", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SX CONTAMINATION_FAIL_CLOSED"}
+
+
+PT-ID: PTS-011
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "S3 PROVENANCE_CLASSIFIED", "trigger": "ChainBreak", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SX CONTAMINATION_FAIL_CLOSED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "S3 PROVENANCE_CLASSIFIED", "trigger": "UntrustedAnchorPromoted", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SX CONTAMINATION_FAIL_CLOSED"}
+
+
+PT-ID: PTS-012
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "SH NONCOMPLIANT_HOLD", "trigger": "HoldCaseWithNewFamilyClosureBundleAndAnchorUpdate", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SR READMISSION_REVIEW"}
+
+
+PT-ID: PTS-013
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "SR READMISSION_REVIEW", "trigger": "ReadmissionBundleChangedCarriedPayload", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S2 BOUNDARY_SCREENED"}
+
+
+PT-ID: PTS-014
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "S8 REPLAY_ADMITTED", "trigger": "Handoff", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S8 REPLAY_ADMITTED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "SX CONTAMINATION_FAIL_CLOSED", "trigger": "IncidentOnlyOutput", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SX CONTAMINATION_FAIL_CLOSED"}
+
+
+PT-ID: PTS-015
+COMMAND: (no invocation -- SKIP: SSCAR_Conformance_Tests.md §5 note — closed enumeration: §7-relocated declarative record (verdict-layer subset), not on the §5 buyer-runnable table.)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-016
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "REPLAY_ADMISSIBLE", "terminal_state": "S8 REPLAY_ADMITTED", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "REPLAY_ADMISSIBLE", "reason_code": "REPLAY_ADMISSIBLE", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}, "FOC-02": {"report_id": "rep-001", "boundary_event_id": "bev-001", "carried_statement_refs": ["cs-001"], "anchor_refs": ["ar-001"], "freshness_refs": ["fr-001"], "replay_refs": ["rr-001"], "disclosure_class_entries": []}, "FOC-03": {"family_decision_id": "fdid-001", "accepted_head_digest": "ahd-001", "linked_irr_digest": "irr-001", "rehydration_closure_ref": "rcr-001", "admission_status": "ADMITTED"}}}
+
+
+PT-ID: PTS-017a
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {"carried_labeled": false}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "CONTAMINATION_FAIL_CLOSED", "terminal_state": "SX CONTAMINATION_FAIL_CLOSED", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "fail", "branch": "contamination", "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "fail", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "fail", "branch": "contamination", "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "fail", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "CONTAMINATION_FAIL_CLOSED", "reason_code": "CONTAMINATION_FAIL_CLOSED", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}, "FOC-04": {"incident_id": "inc-001", "root_reason_code": "UNTRUSTED_ANCHOR_PROMOTED", "contaminating_ref_set": ["contam-001"], "blocked_stage": "provenance_classification", "remediation_class": "non_remediable"}}}
+
+
+PT-ID: PTS-017b
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {"freshness_strictly_increasing": false}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "NONCOMPLIANT_HOLD", "terminal_state": "SH NONCOMPLIANT_HOLD", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "fail", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "fail", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "NONCOMPLIANT_HOLD", "reason_code": "NONCOMPLIANT_HOLD", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}, "FOC-05": {"hold_case_id": "hc-001", "hold_enter_refs": ["he-001"], "pending_requirements": ["anchor_update_ref"], "readmission_budget": 3, "cleared_only_by": "authorized_external_actor"}}}
+
+
+PT-ID: PTS-017d
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "SH NONCOMPLIANT_HOLD", "trigger": "HoldCaseWithNewFamilyClosureBundleAndAnchorUpdate", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SR READMISSION_REVIEW"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "REPLAY_ADMISSIBLE", "terminal_state": "S8 REPLAY_ADMITTED", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "REPLAY_ADMISSIBLE", "reason_code": "REPLAY_ADMISSIBLE", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}, "FOC-02": {"report_id": "rep-001", "boundary_event_id": "bev-001", "carried_statement_refs": ["cs-001"], "anchor_refs": ["ar-001"], "freshness_refs": ["fr-001"], "replay_refs": ["rr-001"], "disclosure_class_entries": []}, "FOC-03": {"family_decision_id": "fdid-001", "accepted_head_digest": "ahd-001", "linked_irr_digest": "irr-001", "rehydration_closure_ref": "rcr-001", "admission_status": "ADMITTED"}}}
+
+
+PT-ID: PTS-018
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {"carried_labeled": false}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "CONTAMINATION_FAIL_CLOSED", "terminal_state": "SX CONTAMINATION_FAIL_CLOSED", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "fail", "branch": "contamination", "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "fail", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "fail", "branch": "contamination", "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "fail", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "CONTAMINATION_FAIL_CLOSED", "reason_code": "CONTAMINATION_FAIL_CLOSED", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}, "FOC-04": {"incident_id": "inc-001", "root_reason_code": "UNTRUSTED_ANCHOR_PROMOTED", "contaminating_ref_set": ["contam-001"], "blocked_stage": "provenance_classification", "remediation_class": "non_remediable"}}}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {"freshness_strictly_increasing": false}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "NONCOMPLIANT_HOLD", "terminal_state": "SH NONCOMPLIANT_HOLD", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "fail", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "fail", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "NONCOMPLIANT_HOLD", "reason_code": "NONCOMPLIANT_HOLD", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}, "FOC-05": {"hold_case_id": "hc-001", "hold_enter_refs": ["he-001"], "pending_requirements": ["anchor_update_ref"], "readmission_budget": 3, "cleared_only_by": "authorized_external_actor"}}}
+
+
+PT-ID: PTS-019
+COMMAND: (no invocation -- SKIP: SSCAR_Conformance_Tests.md §5 note — closed enumeration: §7-relocated declarative (ORC-FOC-PRODUCERS), not on the §5 buyer-runnable table.)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-020
+COMMAND: (no invocation -- SKIP: SSCAR_Conformance_Tests.md §5 note — closed enumeration: §7-relocated declarative (ORC-DISTRIBUTED-LEGITIMACY), not on the §5 buyer-runnable table.)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-021
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.types"}
+EXIT_CODE: 0
+STDOUT_TAIL: {"state_count": 12, "verdict_count": 6, "disjoint_identity": true, "verdicts_without_state": ["REPLAY_INCOMPLETE", "INCIDENT_ONLY"]}
+
+
+PT-ID: PTS-022
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "S3 PROVENANCE_CLASSIFIED", "trigger": "FreshnessReplay", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SH NONCOMPLIANT_HOLD"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.verdict", "outcomes": [{"id": "FV-06", "status": "fail"}]}
+EXIT_CODE: 0
+STDOUT_TAIL: {"verdict": "NONCOMPLIANT_HOLD"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "S4 ANCHOR_LOCKED", "trigger": "CriticalContamination", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SX CONTAMINATION_FAIL_CLOSED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.verdict", "outcomes": [{"id": "FV-09", "status": "fail"}]}
+EXIT_CODE: 0
+STDOUT_TAIL: {"verdict": "CONTAMINATION_FAIL_CLOSED"}
+
+
+PT-ID: PTS-023
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "SR READMISSION_REVIEW", "trigger": "ReadmissionBundleChangedCarriedPayload", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S2 BOUNDARY_SCREENED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "SR READMISSION_REVIEW", "trigger": "ReadmissionBundleChangedAnchorDocumentRef", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S2 BOUNDARY_SCREENED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "SR READMISSION_REVIEW", "trigger": "ReadmissionBundleChangedSourceControlBundles", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S2 BOUNDARY_SCREENED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "SR READMISSION_REVIEW", "trigger": "ReadmissionBundleChangedPolicySnapshotId", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S5 REHYDRATION_CLOSED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "SR READMISSION_REVIEW", "trigger": "ReadmissionBundleChangedRehydrationClosureRef", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S5 REHYDRATION_CLOSED"}
+
+
+PT-ID: PTS-024
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "S4 ANCHOR_LOCKED", "trigger": "Fv07Pass", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S5 REHYDRATION_CLOSED"}
+
+
+PT-ID: PTS-025
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {"anti_rollback_ok": false, "rehydration_integrity_ok": false}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "CONTAMINATION_FAIL_CLOSED", "terminal_state": "SX CONTAMINATION_FAIL_CLOSED", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "fail", "branch": "integrity", "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "fail", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "fail", "branch": "integrity", "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "fail", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "CONTAMINATION_FAIL_CLOSED", "reason_code": "CONTAMINATION_FAIL_CLOSED", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}, "FOC-04": {"incident_id": "inc-001", "root_reason_code": "UNTRUSTED_ANCHOR_PROMOTED", "contaminating_ref_set": ["contam-001"], "blocked_stage": "provenance_classification", "remediation_class": "non_remediable"}}}
+
+
+PT-ID: PTS-026
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "S1 SOURCE_COVERAGE_ADMITTED", "trigger": "Fv02AndFv04Pass", "validator_passed": false}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SX CONTAMINATION_FAIL_CLOSED"}
+
+
+PT-ID: PTS-027
+COMMAND: (no invocation -- SKIP: SSCAR_Conformance_Tests.md §5 note — closed enumeration: §7-relocated declarative (canonical verdict taxonomy, ORC-VERDICT-SET), not on the §5 buyer-runnable table.)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: CT-01
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "S0 FAMILY_INTAKE", "trigger": "Fv01Pass", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S1 SOURCE_COVERAGE_ADMITTED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "REPLAY_ADMISSIBLE", "terminal_state": "S8 REPLAY_ADMITTED", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "REPLAY_ADMISSIBLE", "reason_code": "REPLAY_ADMISSIBLE", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}, "FOC-02": {"report_id": "rep-001", "boundary_event_id": "bev-001", "carried_statement_refs": ["cs-001"], "anchor_refs": ["ar-001"], "freshness_refs": ["fr-001"], "replay_refs": ["rr-001"], "disclosure_class_entries": []}, "FOC-03": {"family_decision_id": "fdid-001", "accepted_head_digest": "ahd-001", "linked_irr_digest": "irr-001", "rehydration_closure_ref": "rcr-001", "admission_status": "ADMITTED"}}}
+
+
+PT-ID: CT-02
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {"carried_labeled": false}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "CONTAMINATION_FAIL_CLOSED", "terminal_state": "SX CONTAMINATION_FAIL_CLOSED", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "fail", "branch": "contamination", "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "fail", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "fail", "branch": "contamination", "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "fail", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "CONTAMINATION_FAIL_CLOSED", "reason_code": "CONTAMINATION_FAIL_CLOSED", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}, "FOC-04": {"incident_id": "inc-001", "root_reason_code": "UNTRUSTED_ANCHOR_PROMOTED", "contaminating_ref_set": ["contam-001"], "blocked_stage": "provenance_classification", "remediation_class": "non_remediable"}}}
+
+
+PT-ID: CT-03
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {"boundary_contract_ok": false}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "CONTAMINATION_FAIL_CLOSED", "terminal_state": "SX CONTAMINATION_FAIL_CLOSED", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "fail", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "fail", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "CONTAMINATION_FAIL_CLOSED", "reason_code": "CONTAMINATION_FAIL_CLOSED", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}, "FOC-04": {"incident_id": "inc-001", "root_reason_code": "UNTRUSTED_ANCHOR_PROMOTED", "contaminating_ref_set": ["contam-001"], "blocked_stage": "provenance_classification", "remediation_class": "non_remediable"}}}
+
+
+PT-ID: CT-04
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {"freshness_strictly_increasing": false}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "NONCOMPLIANT_HOLD", "terminal_state": "SH NONCOMPLIANT_HOLD", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "fail", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "fail", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "NONCOMPLIANT_HOLD", "reason_code": "NONCOMPLIANT_HOLD", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}, "FOC-05": {"hold_case_id": "hc-001", "hold_enter_refs": ["he-001"], "pending_requirements": ["anchor_update_ref"], "readmission_budget": 3, "cleared_only_by": "authorized_external_actor"}}}
+
+
+PT-ID: CT-05
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {"accepted_head_linked": false}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "REPLAY_INCOMPLETE", "terminal_state": "SH NONCOMPLIANT_HOLD", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "fail", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "fail", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "REPLAY_INCOMPLETE", "reason_code": "REPLAY_INCOMPLETE", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}}}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "REPLAY_ADMISSIBLE", "terminal_state": "S8 REPLAY_ADMITTED", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "REPLAY_ADMISSIBLE", "reason_code": "REPLAY_ADMISSIBLE", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}, "FOC-02": {"report_id": "rep-001", "boundary_event_id": "bev-001", "carried_statement_refs": ["cs-001"], "anchor_refs": ["ar-001"], "freshness_refs": ["fr-001"], "replay_refs": ["rr-001"], "disclosure_class_entries": []}, "FOC-03": {"family_decision_id": "fdid-001", "accepted_head_digest": "ahd-001", "linked_irr_digest": "irr-001", "rehydration_closure_ref": "rcr-001", "admission_status": "ADMITTED"}}}
+
+
+PT-ID: CT-06
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "REPLAY_ADMISSIBLE", "terminal_state": "S8 REPLAY_ADMITTED", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "REPLAY_ADMISSIBLE", "reason_code": "REPLAY_ADMISSIBLE", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}, "FOC-02": {"report_id": "rep-001", "boundary_event_id": "bev-001", "carried_statement_refs": ["cs-001"], "anchor_refs": ["ar-001"], "freshness_refs": ["fr-001"], "replay_refs": ["rr-001"], "disclosure_class_entries": []}, "FOC-03": {"family_decision_id": "fdid-001", "accepted_head_digest": "ahd-001", "linked_irr_digest": "irr-001", "rehydration_closure_ref": "rcr-001", "admission_status": "ADMITTED"}}}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {"rehydration_integrity_ok": false, "anti_rollback_ok": false}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "CONTAMINATION_FAIL_CLOSED", "terminal_state": "SX CONTAMINATION_FAIL_CLOSED", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "fail", "branch": "integrity", "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "fail", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "fail", "branch": "integrity", "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "fail", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "CONTAMINATION_FAIL_CLOSED", "reason_code": "CONTAMINATION_FAIL_CLOSED", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}, "FOC-04": {"incident_id": "inc-001", "root_reason_code": "UNTRUSTED_ANCHOR_PROMOTED", "contaminating_ref_set": ["contam-001"], "blocked_stage": "provenance_classification", "remediation_class": "non_remediable"}}}
+
+
+PT-ID: CT-07
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {"replay_lineage_complete": false}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "REPLAY_INCOMPLETE", "terminal_state": "S5 REHYDRATION_CLOSED", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "fail", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "fail", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "REPLAY_INCOMPLETE", "reason_code": "REPLAY_INCOMPLETE", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}}}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "REPLAY_ADMISSIBLE", "terminal_state": "S8 REPLAY_ADMITTED", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "REPLAY_ADMISSIBLE", "reason_code": "REPLAY_ADMISSIBLE", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}, "FOC-02": {"report_id": "rep-001", "boundary_event_id": "bev-001", "carried_statement_refs": ["cs-001"], "anchor_refs": ["ar-001"], "freshness_refs": ["fr-001"], "replay_refs": ["rr-001"], "disclosure_class_entries": []}, "FOC-03": {"family_decision_id": "fdid-001", "accepted_head_digest": "ahd-001", "linked_irr_digest": "irr-001", "rehydration_closure_ref": "rcr-001", "admission_status": "ADMITTED"}}}
+
+
+PT-ID: CT-08
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "REPLAY_ADMISSIBLE", "terminal_state": "S8 REPLAY_ADMITTED", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "REPLAY_ADMISSIBLE", "reason_code": "REPLAY_ADMISSIBLE", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}, "FOC-02": {"report_id": "rep-001", "boundary_event_id": "bev-001", "carried_statement_refs": ["cs-001"], "anchor_refs": ["ar-001"], "freshness_refs": ["fr-001"], "replay_refs": ["rr-001"], "disclosure_class_entries": []}, "FOC-03": {"family_decision_id": "fdid-001", "accepted_head_digest": "ahd-001", "linked_irr_digest": "irr-001", "rehydration_closure_ref": "rcr-001", "admission_status": "ADMITTED"}}}
+
+
+PT-ID: CT-09
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {"tool_state_present": true}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "CONTAMINATION_FAIL_CLOSED", "terminal_state": "S8 REPLAY_ADMITTED", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "fail", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "fail", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "CONTAMINATION_FAIL_CLOSED", "reason_code": "CONTAMINATION_FAIL_CLOSED", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}, "FOC-04": {"incident_id": "inc-001", "root_reason_code": "UNTRUSTED_ANCHOR_PROMOTED", "contaminating_ref_set": ["contam-001"], "blocked_stage": "provenance_classification", "remediation_class": "non_remediable"}}}
+
+
+PT-ID: CT-10
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "SH NONCOMPLIANT_HOLD", "trigger": "HoldCaseWithNewFamilyClosureBundleAndAnchorUpdate", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "SR READMISSION_REVIEW"}
+
+
+PT-ID: CT-11
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {"disclosure_class_entries": [{"ref": "o1", "class": "BOUNDED_EXECUTION_NEUTRAL_OPENNESS"}]}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "REPLAY_ADMISSIBLE_CONSTRAINED", "terminal_state": "S8 REPLAY_ADMITTED", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "REPLAY_ADMISSIBLE_CONSTRAINED", "reason_code": "REPLAY_ADMISSIBLE_CONSTRAINED", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}, "FOC-02": {"report_id": "rep-001", "boundary_event_id": "bev-001", "carried_statement_refs": ["cs-001"], "anchor_refs": ["ar-001"], "freshness_refs": ["fr-001"], "replay_refs": ["rr-001"], "disclosure_class_entries": [{"ref": "o1", "class": "BOUNDED_EXECUTION_NEUTRAL_OPENNESS"}]}, "FOC-03": {"family_decision_id": "fdid-001", "accepted_head_digest": "ahd-001", "linked_irr_digest": "irr-001", "rehydration_closure_ref": "rcr-001", "admission_status": "ADMITTED"}}}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {"disclosure_collapse": true}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "INCIDENT_ONLY", "terminal_state": "S8 REPLAY_ADMITTED", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "fail", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "fail", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "INCIDENT_ONLY", "reason_code": "INCIDENT_ONLY", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}}}
+
+
+PT-ID: CT-12
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {"evidence_closure_fail": true}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "INCIDENT_ONLY", "terminal_state": "S8 REPLAY_ADMITTED", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "fail", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "fail", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "INCIDENT_ONLY", "reason_code": "INCIDENT_ONLY", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}}}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "REPLAY_ADMISSIBLE", "terminal_state": "S8 REPLAY_ADMITTED", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "pass", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "REPLAY_ADMISSIBLE", "reason_code": "REPLAY_ADMISSIBLE", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}, "FOC-02": {"report_id": "rep-001", "boundary_event_id": "bev-001", "carried_statement_refs": ["cs-001"], "anchor_refs": ["ar-001"], "freshness_refs": ["fr-001"], "replay_refs": ["rr-001"], "disclosure_class_entries": []}, "FOC-03": {"family_decision_id": "fdid-001", "accepted_head_digest": "ahd-001", "linked_irr_digest": "irr-001", "rehydration_closure_ref": "rcr-001", "admission_status": "ADMITTED"}}}
+
+
+PT-ID: CT-13
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.compose", "scenario": {"role_reclassified_ok": false}}
+EXIT_CODE: 0
+STDOUT_TAIL: {"family_verdict": "CONTAMINATION_FAIL_CLOSED", "terminal_state": "SX CONTAMINATION_FAIL_CLOSED", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "fail", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "evidence_bundle": {"family_decision_id": "family_decision_id:fam", "boundary_event_id": "boundary_event_id:fam", "session_id_prior_session_ref": "session_id_prior_session_ref:fam", "carried_statement_refs": "carried_statement_refs:fam", "tsa_refs_provenance_refs": "tsa_refs_provenance_refs:fam", "anchor_document_digest_anchor_document_ref": "anchor_document_digest_anchor_document_ref:fam", "accepted_head_digest_linked_irr_digest": "accepted_head_digest_linked_irr_digest:fam", "freshness_before_after_anchor_update_ref": "freshness_before_after_anchor_update_ref:fam", "rehydration_closure_ref": "rehydration_closure_ref:fam", "replay_refs_checkpoint_refs_rollback_refs": "replay_refs_checkpoint_refs_rollback_refs:fam", "disclosure_class_entries": "disclosure_class_entries:fam", "family_validator_outcomes": [{"id": "FV-01", "status": "pass", "branch": null, "evidence_ref": "ev:FV-01"}, {"id": "FV-02", "status": "pass", "branch": null, "evidence_ref": "ev:FV-02"}, {"id": "FV-03", "status": "pass", "branch": null, "evidence_ref": "ev:FV-03"}, {"id": "FV-04", "status": "fail", "branch": null, "evidence_ref": "ev:FV-04"}, {"id": "FV-05", "status": "pass", "branch": null, "evidence_ref": "ev:FV-05"}, {"id": "FV-06", "status": "pass", "branch": null, "evidence_ref": "ev:FV-06"}, {"id": "FV-07", "status": "pass", "branch": null, "evidence_ref": "ev:FV-07"}, {"id": "FV-08", "status": "pass", "branch": null, "evidence_ref": "ev:FV-08"}, {"id": "FV-09", "status": "pass", "branch": null, "evidence_ref": "ev:FV-09"}, {"id": "FV-10", "status": "pass", "branch": null, "evidence_ref": "ev:FV-10"}, {"id": "FV-11", "status": "pass", "branch": null, "evidence_ref": "ev:FV-11"}, {"id": "FV-12", "status": "pass", "branch": null, "evidence_ref": "ev:FV-12"}], "hold_enter_refs_hold_exit_refs": "hold_enter_refs_hold_exit_refs:fam", "contamination_flags_contaminating_ref_set": "contamination_flags_contaminating_ref_set:fam", "report_signature_export_manifest_ref": "report_signature_export_manifest_ref:fam"}, "outputs": {"FOC-01": {"family_decision_id": "fdid-001", "session_id": "sid-001", "family_verdict": "CONTAMINATION_FAIL_CLOSED", "reason_code": "CONTAMINATION_FAIL_CLOSED", "family_validator_refs": ["FV-01", "FV-02", "FV-03", "FV-04", "FV-05", "FV-06", "FV-07", "FV-08", "FV-09", "FV-10", "FV-11", "FV-12"], "family_evidence_refs": ["ev:FV-01", "ev:FV-02", "ev:FV-03", "ev:FV-04", "ev:FV-05", "ev:FV-06", "ev:FV-07", "ev:FV-08", "ev:FV-09", "ev:FV-10", "ev:FV-11", "ev:FV-12"]}, "FOC-04": {"incident_id": "inc-001", "root_reason_code": "UNTRUSTED_ANCHOR_PROMOTED", "contaminating_ref_set": ["contam-001"], "blocked_stage": "provenance_classification", "remediation_class": "non_remediable"}}}
+
+
+PT-ID: CT-14
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "SR READMISSION_REVIEW", "trigger": "ReadmissionBundleChangedCarriedPayload", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S2 BOUNDARY_SCREENED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "SR READMISSION_REVIEW", "trigger": "ReadmissionBundleChangedAnchorDocumentRef", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S2 BOUNDARY_SCREENED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "SR READMISSION_REVIEW", "trigger": "ReadmissionBundleChangedPolicySnapshotId", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S5 REHYDRATION_CLOSED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "SR READMISSION_REVIEW", "trigger": "ReadmissionBundleChangedComponentSet", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S2 BOUNDARY_SCREENED"}
+
+COMMAND: "python" "baseline.py"  # stdin={"op": "family.next_state", "state": "SR READMISSION_REVIEW", "trigger": "ReadmissionBundleChangedRehydrationBundle", "validator_passed": true}
+EXIT_CODE: 0
+STDOUT_TAIL: {"result": "S5 REHYDRATION_CLOSED"}
+
+

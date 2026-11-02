@@ -1,0 +1,2246 @@
+metadata:
+  agent_name: Boundary Defense Agent
+  agent_version: Public Release v2.0
+  index_version: '2.0'
+  source_documents:
+  - Boundary Defense Agent — Specification (Public Release v2.0)
+  derivation_scope: publishable corpus only
+  publication_format:
+  - D1 Human Edition
+  - D2-YAML
+  - D2-JSON
+  - D3 Coverage Matrix
+  - D4 Ambiguity Register
+  authorized_public_corpus:
+  - Boundary Defense Agent — Specification (Public Release v2.0)
+  excluded_sources_statement: Only the authorized public corpus was used in D1, D2, D3, and D4. No external sources were referenced.
+entries:
+- term_id: IDT-001
+  preferred_label: Boundary Defense Agent
+  category: Identity Terms
+  definition_short: Canonical specialized boundary-control agent named in the publishable specification.
+  definition_operational: The agent identity fixed by the specification. It controls frontier interactions and exchanges, validates, filters, blocks, quarantines, and releases boundary artifacts under fail-closed governance.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Agent Specification Record
+  - Boundary Defense Agent — Specification / Assurance Profile
+  related_terms:
+  - boundary-control agent
+  - Boundary artifact
+  - Fail-closed policy
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: IDT-002
+  preferred_label: boundary-control agent
+  category: Identity Terms
+  definition_short: Agent role for ingress, egress, persistence, and transport-adjacent artifact exchange.
+  definition_operational: Used for the agent role and identity class. The term frames the agent as a boundary-governed component rather than a general-purpose executor.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Operational Definitions
+  - Boundary Defense Agent — Specification / Agent Specification Record
+  related_terms:
+  - Boundary Defense Agent
+  - Boundary
+  - critical core
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: IDT-003
+  preferred_label: critical core
+  category: Identity Terms
+  definition_short: The governed core whose boundary is controlled by the agent.
+  definition_operational: Used in the jurisdiction and scope boundary. Ingress and egress artifacts that cross the controlled boundary of the critical core fall within agent governance.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Agent Specification Record
+  related_terms:
+  - Boundary
+  - controlled boundary
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-002
+  preferred_label: Boundary
+  category: Boundary Terms
+  definition_short: Logical boundary spanning runtime I/O, persistence commits, and transport of artifacts.
+  definition_operational: The boundary delimits the governed exchange surface. The agent evaluates artifacts that cross this boundary and applies explicit contracts, validators, and evidence-linked decisions before visibility or release.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Agent Specification Record
+  related_terms:
+  - Boundary artifact
+  - runtime I/O
+  - persistence commits
+  - transport of artifacts
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-001
+  preferred_label: Boundary artifact
+  category: Boundary Terms
+  definition_short: Any input, output, tool-state payload, or persistence/transport-adjacent object that attempts to cross the controlled boundary.
+  definition_operational: The base boundary object class for the specification. The semantic invariant states that no boundary artifact acquires execution, persistence, or transport visibility without explicit validation evidence appropriate to its class.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Operational Definitions
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  related_terms:
+  - Boundary
+  - tool_state_payload
+  - boundary_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-003
+  preferred_label: controlled boundary
+  category: Boundary Terms
+  definition_short: The boundary that artifacts attempt to cross under agent governance.
+  definition_operational: Used in the defining statement and in the operational definition of Boundary artifact. The term identifies the governed crossing point for runtime, persistence, and transport-adjacent exchange.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Operational Definitions
+  - Boundary Defense Agent — Specification / Agent Specification Record
+  related_terms:
+  - Boundary
+  - Boundary artifact
+  - critical core
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-005
+  preferred_label: persistence commits
+  category: Boundary Terms
+  definition_short: Persistence-side actions included in the logical boundary.
+  definition_operational: Used in the Boundary field of the Agent Specification Record. Persistence commits are governed boundary actions and are also referenced in acceptance ordering and release authorization logic.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Agent Specification Record
+  - Boundary Defense Agent — Specification / Temporal / Ordering Contract
+  related_terms:
+  - Boundary
+  - transport of artifacts
+  - Boundary artifact
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-004
+  preferred_label: runtime I/O
+  category: Boundary Terms
+  definition_short: Runtime input and output side of the governed boundary.
+  definition_operational: Used in the boundary and role records. Runtime I/O is part of the logical boundary and is governed together with persistence commits and transport of artifacts.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Agent Specification Record
+  related_terms:
+  - Boundary
+  - persistence commits
+  - transport of artifacts
+  synonyms:
+  - I/O
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-006
+  preferred_label: transport of artifacts
+  category: Boundary Terms
+  definition_short: Transport-side movement of artifacts governed by the boundary model.
+  definition_operational: Used in the Boundary field and in the evidence contract reconstruction claim. Transport effects are authorized only when the required validators and evidence fields support the action.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Agent Specification Record
+  - Boundary Defense Agent — Specification / Evidence Contract Record
+  related_terms:
+  - Boundary
+  - Boundary artifact
+  - persistence commits
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CTL-002
+  preferred_label: accepted-head visibility
+  category: Control Terms
+  definition_short: Visibility rule for the accepted head in replay and freshness control.
+  definition_operational: Used in the assurance and assumption sections. The rule supports replay resistance by keeping accepted-head state visible for freshness and anchor checks.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Assumption-to-Obligation Closure
+  - Boundary Defense Agent — Specification / Assurance Profile
+  - Boundary Defense Agent — Specification / Reuse and Implementation Note
+  related_terms:
+  - accepted head
+  - Accepted anchor
+  - Freshness / Receipt Validator
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CTL-004
+  preferred_label: allowlist
+  category: Control Terms
+  definition_short: Policy allowlisting used for compatibility and admissibility checks.
+  definition_operational: Allowlist checks appear in the Policy / Allowlist Validator, the fail-closed policy, the block triggers, and failure semantics. Failure on allowlist checks blocks or quarantines the path according to class and context.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Agent Specification Record
+  - Boundary Defense Agent — Specification / Validator Catalogue
+  - Boundary Defense Agent — Specification / Failure Semantics Record
+  related_terms:
+  - Policy / Allowlist Validator
+  - BLOCK
+  - QUARANTINE
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CTL-008
+  preferred_label: append-only evidence ledger
+  category: Control Terms
+  definition_short: Append-only evidence storage for material verdicts and reconstruction.
+  definition_operational: Replay / reconstruction is mandatory and all material verdicts are emitted to an append-only evidence ledger. The evidence contract also requires append-only or tamper-evident equivalent continuity.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Agent Specification Record
+  - Boundary Defense Agent — Specification / Evidence Contract Record
+  related_terms:
+  - validator_results
+  - statement_refs
+  - hash_prev
+  - hash_curr
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CTL-006
+  preferred_label: authority limit / budget
+  category: Control Terms
+  definition_short: Finite policy budget for unresolved validation failures, pending approvals, and critical-risk retries.
+  definition_operational: Authority exhaustion causes block plus escalation. The decision table and failure semantics use authority budget exhaustion to drive quarantine or hold until readmission conditions are met.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Agent Authority Record
+  - Boundary Defense Agent — Specification / Decision Table Record
+  - Boundary Defense Agent — Specification / Failure Semantics Record
+  related_terms:
+  - QUARANTINE
+  - NONCOMPLIANT_HOLD
+  - Readmission
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CTL-003
+  preferred_label: evidence gate
+  category: Control Terms
+  definition_short: Gate that checks finalization prerequisites and evidence conditions.
+  definition_operational: The evidence gate is invoked at finalization review with validator_results context. It yields evidence_ok and participates in finalization success or hold entry.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Operational Definitions
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  - Boundary Defense Agent — Specification / Agent Authority Record
+  related_terms:
+  - evidence_ok
+  - EVIDENCE_OK
+  - Evidence Chain Validator
+  - FINALIZATION_REVIEW
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CTL-009
+  preferred_label: Fail-closed policy
+  category: Control Terms
+  definition_short: Mandatory fail-closed handling at specified failure and escalation conditions.
+  definition_operational: The policy is mandatory at schema failure, allowlist failure, CPW critical escalation, evidence failure, counter replay, or authority exhaustion. It is also reflected in gate logic, workflow, and failure semantics.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Agent Specification Record
+  - Boundary Defense Agent — Specification / Decision Table Record
+  - Boundary Defense Agent — Specification / Failure Semantics Record
+  related_terms:
+  - FAIL_CLOSED
+  - BLOCK
+  - QUARANTINE
+  - NONCOMPLIANT_HOLD
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CTL-007
+  preferred_label: human/operator approval channel
+  category: Control Terms
+  definition_short: Approval channel in the escalation path for approval-required handling.
+  definition_operational: The escalation path runs from Boundary Defense Agent to the human/operator approval channel, then to the external assurance component and implementation layer. Approval evidence is attached through approval_ref and Approval Validator checks.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Agent Authority Record
+  related_terms:
+  - approval_ref
+  - Approval Validator
+  - External assurance component
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CTL-005
+  preferred_label: policy profile
+  category: Control Terms
+  definition_short: Active policy profile bound into request and decision handling.
+  definition_operational: The input contract binds policy_profile_id for ingress_request, and the assumption closure requires a stable policy profile with policy_hash bound in decision and evidence records.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Input Contract Record Set
+  - Boundary Defense Agent — Specification / Assumption-to-Obligation Closure
+  related_terms:
+  - policy_hash
+  - ingress_request
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CTL-001
+  preferred_label: Readmission
+  category: Control Terms
+  definition_short: Controlled restoration of a previously blocked or quarantined path after all mandatory validators, approvals, and anchors are satisfied.
+  definition_operational: Readmission is the restoration control used after remediation. The authority record defines readmission triggers, the temporal contract defines when readmission is legal, and the workflow emits READMIT when restoration succeeds.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Operational Definitions
+  - Boundary Defense Agent — Specification / Agent Authority Record
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  - Boundary Defense Agent — Specification / Temporal / Ordering Contract
+  related_terms:
+  - READMIT
+  - READMISSION_APPROVED
+  - approval_ref
+  - Accepted anchor
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: ABR-001
+  preferred_label: CPW
+  category: Abbreviation Terms
+  definition_short: Crash Proximity Warning.
+  definition_operational: Abbreviation for the risk-banding mechanism that constrains behavior and can force fail-closed handling at CRITICAL. It also anchors CPW_CRITICAL and the CPW Band Validator.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Operational Definitions
+  - Boundary Defense Agent — Specification / Validator Catalogue
+  - Boundary Defense Agent — Specification / Optionality Register
+  related_terms:
+  - CPW_CRITICAL
+  - CPW Band Validator
+  - FAIL_CLOSED
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - Do not treat CPW as a verdict token.
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: ABR-002
+  preferred_label: I/O
+  category: Abbreviation Terms
+  definition_short: Input and output.
+  definition_operational: Used in the role and boundary records to describe the governed runtime exchange surface.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Agent Specification Record
+  related_terms:
+  - runtime I/O
+  - Boundary
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: STA-003
+  preferred_label: FILTER_REVIEW
+  category: State Terms
+  definition_short: State in which the validated input is reviewed for escalation, tool-state risk, or release preparation.
+  definition_operational: Entered after VALIDATION_PASS. The workflow routes from FILTER_REVIEW either to TOOL_STATE_QUARANTINED or READY_FOR_RELEASE.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - Boundary Defense Agent
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: STA-007
+  preferred_label: FINALIZATION_REVIEW
+  category: State Terms
+  definition_short: State in which finalization prerequisites are checked by the evidence gate and reconstruction-linked validators.
+  definition_operational: Entered when finalization is requested on the release path. The workflow then branches to EVIDENCE_OK or EVIDENCE_FAIL.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - Boundary Defense Agent
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: STA-001
+  preferred_label: IDLE
+  category: State Terms
+  definition_short: State in which the agent is ready to receive input or returns after successful release, readmission, or hold exit.
+  definition_operational: IDLE is the start and return state. The workflow enters IDLE from finalization success, readmission approval, and compliance restoration.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - Boundary Defense Agent
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: STA-002
+  preferred_label: INGEST_VALIDATE
+  category: State Terms
+  definition_short: State in which ingress input is validated against mandatory checks.
+  definition_operational: Entered after INPUT_RECEIVED. The workflow uses this state for VAL-01, VAL-02, VAL-03, and related failure handling before block or review.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - Boundary Defense Agent
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: STA-008
+  preferred_label: NONCOMPLIANT_HOLD
+  category: State Terms
+  definition_short: Audit-only posture in which no compliance-claimed finalization is permitted until evidence prerequisites are restored.
+  definition_operational: The workflow enters NONCOMPLIANT_HOLD when VAL-05 or VAL-08 fails at finalization review. The same token also appears in gate logic and semantic contract as a gate status and verdict token.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  - Boundary Defense Agent — Specification / Gate Logic Record
+  - Boundary Defense Agent — Specification / Semantic Contract Record
+  related_terms:
+  - FINALIZATION_REVIEW
+  - EVIDENCE_FAIL
+  - READMIT
+  - Accepted anchor
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - The token names both a workflow state and a semantic verdict.
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: STA-006
+  preferred_label: OUTPUT_BLOCKED
+  category: State Terms
+  definition_short: State in which the path remains blocked and no further release occurs.
+  definition_operational: Reached on validation failure, CPW critical handling, and other blocking conditions. Readmission may return the path to IDLE after remediation.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - Boundary Defense Agent
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: STA-005
+  preferred_label: READY_FOR_RELEASE
+  category: State Terms
+  definition_short: State in which the release path is prepared with validator context and policy scope.
+  definition_operational: Entered when no escalation condition remains or when approval is granted on a quarantined tool-state path. FINALIZATION_REQUESTED moves the path to finalization review.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - Boundary Defense Agent
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: STA-004
+  preferred_label: TOOL_STATE_QUARANTINED
+  category: State Terms
+  definition_short: State in which a tool-state path is preserved for inspection but not released.
+  definition_operational: Entered when tool-state is present and elevated boundary risk is classified. Approval evidence is required before the path can move to READY_FOR_RELEASE.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - Boundary Defense Agent
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-007
+  preferred_label: APPROVAL_DENIED
+  category: Transition Terms
+  definition_short: Primary event token for approval denial on an approval-required path.
+  definition_operational: Listed in the semantic core summary as a primary event. On an approval-required tool-state path, absence of approval prevents release and keeps the path blocked or quarantined.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Agent Authority Record
+  related_terms:
+  - approval_ref
+  - tool_state_payload
+  - QUARANTINE
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - The token is listed in the semantic core summary but is not expanded as a separate workflow row in the specification.
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-006
+  preferred_label: APPROVAL_GRANTED
+  category: Transition Terms
+  definition_short: Workflow event for successful approval on a quarantined path.
+  definition_operational: Occurs when VAL-06 passes and moves TOOL_STATE_QUARANTINED to READY_FOR_RELEASE with approval_ref logged.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - TOOL_STATE_QUARANTINED
+  - READY_FOR_RELEASE
+  - approval_ref
+  - Approval Validator
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-014
+  preferred_label: COMPLIANCE_RESTORED
+  category: Transition Terms
+  definition_short: Workflow event for restored evidence prerequisites on a hold path.
+  definition_operational: Occurs from NONCOMPLIANT_HOLD when VAL-05 and VAL-08 are restored and the anchor is updated. The workflow then emits hold exit and READMIT before returning to IDLE.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - NONCOMPLIANT_HOLD
+  - READMIT
+  - Accepted anchor
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-011
+  preferred_label: COUNTER_REPLAY
+  category: Transition Terms
+  definition_short: Primary event token for counter replay in the semantic core summary.
+  definition_operational: Listed as a primary event in the semantic core summary. Replay control also appears in finalization rules and failure semantics through VERIF_COUNTER and accepted anchor checks.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Temporal / Ordering Contract
+  - Boundary Defense Agent — Specification / Failure Semantics Record
+  related_terms:
+  - VERIF_COUNTER
+  - Accepted anchor
+  - NONCOMPLIANT_HOLD
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - The specification uses the token in the semantic core summary while the detailed finalization logic expresses replay through counter and anchor conditions.
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-012
+  preferred_label: CPW_CRITICAL
+  category: Transition Terms
+  definition_short: Workflow event for CRITICAL risk-band escalation.
+  definition_operational: Occurs from any active state when VAL-07 detects band CRITICAL and moves the path to OUTPUT_BLOCKED with FAIL_CLOSED handling.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  - Boundary Defense Agent — Specification / Failure Semantics Record
+  related_terms:
+  - CPW
+  - CPW Band Validator
+  - FAIL_CLOSED
+  - OUTPUT_BLOCKED
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-010
+  preferred_label: EVIDENCE_FAIL
+  category: Transition Terms
+  definition_short: Workflow event for failed finalization evidence review.
+  definition_operational: Occurs in FINALIZATION_REVIEW when VAL-05 or VAL-08 fails because of evidence failure or replay and moves the path to NONCOMPLIANT_HOLD.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - FINALIZATION_REVIEW
+  - NONCOMPLIANT_HOLD
+  - Evidence Chain Validator
+  - Reconstruction Validator
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-009
+  preferred_label: EVIDENCE_OK
+  category: Transition Terms
+  definition_short: Workflow event for successful finalization evidence review.
+  definition_operational: Occurs in FINALIZATION_REVIEW when VAL-05 and VAL-08 pass, evidence_ok=true, and the counter strictly increases.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - FINALIZATION_REVIEW
+  - evidence_ok
+  - Evidence Chain Validator
+  - Reconstruction Validator
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - Do not confuse the event token EVIDENCE_OK with the evidence field evidence_ok.
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-008
+  preferred_label: FINALIZATION_REQUESTED
+  category: Transition Terms
+  definition_short: Workflow event that moves the release path into finalization review.
+  definition_operational: Occurs from READY_FOR_RELEASE when the release path is selected and the validator bundle remains attached.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - READY_FOR_RELEASE
+  - FINALIZATION_REVIEW
+  - validator_results
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-001
+  preferred_label: INPUT_RECEIVED
+  category: Transition Terms
+  definition_short: Workflow event that starts ingress handling.
+  definition_operational: Occurs from IDLE and creates the ingress_request record that opens validation.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - IDLE
+  - INGEST_VALIDATE
+  - ingress_request
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-005
+  preferred_label: NO_ESCALATION
+  category: Transition Terms
+  definition_short: Workflow event for release-path continuation without escalation.
+  definition_operational: Occurs in FILTER_REVIEW when VAL-02, VAL-04, and VAL-07 pass and no tool-state risk remains.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - FILTER_REVIEW
+  - READY_FOR_RELEASE
+  - CPW Band Validator
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-013
+  preferred_label: READMISSION_APPROVED
+  category: Transition Terms
+  definition_short: Workflow event for approved readmission after remediation.
+  definition_operational: Occurs from OUTPUT_BLOCKED when failed validators are remediated and VAL-08 is available where replay claim is restored. The workflow then emits READMIT and returns to IDLE.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - Readmission
+  - READMIT
+  - IDLE
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-004
+  preferred_label: TOOL_STATE_DETECTED
+  category: Transition Terms
+  definition_short: Workflow event for detected tool-state on an elevated-risk path.
+  definition_operational: Occurs in FILTER_REVIEW when tool-state is present and VAL-02 classifies elevated boundary risk.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - FILTER_REVIEW
+  - TOOL_STATE_QUARANTINED
+  - tool_state_payload
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-003
+  preferred_label: VALIDATION_FAIL
+  category: Transition Terms
+  definition_short: Workflow event for failed mandatory validation.
+  definition_operational: Occurs when any of VAL-01, VAL-02, VAL-03, or VAL-04 fails and moves the path to OUTPUT_BLOCKED.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - INGEST_VALIDATE
+  - OUTPUT_BLOCKED
+  - Freshness / Receipt Validator
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-002
+  preferred_label: VALIDATION_PASS
+  category: Transition Terms
+  definition_short: Workflow event for successful mandatory validation.
+  definition_operational: Occurs when VAL-01, VAL-02, and VAL-03 pass and moves the path from INGEST_VALIDATE to FILTER_REVIEW.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - INGEST_VALIDATE
+  - FILTER_REVIEW
+  - Schema Validator
+  - Policy / Allowlist Validator
+  - Statement Provenance Validator
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-001
+  preferred_label: ALLOW
+  category: Decision Terms
+  definition_short: The artifact is admissible for the declared boundary scope only; no implied authority exists beyond that scope.
+  definition_operational: Used when all mandatory validators pass and no escalation condition exists. Release is within the declared scope only.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Gate Logic Record
+  - Boundary Defense Agent — Specification / Semantic Contract Record
+  related_terms:
+  - boundary_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-002
+  preferred_label: ALLOW_CONSTRAINED
+  category: Decision Terms
+  definition_short: The artifact is admissible under reduced scope, tighter observation, or explicit follow-up review.
+  definition_operational: Used when release is permitted but policy requires constrained handling or human review.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Gate Logic Record
+  - Boundary Defense Agent — Specification / Semantic Contract Record
+  related_terms:
+  - boundary_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-003
+  preferred_label: BLOCK
+  category: Decision Terms
+  definition_short: The artifact is inadmissible and SHALL NOT mutate governed state or gain boundary visibility.
+  definition_operational: Used for schema, policy, provenance, replay, or related inadmissibility conditions. Block may emit boundary_verdict and keep accepted head unchanged where required.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Gate Logic Record
+  - Boundary Defense Agent — Specification / Semantic Contract Record
+  related_terms:
+  - boundary_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-012
+  preferred_label: boundary_verdict
+  category: Decision Terms
+  definition_short: Output artifact that records a boundary decision.
+  definition_operational: Carries decision_id, verdict, reason_code, validator_results, statement_refs, and input_digest. It is emitted for blocking or release-linked decisions as required by the decision table and evidence contract.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Output Contract Record Set
+  - Boundary Defense Agent — Specification / Decision Table Record
+  - Boundary Defense Agent — Specification / Evidence Contract Record
+  related_terms:
+  - BoundaryDecisionRecord
+  - decision_id
+  - validator_results
+  - statement_refs
+  - reason_code
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-018
+  preferred_label: BoundaryDecisionRecord
+  category: Decision Terms
+  definition_short: Machine-readable form for a boundary decision record.
+  definition_operational: 'Canonical field skeleton: {decision_id, verdict, reason_code, validator_results[], statement_refs[], order_index}. It packages the boundary_verdict record shape for structured representation.'
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Machine-Readable Form Catalogue
+  - Boundary Defense Agent — Specification / Output Contract Record Set
+  - Boundary Defense Agent — Specification / Evidence Contract Record
+  related_terms:
+  - boundary_verdict
+  - decision_id
+  - validator_results
+  - statement_refs
+  - order_index
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-020
+  preferred_label: BoundaryIncidentRecord
+  category: Decision Terms
+  definition_short: Machine-readable form for incident record packaging.
+  definition_operational: 'Canonical field skeleton: {decision_id, fail_reason, hold_refs[], rollback_ref?, limitations[]}. It packages incident_report in structured representation.'
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Machine-Readable Form Catalogue
+  - Boundary Defense Agent — Specification / Output Contract Record Set
+  related_terms:
+  - incident_report
+  - fail_reason
+  - hold_refs
+  - rollback_ref
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-016
+  preferred_label: BoundaryInputEnvelope
+  category: Decision Terms
+  definition_short: Machine-readable form for ingress input packaging.
+  definition_operational: 'Canonical field skeleton: {request_id, source_id, artifact_type, payload_digest, schema_id, policy_profile_id}. It packages the ingress_request form in structured representation.'
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Machine-Readable Form Catalogue
+  - Boundary Defense Agent — Specification / Input Contract Record Set
+  related_terms:
+  - ingress_request
+  - payload_digest
+  - policy_hash
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-005
+  preferred_label: FAIL_CLOSED
+  category: Decision Terms
+  definition_short: The agent halts substantive boundary progression and emits an auditable failure state.
+  definition_operational: Used at critical risk or prerequisite violation, including CPW critical conditions and finalization-adjacent failure paths.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Gate Logic Record
+  - Boundary Defense Agent — Specification / Semantic Contract Record
+  related_terms:
+  - boundary_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-010
+  preferred_label: finalization_request
+  category: Decision Terms
+  definition_short: Decision object for finalization-relevant handling.
+  definition_operational: Carries op_type, state_hash, policy_hash, and measurement_ref. It is checked by the Evidence Chain Validator and the Freshness / Receipt Validator, with NONCOMPLIANT_HOLD as the default failure verdict.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Input Contract Record Set
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - FinalizationRequestEnvelope
+  - Evidence Chain Validator
+  - measurement_ref
+  - state_hash
+  - policy_hash
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-019
+  preferred_label: FinalizationRequestEnvelope
+  category: Decision Terms
+  definition_short: Machine-readable form for finalization request packaging.
+  definition_operational: 'Canonical field skeleton: {request_id, op_type, state_hash, policy_hash, measurement_ref}. It packages finalization_request for evidence-linked finalization handling.'
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Machine-Readable Form Catalogue
+  - Boundary Defense Agent — Specification / Input Contract Record Set
+  related_terms:
+  - finalization_request
+  - state_hash
+  - policy_hash
+  - measurement_ref
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-015
+  preferred_label: incident_report
+  category: Decision Terms
+  definition_short: Output artifact that records failure or hold handling.
+  definition_operational: Carries decision_id, fail_reason, hold_refs, optional rollback_ref, and limitations. It is emitted when finalization is blocked into NONCOMPLIANT_HOLD.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Output Contract Record Set
+  - Boundary Defense Agent — Specification / Decision Table Record
+  related_terms:
+  - NONCOMPLIANT_HOLD
+  - rollback_ref
+  - hold_refs
+  - fail_reason
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-007
+  preferred_label: ingress_request
+  category: Decision Terms
+  definition_short: Decision object for boundary input evaluation.
+  definition_operational: Created when input is received. Carries artifact_type, source_id, policy_profile_id, payload_digest, and schema_id for schema, policy, and source binding checks before downstream handling.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Input Contract Record Set
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - BoundaryInputEnvelope
+  - Schema Validator
+  - Policy / Allowlist Validator
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-009
+  preferred_label: output_release_request
+  category: Decision Terms
+  definition_short: Decision object for release of an output artifact.
+  definition_operational: Primary decision object on the release path. Release proceeds according to policy scope only when validator-driven conditions support ALLOW or ALLOW_CONSTRAINED handling.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Agent Specification Record
+  - Boundary Defense Agent — Specification / Gate Logic Record
+  related_terms:
+  - release_notice
+  - ALLOW
+  - ALLOW_CONSTRAINED
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-004
+  preferred_label: QUARANTINE
+  category: Decision Terms
+  definition_short: The artifact may be stored for inspection but remains non-executable and non-releasable.
+  definition_operational: Used for tool-state or authority ambiguity and for approval-required paths that lack explicit approval.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Gate Logic Record
+  - Boundary Defense Agent — Specification / Semantic Contract Record
+  related_terms:
+  - boundary_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-013
+  preferred_label: quarantine_notice
+  category: Decision Terms
+  definition_short: Output artifact that records quarantine handling.
+  definition_operational: Carries decision_id, quarantine_reason, activation_requirements, and optional approval_ref. It is emitted when tool-state or equivalent elevated-risk handling enters quarantine.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Output Contract Record Set
+  - Boundary Defense Agent — Specification / Decision Table Record
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - QUARANTINE
+  - approval_ref
+  - activation_requirements
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-006
+  preferred_label: READMIT
+  category: Decision Terms
+  definition_short: A previously blocked or quarantined path is re-opened only after explicit restoration evidence is attached.
+  definition_operational: Used at restoration after failed validators are remediated and the required validators, approvals, and anchors are restored.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Gate Logic Record
+  - Boundary Defense Agent — Specification / Semantic Contract Record
+  related_terms:
+  - boundary_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-014
+  preferred_label: release_notice
+  category: Decision Terms
+  definition_short: Output artifact that records release handling.
+  definition_operational: Carries decision_id, release_scope, policy_hash, and optional evidence_refs. It is prepared on the ready-for-release path and binds release to policy scope.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Output Contract Record Set
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - release_scope
+  - policy_hash
+  - ALLOW
+  - ALLOW_CONSTRAINED
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-011
+  preferred_label: statement_usage_request
+  category: Decision Terms
+  definition_short: Decision object for use of a statement in gate logic.
+  definition_operational: Carries statement_id, tsa_label, source_class, and scope_id. It is checked by the Statement Provenance Validator, and missing label or inadmissible source handling blocks gate use.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Input Contract Record Set
+  - Boundary Defense Agent — Specification / Decision Table Record
+  related_terms:
+  - Statement record
+  - statement_id
+  - tsa_label
+  - source_class
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-008
+  preferred_label: tool_state_payload
+  category: Decision Terms
+  definition_short: Decision object for a capability-bearing tool-state payload.
+  definition_operational: Used for a capability-bearing payload associated with a tool or tool-derived state. Structural restoration does not grant execution authority, and the default failure verdict is QUARANTINE until required approval is evidenced.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Semantic Core Summary
+  - Boundary Defense Agent — Specification / Operational Definitions
+  - Boundary Defense Agent — Specification / Input Contract Record Set
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - ToolStateEnvelope
+  - QUARANTINE
+  - approval_ref
+  synonyms:
+  - Tool-state payload
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-017
+  preferred_label: ToolStateEnvelope
+  category: Decision Terms
+  definition_short: Machine-readable form for tool-state packaging.
+  definition_operational: 'Canonical field skeleton: {request_id, tool_ids[], claimed_permissions[], payload_digest, approval_required=true}. It packages tool_state_payload for structured handling.'
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Machine-Readable Form Catalogue
+  - Boundary Defense Agent — Specification / Input Contract Record Set
+  related_terms:
+  - tool_state_payload
+  - approval_ref
+  - payload_digest
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VAL-006
+  preferred_label: Approval Validator
+  category: Validation Terms
+  definition_short: Checks explicit operator approval for tool-state activation.
+  definition_operational: Keeps the path in QUARANTINE until explicit approval is evidenced through approval_ref.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Validator Catalogue
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - validator_results
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VAL-007
+  preferred_label: CPW Band Validator
+  category: Validation Terms
+  definition_short: Confirms the band-driven action envelope.
+  definition_operational: Detects CRITICAL band conditions and produces FAIL_CLOSED when the risk band requires it.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Validator Catalogue
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - validator_results
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VAL-005
+  preferred_label: Evidence Chain Validator
+  category: Validation Terms
+  definition_short: Checks evidence_ok, evidence_ref, and replay anchor conditions.
+  definition_operational: Used in finalization review. It produces NONCOMPLIANT_HOLD or FAIL_CLOSED at finalization failure.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Validator Catalogue
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - validator_results
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VAL-004
+  preferred_label: Freshness / Receipt Validator
+  category: Validation Terms
+  definition_short: Checks strict increase and accepted-head binding.
+  definition_operational: Used for replay and downgrade resistance. It blocks replay attempts and participates in finalization and no-escalation path checks.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Validator Catalogue
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - validator_results
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VAL-002
+  preferred_label: Policy / Allowlist Validator
+  category: Validation Terms
+  definition_short: Checks policy compatibility and allowlisted types/tools.
+  definition_operational: Runs on policy compatibility and allowlist conditions and produces BLOCK or QUARANTINE for disallowed classes.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Validator Catalogue
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - validator_results
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VAL-008
+  preferred_label: Reconstruction Validator
+  category: Validation Terms
+  definition_short: Confirms evidence sufficiency for offline replay.
+  definition_operational: Supports READMIT and finalization by confirming that replay evidence is sufficient.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Validator Catalogue
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - validator_results
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VAL-001
+  preferred_label: Schema Validator
+  category: Validation Terms
+  definition_short: Confirms required structure and field typing.
+  definition_operational: Runs on malformed ingress or tool-state payloads and produces BLOCK on schema failure.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Validator Catalogue
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - validator_results
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VAL-003
+  preferred_label: Statement Provenance Validator
+  category: Validation Terms
+  definition_short: Checks statement_id, tsa_label, source_class, and scope.
+  definition_operational: Used on statement_usage_request and unlabeled gate logic handling; produces BLOCK plus conflict evidence for inadmissible statement use.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Validator Catalogue
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - validator_results
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-005
+  preferred_label: Accepted anchor
+  category: Evidence Terms
+  definition_short: Last accepted freshness or verification watermark used to reject replay and downgrade attempts.
+  definition_operational: Used in replay resistance, finalization rules, and readmission control. Finalization may proceed only if evidence_ok=true and VERIF_COUNTER is greater than the accepted anchor.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Operational Definitions
+  - Boundary Defense Agent — Specification / Decision Table Record
+  - Boundary Defense Agent — Specification / Temporal / Ordering Contract
+  related_terms:
+  - accepted head
+  - VERIF_COUNTER
+  - evidence_ok
+  synonyms:
+  - accepted_anchor
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-006
+  preferred_label: accepted head
+  category: Evidence Terms
+  definition_short: Accepted-head state kept unchanged on replay or missing receipt conditions.
+  definition_operational: Used by the Freshness / Receipt Validator, failure semantics, and accepted-head visibility rule to express replay resistance and stable acceptance state.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Decision Table Record
+  - Boundary Defense Agent — Specification / Validator Catalogue
+  - Boundary Defense Agent — Specification / Failure Semantics Record
+  - Boundary Defense Agent — Specification / Assumption-to-Obligation Closure
+  - Boundary Defense Agent — Specification / Assurance Profile
+  related_terms:
+  - Accepted anchor
+  - accepted-head visibility
+  - VERIF_COUNTER
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-031
+  preferred_label: activation_requirements
+  category: Evidence Terms
+  definition_short: Requirements attached to quarantine activation and release eligibility.
+  definition_operational: Mandatory in quarantine_notice. The field expresses what must be restored or evidenced before a quarantined path can move toward release.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Output Contract Record Set
+  related_terms:
+  - quarantine_notice
+  - approval_ref
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-026
+  preferred_label: approval_ref
+  category: Evidence Terms
+  definition_short: Approval evidence field for tool-state activation or release.
+  definition_operational: Conditional in the evidence contract and optional in quarantine_notice. Approval Validator requires it for approval-required tool-state handling before release can proceed.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Output Contract Record Set
+  - Boundary Defense Agent — Specification / Evidence Contract Record
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  related_terms:
+  - Approval Validator
+  - APPROVAL_GRANTED
+  - tool_state_payload
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - Do not confuse approval_ref with the transition events APPROVAL_GRANTED or APPROVAL_DENIED.
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-015
+  preferred_label: boundary_side
+  category: Evidence Terms
+  definition_short: Evidence field that records which boundary side the decision concerns.
+  definition_operational: Mandatory in the evidence contract and used in minimum reconstruction claims to explain persistence or transport authorization context.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Evidence Contract Record
+  related_terms:
+  - Boundary
+  - decision_id
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-032
+  preferred_label: decision_object
+  category: Evidence Terms
+  definition_short: Evidence field that records which decision object was evaluated.
+  definition_operational: Mandatory in the evidence contract. It records the evaluated decision object so a third party can determine what artifact was evaluated and reconstruct the decision in context.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Evidence Contract Record
+  related_terms:
+  - ingress_request
+  - tool_state_payload
+  - finalization_request
+  - statement_usage_request
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-009
+  preferred_label: decision_id
+  category: Evidence Terms
+  definition_short: Identity field for a decision and for decision-linked artifacts.
+  definition_operational: Mandatory in boundary_verdict and in the evidence contract. Also appears in release, quarantine, and incident records and in machine-readable forms.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Output Contract Record Set
+  - Boundary Defense Agent — Specification / Evidence Contract Record
+  - Boundary Defense Agent — Specification / Machine-Readable Form Catalogue
+  related_terms:
+  - boundary_verdict
+  - BoundaryDecisionRecord
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-007
+  preferred_label: evidence_ok
+  category: Evidence Terms
+  definition_short: Boolean result returned by the evidence gate when finalization prerequisites are checked.
+  definition_operational: Used by the Evidence Chain Validator, decision table, and finalization rules. A false value blocks compliance-claimed finalization.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Operational Definitions
+  - Boundary Defense Agent — Specification / Decision Table Record
+  - Boundary Defense Agent — Specification / Validator Catalogue
+  - Boundary Defense Agent — Specification / Temporal / Ordering Contract
+  related_terms:
+  - EVIDENCE_OK
+  - EVIDENCE_FAIL
+  - evidence gate
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - Do not confuse the evidence field evidence_ok with the workflow event EVIDENCE_OK.
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-012
+  preferred_label: evidence_ref
+  category: Evidence Terms
+  definition_short: Evidence reference field used for finalization-linked evidence.
+  definition_operational: Conditional in the evidence contract and checked by the Evidence Chain Validator for finalization handling.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Evidence Contract Record
+  - Boundary Defense Agent — Specification / Validator Catalogue
+  related_terms:
+  - Evidence Chain Validator
+  - verif_counter_anchor
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-030
+  preferred_label: fail_reason
+  category: Evidence Terms
+  definition_short: Failure reason field in incident handling.
+  definition_operational: Mandatory in incident_report so failure-driven hold or remediation handling can be reconstructed.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Output Contract Record Set
+  - Boundary Defense Agent — Specification / Machine-Readable Form Catalogue
+  related_terms:
+  - incident_report
+  - reason_code
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-025
+  preferred_label: hash_curr
+  category: Evidence Terms
+  definition_short: Current-link integrity field for evidence continuity.
+  definition_operational: Mandatory in the evidence contract and paired with hash_prev for externally checkable continuity.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Evidence Contract Record
+  related_terms:
+  - hash_prev
+  - append-only evidence ledger
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-024
+  preferred_label: hash_prev
+  category: Evidence Terms
+  definition_short: Previous-link integrity field for evidence continuity.
+  definition_operational: Mandatory in the evidence contract to support append-only or tamper-evident continuity with externally checkable linkage.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Evidence Contract Record
+  related_terms:
+  - hash_curr
+  - append-only evidence ledger
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-028
+  preferred_label: hold_refs
+  category: Evidence Terms
+  definition_short: References to hold-linked records in incident handling.
+  definition_operational: Mandatory in incident_report and used when finalization is blocked into NONCOMPLIANT_HOLD.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Output Contract Record Set
+  related_terms:
+  - incident_report
+  - NONCOMPLIANT_HOLD
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-016
+  preferred_label: input_digest
+  category: Evidence Terms
+  definition_short: Digest field for the evaluated input in boundary decision evidence.
+  definition_operational: Mandatory in boundary_verdict and in the evidence contract so the evaluated artifact can be reconstructed and compared without ambiguity.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Output Contract Record Set
+  - Boundary Defense Agent — Specification / Evidence Contract Record
+  related_terms:
+  - payload_digest
+  - Boundary artifact
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-020
+  preferred_label: measurement_ref
+  category: Evidence Terms
+  definition_short: Measurement reference attached to finalization handling.
+  definition_operational: Mandatory in finalization_request and FinalizationRequestEnvelope for evidence-linked finalization review.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Input Contract Record Set
+  - Boundary Defense Agent — Specification / Machine-Readable Form Catalogue
+  related_terms:
+  - finalization_request
+  - state_hash
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-023
+  preferred_label: order_index
+  category: Evidence Terms
+  definition_short: Monotonically increasing order field for boundary decisions.
+  definition_operational: Each boundary decision receives a monotonically increasing order_index within its session or scope. The field is also produced by the decision engine.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Evidence Contract Record
+  - Boundary Defense Agent — Specification / Temporal / Ordering Contract
+  - Boundary Defense Agent — Specification / Machine-Readable Form Catalogue
+  related_terms:
+  - session_id
+  - decision_id
+  - BoundaryDecisionRecord
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-017
+  preferred_label: payload_digest
+  category: Evidence Terms
+  definition_short: Digest field for request payloads in input envelopes.
+  definition_operational: Mandatory in ingress_request and tool_state_payload contracts and in machine-readable input forms. It binds request identity to the evaluated payload.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Input Contract Record Set
+  - Boundary Defense Agent — Specification / Machine-Readable Form Catalogue
+  related_terms:
+  - input_digest
+  - ingress_request
+  - tool_state_payload
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-018
+  preferred_label: policy_hash
+  category: Evidence Terms
+  definition_short: Hash field that binds policy state into decision or finalization handling.
+  definition_operational: Mandatory in finalization_request and release_notice, and required by the assumption closure for every decision and evidence record when the policy profile is active and stable.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Input Contract Record Set
+  - Boundary Defense Agent — Specification / Output Contract Record Set
+  - Boundary Defense Agent — Specification / Assumption-to-Obligation Closure
+  related_terms:
+  - policy profile
+  - finalization_request
+  - release_notice
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-022
+  preferred_label: reason_code
+  category: Evidence Terms
+  definition_short: Recorded reason field for a boundary decision.
+  definition_operational: Mandatory in boundary_verdict and the evidence contract so an auditable failure or release reason can be reconstructed.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Output Contract Record Set
+  - Boundary Defense Agent — Specification / Evidence Contract Record
+  related_terms:
+  - decision_id
+  - verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-027
+  preferred_label: release_scope
+  category: Evidence Terms
+  definition_short: Scope field attached to release handling.
+  definition_operational: Mandatory in release_notice. It binds the release to policy-defined scope and supports ALLOW or ALLOW_CONSTRAINED handling.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Output Contract Record Set
+  - Boundary Defense Agent — Specification / Decision Table Record
+  related_terms:
+  - release_notice
+  - ALLOW
+  - ALLOW_CONSTRAINED
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-029
+  preferred_label: rollback_ref
+  category: Evidence Terms
+  definition_short: Reference to a rollback action or target.
+  definition_operational: Optional in incident_report and conditional in the evidence contract for recovery actions. Rollback may target the last clean boundary state when FAIL_CLOSED occurs after a LASTCLEAN-equivalent checkpoint.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Output Contract Record Set
+  - Boundary Defense Agent — Specification / Evidence Contract Record
+  - Boundary Defense Agent — Specification / Temporal / Ordering Contract
+  related_terms:
+  - Rollback operation
+  - FAIL_CLOSED
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-014
+  preferred_label: session_id
+  category: Evidence Terms
+  definition_short: Session identifier in the evidence contract.
+  definition_operational: Mandatory in the evidence contract so a third party can determine scope and order of boundary decisions within a session or equivalent scope.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Evidence Contract Record
+  related_terms:
+  - order_index
+  - decision_id
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-004
+  preferred_label: source_class
+  category: Evidence Terms
+  definition_short: Admissibility class assigned to the source of a gate-relevant statement.
+  definition_operational: Used with statement_id and tsa_label to determine whether a statement is admissible for gate logic.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Operational Definitions
+  - Boundary Defense Agent — Specification / Input Contract Record Set
+  - Boundary Defense Agent — Specification / Decision Table Record
+  related_terms:
+  - Statement record
+  - tsa_label
+  - Statement Provenance Validator
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-019
+  preferred_label: state_hash
+  category: Evidence Terms
+  definition_short: Hash field for the state under finalization handling.
+  definition_operational: Mandatory in finalization_request and FinalizationRequestEnvelope so evidence-linked finalization can bind the evaluated state.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Input Contract Record Set
+  - Boundary Defense Agent — Specification / Machine-Readable Form Catalogue
+  related_terms:
+  - finalization_request
+  - measurement_ref
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-001
+  preferred_label: Statement record
+  category: Evidence Terms
+  definition_short: Gate-relevant claim identified by statement_id and accompanied by tsa_label and source_class so it can be used in auditable decision logic.
+  definition_operational: Used when gate logic consumes claims. The record binds statement identity, label, and source admissibility for auditable use.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Operational Definitions
+  - Boundary Defense Agent — Specification / Input Contract Record Set
+  related_terms:
+  - statement_id
+  - tsa_label
+  - source_class
+  - statement_usage_request
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-002
+  preferred_label: statement_id
+  category: Evidence Terms
+  definition_short: Stable identity for a gate-relevant statement.
+  definition_operational: Statement ordering requires statement_id identity to remain stable and decision references to point only to prior or current statement records.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Operational Definitions
+  - Boundary Defense Agent — Specification / Input Contract Record Set
+  - Boundary Defense Agent — Specification / Temporal / Ordering Contract
+  related_terms:
+  - Statement record
+  - statement_refs
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-011
+  preferred_label: statement_refs
+  category: Evidence Terms
+  definition_short: References to statement records used by a decision.
+  definition_operational: Mandatory in boundary_verdict and evidence records. Statement ordering requires decision references to point only to prior or current statement records.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Output Contract Record Set
+  - Boundary Defense Agent — Specification / Evidence Contract Record
+  - Boundary Defense Agent — Specification / Temporal / Ordering Contract
+  related_terms:
+  - Statement record
+  - statement_id
+  - BoundaryDecisionRecord
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-003
+  preferred_label: tsa_label
+  category: Evidence Terms
+  definition_short: Explicit label attached to a statement record to mark its status for gate use.
+  definition_operational: Used in statement records and statement_usage_request. Missing tsa_label blocks gate use and yields conflict handling.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Operational Definitions
+  - Boundary Defense Agent — Specification / Input Contract Record Set
+  - Boundary Defense Agent — Specification / Decision Table Record
+  related_terms:
+  - Statement record
+  - source_class
+  - Statement Provenance Validator
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-010
+  preferred_label: validator_results
+  category: Evidence Terms
+  definition_short: Recorded results of validator execution.
+  definition_operational: Mandatory in boundary_verdict and evidence records. The workflow attaches validator_results on validation pass, updates it on approval or release preparation, and passes it to the evidence gate.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Output Contract Record Set
+  - Boundary Defense Agent — Specification / Workflow / State-Transition Record
+  - Boundary Defense Agent — Specification / Evidence Contract Record
+  related_terms:
+  - decision_id
+  - Schema Validator
+  - BoundaryDecisionRecord
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-021
+  preferred_label: verdict
+  category: Evidence Terms
+  definition_short: Recorded decision token emitted by the agent.
+  definition_operational: Mandatory in boundary_verdict and the evidence contract. The semantic verdict set is closed to ALLOW, ALLOW_CONSTRAINED, BLOCK, QUARANTINE, FAIL_CLOSED, NONCOMPLIANT_HOLD, and READMIT.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Output Contract Record Set
+  - Boundary Defense Agent — Specification / Evidence Contract Record
+  - Boundary Defense Agent — Specification / Validator Catalogue
+  related_terms:
+  - ALLOW
+  - BLOCK
+  - QUARANTINE
+  - FAIL_CLOSED
+  - READMIT
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-008
+  preferred_label: VERIF_COUNTER
+  category: Evidence Terms
+  definition_short: Strictly increasing verification counter used, where deployed, to prevent replay at finalization time.
+  definition_operational: Used in finalization rules and decision logic. Finalization may proceed only when the counter strictly exceeds the accepted anchor.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Operational Definitions
+  - Boundary Defense Agent — Specification / Decision Table Record
+  - Boundary Defense Agent — Specification / Temporal / Ordering Contract
+  related_terms:
+  - Accepted anchor
+  - COUNTER_REPLAY
+  - verif_counter_anchor
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVI-013
+  preferred_label: verif_counter_anchor
+  category: Evidence Terms
+  definition_short: Counter-anchor field used in finalization-linked evidence handling.
+  definition_operational: Conditional in the evidence contract for finalization and paired with evidence_ref by the external assurance component and VAL-05.
+  normative_status: normative
+  source_refs:
+  - Boundary Defense Agent — Specification / Evidence Contract Record
+  related_terms:
+  - VERIF_COUNTER
+  - Accepted anchor
+  - evidence_ref
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: OPT-002
+  preferred_label: CPW numeric profile
+  category: Optionality Terms
+  definition_short: Policy-variable numeric profile for CPW banding.
+  definition_operational: The Optionality Register permits variability in the numeric profile, but banded escalation and CRITICAL to FAIL_CLOSED handling remain mandatory.
+  normative_status: implementation_optional
+  source_refs:
+  - Boundary Defense Agent — Specification / Optionality Register
+  related_terms:
+  - CPW
+  - FAIL_CLOSED
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: OPT-001
+  preferred_label: External assurance component
+  category: Optionality Terms
+  definition_short: Optional for non-finalizing audit-only operation; mandatory for compliance-claimed finalization and persisted release claims.
+  definition_operational: Appears in the Optionality Register and the escalation path. The component is optional only in non-finalizing audit-only operation and required where compliance-claimed finalization or persisted release claims are made.
+  normative_status: implementation_optional
+  source_refs:
+  - Boundary Defense Agent — Specification / Optionality Register
+  - Boundary Defense Agent — Specification / Agent Authority Record
+  related_terms:
+  - human/operator approval channel
+  - evidence_ref
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: OPT-003
+  preferred_label: Operator approval for non-tool artifacts
+  category: Optionality Terms
+  definition_short: Optional approval requirement for non-tool artifacts unless policy elevates a class to approval-required.
+  definition_operational: This optionality applies only where policy elevates a class. It does not relax the mandatory approval requirement for approval-required tool-state activation.
+  normative_status: implementation_optional
+  source_refs:
+  - Boundary Defense Agent — Specification / Optionality Register
+  related_terms:
+  - Approval Validator
+  - human/operator approval channel
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: OPT-004
+  preferred_label: Rollback operation
+  category: Optionality Terms
+  definition_short: Optional rollback if no clean checkpoint exists; FAIL_CLOSED remains mandatory.
+  definition_operational: Rollback is optional in the Optionality Register, but rollback behavior is still governed by the temporal contract and failure semantics when a clean checkpoint exists.
+  normative_status: implementation_optional
+  source_refs:
+  - Boundary Defense Agent — Specification / Optionality Register
+  - Boundary Defense Agent — Specification / Temporal / Ordering Contract
+  - Boundary Defense Agent — Specification / Failure Semantics Record
+  related_terms:
+  - rollback_ref
+  - FAIL_CLOSED
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true

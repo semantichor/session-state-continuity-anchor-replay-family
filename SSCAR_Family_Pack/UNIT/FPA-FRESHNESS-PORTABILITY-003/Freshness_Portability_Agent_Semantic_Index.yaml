@@ -1,0 +1,2294 @@
+metadata:
+  agent_name: Freshness Portability Agent
+  agent_version: '1.0'
+  index_version: '2.0'
+  source_documents:
+  - Freshness_Portability_Agent_Specification
+  derivation_scope: authorized public corpus only
+  publication_format:
+  - yaml
+  - json
+  authorized_public_corpus:
+  - Freshness_Portability_Agent_Specification
+  excluded_sources_statement: Only the authorized public corpus is used.
+entries:
+- term_id: ID-002
+  preferred_label: FPA-FRESHNESS-PORTABILITY-003
+  category: Identity Terms
+  definition_short: Agent identity assigned to the Freshness Portability Agent.
+  definition_operational: This identifier binds the canonical name and the agent record used across the specification and machine-readable forms.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification Header Table
+  - Freshness Portability Agent — Specification §4 Agent Specification Record
+  related_terms:
+  - Freshness Portability Agent
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: ID-001
+  preferred_label: Freshness Portability Agent
+  category: Identity Terms
+  definition_short: Strict freshness-governed control for import acceptance, receipt anchoring, watermark advancement, restoration eligibility, quarantine, and readmission.
+  definition_operational: The agent governs strictly increasing freshness acceptance across sources and devices. It evaluates imports, anchors accepted receipts, advances the acceptance watermark, and controls restoration eligibility without directly executing restore or tool activation.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §1 Normative Status and Scope
+  - Freshness Portability Agent — Specification §2 Agent Overview
+  related_terms:
+  - source_id
+  - Acceptance watermark
+  - Import Receipt Record (IRR)
+  - RESTORATION_ELIGIBLE
+  - QUARANTINE
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - The specification is execution-neutral.
+  - Tool activation and direct restore execution remain outside the agent's authority.
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: ID-005
+  preferred_label: agent_id
+  category: Identity Terms
+  definition_short: Identity of the emitting agent.
+  definition_operational: This field identifies the agent that emits the verdict and is produced by agent binding in the evidence package and machine-readable forms.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §11 Evidence Contract / `agent_id`
+  - Freshness Portability Agent — Specification §12 Machine-Readable Form Catalogue / MF-01
+  related_terms:
+  - Freshness Portability Agent
+  - decision_id
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: ID-004
+  preferred_label: ledger_uuid
+  category: Identity Terms
+  definition_short: The ledger identity bound to the source and included in verdict, receipt, and watermark records.
+  definition_operational: The term binds the evaluated source ledger to verdict, receipt, watermark, and contract records throughout the specification.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §3 Core Terms and Public Definitions
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: ID-006
+  preferred_label: policy_id / policy_version
+  category: Identity Terms
+  definition_short: Applied local policy snapshot.
+  definition_operational: These fields identify the policy basis applied on the decision path and are produced by the Policy Compatibility Validator.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §5 Agent Authority Record
+  - Freshness Portability Agent — Specification §11 Evidence Contract / `policy_id` / `policy_version`
+  related_terms:
+  - VAL-004 - Policy Compatibility Validator
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: ID-003
+  preferred_label: source_id
+  category: Identity Terms
+  definition_short: The stable source identity used to scope freshness comparison, authority, and receipt linkage.
+  definition_operational: The term scopes freshness comparison, authority, receipt linkage, and contract fields across acceptance, restore, and evidence paths.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §3 Core Terms and Public Definitions
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: STA-004
+  preferred_label: FRESHNESS_ELIGIBLE
+  category: State Terms
+  definition_short: The strictly increasing freshness condition is satisfied.
+  definition_operational: 'State token S3. Allowed outbound transitions: `IRRAppended -> S4`'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §8 Workflow / State-Transition Record / S3
+  related_terms:
+  - IRRAppended -> S4
+  synonyms:
+  - S3
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: STA-001
+  preferred_label: IDLE
+  category: State Terms
+  definition_short: No active evaluation; the local watermark is the current reference.
+  definition_operational: 'State token S0. Allowed outbound transitions: `TransferPacketReceived -> S1`'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §8 Workflow / State-Transition Record / S0
+  related_terms:
+  - TransferPacketReceived -> S1
+  synonyms:
+  - S0
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: STA-005
+  preferred_label: IRR_COMMITTED
+  category: State Terms
+  definition_short: The receipt has been durably appended to the local journal.
+  definition_operational: 'State token S4. Allowed outbound transitions: `WatermarkPersisted -> S5`'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §8 Workflow / State-Transition Record / S4
+  related_terms:
+  - WatermarkPersisted -> S5
+  synonyms:
+  - S4
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: STA-008
+  preferred_label: QUARANTINED
+  category: State Terms
+  definition_short: The case is suspended pending new evidence, a new policy basis, or operator review.
+  definition_operational: 'State token S7. Allowed outbound transitions: `ReadmissionApproved -> S2`; `ReadmissionRejected -> S8`'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §8 Workflow / State-Transition Record / S7
+  related_terms:
+  - ReadmissionApproved -> S2
+  - ReadmissionRejected -> S8
+  synonyms:
+  - S7
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - State token S7; distinct from the semantic verdict QUARANTINE.
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: STA-002
+  preferred_label: RECEIVED
+  category: State Terms
+  definition_short: The packet has been received and framed for validation.
+  definition_operational: 'State token S1. Allowed outbound transitions: `StructureValid -> S2`; `StructureInvalid -> S8`'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §8 Workflow / State-Transition Record / S1
+  related_terms:
+  - StructureValid -> S2
+  - StructureInvalid -> S8
+  synonyms:
+  - S1
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: STA-009
+  preferred_label: REJECTED
+  category: State Terms
+  definition_short: The import or restoration path has been denied with no effect.
+  definition_operational: 'State token S8. Allowed outbound transitions: `NewPacket -> S1`'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §8 Workflow / State-Transition Record / S8
+  related_terms:
+  - NewPacket -> S1
+  synonyms:
+  - S8
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: STA-007
+  preferred_label: RESTORATION_ELIGIBLE
+  category: State Terms
+  definition_short: The accepted head is eligible for the restore service.
+  definition_operational: 'State token S6. Allowed outbound transitions: `RestoreAdmitted -> S0`; `RestoreDenied -> S8`'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §8 Workflow / State-Transition Record / S6
+  related_terms:
+  - RestoreAdmitted -> S0
+  - RestoreDenied -> S8
+  synonyms:
+  - S6
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - State token S6; do not collapse with the semantic verdict of the same label.
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: STA-003
+  preferred_label: VERIFIED
+  category: State Terms
+  definition_short: Preliminary `SSM` / hash / policy checks have passed.
+  definition_operational: 'State token S2. Allowed outbound transitions: `FreshnessPass -> S3`; `FreshnessFail -> S8`; `EvidencePending -> S7`'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §8 Workflow / State-Transition Record / S2
+  related_terms:
+  - FreshnessPass -> S3
+  - FreshnessFail -> S8
+  - EvidencePending -> S7
+  synonyms:
+  - S2
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: STA-006
+  preferred_label: WATERMARK_COMMITTED
+  category: State Terms
+  definition_short: The accepted watermark has been updated.
+  definition_operational: 'State token S5. Allowed outbound transitions: `RestoreRequest + GenesisConfirmed -> S6`'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §8 Workflow / State-Transition Record / S5
+  related_terms:
+  - RestoreRequest + GenesisConfirmed -> S6
+  synonyms:
+  - S5
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-006
+  preferred_label: EvidencePending
+  category: Transition Terms
+  definition_short: Validated transition token used by the closed state machine.
+  definition_operational: This transition moves the workflow from VERIFIED toward S7 under the allowed outbound transitions in the state record.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §8 Workflow / State-Transition Record
+  related_terms:
+  - VERIFIED
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-005
+  preferred_label: FreshnessFail
+  category: Transition Terms
+  definition_short: Validated transition token used by the closed state machine.
+  definition_operational: This transition moves the workflow from VERIFIED toward S8 under the allowed outbound transitions in the state record.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §8 Workflow / State-Transition Record
+  related_terms:
+  - VERIFIED
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-004
+  preferred_label: FreshnessPass
+  category: Transition Terms
+  definition_short: Validated transition token used by the closed state machine.
+  definition_operational: This transition moves the workflow from VERIFIED toward S3 under the allowed outbound transitions in the state record.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §8 Workflow / State-Transition Record
+  related_terms:
+  - VERIFIED
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-007
+  preferred_label: IRRAppended
+  category: Transition Terms
+  definition_short: Validated transition token used by the closed state machine.
+  definition_operational: This transition moves the workflow from FRESHNESS_ELIGIBLE toward S4 under the allowed outbound transitions in the state record.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §8 Workflow / State-Transition Record
+  related_terms:
+  - FRESHNESS_ELIGIBLE
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-014
+  preferred_label: NewPacket
+  category: Transition Terms
+  definition_short: Validated transition token used by the closed state machine.
+  definition_operational: This transition moves the workflow from REJECTED toward S1 under the allowed outbound transitions in the state record.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §8 Workflow / State-Transition Record
+  related_terms:
+  - REJECTED
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-012
+  preferred_label: ReadmissionApproved
+  category: Transition Terms
+  definition_short: Validated transition token used by the closed state machine.
+  definition_operational: This transition moves the workflow from QUARANTINED toward S2 under the allowed outbound transitions in the state record.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §8 Workflow / State-Transition Record
+  related_terms:
+  - QUARANTINED
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-013
+  preferred_label: ReadmissionRejected
+  category: Transition Terms
+  definition_short: Validated transition token used by the closed state machine.
+  definition_operational: This transition moves the workflow from QUARANTINED toward S8 under the allowed outbound transitions in the state record.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §8 Workflow / State-Transition Record
+  related_terms:
+  - QUARANTINED
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-010
+  preferred_label: RestoreAdmitted
+  category: Transition Terms
+  definition_short: Validated transition token used by the closed state machine.
+  definition_operational: This transition moves the workflow from RESTORATION_ELIGIBLE toward S0 under the allowed outbound transitions in the state record.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §8 Workflow / State-Transition Record
+  related_terms:
+  - RESTORATION_ELIGIBLE
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-011
+  preferred_label: RestoreDenied
+  category: Transition Terms
+  definition_short: Validated transition token used by the closed state machine.
+  definition_operational: This transition moves the workflow from RESTORATION_ELIGIBLE toward S8 under the allowed outbound transitions in the state record.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §8 Workflow / State-Transition Record
+  related_terms:
+  - RESTORATION_ELIGIBLE
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-009
+  preferred_label: RestoreRequest + GenesisConfirmed
+  category: Transition Terms
+  definition_short: Combined restore trigger from WATERMARK_COMMITTED to RESTORATION_ELIGIBLE.
+  definition_operational: This transition requires a RestoreRequest together with GenesisConfirmed before the workflow may move from WATERMARK_COMMITTED to the RESTORATION_ELIGIBLE state.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §8 Workflow / State-Transition Record
+  related_terms:
+  - RestoreRequest
+  - GenesisConfirmed
+  - WATERMARK_COMMITTED
+  - RESTORATION_ELIGIBLE
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-003
+  preferred_label: StructureInvalid
+  category: Transition Terms
+  definition_short: Validated transition token used by the closed state machine.
+  definition_operational: This transition moves the workflow from RECEIVED toward S8 under the allowed outbound transitions in the state record.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §8 Workflow / State-Transition Record
+  related_terms:
+  - RECEIVED
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-002
+  preferred_label: StructureValid
+  category: Transition Terms
+  definition_short: Validated transition token used by the closed state machine.
+  definition_operational: This transition moves the workflow from RECEIVED toward S2 under the allowed outbound transitions in the state record.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §8 Workflow / State-Transition Record
+  related_terms:
+  - RECEIVED
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-001
+  preferred_label: TransferPacketReceived
+  category: Transition Terms
+  definition_short: Validated transition token used by the closed state machine.
+  definition_operational: This transition moves the workflow from IDLE toward S1 under the allowed outbound transitions in the state record.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §8 Workflow / State-Transition Record
+  related_terms:
+  - IDLE
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TRN-008
+  preferred_label: WatermarkPersisted
+  category: Transition Terms
+  definition_short: Validated transition token used by the closed state machine.
+  definition_operational: This transition moves the workflow from IRR_COMMITTED toward S5 under the allowed outbound transitions in the state record.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §8 Workflow / State-Transition Record
+  related_terms:
+  - IRR_COMMITTED
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-101
+  preferred_label: ACCEPT
+  category: Decision Terms
+  definition_short: All constitutive conditions pass and the agent may emit APPEND_IRR.
+  definition_operational: Gate class = RELEASE. Acceptance becomes effective only through the receipt path declared in the specification.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §14 Semantic Contract
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-201
+  preferred_label: APPEND_IRR
+  category: Decision Terms
+  definition_short: Operational action that requests durable receipt append for an accepted import.
+  definition_operational: This action is part of the operational action set and is emitted only on the gate paths that authorize APPEND_IRR.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §13 Gate Logic
+  - Freshness Portability Agent — Specification §6 Decision Table
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-302
+  preferred_label: BLOCK
+  category: Decision Terms
+  definition_short: Gate class that supports REJECT and FAIL_CLOSED.
+  definition_operational: The permitted blocking actions are REJECT_STALE, REJECT_INVALID, DENY_RESTORE, and BLOCK_TOOL_STATE, with no downstream restorative mutation.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §13 Gate Logic
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-208
+  preferred_label: BLOCK_TOOL_STATE
+  category: Decision Terms
+  definition_short: Operational action that blocks tool-state activation outside agent authority.
+  definition_operational: This action is part of the operational action set and is emitted only on the gate paths that authorize BLOCK_TOOL_STATE.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §13 Gate Logic
+  - Freshness Portability Agent — Specification §6 Decision Table
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-206
+  preferred_label: DENY_RESTORE
+  category: Decision Terms
+  definition_short: Operational action that blocks restore admission on the restore path.
+  definition_operational: This action is part of the operational action set and is emitted only on the gate paths that authorize DENY_RESTORE.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §13 Gate Logic
+  - Freshness Portability Agent — Specification §6 Decision Table
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-303
+  preferred_label: ESCALATION
+  category: Decision Terms
+  definition_short: Gate class that supports QUARANTINE.
+  definition_operational: The operational action is OPEN_QUARANTINE_CASE for operator or policy review.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §13 Gate Logic
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-106
+  preferred_label: FAIL_CLOSED
+  category: Decision Terms
+  definition_short: If the constitutive conditions are not fully satisfied, the effect is blocked.
+  definition_operational: Concrete actions include REJECT_INVALID, DENY_RESTORE, and BLOCK_TOOL_STATE. Gate class = BLOCK.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §14 Semantic Contract
+  related_terms: []
+  synonyms: []
+  non_synonyms:
+  - REJECT
+  - QUARANTINE
+  - READMIT
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-205
+  preferred_label: ISSUE_RESTORE_ADMISSION_TOKEN
+  category: Decision Terms
+  definition_short: Operational action that emits the restore admission token for a restore-eligible accepted head.
+  definition_operational: This action is part of the operational action set and is emitted only on the gate paths that authorize ISSUE_RESTORE_ADMISSION_TOKEN.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §13 Gate Logic
+  - Freshness Portability Agent — Specification §6 Decision Table
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-204
+  preferred_label: OPEN_QUARANTINE_CASE
+  category: Decision Terms
+  definition_short: Operational action that opens a suspended case for operator or policy review.
+  definition_operational: This action is part of the operational action set and is emitted only on the gate paths that authorize OPEN_QUARANTINE_CASE.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §13 Gate Logic
+  - Freshness Portability Agent — Specification §6 Decision Table
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-103
+  preferred_label: QUARANTINE
+  category: Decision Terms
+  definition_short: The case is suspended because required evidence or policy support is missing, but the case may become re-evaluable.
+  definition_operational: The concrete action is OPEN_QUARANTINE_CASE. Gate class = ESCALATION.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §14 Semantic Contract
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - Semantic verdict; distinct from the state token QUARANTINED and from the record QuarantineCaseRecord.
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-001
+  preferred_label: Quarantine case
+  category: Decision Terms
+  definition_short: A suspended case that may be re-evaluated only when new evidence or a new policy basis exists.
+  definition_operational: The case remains suspended until new evidence or a new policy basis permits readmission review under the stated rules.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §3 Core Terms and Public Definitions
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-304
+  preferred_label: READMISSION
+  category: Decision Terms
+  definition_short: Gate class that supports READMIT.
+  definition_operational: The operational action is REENTER_VERIFIED, and the path is permitted only from QUARANTINED and only when new evidence or a new policy basis exists.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §13 Gate Logic
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-105
+  preferred_label: READMIT
+  category: Decision Terms
+  definition_short: A quarantined case re-enters evaluation from VERIFIED on the basis of normative novelty.
+  definition_operational: The concrete action is REENTER_VERIFIED. Gate class = READMISSION.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §14 Semantic Contract
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-207
+  preferred_label: REENTER_VERIFIED
+  category: Decision Terms
+  definition_short: Operational action that returns a quarantined case to VERIFIED for re-evaluation.
+  definition_operational: This action is part of the operational action set and is emitted only on the gate paths that authorize REENTER_VERIFIED.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §13 Gate Logic
+  - Freshness Portability Agent — Specification §6 Decision Table
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-102
+  preferred_label: REJECT
+  category: Decision Terms
+  definition_short: The constitutive conditions fail irrecoverably for the current packet.
+  definition_operational: The concrete action is REJECT_STALE or REJECT_INVALID. Gate class = BLOCK.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §14 Semantic Contract
+  related_terms: []
+  synonyms: []
+  non_synonyms:
+  - FAIL_CLOSED
+  - QUARANTINE
+  - READMIT
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-203
+  preferred_label: REJECT_INVALID
+  category: Decision Terms
+  definition_short: Operational action that rejects an invalid packet or invalid binding with no downstream restorative effect.
+  definition_operational: This action is part of the operational action set and is emitted only on the gate paths that authorize REJECT_INVALID.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §13 Gate Logic
+  - Freshness Portability Agent — Specification §6 Decision Table
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-202
+  preferred_label: REJECT_STALE
+  category: Decision Terms
+  definition_short: Operational action that rejects a stale packet without receipt emission or watermark update.
+  definition_operational: This action is part of the operational action set and is emitted only on the gate paths that authorize REJECT_STALE.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §13 Gate Logic
+  - Freshness Portability Agent — Specification §6 Decision Table
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-301
+  preferred_label: RELEASE
+  category: Decision Terms
+  definition_short: Gate class that supports ACCEPT and RESTORATION_ELIGIBLE.
+  definition_operational: APPEND_IRR requires durable receipt append, and ISSUE_RESTORE_ADMISSION_TOKEN requires valid IRR linkage and GenesisConfirmed.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §13 Gate Logic
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-104
+  preferred_label: RESTORATION_ELIGIBLE
+  category: Decision Terms
+  definition_short: The accepted head is semantically admitted to the restore service.
+  definition_operational: The concrete action is ISSUE_RESTORE_ADMISSION_TOKEN. Gate class = RELEASE.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §14 Semantic Contract
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - Semantic verdict; do not collapse with the state token S6 of the same label.
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-002
+  preferred_label: accept_import
+  category: Decision Terms
+  definition_short: 'Decision object with condition set: Valid structure AND valid `SSM` AND valid `packet_hash` AND policy compatible AND `freshness_new > watermark[source_id]`'
+  definition_operational: When this decision object is evaluated, the semantic verdict is ACCEPT and the operational action is APPEND_IRR. Gate class = RELEASE. The watermark may advance only after durable receipt append.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §6 Decision Table / DT-01
+  related_terms:
+  - ACCEPT
+  - APPEND_IRR
+  synonyms: []
+  non_synonyms:
+  - ACCEPT
+  - APPEND_IRR
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-005
+  preferred_label: quarantine_inconclusive
+  category: Decision Terms
+  definition_short: 'Decision object with condition set: Required evidence or required transport cannot be confirmed, but the case is recoverable through new evidence or a new policy basis'
+  definition_operational: When this decision object is evaluated, the semantic verdict is QUARANTINE and the operational action is OPEN_QUARANTINE_CASE. Gate class = ESCALATION. No receipt is emitted.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §6 Decision Table / DT-04
+  related_terms:
+  - QUARANTINE
+  - OPEN_QUARANTINE_CASE
+  synonyms: []
+  non_synonyms:
+  - QUARANTINE
+  - OPEN_QUARANTINE_CASE
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-008
+  preferred_label: readmit_quarantine
+  category: Decision Terms
+  definition_short: 'Decision object with condition set: Open quarantine case AND (`new_evidence` OR `new_policy`) AND policy permits re-evaluation'
+  definition_operational: When this decision object is evaluated, the semantic verdict is READMIT and the operational action is REENTER_VERIFIED. Gate class = ESCALATION / READMISSION.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §6 Decision Table / DT-07
+  related_terms:
+  - READMIT
+  - REENTER_VERIFIED
+  synonyms: []
+  non_synonyms:
+  - READMIT
+  - REENTER_VERIFIED
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-004
+  preferred_label: reject_invalid_binding
+  category: Decision Terms
+  definition_short: 'Decision object with condition set: Invalid `SSM` OR invalid hash OR invalid structure/canonicalization'
+  definition_operational: When this decision object is evaluated, the semantic verdict is FAIL_CLOSED and the operational action is REJECT_INVALID. Gate class = BLOCK. No downstream restorative effect.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §6 Decision Table / DT-03
+  related_terms:
+  - FAIL_CLOSED
+  - REJECT_INVALID
+  synonyms: []
+  non_synonyms:
+  - FAIL_CLOSED
+  - REJECT_INVALID
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-003
+  preferred_label: reject_stale
+  category: Decision Terms
+  definition_short: 'Decision object with condition set: `freshness_new <= watermark[source_id]`'
+  definition_operational: When this decision object is evaluated, the semantic verdict is REJECT and the operational action is REJECT_STALE. Gate class = BLOCK. No receipt is emitted and the watermark is not updated.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §6 Decision Table / DT-02
+  related_terms:
+  - REJECT
+  - REJECT_STALE
+  synonyms: []
+  non_synonyms:
+  - REJECT
+  - REJECT_STALE
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-006
+  preferred_label: restore_admit
+  category: Decision Terms
+  definition_short: 'Decision object with condition set: Valid `IRR` AND linked `accepted_head_digest` AND `GenesisConfirmed`'
+  definition_operational: When this decision object is evaluated, the semantic verdict is RESTORATION_ELIGIBLE and the operational action is ISSUE_RESTORE_ADMISSION_TOKEN. Gate class = RELEASE to the restore service. Execution-neutral.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §6 Decision Table / DT-05
+  related_terms:
+  - RESTORATION_ELIGIBLE
+  - ISSUE_RESTORE_ADMISSION_TOKEN
+  synonyms: []
+  non_synonyms:
+  - RESTORATION_ELIGIBLE
+  - ISSUE_RESTORE_ADMISSION_TOKEN
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DEC-007
+  preferred_label: restore_deny
+  category: Decision Terms
+  definition_short: 'Decision object with condition set: Missing `IRR` OR unlinked `accepted_head_digest` OR `GenesisConfirmed = false`'
+  definition_operational: When this decision object is evaluated, the semantic verdict is FAIL_CLOSED and the operational action is DENY_RESTORE. Gate class = BLOCK.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §6 Decision Table / DT-06
+  related_terms:
+  - FAIL_CLOSED
+  - DENY_RESTORE
+  synonyms: []
+  non_synonyms:
+  - FAIL_CLOSED
+  - DENY_RESTORE
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VAL-001
+  preferred_label: VAL-001 - Frame / Envelope Validator
+  category: Validation Terms
+  definition_short: Framing, length, checksum, and canonicalization.
+  definition_operational: 'Input: TransferPacket. Guard / transition linkage: `StructureValid`; pass `S1 -> S2`; fail `S1 -> S8`.. Failure effect: `FAIL_CLOSED -> REJECT_INVALID`.'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §7 Validator Catalogue / VAL-001
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VAL-002
+  preferred_label: VAL-002 - SSM Signature Validator
+  category: Validation Terms
+  definition_short: Validates the `SSM` signature and packet-hash binding.
+  definition_operational: 'Input: `SSM`. Guard / transition linkage: `SSMValid`; evaluated in `S2` before `FreshnessPass`.. Failure effect: `FAIL_CLOSED -> REJECT_INVALID`.'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §7 Validator Catalogue / VAL-002
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VAL-003
+  preferred_label: VAL-003 - Packet Hash Validator
+  category: Validation Terms
+  definition_short: Validates that the packet hash matches the transferred artifacts.
+  definition_operational: 'Input: TransferPacket. Guard / transition linkage: `PacketHashValid`; evaluated in `S2` before `FreshnessPass`.. Failure effect: `FAIL_CLOSED -> REJECT_INVALID`.'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §7 Validator Catalogue / VAL-003
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VAL-004
+  preferred_label: VAL-004 - Policy Compatibility Validator
+  category: Validation Terms
+  definition_short: Validates `policy_id`, `policy_version`, and local profile compatibility.
+  definition_operational: 'Input: `SSM` / policy snapshot. Guard / transition linkage: `PolicyCompatible`; fail `S2 -> S8` or `S2 -> S7` when recoverable.. Failure effect: `REJECT -> REJECT_INVALID` or `QUARANTINE -> OPEN_QUARANTINE_CASE`.'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §7 Validator Catalogue / VAL-004
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VAL-005
+  preferred_label: VAL-005 - Freshness Comparator
+  category: Validation Terms
+  definition_short: Enforces `freshness_new > watermark[source_id]`.
+  definition_operational: 'Input: Freshness value + watermark. Guard / transition linkage: `FreshnessPass`; pass `S2 -> S3`; fail `S2 -> S8`.. Failure effect: `REJECT -> REJECT_STALE`.'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §7 Validator Catalogue / VAL-005
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VAL-006
+  preferred_label: VAL-006 - IRR Linkage Validator
+  category: Validation Terms
+  definition_short: Validates receipt anchoring and accepted-head linkage.
+  definition_operational: 'Input: `IRR`. Guard / transition linkage: `IRRValid && linked_head`; allows `S5 -> S6`; failing restore path goes `S5 -> S8`.. Failure effect: `FAIL_CLOSED -> DENY_RESTORE`.'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §7 Validator Catalogue / VAL-006
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VAL-007
+  preferred_label: VAL-007 - Transport Policy Validator
+  category: Validation Terms
+  definition_short: Validates authenticated/encrypted transport when required by policy.
+  definition_operational: 'Input: Transport metadata. Guard / transition linkage: `TransportPolicySatisfied`; fail `S2 -> S8` or `S2 -> S7` when recoverable.. Failure effect: `REJECT -> REJECT_INVALID` or `QUARANTINE -> OPEN_QUARANTINE_CASE`.'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §7 Validator Catalogue / VAL-007
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VAL-008
+  preferred_label: VAL-008 - TVC Validator
+  category: Validation Terms
+  definition_short: Validates `TVC` when present and/or required.
+  definition_operational: 'Input: `TVC`. Guard / transition linkage: `TVCValidWhenRequired`; fail `S2 -> S8` or `S2 -> S7` when recoverable.. Failure effect: `REJECT -> REJECT_INVALID` or `QUARANTINE -> OPEN_QUARANTINE_CASE`.'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §7 Validator Catalogue / VAL-008
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VAL-009
+  preferred_label: VAL-009 - Evidence Validator
+  category: Validation Terms
+  definition_short: Validates `Evidence.bin`, including signature, hash binding, evidence sequence, and validity window.
+  definition_operational: 'Input: `Evidence.bin`. Guard / transition linkage: `EvidenceValidWhenRequired`; fail `S2 -> S8` or `S2 -> S7` when recoverable.. Failure effect: `REJECT -> REJECT_INVALID` or `QUARANTINE -> OPEN_QUARANTINE_CASE`.'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §7 Validator Catalogue / VAL-009
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VAL-010
+  preferred_label: VAL-010 - Genesis Precondition Validator
+  category: Validation Terms
+  definition_short: Validates the `GenesisConfirmed` precondition before restore eligibility is granted.
+  definition_operational: 'Input: Restore context. Guard / transition linkage: `GenesisConfirmed`; allows `S5 -> S6`; fail `S5 -> S8`.. Failure effect: `FAIL_CLOSED -> DENY_RESTORE`.'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §7 Validator Catalogue / VAL-010
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VAL-011
+  preferred_label: VAL-011 - Tool-State Non-Authority Validator
+  category: Validation Terms
+  definition_short: Ensures that freshness acceptance does not authorize tool-state activation.
+  definition_operational: 'Input: Tool manifest / restore plan. Guard / transition linkage: `ToolStateActivationRequested == false` within agent authority; violation routes `S5/S6 -> S7` or `S8`.. Failure effect: `QUARANTINE -> OPEN_QUARANTINE_CASE` or `FAIL_CLOSED -> BLOCK_TOOL_STATE`.'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §7 Validator Catalogue / VAL-011
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVD-002
+  preferred_label: agent_id
+  category: Evidence Terms
+  definition_short: Identity of the emitting agent
+  definition_operational: All verdicts; produced by agent binding.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §11 Evidence Contract / `agent_id`
+  related_terms:
+  - agent_id
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVD-001
+  preferred_label: decision_id
+  category: Evidence Terms
+  definition_short: Unique identifier of the verdict
+  definition_operational: All verdicts; produced by the GateVerdict emitter.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §11 Evidence Contract / `decision_id`
+  related_terms:
+  - decision_id
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVD-005
+  preferred_label: decision_object
+  category: Evidence Terms
+  definition_short: Decision object under evaluation
+  definition_operational: All verdicts; produced by the decision dispatcher.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §11 Evidence Contract / `decision_object`
+  related_terms:
+  - decision_object
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVD-012
+  preferred_label: evidence_validation_result
+  category: Evidence Terms
+  definition_short: '`Evidence.bin` validation result when relevant'
+  definition_operational: Conditional; produced by the Evidence Validator.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §11 Evidence Contract / `evidence_validation_result`
+  related_terms:
+  - evidence_validation_result
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVD-008
+  preferred_label: freshness_value
+  category: Evidence Terms
+  definition_short: Evaluated freshness value
+  definition_operational: Accept / reject_stale; produced by input parsing and the Freshness Comparator.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §11 Evidence Contract / `freshness_value`
+  related_terms:
+  - freshness_value
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVD-017
+  preferred_label: gate_class
+  category: Evidence Terms
+  definition_short: 'Gate class: `RELEASE`, `BLOCK`, `ESCALATION`, or `READMISSION`'
+  definition_operational: All verdicts; produced by the Gate Logic Record.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §11 Evidence Contract / `gate_class`
+  related_terms:
+  - gate_class
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values:
+  - RELEASE
+  - BLOCK
+  - ESCALATION
+  - READMISSION
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVD-014
+  preferred_label: irr_digest / prev_receipt_digest
+  category: Evidence Terms
+  definition_short: Receipt anchoring data
+  definition_operational: Accept / restoration_eligible; produced by the receipt journal and IRR Linkage Validator.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §11 Evidence Contract / `irr_digest` / `prev_receipt_digest`
+  related_terms:
+  - irr_digest
+  - prev_receipt_digest
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVD-004
+  preferred_label: ledger_uuid
+  category: Evidence Terms
+  definition_short: Identity of the source ledger
+  definition_operational: All verdicts; produced by input parsing and source-binding logic.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §11 Evidence Contract / `ledger_uuid`
+  related_terms:
+  - ledger_uuid
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVD-007
+  preferred_label: packet_hash
+  category: Evidence Terms
+  definition_short: Hash of the transferred packet
+  definition_operational: Accept / reject / quarantine; produced by the Packet Hash Validator.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §11 Evidence Contract / `packet_hash`
+  related_terms:
+  - packet_hash
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVD-006
+  preferred_label: policy_id / policy_version
+  category: Evidence Terms
+  definition_short: Applied local policy snapshot
+  definition_operational: All verdicts; produced by the Policy Compatibility Validator.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §11 Evidence Contract / `policy_id` / `policy_version`
+  related_terms:
+  - policy_id
+  - policy_version
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVD-015
+  preferred_label: reason_code
+  category: Evidence Terms
+  definition_short: Normative reason code
+  definition_operational: All verdicts; produced by gate-logic mapping and the Decision Table.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §11 Evidence Contract / `reason_code`
+  related_terms:
+  - reason_code
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVD-016
+  preferred_label: semantic_verdict
+  category: Evidence Terms
+  definition_short: Canonical semantic verdict
+  definition_operational: All verdicts; produced by the Decision Table and Semantic Contract.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §11 Evidence Contract / `semantic_verdict`
+  related_terms:
+  - semantic_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values:
+  - ACCEPT
+  - REJECT
+  - QUARANTINE
+  - RESTORATION_ELIGIBLE
+  - READMIT
+  - FAIL_CLOSED
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVD-003
+  preferred_label: source_id
+  category: Evidence Terms
+  definition_short: Identity of the evaluated source
+  definition_operational: All verdicts; produced by input parsing and source-binding logic.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §11 Evidence Contract / `source_id`
+  related_terms:
+  - source_id
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVD-010
+  preferred_label: ssm_validation_result
+  category: Evidence Terms
+  definition_short: '`SSM` validation result'
+  definition_operational: All import verdicts; produced by the SSM Signature Validator.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §11 Evidence Contract / `ssm_validation_result`
+  related_terms:
+  - ssm_validation_result
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVD-013
+  preferred_label: transport_validation_result
+  category: Evidence Terms
+  definition_short: Transport policy validation result when relevant
+  definition_operational: Conditional; produced by the Transport Policy Validator.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §11 Evidence Contract / `transport_validation_result`
+  related_terms:
+  - transport_validation_result
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVD-011
+  preferred_label: tvc_validation_result
+  category: Evidence Terms
+  definition_short: '`TVC` validation result when relevant'
+  definition_operational: Conditional; produced by the TVC Validator.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §11 Evidence Contract / `tvc_validation_result`
+  related_terms:
+  - tvc_validation_result
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EVD-009
+  preferred_label: watermark_before / watermark_after
+  category: Evidence Terms
+  definition_short: Watermark state before and after the verdict
+  definition_operational: Accept / reject_stale; produced by the watermark store and WatermarkUpdate path.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §11 Evidence Contract / `watermark_before` / `watermark_after`
+  related_terms:
+  - watermark_before
+  - watermark_after
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-MF02
+  preferred_label: AcceptanceReceiptRecord
+  category: Boundary Terms
+  definition_short: Machine-readable form encoded as JSON object.
+  definition_operational: 'Core fields: `decision_id`, `source_id`, `ledger_uuid`, `packet_hash`, `accepted_head_digest`, `freshness_value`, `prev_receipt_digest`.'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §12 Machine-Readable Form Catalogue / MF-02
+  related_terms:
+  - decision_id
+  - source_id
+  - ledger_uuid
+  - packet_hash
+  - accepted_head_digest
+  - freshness_value
+  - prev_receipt_digest
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-OC01
+  preferred_label: GateVerdict
+  category: Boundary Terms
+  definition_short: 'Output contract with required fields: `decision_id`, `verdict`, `source_id`, `ledger_uuid`, `decision_object`, `policy_id`, `reason_code`'
+  definition_operational: Mandatory on every path.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §10 Output Contracts / OC-01
+  related_terms:
+  - decision_id
+  - verdict
+  - source_id
+  - ledger_uuid
+  - decision_object
+  - policy_id
+  - reason_code
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-OC02
+  preferred_label: IRRAppendRequest
+  category: Boundary Terms
+  definition_short: 'Output contract with required fields: `decision_id`, `source_id`, `ledger_uuid`, `accepted_head_digest`, `packet_hash`, `freshness_value`'
+  definition_operational: Emitted only for `APPEND_IRR`.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §10 Output Contracts / OC-02
+  related_terms:
+  - decision_id
+  - source_id
+  - ledger_uuid
+  - accepted_head_digest
+  - packet_hash
+  - freshness_value
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-MF04
+  preferred_label: QuarantineCaseRecord
+  category: Boundary Terms
+  definition_short: Machine-readable form encoded as JSON object.
+  definition_operational: 'Core fields: `quarantine_case_id`, `source_id`, `decision_id`, `pending_requirements`, `status`.'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §12 Machine-Readable Form Catalogue / MF-04
+  related_terms:
+  - quarantine_case_id
+  - source_id
+  - decision_id
+  - pending_requirements
+  - status
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - Boundary record emitted for quarantined cases; keep distinct from the concept Quarantine case.
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-OC05
+  preferred_label: QuarantineCaseRecord
+  category: Boundary Terms
+  definition_short: 'Output contract with required fields: `quarantine_case_id`, `reason_code`, `pending_requirements`'
+  definition_operational: Mandatory for quarantined cases.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §10 Output Contracts / OC-05
+  related_terms:
+  - quarantine_case_id
+  - reason_code
+  - pending_requirements
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - Boundary record emitted for quarantined cases; keep distinct from the concept Quarantine case.
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-IC03
+  preferred_label: QuarantineReviewRequest
+  category: Boundary Terms
+  definition_short: 'Input contract with required fields: `quarantine_case_id`, `new_evidence?`, `new_policy_id?`'
+  definition_operational: Requires either new evidence or a new policy basis.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §9 Input Contracts / IC-03
+  related_terms:
+  - quarantine_case_id
+  - new_evidence?
+  - new_policy_id?
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - Boundary request used to review an open quarantine case; keep distinct from QuarantineCaseRecord.
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-MF05
+  preferred_label: ReadmissionDecisionRecord
+  category: Boundary Terms
+  definition_short: Machine-readable form encoded as JSON object.
+  definition_operational: 'Core fields: `decision_id`, `quarantine_case_id`, `new_evidence_ref?`, `new_policy_id?`, `verdict`.'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §12 Machine-Readable Form Catalogue / MF-05
+  related_terms:
+  - decision_id
+  - quarantine_case_id
+  - new_evidence_ref?
+  - new_policy_id?
+  - verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-001
+  preferred_label: Restore service
+  category: Boundary Terms
+  definition_short: The downstream service that consumes restore admission tokens and performs restore execution outside this agent's authority.
+  definition_operational: The service is downstream from the agent. It consumes restore admission tokens but restore execution remains outside agent authority.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §3 Core Terms and Public Definitions
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-MF03
+  preferred_label: RestoreAdmissionRecord
+  category: Boundary Terms
+  definition_short: Machine-readable form encoded as JSON object.
+  definition_operational: 'Core fields: `decision_id`, `source_id`, `accepted_head_digest`, `linked_irr_digest`, `genesis_context_id`, `admission_status`.'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §12 Machine-Readable Form Catalogue / MF-03
+  related_terms:
+  - decision_id
+  - source_id
+  - accepted_head_digest
+  - linked_irr_digest
+  - genesis_context_id
+  - admission_status
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-OC04
+  preferred_label: RestoreAdmissionToken
+  category: Boundary Terms
+  definition_short: 'Output contract with required fields: `source_id`, `accepted_head_digest`, `linked_irr_digest`, `admission_status`'
+  definition_operational: Execution-neutral; it does not perform the restore.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §10 Output Contracts / OC-04
+  related_terms:
+  - source_id
+  - accepted_head_digest
+  - linked_irr_digest
+  - admission_status
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-IC02
+  preferred_label: RestoreRequest
+  category: Boundary Terms
+  definition_short: 'Input contract with required fields: `source_id`, `accepted_head_digest`, `restore_scope`, `genesis_context_id`'
+  definition_operational: The agent does not accept a restore request without a reference to an accepted head and linked receipt anchoring.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §9 Input Contracts / IC-02
+  related_terms:
+  - source_id
+  - accepted_head_digest
+  - restore_scope
+  - genesis_context_id
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - Input contract and workflow trigger; the same lexical form is used on the restore path.
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-MF01
+  preferred_label: TransferEvaluationRequest
+  category: Boundary Terms
+  definition_short: Machine-readable form encoded as JSON object.
+  definition_operational: 'Core fields: `agent_id`, `source_id`, `ledger_uuid`, `packet_hash`, `freshness_value`, `policy_id`.'
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §12 Machine-Readable Form Catalogue / MF-01
+  related_terms:
+  - agent_id
+  - source_id
+  - ledger_uuid
+  - packet_hash
+  - freshness_value
+  - policy_id
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-IC01
+  preferred_label: TransferPacket
+  category: Boundary Terms
+  definition_short: 'Input contract with required fields: `source_id`, `ledger_uuid`, `freshness_value`, `head_digest`, `packet_hash`, `ledger.csl`, `ledger.meta`, `SSM`, `TVC?`, `Evidence.bin?`'
+  definition_operational: Mandatory for every acceptance evaluation.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §9 Input Contracts / IC-01
+  related_terms:
+  - source_id
+  - ledger_uuid
+  - freshness_value
+  - head_digest
+  - packet_hash
+  - ledger.csl
+  - ledger.meta
+  - SSM
+  - TVC?
+  - Evidence.bin?
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-OC03
+  preferred_label: WatermarkUpdate
+  category: Boundary Terms
+  definition_short: 'Output contract with required fields: `source_id`, `old_watermark`, `new_watermark`, `linked_decision_id`'
+  definition_operational: Emitted only after durable receipt append.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §10 Output Contracts / OC-03
+  related_terms:
+  - source_id
+  - old_watermark
+  - new_watermark
+  - linked_decision_id
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-002
+  preferred_label: import channel
+  category: Boundary Terms
+  definition_short: Boundary component on the import side of the agent.
+  definition_operational: The import channel is one side of the boundary controlled by the agent during acceptance evaluation and boundary exchange.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §2 Agent Overview
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-004
+  preferred_label: operator boundary
+  category: Boundary Terms
+  definition_short: Boundary component separating operator review from automated gate behavior.
+  definition_operational: The operator boundary appears in the declared boundary and is relevant where escalation or quarantine requires review.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §2 Agent Overview
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-005
+  preferred_label: policy layer
+  category: Boundary Terms
+  definition_short: Boundary component representing the applied local policy context.
+  definition_operational: The policy layer constrains acceptance, evidence, transport, and optional artifacts through policy compatibility and policy snapshot fields.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §2 Agent Overview
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BND-003
+  preferred_label: receipt journal
+  category: Boundary Terms
+  definition_short: Boundary component that holds the append-only acceptance receipt path.
+  definition_operational: The receipt journal receives durable receipt append operations and supports receipt anchoring, accepted-head linkage, and restore eligibility.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §2 Agent Overview
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CTL-001
+  preferred_label: Acceptance watermark
+  category: Control Terms
+  definition_short: The locally committed freshness reference for a source.
+  definition_operational: The watermark may move only forward and only after durable receipt anchoring. It is the stored reference used by freshness comparison and restore control.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §3 Core Terms and Public Definitions
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CTL-002
+  preferred_label: GenesisConfirmed
+  category: Control Terms
+  definition_short: A restore precondition indicating that the required baseline state has already been established or verified.
+  definition_operational: Restore eligibility is not granted unless this precondition is satisfied. Missing GenesisConfirmed blocks restore admission.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §3 Core Terms and Public Definitions
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CTL-010
+  preferred_label: authority budget
+  category: Control Terms
+  definition_short: Finite authority budget under which the watermark may move only forward and only one semantic verdict may be emitted per packet-hash/freshness tuple.
+  definition_operational: The authority budget prohibits retroactive downgrade, watermark decrement, rewrite, or authority expansion into non-authority zones.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §5 Agent Authority Record
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CTL-004
+  preferred_label: canonical sequence
+  category: Control Terms
+  definition_short: Mandatory semantic ordering declared as validate -> append IRR -> persist watermark -> update indexes.
+  definition_operational: This sequence fixes the order of effective acceptance and prevents watermark advancement before durable receipt append.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §15 Temporal and Ordering Contract
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CTL-005
+  preferred_label: determinacy rule
+  category: Control Terms
+  definition_short: For each decision object, exactly one normative path may remain active after evaluating the full condition set.
+  definition_operational: The rule closes the decision space and prevents multiple concurrent normative outcomes for the same evaluated decision object.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §13 Gate Logic
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CTL-009
+  preferred_label: fail-closed behavior
+  category: Control Terms
+  definition_short: Blocked effect for invalid, incomplete, or unauthorized conditions.
+  definition_operational: Fail-closed behavior applies to structural, hash, signature, freshness, policy, evidence, transport, restore, and tool-state failures as specified by the failure semantics.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §1 Normative Status and Scope
+  - Freshness Portability Agent — Specification §16 Failure Semantics
+  related_terms: []
+  synonyms: []
+  non_synonyms:
+  - REJECT
+  - QUARANTINE
+  - RESTORATION_ELIGIBLE
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CTL-003
+  preferred_label: freshness monotonicity
+  category: Control Terms
+  definition_short: Strictly increasing freshness ordering per source_id.
+  definition_operational: Freshness monotonicity is the ordering root for acceptance and is enforced through the freshness rule and receipt-linked watermark advancement.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §15 Temporal and Ordering Contract
+  - Freshness Portability Agent — Specification Appendix A. Normative Rule Summary / PR-13
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CTL-006
+  preferred_label: receipt rule
+  category: Control Terms
+  definition_short: No acceptance verdict becomes effective without durable IRR append.
+  definition_operational: The rule binds effective acceptance to receipt anchoring and prevents acceptance without durable receipt append.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §13 Gate Logic
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CTL-008
+  preferred_label: restore rule
+  category: Control Terms
+  definition_short: No restoration eligibility exists without valid IRR linkage and GenesisConfirmed.
+  definition_operational: The rule blocks restore admission unless receipt anchoring and the baseline precondition are both satisfied.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §13 Gate Logic
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CTL-007
+  preferred_label: watermark rule
+  category: Control Terms
+  definition_short: No watermark advances before receipt append, and no accepted watermark may be decremented.
+  definition_operational: The rule makes watermark progression monotonic and receipt-dependent.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §13 Gate Logic
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: ABR-005
+  preferred_label: Crash/restart classes C-0/C-1/C-2/C-3
+  category: Abbreviation Terms
+  definition_short: Implementation recovery checkpoints used to prove idempotence across interrupted acceptance sequences.
+  definition_operational: The classes structure crash recovery and demonstrate idempotent recovery without degrading the accepted watermark.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §3 Core Terms and Public Definitions
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: ABR-004
+  preferred_label: Evidence.bin
+  category: Abbreviation Terms
+  definition_short: An optional external evidence artifact that becomes mandatory only when required by local policy.
+  definition_operational: The artifact is optional by default, but when active policy requires it, missing or invalid evidence produces fail-closed rejection or quarantine depending on recoverability and policy.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §3 Core Terms and Public Definitions
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - Optional by default.
+  - Becomes mandatory only when required by the active policy.
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: ABR-001
+  preferred_label: Import Receipt Record (IRR)
+  category: Abbreviation Terms
+  definition_short: The append-only acceptance receipt used to anchor accepted imports and to gate downstream restoration eligibility.
+  definition_operational: The IRR is the receipt-anchoring artifact that makes acceptance effective and links the accepted head to downstream restoration eligibility.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §3 Core Terms and Public Definitions
+  related_terms: []
+  synonyms:
+  - IRR
+  non_synonyms:
+  - IRRAppendRequest
+  - AcceptanceReceiptRecord
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: ABR-002
+  preferred_label: SSM
+  category: Abbreviation Terms
+  definition_short: A signed metadata artifact used for source binding and packet-hash binding during acceptance evaluation.
+  definition_operational: The artifact is validated during acceptance and participates in source binding, policy compatibility, and packet-hash binding.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §3 Core Terms and Public Definitions
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: ABR-003
+  preferred_label: TVC
+  category: Abbreviation Terms
+  definition_short: An optional validation artifact that becomes mandatory only when required by local policy.
+  definition_operational: The artifact is optional by default and is validated when present and/or required. Missing or invalid required TVC prevents successful acceptance.
+  normative_status: normative
+  source_refs:
+  - Freshness Portability Agent — Specification §3 Core Terms and Public Definitions
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - Optional by default.
+  - Becomes mandatory only when required by the active policy.
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: OPT-002
+  preferred_label: Evidence.bin
+  category: Optionality Terms
+  definition_short: Optional by default.
+  definition_operational: 'Activation rule: Becomes mandatory only when required by the active policy. Effect: If mandatory and missing or invalid, the verdict is fail-closed.'
+  normative_status: implementation_optional
+  source_refs:
+  - Freshness Portability Agent — Specification §19 Optionality Register / Evidence.bin
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - Optional by default.
+  - Becomes mandatory only when required by the active policy.
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: OPT-004
+  preferred_label: Semantic continuity score
+  category: Optionality Terms
+  definition_short: Optional supplemental control.
+  definition_operational: 'Activation rule: May strengthen a decision but does not substitute for receipt anchoring, freshness control, or restoration rules. Effect: Cannot cure failure of a constitutive condition.'
+  normative_status: implementation_optional
+  source_refs:
+  - Freshness Portability Agent — Specification §19 Optionality Register / Semantic continuity score
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: OPT-001
+  preferred_label: TVC
+  category: Optionality Terms
+  definition_short: Optional by default.
+  definition_operational: 'Activation rule: Becomes mandatory only when required by the active policy. Effect: Without `TVC`, the agent may operate on the source-sequence or receiver-watermark model.'
+  normative_status: implementation_optional
+  source_refs:
+  - Freshness Portability Agent — Specification §19 Optionality Register / TVC
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - Optional by default.
+  - Becomes mandatory only when required by the active policy.
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: OPT-005
+  preferred_label: Tool-state approval path
+  category: Optionality Terms
+  definition_short: Conditioned on restored tool-state being present.
+  definition_operational: 'Activation rule: Always outside the authority of this agent. Effect: Freshness acceptance never implies tool-state approval.'
+  normative_status: implementation_optional
+  source_refs:
+  - Freshness Portability Agent — Specification §19 Optionality Register / Tool-state approval path
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - Always outside the authority of this agent.
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: OPT-003
+  preferred_label: Transport mTLS
+  category: Optionality Terms
+  definition_short: Policy-conditioned.
+  definition_operational: 'Activation rule: Mandatory only for designated `source_id` values or boundaries. Effect: Failure of required transport produces reject or quarantine.'
+  normative_status: implementation_optional
+  source_refs:
+  - Freshness Portability Agent — Specification §19 Optionality Register / Transport mTLS
+  related_terms: []
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - Mandatory only for designated source_id values or boundaries.
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true

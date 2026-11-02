@@ -1,0 +1,2086 @@
+{
+  "agent_name": "Audit Replay Agent",
+  "agent_version": "unspecified",
+  "index_version": "2.0",
+  "source_documents": [
+    "Audit Replay Agent — Specification"
+  ],
+  "derivation_scope": "Restricted to the publishable corpus of the agent specification.",
+  "publication_format": [
+    "D1",
+    "D2-YAML",
+    "D2-JSON",
+    "D3",
+    "D4"
+  ],
+  "authorized_public_corpus": [
+    "Audit Replay Agent — Specification"
+  ],
+  "excluded_sources_statement": "No non-publishable, confidential, or provenance source was used for lexical derivation or traceability.",
+  "entries": [
+    {
+      "term_id": "ID_ARA_AUDIT_REPLAY_001",
+      "preferred_label": "ARA-AUDIT-REPLAY-001",
+      "category": "Identity Terms",
+      "definition_short": "Agent ID assigned to the Audit Replay Agent.",
+      "definition_operational": "Stable identifier that binds the machine-readable and narrative package to the named public agent.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification title block",
+        "Audit Replay Agent — Specification §11"
+      ],
+      "related_terms": [
+        "Audit Replay Agent"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as the agent_id value in machine-readable handoff."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "ID_AUDIT_REPLAY_AGENT",
+      "preferred_label": "Audit Replay Agent",
+      "category": "Identity Terms",
+      "definition_short": "Canonical audit / replay / verification agent defined by the public specification.",
+      "definition_operational": "Agent identity used for offline reconstruction, continuity verification, and reproduction of rollback sequences for ledger-backed sessions.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §1",
+        "Audit Replay Agent — Specification §3"
+      ],
+      "related_terms": [
+        "ARA-AUDIT-REPLAY-001",
+        "CSL",
+        "ZSSC"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as the display name of the publishable agent, not as a software implementation label."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "STATE_FAIL_CLOSED",
+      "preferred_label": "FAIL_CLOSED",
+      "category": "State Terms",
+      "definition_short": "Critical block state in the workflow and gate logic.",
+      "definition_operational": "Critical state entered on signature failure, chain break, canonical parse failure, or invalid policy. Permits only incident output and no positive verdict or compliant finalization.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §6.1",
+        "Audit Replay Agent — Specification §12",
+        "Audit Replay Agent — Specification §15"
+      ],
+      "related_terms": [
+        "S6 READMITTED",
+        "NONCOMPLIANT_HOLD",
+        "INCIDENT_ONLY",
+        "EV_READMISSION_GRANTED"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as a fail-closed workflow and gate status, not as a positive audit outcome."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "STATE_S0_INGESTED",
+      "preferred_label": "S0 INGESTED",
+      "category": "State Terms",
+      "definition_short": "Bundle received but not yet validated.",
+      "definition_operational": "Workflow state entered when input contract satisfied. and exited on ev_parse_ok or structural failure.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §6.1"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as a workflow state in the state transition model."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "STATE_S1_PARSED",
+      "preferred_label": "S1 PARSED",
+      "category": "State Terms",
+      "definition_short": "Framing, checksum, and canonical parse are valid.",
+      "definition_operational": "Workflow state entered when v-01 through v-03 pass. and exited on signature, continuity, and policy verification.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §6.1"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as a workflow state in the state transition model."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "STATE_S2_VERIFIED",
+      "preferred_label": "S2 VERIFIED",
+      "category": "State Terms",
+      "definition_short": "Signatures, hash continuity, policy binding, and freshness anchors are validated to the extent required by policy.",
+      "definition_operational": "Workflow state entered when v-04 through v-06 pass; v-09 passes when policy activates freshness or anchor control. and exited on state reconstruction.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §6.1"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as a workflow state in the state transition model."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "STATE_S3_RECONSTRUCTED",
+      "preferred_label": "S3 RECONSTRUCTED",
+      "category": "State Terms",
+      "definition_short": "Session state, statement lineage, and record lineage are reconstructed offline.",
+      "definition_operational": "Workflow state entered when replay fold complete. and exited on checkpoint analysis.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §6.1"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as a workflow state in the state transition model."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "STATE_S4_CHECKPOINT_RESOLVED",
+      "preferred_label": "S4 CHECKPOINT_RESOLVED",
+      "category": "State Terms",
+      "definition_short": "LASTCLEAN and rollback lineage are identified and evaluated.",
+      "definition_operational": "Workflow state entered when checkpoint lineage valid. and exited on report assembly or fail-closed / hold.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §6.1"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as a workflow state in the state transition model."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "STATE_S5_REPORT_READY",
+      "preferred_label": "S5 REPORT_READY",
+      "category": "State Terms",
+      "definition_short": "A finalizable report and complete machine-readable export are available.",
+      "definition_operational": "Workflow state entered when evidence sufficiency passes and report sufficiency passes. and exited on emit output.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §6.1"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as a workflow state in the state transition model."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "STATE_S6_READMITTED",
+      "preferred_label": "S6 READMITTED",
+      "category": "State Terms",
+      "definition_short": "Session state for controlled resumption after restored compliance prerequisites.",
+      "definition_operational": "Readmitted session state permitted only after explicit proof of restored compliance prerequisites, including hold-exit evidence and an updated anchor.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §6.1",
+        "Audit Replay Agent — Specification §6.2",
+        "Audit Replay Agent — Specification §12"
+      ],
+      "related_terms": [
+        "EV_READMISSION_GRANTED",
+        "hold_exit_refs",
+        "anchor_update_ref",
+        "FAIL_CLOSED"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only after readmission prerequisites are satisfied."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "STATE_SH_HOLD_ACTIVE",
+      "preferred_label": "SH HOLD_ACTIVE",
+      "category": "State Terms",
+      "definition_short": "Session is in audit-only mode after evidence failure, missing verification evidence, or counter / anchor replay.",
+      "definition_operational": "Workflow state entered when ev_evidence_fail or ev_counter_replay. and exited on ev_readmission_granted or incident-only closure.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §6.1"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as a workflow state in the state transition model."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "EVENT_EV_CHAIN_BREAK",
+      "preferred_label": "EV_CHAIN_BREAK",
+      "category": "Transition Terms",
+      "definition_short": "hash_prev / hash_curr no longer form a continuous chain.",
+      "definition_operational": "Workflow event. Normative effect: Forces verdict BROKEN and SX FAIL_CLOSED.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §6.2"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as an event in the workflow and state transition model."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "EVENT_EV_COUNTER_REPLAY",
+      "preferred_label": "EV_COUNTER_REPLAY",
+      "category": "Transition Terms",
+      "definition_short": "The verification counter or freshness anchor is not strictly increasing.",
+      "definition_operational": "Workflow event. Normative effect: Forces SH HOLD_ACTIVE and blocks compliant finalization.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §6.2"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as an event in the workflow and state transition model."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "EVENT_EV_EVIDENCE_FAIL",
+      "preferred_label": "EV_EVIDENCE_FAIL",
+      "category": "Transition Terms",
+      "definition_short": "Required verification evidence is missing, invalid, or not recognized by policy.",
+      "definition_operational": "Workflow event. Normative effect: Forces SH HOLD_ACTIVE and blocks compliant finalization.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §6.2"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as an event in the workflow and state transition model."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "EVENT_EV_LASTCLEAN_FOUND",
+      "preferred_label": "EV_LASTCLEAN_FOUND",
+      "category": "Transition Terms",
+      "definition_short": "A usable checkpoint has been identified.",
+      "definition_operational": "Workflow event. Normative effect: Permits S3 -> S4.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §6.2"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as an event in the workflow and state transition model."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "EVENT_EV_PARSE_OK",
+      "preferred_label": "EV_PARSE_OK",
+      "category": "Transition Terms",
+      "definition_short": "All frames can be read deterministically.",
+      "definition_operational": "Workflow event. Normative effect: Permits S0 -> S1.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §6.2"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as an event in the workflow and state transition model."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "EVENT_EV_POLICY_UNRESOLVED",
+      "preferred_label": "EV_POLICY_UNRESOLVED",
+      "category": "Transition Terms",
+      "definition_short": "policy_profile_id or policy_hash is not resolvable or not admitted.",
+      "definition_operational": "Workflow event. Normative effect: Blocks compliant finalization and may force SX.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §6.2"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as an event in the workflow and state transition model."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "EVENT_EV_READMISSION_GRANTED",
+      "preferred_label": "EV_READMISSION_GRANTED",
+      "category": "Transition Terms",
+      "definition_short": "There is explicit proof that compliance prerequisites were restored, including hold-exit evidence, resolvable policy, and a strictly increasing updated anchor.",
+      "definition_operational": "Workflow event. Normative effect: Permits readmission and controlled resumption.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §6.2"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as an event in the workflow and state transition model."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "EVENT_EV_REPORT_BOUND",
+      "preferred_label": "EV_REPORT_BOUND",
+      "category": "Transition Terms",
+      "definition_short": "The report includes continuity, decisions, checkpoints, limitations, and evidence linkage.",
+      "definition_operational": "Workflow event. Normative effect: Permits S4 -> S5.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §6.2"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as an event in the workflow and state transition model."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "EVENT_EV_ROLLBACK_REPLAYED",
+      "preferred_label": "EV_ROLLBACK_REPLAYED",
+      "category": "Transition Terms",
+      "definition_short": "A valid rollback chain has been reproduced offline.",
+      "definition_operational": "Workflow event. Normative effect: Supports verdict REPLAYABLE.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §6.2"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as an event in the workflow and state transition model."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "EVENT_EV_SIGNATURE_FAIL",
+      "preferred_label": "EV_SIGNATURE_FAIL",
+      "category": "Transition Terms",
+      "definition_short": "A required signature is invalid or missing.",
+      "definition_operational": "Workflow event. Normative effect: Forces SX FAIL_CLOSED.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §6.2"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as an event in the workflow and state transition model."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "TRANSITION_ROLLBACK",
+      "preferred_label": "ROLLBACK",
+      "category": "Transition Terms",
+      "definition_short": "Rollback control point and reversion path used in offline replay.",
+      "definition_operational": "Valid only if CHECKPOINT(LASTCLEAN) precedes FAIL_CLOSED and the checkpoint state_hash verifies under the applicable verification ruleset.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §2",
+        "Audit Replay Agent — Specification §10",
+        "Audit Replay Agent — Specification §14"
+      ],
+      "related_terms": [
+        "CHECKPOINT(LASTCLEAN)",
+        "Rollback sequence",
+        "FAIL_CLOSED",
+        "REPLAYABLE"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only for rollback lineage and replay conditions admitted by the specification."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "DEC_AUDIT_REPORT",
+      "preferred_label": "Audit report",
+      "category": "Decision Terms",
+      "definition_short": "Decision object classified as finalization eligibility.",
+      "definition_operational": "Primary decision object in the audit vocabulary. Admitted verdicts: FINALIZABLE | INCIDENT_ONLY | BLOCKED. Primary artifact linkage: Decision Table.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §5"
+      ],
+      "related_terms": [
+        "Decision Table"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use with the admitted verdict set defined for Audit report in §5."
+      ],
+      "allowed_values": [
+        "FINALIZABLE",
+        "INCIDENT_ONLY",
+        "BLOCKED"
+      ],
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "VERDICT_BLOCKED",
+      "preferred_label": "BLOCKED",
+      "category": "Decision Terms",
+      "definition_short": "Admitted blocking state for compliant finalization or report eligibility.",
+      "definition_operational": "Used where policy binding, report sufficiency, or other critical conditions prevent compliant finalization or prevent a positive report status.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §5",
+        "Audit Replay Agent — Specification §9"
+      ],
+      "related_terms": [
+        "Audit report",
+        "FAIL_CLOSED",
+        "INCIDENT_ONLY"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use for blocking outcomes that prevent compliant finalization."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "VERDICT_BROKEN",
+      "preferred_label": "BROKEN",
+      "category": "Decision Terms",
+      "definition_short": "The integrity chain is not continuous; conclusions about the full history are invalid.",
+      "definition_operational": "Normative verdict meaning from the semantic contract: The integrity chain is not continuous; conclusions about the full history are invalid.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §13"
+      ],
+      "related_terms": [
+        "Ledger session",
+        "Hash chain continuity",
+        "Rollback sequence",
+        "Audit report"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only with the decision object or gate context that admits this verdict."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "DEC_CHECKPOINT_LASTCLEAN",
+      "preferred_label": "CHECKPOINT(LASTCLEAN)",
+      "category": "Decision Terms",
+      "definition_short": "Decision object classified as checkpoint usability.",
+      "definition_operational": "Primary decision object in the audit vocabulary. Admitted verdicts: USABLE | STALE | UNVERIFIED. Primary artifact linkage: Workflow / State Transition.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §5"
+      ],
+      "related_terms": [
+        "Workflow / State Transition"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use with the admitted verdict set defined for CHECKPOINT(LASTCLEAN) in §5."
+      ],
+      "allowed_values": [
+        "USABLE",
+        "STALE",
+        "UNVERIFIED"
+      ],
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "VERDICT_FINALIZABLE",
+      "preferred_label": "FINALIZABLE",
+      "category": "Decision Terms",
+      "definition_short": "Admitted finalization eligibility state for the audit report.",
+      "definition_operational": "Admitted value in the audit report decision-object vocabulary indicating that report finalization is eligible under the decision table and report sufficiency conditions.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §5",
+        "Audit Replay Agent — Specification §9"
+      ],
+      "related_terms": [
+        "Audit report",
+        "FINALIZE_REPORT",
+        "Report sufficiency validator"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only as an admitted audit report eligibility value."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "DEC_FRAMED_RECORD",
+      "preferred_label": "Framed record",
+      "category": "Decision Terms",
+      "definition_short": "Decision object classified as record admission.",
+      "definition_operational": "Primary decision object in the audit vocabulary. Admitted verdicts: VALID | MALFORMED | UNSUPPORTED. Primary artifact linkage: Validator Catalogue.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §5"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use with the admitted verdict set defined for Framed record in §5."
+      ],
+      "allowed_values": [
+        "VALID",
+        "MALFORMED",
+        "UNSUPPORTED"
+      ],
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "DEC_HASH_CHAIN_CONTINUITY",
+      "preferred_label": "Hash chain continuity",
+      "category": "Decision Terms",
+      "definition_short": "Decision object classified as integrity gate.",
+      "definition_operational": "Primary decision object in the audit vocabulary. Admitted verdicts: CONTIGUOUS | BROKEN. Primary artifact linkage: Evidence Contract.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §5"
+      ],
+      "related_terms": [
+        "Evidence Contract"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use with the admitted verdict set defined for Hash chain continuity in §5."
+      ],
+      "allowed_values": [
+        "CONTIGUOUS",
+        "BROKEN"
+      ],
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "VERDICT_INCIDENT_ONLY",
+      "preferred_label": "INCIDENT_ONLY",
+      "category": "Decision Terms",
+      "definition_short": "Only incident and remediation artifacts are permitted, not a compliant report.",
+      "definition_operational": "Normative verdict meaning from the semantic contract: Only incident and remediation artifacts are permitted, not a compliant report.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §13"
+      ],
+      "related_terms": [
+        "Ledger session",
+        "Hash chain continuity",
+        "Rollback sequence",
+        "Audit report"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only with the decision object or gate context that admits this verdict."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "DEC_LEDGER_SESSION",
+      "preferred_label": "Ledger session",
+      "category": "Decision Terms",
+      "definition_short": "Decision object classified as admit or reject reconstruction.",
+      "definition_operational": "Primary decision object in the audit vocabulary. Admitted verdicts: RECONSTRUCTABLE | PARTIAL | REJECTED. Primary artifact linkage: REPORT.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §5"
+      ],
+      "related_terms": [
+        "REPORT"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use with the admitted verdict set defined for Ledger session in §5."
+      ],
+      "allowed_values": [
+        "RECONSTRUCTABLE",
+        "PARTIAL",
+        "REJECTED"
+      ],
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "VERDICT_PARTIAL",
+      "preferred_label": "PARTIAL",
+      "category": "Decision Terms",
+      "definition_short": "Some artifacts can be reconstructed, but closure is missing for at least one critical decision object.",
+      "definition_operational": "Normative verdict meaning from the semantic contract: Some artifacts can be reconstructed, but closure is missing for at least one critical decision object.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §13"
+      ],
+      "related_terms": [
+        "Ledger session",
+        "Hash chain continuity",
+        "Rollback sequence",
+        "Audit report"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only with the decision object or gate context that admits this verdict."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "VERDICT_REJECTED",
+      "preferred_label": "REJECTED",
+      "category": "Decision Terms",
+      "definition_short": "The input cannot support admissible reconstruction; no compliance output may be issued.",
+      "definition_operational": "Normative verdict meaning from the semantic contract: The input cannot support admissible reconstruction; no compliance output may be issued.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §13"
+      ],
+      "related_terms": [
+        "Ledger session",
+        "Hash chain continuity",
+        "Rollback sequence",
+        "Audit report"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only with the decision object or gate context that admits this verdict."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "VERDICT_REPLAYABLE",
+      "preferred_label": "REPLAYABLE",
+      "category": "Decision Terms",
+      "definition_short": "The session can be reconstructed offline with a decision path, continuity, and rollback lineage sufficient for independent audit.",
+      "definition_operational": "Normative verdict meaning from the semantic contract: The session can be reconstructed offline with a decision path, continuity, and rollback lineage sufficient for independent audit.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §13"
+      ],
+      "related_terms": [
+        "Ledger session",
+        "Hash chain continuity",
+        "Rollback sequence",
+        "Audit report"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only with the decision object or gate context that admits this verdict."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "DEC_ROLLBACK_SEQUENCE",
+      "preferred_label": "Rollback sequence",
+      "category": "Decision Terms",
+      "definition_short": "Decision object classified as rollback correctness.",
+      "definition_operational": "Primary decision object in the audit vocabulary. Admitted verdicts: REPLAYABLE | INCOMPLETE | INVALID. Primary artifact linkage: Gate Logic.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §5"
+      ],
+      "related_terms": [
+        "Gate Logic"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use with the admitted verdict set defined for Rollback sequence in §5."
+      ],
+      "allowed_values": [
+        "REPLAYABLE",
+        "INCOMPLETE",
+        "INVALID"
+      ],
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "VAL_V_03",
+      "preferred_label": "Canonical parse validator",
+      "category": "Validation Terms",
+      "definition_short": "Structural validator.",
+      "definition_operational": "Canonical parse validator (V-03). Pass condition: The canonical serialization can be parsed without ambiguity. Fail effect: Record UNSUPPORTED or MALFORMED; block.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §8"
+      ],
+      "related_terms": [],
+      "synonyms": [
+        "V-03"
+      ],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use with the exact pass condition and fail effect defined in the validator catalogue."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "VAL_V_07",
+      "preferred_label": "Checkpoint lineage validator",
+      "category": "Validation Terms",
+      "definition_short": "Behavioral validator.",
+      "definition_operational": "Checkpoint lineage validator (V-07). Pass condition: LASTCLEAN precedes FAIL_CLOSED and its state_hash is verifiable. Fail effect: Rollback INVALID.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §8"
+      ],
+      "related_terms": [],
+      "synonyms": [
+        "V-07"
+      ],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use with the exact pass condition and fail effect defined in the validator catalogue."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "VAL_V_02",
+      "preferred_label": "Checksum validator",
+      "category": "Validation Terms",
+      "definition_short": "Structural validator.",
+      "definition_operational": "Checksum validator (V-02). Pass condition: The checksum over the canonical bytes is correct. Fail effect: Record MALFORMED; block.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §8"
+      ],
+      "related_terms": [],
+      "synonyms": [
+        "V-02"
+      ],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use with the exact pass condition and fail effect defined in the validator catalogue."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "VAL_V_01",
+      "preferred_label": "Frame length validator",
+      "category": "Validation Terms",
+      "definition_short": "Structural validator.",
+      "definition_operational": "Frame length validator (V-01). Pass condition: The declared length matches the available bytes. Fail effect: Record MALFORMED; block.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §8"
+      ],
+      "related_terms": [],
+      "synonyms": [
+        "V-01"
+      ],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use with the exact pass condition and fail effect defined in the validator catalogue."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "VAL_V_05",
+      "preferred_label": "Hash continuity validator",
+      "category": "Validation Terms",
+      "definition_short": "Evidence validator.",
+      "definition_operational": "Hash continuity validator (V-05). Pass condition: hash_prev and hash_curr form a continuous chain. Fail effect: Verdict BROKEN; FAIL_CLOSED.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §8"
+      ],
+      "related_terms": [],
+      "synonyms": [
+        "V-05"
+      ],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use with the exact pass condition and fail effect defined in the validator catalogue."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "VAL_V_06",
+      "preferred_label": "Policy bind validator",
+      "category": "Validation Terms",
+      "definition_short": "Boundary validator.",
+      "definition_operational": "Policy bind validator (V-06). Pass condition: policy_profile_id and policy_hash are resolvable and admitted. Fail effect: BLOCKED.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §8"
+      ],
+      "related_terms": [],
+      "synonyms": [
+        "V-06"
+      ],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use with the exact pass condition and fail effect defined in the validator catalogue."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "VAL_V_09",
+      "preferred_label": "Replay counter / freshness validator",
+      "category": "Validation Terms",
+      "definition_short": "Ordering validator.",
+      "definition_operational": "Replay counter / freshness validator (V-09). Pass condition: The counter or anchor is strictly increasing under policy. Fail effect: NONCOMPLIANT_HOLD / block.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §8"
+      ],
+      "related_terms": [],
+      "synonyms": [
+        "V-09"
+      ],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use with the exact pass condition and fail effect defined in the validator catalogue."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "VAL_V_08",
+      "preferred_label": "Report sufficiency validator",
+      "category": "Validation Terms",
+      "definition_short": "Evidence validator.",
+      "definition_operational": "Report sufficiency validator (V-08). Pass condition: The report includes decisions, checkpoints, continuity, and limitations. Fail effect: FINALIZE_REPORT blocked.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §8"
+      ],
+      "related_terms": [],
+      "synonyms": [
+        "V-08"
+      ],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use with the exact pass condition and fail effect defined in the validator catalogue."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "VAL_V_04",
+      "preferred_label": "Signature validator",
+      "category": "Validation Terms",
+      "definition_short": "Evidence validator.",
+      "definition_operational": "Signature validator (V-04). Pass condition: All required signatures are valid under the current policy. Fail effect: FAIL_CLOSED.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §8"
+      ],
+      "related_terms": [],
+      "synonyms": [
+        "V-04"
+      ],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use with the exact pass condition and fail effect defined in the validator catalogue."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "VAL_V_10",
+      "preferred_label": "Tool-state exclusion validator",
+      "category": "Validation Terms",
+      "definition_short": "Operational validator.",
+      "definition_operational": "Tool-state exclusion validator (V-10). Pass condition: No unauthorized tool-state artifact enters logical reconstruction. Fail effect: QUARANTINE.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §8"
+      ],
+      "related_terms": [],
+      "synonyms": [
+        "V-10"
+      ],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use with the exact pass condition and fail effect defined in the validator catalogue."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "EVID_ANCHOR_UPDATE_REF",
+      "preferred_label": "anchor_update_ref",
+      "category": "Evidence Terms",
+      "definition_short": "Proves strict increase after a hold.",
+      "definition_operational": "Evidence-contract field. Required status: Yes for readmission and counter-sensitive profiles. Purpose: Proves strict increase after a hold.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §10"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only as a field in the minimum evidence set for offline reconstruction and audit."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "CONTRACT_OUTPUT_CONTRACT_OC_01_AUDIT_REPORT",
+      "preferred_label": "Audit Report",
+      "category": "Evidence Terms",
+      "definition_short": "Contracted package with required fields: report_id; session_id; verdict; continuity summary; checkpoints; rollback refs; limitations; signature / export refs",
+      "definition_operational": "Contract rule: Must be sufficient for offline audit.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §7"
+      ],
+      "related_terms": [],
+      "synonyms": [
+        "Output Contract OC-01 Audit Report"
+      ],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as an input or output contract exactly as listed in §7."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "EVID_BOOT_OR_VERIF_REFS",
+      "preferred_label": "boot_or_verif_refs",
+      "category": "Evidence Terms",
+      "definition_short": "Links the verdict to the external evidence chain when policy requires it.",
+      "definition_operational": "Evidence-contract field. Required status: Yes when policy activates bound verification. Purpose: Links the verdict to the external evidence chain when policy requires it.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §10"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only as a field in the minimum evidence set for offline reconstruction and audit."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "EVID_BUNDLE_DIGEST",
+      "preferred_label": "bundle_digest",
+      "category": "Evidence Terms",
+      "definition_short": "Binds the verdict to the exact input bundle.",
+      "definition_operational": "Evidence-contract field. Required status: Yes. Purpose: Binds the verdict to the exact input bundle.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §10"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only as a field in the minimum evidence set for offline reconstruction and audit."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "EVID_CHECKPOINT_REFS",
+      "preferred_label": "checkpoint_refs",
+      "category": "Evidence Terms",
+      "definition_short": "Proves the clean state used for replay.",
+      "definition_operational": "Evidence-contract field. Required status: Yes for checkpoint, rollback, or replay verdicts. Purpose: Proves the clean state used for replay.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §10"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only as a field in the minimum evidence set for offline reconstruction and audit."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "EVID_HASH_CONTINUITY_REFS",
+      "preferred_label": "hash_continuity_refs",
+      "category": "Evidence Terms",
+      "definition_short": "Proves append-only history and reconstructable ordering.",
+      "definition_operational": "Evidence-contract field. Required status: Yes. Purpose: Proves append-only history and reconstructable ordering.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §10"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only as a field in the minimum evidence set for offline reconstruction and audit."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "EVID_HOLD_ENTER_REFS",
+      "preferred_label": "hold_enter_refs",
+      "category": "Evidence Terms",
+      "definition_short": "Proves entry into audit-only mode.",
+      "definition_operational": "Evidence-contract field. Required status: Yes when NONCOMPLIANT_HOLD exists. Purpose: Proves entry into audit-only mode.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §10"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only as a field in the minimum evidence set for offline reconstruction and audit."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "EVID_HOLD_EXIT_REFS",
+      "preferred_label": "hold_exit_refs",
+      "category": "Evidence Terms",
+      "definition_short": "Proves restoration of compliance prerequisites.",
+      "definition_operational": "Evidence-contract field. Required status: Yes for readmission. Purpose: Proves restoration of compliance prerequisites.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §10"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only as a field in the minimum evidence set for offline reconstruction and audit."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "CONTRACT_OUTPUT_CONTRACT_OC_03_INCIDENT_NOTICE",
+      "preferred_label": "Incident Notice",
+      "category": "Evidence Terms",
+      "definition_short": "Contracted package with required fields: reason_code; blocked_stage; inhibitions; required_remediation",
+      "definition_operational": "Contract rule: The only permitted output in FAIL_CLOSED.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §7"
+      ],
+      "related_terms": [],
+      "synonyms": [
+        "Output Contract OC-03 Incident Notice"
+      ],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as an input or output contract exactly as listed in §7."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "CONTRACT_OUTPUT_CONTRACT_OC_02_MACHINE_EVIDENCE",
+      "preferred_label": "Machine Evidence",
+      "category": "Evidence Terms",
+      "definition_short": "Contracted package with required fields: Normalized JSON verdict; validator outcomes; record anomalies; graph of refs",
+      "definition_operational": "Contract rule: No long-form narrative is required for the execution consumer.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §7"
+      ],
+      "related_terms": [],
+      "synonyms": [
+        "Output Contract OC-02 Machine Evidence"
+      ],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as an input or output contract exactly as listed in §7."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "CONTRACT_INPUT_CONTRACT_IC_02_OPTIONAL_EVIDENCE",
+      "preferred_label": "Optional Evidence",
+      "category": "Evidence Terms",
+      "definition_short": "Contracted package with required fields: BOOT_* refs; VERIF_EVENT; VERIF_COUNTER_ANCHOR; export manifest; trust-store refs",
+      "definition_operational": "Contract rule: Mandatory when policy requires bound verification.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §7"
+      ],
+      "related_terms": [],
+      "synonyms": [
+        "Input Contract IC-02 Optional Evidence"
+      ],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as an input or output contract exactly as listed in §7."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "EVID_POLICY_PROFILE_ID_POLICY_HASH",
+      "preferred_label": "policy_profile_id / policy_hash",
+      "category": "Evidence Terms",
+      "definition_short": "Fixes the governing policy under which the verdict is issued.",
+      "definition_operational": "Evidence-contract field. Required status: Yes. Purpose: Fixes the governing policy under which the verdict is issued.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §10"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only as a field in the minimum evidence set for offline reconstruction and audit."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "EVID_REPORT_FIELDS_REF",
+      "preferred_label": "report_fields_ref",
+      "category": "Evidence Terms",
+      "definition_short": "Proves minimum report completeness.",
+      "definition_operational": "Evidence-contract field. Required status: Yes for FINALIZE_REPORT. Purpose: Proves minimum report completeness.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §10"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only as a field in the minimum evidence set for offline reconstruction and audit."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "EVID_REPORT_SIGNATURE_EXPORT_MANIFEST_REF",
+      "preferred_label": "report_signature / export_manifest_ref",
+      "category": "Evidence Terms",
+      "definition_short": "Proves export integrity and chain of custody.",
+      "definition_operational": "Evidence-contract field. Required status: Yes for final output. Purpose: Proves export integrity and chain of custody.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §10"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only as a field in the minimum evidence set for offline reconstruction and audit."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "EVID_ROLLBACK_REFS",
+      "preferred_label": "rollback_refs",
+      "category": "Evidence Terms",
+      "definition_short": "Proves the reversion path.",
+      "definition_operational": "Evidence-contract field. Required status: Yes for verdict REPLAYABLE. Purpose: Proves the reversion path.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §10"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only as a field in the minimum evidence set for offline reconstruction and audit."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "CONTRACT_INPUT_CONTRACT_IC_01_SESSION_BUNDLE",
+      "preferred_label": "Session Bundle",
+      "category": "Evidence Terms",
+      "definition_short": "Contracted package with required fields: ledger_uuid; session_id; record stream; policy_profile_id; source_id; hash head / tail; signature refs",
+      "definition_operational": "Contract rule: Without these fields the agent does not enter replay logic.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §7"
+      ],
+      "related_terms": [],
+      "synonyms": [
+        "Input Contract IC-01 Session Bundle"
+      ],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use as an input or output contract exactly as listed in §7."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "EVID_SIGNATURE_REFS",
+      "preferred_label": "signature_refs",
+      "category": "Evidence Terms",
+      "definition_short": "Proves authenticity and provenance where signatures are policy-required.",
+      "definition_operational": "Evidence-contract field. Required status: Yes when policy requires signatures. Purpose: Proves authenticity and provenance where signatures are policy-required.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §10"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only as a field in the minimum evidence set for offline reconstruction and audit."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "EVID_VALIDATOR_OUTCOMES",
+      "preferred_label": "validator_outcomes",
+      "category": "Evidence Terms",
+      "definition_short": "Allows the consumer to replay admissibility and blocking decisions.",
+      "definition_operational": "Evidence-contract field. Required status: Yes. Purpose: Allows the consumer to replay admissibility and blocking decisions.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §10"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only as a field in the minimum evidence set for offline reconstruction and audit."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "BOUNDARY_CHAIN_OF_CUSTODY",
+      "preferred_label": "chain of custody",
+      "category": "Boundary Terms",
+      "definition_short": "Export integrity requirement for auditable output.",
+      "definition_operational": "Audit export must preserve chain of custody through exporter identity, covered interval, hashes, CSL head, governing policy, and evidence references used.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §1",
+        "Audit Replay Agent — Specification §10"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only in the public operational sense defined by the specification."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "BOUNDARY_FRESHNESS_ANCHOR",
+      "preferred_label": "freshness anchor",
+      "category": "Boundary Terms",
+      "definition_short": "Ordering anchor used in policy-sensitive replay and readmission control.",
+      "definition_operational": "Freshness or anchor values must be strictly increasing under policy; replay or non-increase enters NONCOMPLIANT_HOLD and blocks compliant finalization until restored prerequisites are proven.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §6.1",
+        "Audit Replay Agent — Specification §6.2",
+        "Audit Replay Agent — Specification §14",
+        "Audit Replay Agent — Specification §15"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only in the public operational sense defined by the specification."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "BOUNDARY_POLICY_PROFILE",
+      "preferred_label": "policy profile",
+      "category": "Boundary Terms",
+      "definition_short": "Active governing profile used for authority, validation, and policy binding.",
+      "definition_operational": "Authority source and input element that fixes the governing policy under which the audit is executed and the verdict is issued.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §3",
+        "Audit Replay Agent — Specification §4",
+        "Audit Replay Agent — Specification §7",
+        "Audit Replay Agent — Specification §10"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only in the public operational sense defined by the specification."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "BOUNDARY_TRUST_STORE",
+      "preferred_label": "trust store",
+      "category": "Boundary Terms",
+      "definition_short": "Verification trust input admitted by the specification.",
+      "definition_operational": "Input element used together with a compatible policy to validate signatures or verification prerequisites where policy requires it.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §3",
+        "Audit Replay Agent — Specification §7",
+        "Audit Replay Agent — Specification §16",
+        "Audit Replay Agent — Specification §18"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only in the public operational sense defined by the specification."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "BOUNDARY_VERIFICATION_POLICY",
+      "preferred_label": "verification policy",
+      "category": "Boundary Terms",
+      "definition_short": "Policy-based verification input admitted by the specification.",
+      "definition_operational": "Alternative or companion verification control used in inputs, assumptions, and observability surfaces for signature and evidence validation.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §3",
+        "Audit Replay Agent — Specification §7",
+        "Audit Replay Agent — Specification §16",
+        "Audit Replay Agent — Specification §18"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only in the public operational sense defined by the specification."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "CONTROL_CONSTRAINED",
+      "preferred_label": "CONSTRAINED",
+      "category": "Control Terms",
+      "definition_short": "Partial reconstruction is possible but critical insufficiency is absent.",
+      "definition_operational": "Gate status with permitted actions: Partial report; anomaly export. Prohibited actions: Final verdict REPLAYABLE.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §12"
+      ],
+      "related_terms": [
+        "FAIL_CLOSED",
+        "Audit report",
+        "Machine Evidence"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only in gate logic and control-state reasoning."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "CONTROL_NONCOMPLIANT_HOLD",
+      "preferred_label": "NONCOMPLIANT_HOLD",
+      "category": "Control Terms",
+      "definition_short": "evidence_ok = false or freshness replay detected.",
+      "definition_operational": "Gate status with permitted actions: Audit-only mode; incident report. Prohibited actions: Checkpoint or report compliant finalization.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §12"
+      ],
+      "related_terms": [
+        "FAIL_CLOSED",
+        "Audit report",
+        "Machine Evidence"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only in gate logic and control-state reasoning."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "CONTROL_OPEN",
+      "preferred_label": "OPEN",
+      "category": "Control Terms",
+      "definition_short": "Structural and evidence validators have passed.",
+      "definition_operational": "Gate status with permitted actions: Reconstruction; checkpoint analysis; report assembly. Prohibited actions: None beyond policy.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §12"
+      ],
+      "related_terms": [
+        "FAIL_CLOSED",
+        "Audit report",
+        "Machine Evidence"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only in gate logic and control-state reasoning."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "CONTROL_QUARANTINE",
+      "preferred_label": "QUARANTINE",
+      "category": "Control Terms",
+      "definition_short": "Unauthorized tool-state or auxiliary artifact detected.",
+      "definition_operational": "Gate status with permitted actions: Isolated audit; incident export. Prohibited actions: Injection into the replay core.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §12"
+      ],
+      "related_terms": [
+        "FAIL_CLOSED",
+        "Audit report",
+        "Machine Evidence"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only in gate logic and control-state reasoning."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "ABBR_AXIOM_SET",
+      "preferred_label": "AXIOM_SET",
+      "category": "Abbreviation Terms",
+      "definition_short": "Named report element referenced for ZSSC-bound sessions.",
+      "definition_operational": "ZSSC-bound final reports must be able to include or explicitly reference AXIOM_SET as part of the required report content.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §10"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only as an attested abbreviation or named control point from the publishable specification."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "ABBR_BAND_CHANGE",
+      "preferred_label": "BAND_CHANGE",
+      "category": "Abbreviation Terms",
+      "definition_short": "ZSSC control point listed by the specification.",
+      "definition_operational": "Named auditable governance record or control point supplied by ZSSC and admitted by the public specification.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §2"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only as an attested abbreviation or named control point from the publishable specification."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "ABBR_CPW_SAMPLE",
+      "preferred_label": "CPW_SAMPLE",
+      "category": "Abbreviation Terms",
+      "definition_short": "ZSSC control point listed by the specification.",
+      "definition_operational": "Named auditable governance record or control point supplied by ZSSC and admitted by the public specification.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §2"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only as an attested abbreviation or named control point from the publishable specification."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "ABBR_CSL",
+      "preferred_label": "CSL",
+      "category": "Abbreviation Terms",
+      "definition_short": "Foundational model that provides framed record encoding and continuity-related record semantics.",
+      "definition_operational": "Public operational concept used by the specification for framed record encoding, checksum validation, canonical parsing, append-only hash-chain continuity, fail-closed restoration discipline, tool-state restrictions, and auditable export semantics.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §2"
+      ],
+      "related_terms": [
+        "Framed record",
+        "Hash chain continuity",
+        "chain of custody"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only as a foundational model already assumed by the public specification."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "ABBR_POLICY_BIND",
+      "preferred_label": "POLICY_BIND",
+      "category": "Abbreviation Terms",
+      "definition_short": "Named report element referenced for ZSSC-bound sessions.",
+      "definition_operational": "ZSSC-bound final reports must be able to include or explicitly reference POLICY_BIND in the required report content.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §10"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only as an attested abbreviation or named control point from the publishable specification."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "ABBR_VERIF_COUNTER_ANCHOR",
+      "preferred_label": "VERIF_COUNTER_ANCHOR",
+      "category": "Abbreviation Terms",
+      "definition_short": "Optional evidence or input reference used for counter or anchor verification.",
+      "definition_operational": "Named verification reference admitted as optional evidence and input-surface content when policy activates bound verification or counter-sensitive ordering.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §7",
+        "Audit Replay Agent — Specification §18"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only as an attested abbreviation or named control point from the publishable specification."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "ABBR_VERIF_EVENT",
+      "preferred_label": "VERIF_EVENT",
+      "category": "Abbreviation Terms",
+      "definition_short": "Optional evidence or input reference used when policy requires bound verification.",
+      "definition_operational": "Named verification reference admitted as optional evidence and input-surface content when bound verification is activated by policy.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §7",
+        "Audit Replay Agent — Specification §18"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only as an attested abbreviation or named control point from the publishable specification."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "ABBR_ZSSC",
+      "preferred_label": "ZSSC",
+      "category": "Abbreviation Terms",
+      "definition_short": "Foundational model that provides auditable governance records and control points.",
+      "definition_operational": "Public operational concept used for governance records and control points such as ZSSC_ENTER, ZSSC_EXIT, CPW_SAMPLE, BAND_CHANGE, CHECKPOINT(LASTCLEAN), ROLLBACK, FAIL_CLOSED, and REPORT.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §2",
+        "Audit Replay Agent — Specification §10"
+      ],
+      "related_terms": [
+        "ZSSC_ENTER",
+        "ZSSC_EXIT",
+        "CPW_SAMPLE",
+        "BAND_CHANGE",
+        "CHECKPOINT(LASTCLEAN)",
+        "ROLLBACK",
+        "FAIL_CLOSED",
+        "Audit report"
+      ],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only for records and control points explicitly admitted by the specification."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "ABBR_ZSSC_ENTER",
+      "preferred_label": "ZSSC_ENTER",
+      "category": "Abbreviation Terms",
+      "definition_short": "ZSSC governance record listed by the specification.",
+      "definition_operational": "Named auditable governance record or control point supplied by ZSSC and admitted by the public specification.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §2"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only as an attested abbreviation or named control point from the publishable specification."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "ABBR_ZSSC_EXIT",
+      "preferred_label": "ZSSC_EXIT",
+      "category": "Abbreviation Terms",
+      "definition_short": "ZSSC governance record listed by the specification.",
+      "definition_operational": "Named auditable governance record or control point supplied by ZSSC and admitted by the public specification.",
+      "normative_status": "normative",
+      "source_refs": [
+        "Audit Replay Agent — Specification §2"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only as an attested abbreviation or named control point from the publishable specification."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "OPT_AUXILIARY_INDEXES_SQLITE",
+      "preferred_label": "Auxiliary indexes / SQLite",
+      "category": "Optionality Terms",
+      "definition_short": "Implementation optional.",
+      "definition_operational": "Optionality rule: They must not become the source of truth for admission or audit.",
+      "normative_status": "implementation_optional",
+      "source_refs": [
+        "Audit Replay Agent — Specification §17"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only under the optionality rule stated in §17."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "OPT_NONCOMPLIANT_HOLD_INTERVAL_IN_THE_LEDGER",
+      "preferred_label": "NONCOMPLIANT_HOLD interval in the ledger",
+      "category": "Optionality Terms",
+      "definition_short": "Schema optional.",
+      "definition_operational": "Optionality rule: Recommended when FAIL_CLOSED is related to evidence failure.",
+      "normative_status": "implementation_optional",
+      "source_refs": [
+        "Audit Replay Agent — Specification §17"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only under the optionality rule stated in §17."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "OPT_SEMANTIC_CONTINUITY_SCORE",
+      "preferred_label": "Semantic continuity score",
+      "category": "Optionality Terms",
+      "definition_short": "Controlled optional.",
+      "definition_operational": "Optionality rule: Use only when policy activates it; it does not replace constitutive verification.",
+      "normative_status": "implementation_optional",
+      "source_refs": [
+        "Audit Replay Agent — Specification §17"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only under the optionality rule stated in §17."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    },
+    {
+      "term_id": "OPT_TVC_PROOF_FROM_FRESHNESS_ISSUER",
+      "preferred_label": "TVC / proof from freshness issuer",
+      "category": "Optionality Terms",
+      "definition_short": "Conditional optional.",
+      "definition_operational": "Optionality rule: Mandatory only when required by the acceptance policy.",
+      "normative_status": "implementation_optional",
+      "source_refs": [
+        "Audit Replay Agent — Specification §17"
+      ],
+      "related_terms": [],
+      "synonyms": [],
+      "non_synonyms": [],
+      "usage_constraints": [
+        "Use only under the optionality rule stated in §17."
+      ],
+      "allowed_values": null,
+      "ambiguities": [],
+      "examples": [],
+      "term_attested_in_spec": true,
+      "public_traceable": true
+    }
+  ]
+}

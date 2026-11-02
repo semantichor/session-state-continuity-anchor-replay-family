@@ -1,0 +1,1344 @@
+PT-ID: PT-001
+COMMAND: baseline.exe vra next_state S0 StartupComplete true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S1
+
+PT-ID: PT-002
+COMMAND: baseline.exe vra next_state S2 StructuralChecksDone true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S3
+
+PT-ID: PT-003
+COMMAND: baseline.exe vra next_state S3 EligibilityChecksDone true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S4
+
+PT-ID: PT-004
+COMMAND: baseline.exe vra next_state S2 StructuralChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S5
+
+PT-ID: PT-005
+COMMAND: baseline.exe vra next_state S2 StructuralChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S5
+
+PT-ID: PT-006
+COMMAND: baseline.exe vra next_state S2 StructuralChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S5
+
+PT-ID: PT-007
+COMMAND: baseline.exe vra next_state S2 StructuralChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S5
+
+PT-ID: PT-008
+COMMAND: baseline.exe vra next_state S3 EligibilityChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S5
+
+PT-ID: PT-009
+COMMAND: baseline.exe vra next_state S3 EligibilityChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S5
+
+PT-ID: PT-010
+COMMAND: baseline.exe vra next_state S0 StartupComplete false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S5
+
+PT-ID: PT-011
+COMMAND: baseline.exe vra next_state S3 RollbackDetected true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S5
+
+PT-ID: PT-012
+COMMAND: baseline.exe vra next_state S5 WalReplayNeeded true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S7
+
+PT-ID: PT-013
+COMMAND: baseline.exe vra next_state S3 ToolStateInvalid true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S6
+
+PT-ID: PT-014
+COMMAND: baseline.exe vra next_state S3 ToolStateInvalid true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S6
+COMMAND: baseline.exe vra next_state S3 EligibilityChecksDone true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S4
+
+PT-ID: PT-015
+COMMAND: baseline.exe vra next_state S6 StartupComplete true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S6
+
+PT-ID: PT-016
+COMMAND: baseline.exe vra evidence deny_chain
+EXIT_CODE: 0
+STDOUT_TAIL: OK vra_evidence validator_bundle_id=vb-0001;verified_head_digest=sha256:acceptedhead0001;snapshot_id=vra-snap-0001;policy_id=pol-0001;source_id=src-0001;freshness_value=41;irr_digest=sha256:irr0001;tool_activation_status=inactive;failure_code=FC_CHAIN;failed_validator=V_CHAIN;suppression_status=suppressed
+
+PT-ID: PT-017
+COMMAND: baseline.exe vra evidence deny_freshness
+EXIT_CODE: 0
+STDOUT_TAIL: OK vra_evidence validator_bundle_id=vb-0001;verified_head_digest=sha256:acceptedhead0001;snapshot_id=vra-snap-0001;policy_id=pol-0001;source_id=src-0001;freshness_value=40;irr_digest=sha256:irr0001;tool_activation_status=inactive;failed_validator=V_FRESHNESS
+
+PT-ID: PT-018
+COMMAND: baseline.exe vra evidence deny_parse
+EXIT_CODE: 0
+STDOUT_TAIL: OK vra_evidence failure_code=FC_PARSE;failed_validator=V_PARSE;suppression_status=suppressed;validator_bundle_id=vb-0001;verified_head_digest=sha256:acceptedhead0001;snapshot_id=vra-snap-0001
+
+PT-ID: PT-019
+COMMAND: baseline.exe vra evidence recovery
+EXIT_CODE: 0
+STDOUT_TAIL: OK vra_evidence recovery_phase=WAL_REPLAY;recovery_phase_producer=V_WAL_PHASE;validator_bundle_id=vb-0001;snapshot_id=vra-snap-0001
+
+PT-ID: PT-020
+COMMAND: baseline.exe vra evidence readmission
+EXIT_CODE: 0
+STDOUT_TAIL: OK vra_evidence readmission_token_id=rt-0001;validator_bundle_id=vb-0001
+
+PT-ID: PT-021
+COMMAND: baseline.exe vra evidence producers
+EXIT_CODE: 0
+STDOUT_TAIL: OK vra_evidence validator_bundle_id_producer=ExecutionLayer;failure_explanation_producer=GateLogic;tool_activation_status_producer=ToolGate
+
+PT-ID: PT-022
+COMMAND: baseline.exe vra verdict_vocab
+EXIT_CODE: 0
+STDOUT_TAIL: OK vra_verdicts ALLOW=1;DENY=1;QUARANTINE=1;ESCALATE=1;READMISSION_PENDING=1
+
+PT-ID: PT-023
+COMMAND: baseline.exe vra verdict_vocab
+EXIT_CODE: 0
+STDOUT_TAIL: OK vra_verdicts ALLOW=1;DENY=1;QUARANTINE=1;ESCALATE=1;READMISSION_PENDING=1
+
+PT-ID: PT-024
+COMMAND: baseline.exe vra next_state S8 AuthorityRelease true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S0
+
+PT-ID: PT-025
+COMMAND: baseline.exe vra evidence deny_freshness
+EXIT_CODE: 0
+STDOUT_TAIL: OK vra_evidence validator_bundle_id=vb-0001;verified_head_digest=sha256:acceptedhead0001;snapshot_id=vra-snap-0001;policy_id=pol-0001;source_id=src-0001;freshness_value=40;irr_digest=sha256:irr0001;tool_activation_status=inactive;failed_validator=V_FRESHNESS
+
+PT-ID: PT-026
+COMMAND: baseline.exe vra evidence recovery
+EXIT_CODE: 0
+STDOUT_TAIL: OK vra_evidence recovery_phase=WAL_REPLAY;recovery_phase_producer=V_WAL_PHASE;validator_bundle_id=vb-0001;snapshot_id=vra-snap-0001
+
+PT-ID: PT-027
+COMMAND: baseline.exe vra next_state S3 ToolStateInvalid true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S6
+
+PT-ID: PT-028
+COMMAND: baseline.exe vra evidence compat
+EXIT_CODE: 0
+STDOUT_TAIL: OK vra_evidence v_compat_enforcement=import_admissibility_point;compat_status=recorded
+
+PT-ID: PT-029
+COMMAND: baseline.exe vra evidence writer_lock
+EXIT_CODE: 0
+STDOUT_TAIL: OK vra_evidence v_writer_lock_enforcement=single_writer;writer_lock_status=held;contention_status=none
+
+PT-ID: PTS-BDA-001
+COMMAND: baseline.exe bda next_state IDLE INPUT_RECEIVED true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=INGEST_VALIDATE
+
+PT-ID: PTS-BDA-002
+COMMAND: baseline.exe bda next_state INGEST_VALIDATE VALIDATION_PASS true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=FILTER_REVIEW
+
+PT-ID: PTS-BDA-003
+COMMAND: baseline.exe bda next_state FILTER_REVIEW NO_ESCALATION true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=READY_FOR_RELEASE
+
+PT-ID: PTS-BDA-004
+COMMAND: baseline.exe bda next_state FINALIZATION_REVIEW EVIDENCE_OK true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=IDLE
+
+PT-ID: PTS-BDA-005
+COMMAND: baseline.exe bda next_state INGEST_VALIDATE VALIDATION_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=OUTPUT_BLOCKED
+
+PT-ID: PTS-BDA-006
+COMMAND: baseline.exe bda next_state FILTER_REVIEW TOOL_STATE_DETECTED true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=TOOL_STATE_QUARANTINED
+
+PT-ID: PTS-BDA-007
+COMMAND: baseline.exe bda next_state INGEST_VALIDATE VALIDATION_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=OUTPUT_BLOCKED
+
+PT-ID: PTS-BDA-008
+COMMAND: baseline.exe bda next_state TOOL_STATE_QUARANTINED APPROVAL_GRANTED false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=TOOL_STATE_QUARANTINED
+
+PT-ID: PTS-BDA-009
+COMMAND: baseline.exe bda next_state INGEST_VALIDATE VALIDATION_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=OUTPUT_BLOCKED
+
+PT-ID: PTS-BDA-010
+COMMAND: baseline.exe bda next_state INGEST_VALIDATE VALIDATION_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=OUTPUT_BLOCKED
+
+PT-ID: PTS-BDA-011
+COMMAND: baseline.exe bda evidence conflict
+EXIT_CODE: 0
+STDOUT_TAIL: OK bda_evidence verdict=BLOCK;conflict_evidence=recorded;tsa_label=missing
+
+PT-ID: PTS-BDA-012
+COMMAND: baseline.exe bda verdict_vocab
+EXIT_CODE: 0
+STDOUT_TAIL: OK bda_verdicts ALLOW=1;ALLOW_CONSTRAINED=1;BLOCK=1;QUARANTINE=1;FAIL_CLOSED=1;NONCOMPLIANT_HOLD=1;READMIT=1
+
+PT-ID: PTS-BDA-013
+COMMAND: baseline.exe bda next_state FILTER_REVIEW CPW_CRITICAL true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=OUTPUT_BLOCKED
+
+PT-ID: PTS-BDA-014
+COMMAND: baseline.exe bda next_state INGEST_VALIDATE VALIDATION_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=OUTPUT_BLOCKED
+COMMAND: baseline.exe bda next_state FINALIZATION_REVIEW EVIDENCE_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=NONCOMPLIANT_HOLD
+
+PT-ID: PTS-BDA-015
+COMMAND: baseline.exe bda next_state FILTER_REVIEW CPW_CRITICAL true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=OUTPUT_BLOCKED
+
+PT-ID: PTS-BDA-016
+COMMAND: baseline.exe bda next_state FINALIZATION_REVIEW CPW_CRITICAL true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=OUTPUT_BLOCKED
+
+PT-ID: PTS-BDA-017
+COMMAND: baseline.exe bda next_state TOOL_STATE_QUARANTINED CPW_CRITICAL true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=OUTPUT_BLOCKED
+
+PT-ID: PTS-BDA-018
+COMMAND: baseline.exe bda next_state OUTPUT_BLOCKED READMISSION_APPROVED true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=IDLE
+
+PT-ID: PTS-BDA-019
+COMMAND: baseline.exe bda next_state NONCOMPLIANT_HOLD COMPLIANCE_RESTORED true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=IDLE
+
+PT-ID: PTS-BDA-020
+COMMAND: baseline.exe bda next_state OUTPUT_BLOCKED READMISSION_APPROVED false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=OUTPUT_BLOCKED
+
+PT-ID: PTS-BDA-021
+COMMAND: baseline.exe bda next_state OUTPUT_BLOCKED READMISSION_APPROVED true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=IDLE
+COMMAND: baseline.exe bda next_state IDLE INPUT_RECEIVED true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=INGEST_VALIDATE
+
+PT-ID: PTS-BDA-022
+COMMAND: baseline.exe bda evidence verdict_artifact
+EXIT_CODE: 0
+STDOUT_TAIL: OK bda_evidence decision_id=bd-0001;session_id=sess-0001;boundary_side=ingress;decision_object=ingress_request;input_digest=sha256:in0001;policy_hash=sha256:pol0001;validator_results=VAL-01:pass;VAL-02:pass;statement_refs=stmt-0001;verdict=ALLOW;reason_code=RC_OK;order_index=1;hash_prev=sha256:h0;hash_curr=sha256:h1
+
+PT-ID: PTS-BDA-023
+COMMAND: baseline.exe bda evidence mandatory
+EXIT_CODE: 0
+STDOUT_TAIL: OK bda_evidence decision_id=bd-0001;session_id=sess-0001;boundary_side=ingress;decision_object=ingress_request;input_digest=sha256:in0001;policy_hash=sha256:pol0001;validator_results=VAL-01:pass;VAL-02:pass;statement_refs=stmt-0001;verdict=ALLOW;reason_code=RC_OK;order_index=1;hash_prev=sha256:h0;hash_curr=sha256:h1
+
+PT-ID: PTS-BDA-024
+COMMAND: baseline.exe bda evidence approval
+EXIT_CODE: 0
+STDOUT_TAIL: OK bda_evidence decision_id=bd-0001;session_id=sess-0001;boundary_side=ingress;decision_object=ingress_request;input_digest=sha256:in0001;policy_hash=sha256:pol0001;validator_results=VAL-01:pass;VAL-02:pass;statement_refs=stmt-0001;verdict=ALLOW;reason_code=RC_OK;order_index=1;hash_prev=sha256:h0;hash_curr=sha256:h1;approval_ref=ap-0001
+
+PT-ID: PTS-BDA-025
+COMMAND: baseline.exe bda evidence finalization
+EXIT_CODE: 0
+STDOUT_TAIL: OK bda_evidence decision_id=bd-0001;session_id=sess-0001;boundary_side=ingress;decision_object=ingress_request;input_digest=sha256:in0001;policy_hash=sha256:pol0001;validator_results=VAL-01:pass;VAL-02:pass;statement_refs=stmt-0001;verdict=ALLOW;reason_code=RC_OK;order_index=1;hash_prev=sha256:h0;hash_curr=sha256:h1;evidence_ref=ev-0001;verif_counter_anchor=42
+
+PT-ID: PTS-BDA-026
+COMMAND: baseline.exe bda evidence rollback
+EXIT_CODE: 0
+STDOUT_TAIL: OK bda_evidence decision_id=bd-0001;session_id=sess-0001;boundary_side=ingress;decision_object=ingress_request;input_digest=sha256:in0001;policy_hash=sha256:pol0001;validator_results=VAL-01:pass;VAL-02:pass;statement_refs=stmt-0001;verdict=ALLOW;reason_code=RC_OK;order_index=1;hash_prev=sha256:h0;hash_curr=sha256:h1;rollback_ref=rb-0001
+
+PT-ID: PTS-BDA-027
+COMMAND: (no invocation -- SKIP: Boundary_Defense_Agent_Conformance_Tests.md:516 §5 Minimal Run Note bounded-external — "authorized non-validator producer grounding".)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-BDA-028
+COMMAND: baseline.exe bda next_state READY_FOR_RELEASE CPW_CRITICAL true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=OUTPUT_BLOCKED
+
+PT-ID: PTS-BDA-029
+COMMAND: (no invocation -- SKIP: Boundary_Defense_Agent_Conformance_Tests.md:516 §5 Minimal Run Note bounded-external — "distributed enforcement legitimacy where not exposed by local transition function".)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-BDA-030
+COMMAND: baseline.exe bda verdict_vocab
+EXIT_CODE: 0
+STDOUT_TAIL: OK bda_verdicts ALLOW=1;ALLOW_CONSTRAINED=1;BLOCK=1;QUARANTINE=1;FAIL_CLOSED=1;NONCOMPLIANT_HOLD=1;READMIT=1
+
+PT-ID: PTS-BDA-031
+COMMAND: baseline.exe bda verdict_vocab
+EXIT_CODE: 0
+STDOUT_TAIL: OK bda_verdicts ALLOW=1;ALLOW_CONSTRAINED=1;BLOCK=1;QUARANTINE=1;FAIL_CLOSED=1;NONCOMPLIANT_HOLD=1;READMIT=1
+
+PT-ID: PTS-BDA-032
+COMMAND: baseline.exe bda next_state INGEST_VALIDATE VALIDATION_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=OUTPUT_BLOCKED
+COMMAND: baseline.exe bda next_state FILTER_REVIEW TOOL_STATE_DETECTED true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=TOOL_STATE_QUARANTINED
+
+PT-ID: PTS-BDA-033
+COMMAND: baseline.exe bda next_state FILTER_REVIEW CPW_CRITICAL true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=OUTPUT_BLOCKED
+
+PT-ID: PTS-BDA-034
+COMMAND: baseline.exe bda evidence approval
+EXIT_CODE: 0
+STDOUT_TAIL: OK bda_evidence decision_id=bd-0001;session_id=sess-0001;boundary_side=ingress;decision_object=ingress_request;input_digest=sha256:in0001;policy_hash=sha256:pol0001;validator_results=VAL-01:pass;VAL-02:pass;statement_refs=stmt-0001;verdict=ALLOW;reason_code=RC_OK;order_index=1;hash_prev=sha256:h0;hash_curr=sha256:h1;approval_ref=ap-0001
+
+PT-ID: PTS-BDA-035
+COMMAND: baseline.exe bda next_state FINALIZATION_REVIEW EVIDENCE_OK true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=IDLE
+COMMAND: baseline.exe bda next_state FINALIZATION_REVIEW EVIDENCE_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=NONCOMPLIANT_HOLD
+
+PT-ID: PTS-BDA-036
+COMMAND: baseline.exe bda verdict_vocab
+EXIT_CODE: 0
+STDOUT_TAIL: OK bda_verdicts ALLOW=1;ALLOW_CONSTRAINED=1;BLOCK=1;QUARANTINE=1;FAIL_CLOSED=1;NONCOMPLIANT_HOLD=1;READMIT=1
+
+PT-ID: TAA-PT-001
+COMMAND: baseline.exe taa next_state INTAKE INTAKE_TO_ROLE_SCREENING true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=ROLE_SCREENING
+
+PT-ID: TAA-PT-002
+COMMAND: baseline.exe taa next_state EVALUATING EVALUATING_TO_CLASSIFYING true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=CLASSIFYING
+
+PT-ID: TAA-PT-003
+COMMAND: baseline.exe taa next_state DECIDED DECIDED_TO_HANDOFF_READY true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=HANDOFF_READY
+
+PT-ID: TAA-PT-004
+COMMAND: baseline.exe taa next_state EVALUATING EVALUATING_TO_CLASSIFYING false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=FAIL_CLOSED
+
+PT-ID: TAA-PT-005
+COMMAND: baseline.exe taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_CONSTRAINED_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=DECIDED
+
+PT-ID: TAA-PT-006
+COMMAND: baseline.exe taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=DECIDED
+
+PT-ID: TAA-PT-007
+COMMAND: baseline.exe taa next_state ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=CANONICALIZING
+
+PT-ID: TAA-PT-008
+COMMAND: baseline.exe taa next_state CLASSIFYING CLASSIFYING_TO_DENY_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=DECIDED
+COMMAND: baseline.exe taa next_state EVALUATING EVALUATING_TO_FAIL_CLOSED false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=FAIL_CLOSED
+
+PT-ID: TAA-PT-009
+COMMAND: baseline.exe taa next_state INTAKE STRUCTURAL_INCOMPLETENESS_TO_FAIL_CLOSED false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=FAIL_CLOSED
+
+PT-ID: TAA-PT-010
+COMMAND: baseline.exe taa next_state CLASSIFYING POLICY_SNAPSHOT_DRIFT_TO_FAIL_CLOSED false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=FAIL_CLOSED
+
+PT-ID: TAA-PT-011
+COMMAND: baseline.exe taa next_state EVALUATING CONFLICT_CHECKING_TO_ALLOW_DECISION false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=FAIL_CLOSED
+
+PT-ID: TAA-PT-012
+COMMAND: baseline.exe taa next_state FAIL_CLOSED FAIL_CLOSED_TO_NONCOMPLIANT_HOLD false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=NONCOMPLIANT_HOLD
+COMMAND: baseline.exe taa next_state NONCOMPLIANT_HOLD NONCOMPLIANT_HOLD_TO_READMISSION_PENDING false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=READMISSION_PENDING
+
+PT-ID: TAA-PT-013
+COMMAND: baseline.exe taa next_state READMISSION_PENDING READMISSION_PENDING_TO_ROLE_SCREENING true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=ROLE_SCREENING
+
+PT-ID: TAA-PT-014
+COMMAND: baseline.exe taa next_state CLOSED EVALUATING_TO_CLASSIFYING true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=CLOSED
+
+PT-ID: TAA-PT-015
+COMMAND: baseline.exe taa evidence closure
+EXIT_CODE: 0
+STDOUT_TAIL: OK taa_evidence semantic_closure=ok;evidence_closure=ok;failure_closure=ok;policy_snapshot_closure=ok
+
+PT-ID: TAA-PT-016
+COMMAND: baseline.exe taa evidence mandatory
+EXIT_CODE: 0
+STDOUT_TAIL: OK taa_evidence decision_id=td-0001;statement_id_list=taa-stmt-0001;verdict=ALLOW;reason_code=RC_OK;tsa_label=mechanism_level_admitted;source_class=TRAINED;source_ref=sr-0001;boundary_validated_role=mechanism_level;role_validation_result=confirmed;policy_snapshot_id=ps-0001;policy_hash_ref=sha256:ph0001;scope_id=scope-0001;turn_id=turn-0001;order_ref=ord-0001;logical_timestamp=1
+
+PT-ID: TAA-PT-017
+COMMAND: baseline.exe taa evidence conditional_conflict
+EXIT_CODE: 0
+STDOUT_TAIL: OK taa_evidence decision_id=td-0001;statement_id_list=taa-stmt-0001;verdict=ALLOW;reason_code=RC_OK;tsa_label=mechanism_level_admitted;source_class=TRAINED;source_ref=sr-0001;boundary_validated_role=mechanism_level;role_validation_result=confirmed;policy_snapshot_id=ps-0001;policy_hash_ref=sha256:ph0001;scope_id=scope-0001;turn_id=turn-0001;order_ref=ord-0001;logical_timestamp=1;conflict_check_mode=heuristic;conflict_check_strength=below_threshold;conflict_check_confidence=0.4;conflict_check_coverage_scope=partial;compared_claim_set_ref=ccs-0001;residual_risk_statement=residual_present
+
+PT-ID: TAA-PT-018
+COMMAND: baseline.exe taa evidence escalation
+EXIT_CODE: 0
+STDOUT_TAIL: OK taa_evidence request_id=er-0001;failure_ref=fr-0001;required_actor_role=external_reviewer;required_evidence=clearance;status=open
+
+PT-ID: TAA-PT-019
+COMMAND: baseline.exe taa next_state DECIDED CLEARANCE_ARTIFACT_MISSING_TO_FAIL_CLOSED false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=FAIL_CLOSED
+
+PT-ID: TAA-PT-021
+COMMAND: baseline.exe taa verdict_vocab
+EXIT_CODE: 0
+STDOUT_TAIL: OK taa_verdicts ALLOW=1;ALLOW_CONSTRAINED=1;DENY=1;FAIL_CLOSED=1;ESCALATE=1;OUT_OF_SCOPE=1
+
+PT-ID: TAA-PT-022
+COMMAND: baseline.exe taa next_state ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=CANONICALIZING
+COMMAND: baseline.exe taa next_state ROLE_SCREENING ROLE_SCREENING_TO_OUT_OF_SCOPE_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=DECIDED
+
+PT-ID: TAA-PT-023
+COMMAND: baseline.exe taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=DECIDED
+COMMAND: baseline.exe taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_FAIL_CLOSED false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=FAIL_CLOSED
+
+PT-ID: TAA-PT-024
+COMMAND: baseline.exe taa next_state EVALUATING EVALUATING_TO_FAIL_CLOSED false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=FAIL_CLOSED
+
+PT-ID: TAA-PT-025
+COMMAND: baseline.exe taa evidence conditional_conflict
+EXIT_CODE: 0
+STDOUT_TAIL: OK taa_evidence decision_id=td-0001;statement_id_list=taa-stmt-0001;verdict=ALLOW;reason_code=RC_OK;tsa_label=mechanism_level_admitted;source_class=TRAINED;source_ref=sr-0001;boundary_validated_role=mechanism_level;role_validation_result=confirmed;policy_snapshot_id=ps-0001;policy_hash_ref=sha256:ph0001;scope_id=scope-0001;turn_id=turn-0001;order_ref=ord-0001;logical_timestamp=1;conflict_check_mode=heuristic;conflict_check_strength=below_threshold;conflict_check_confidence=0.4;conflict_check_coverage_scope=partial;compared_claim_set_ref=ccs-0001;residual_risk_statement=residual_present
+
+PT-ID: TAA-PT-026
+COMMAND: baseline.exe taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=DECIDED
+
+PT-ID: TAA-PT-027
+COMMAND: baseline.exe taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=DECIDED
+COMMAND: baseline.exe taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_CONSTRAINED_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=DECIDED
+COMMAND: baseline.exe taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=DECIDED
+COMMAND: baseline.exe taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=DECIDED
+
+PT-ID: TAA-PT-020
+COMMAND: (no invocation -- SKIP: Truth_Arbitration_Agent_Conformance_Tests.md §4/record-kind — "Declarative conformance claim (not a buyer-runnable unit test)"; MRN bounded-external: ordering enforcement distributed across §11 + §9, satisfied at the runtime layer (AMB-011).)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: VP-GEN-001
+COMMAND: baseline.exe taa next_state INTAKE INTAKE_TO_ROLE_SCREENING true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=ROLE_SCREENING
+
+PT-ID: VP-GEN-002
+COMMAND: baseline.exe taa next_state EVALUATING EVALUATING_TO_CLASSIFYING true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=CLASSIFYING
+
+PT-ID: VP-GEN-003
+COMMAND: baseline.exe taa next_state DECIDED DECIDED_TO_HANDOFF_READY true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=HANDOFF_READY
+
+PT-ID: VP-GEN-004
+COMMAND: baseline.exe taa next_state EVALUATING EVALUATING_TO_CLASSIFYING false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=FAIL_CLOSED
+
+PT-ID: VP-GEN-005
+COMMAND: baseline.exe taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_CONSTRAINED_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=DECIDED
+
+PT-ID: VP-GEN-006
+COMMAND: baseline.exe taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=DECIDED
+
+PT-ID: VP-GEN-007
+COMMAND: baseline.exe taa next_state ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=CANONICALIZING
+
+PT-ID: VP-GEN-008
+COMMAND: baseline.exe taa next_state CLASSIFYING CLASSIFYING_TO_DENY_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=DECIDED
+COMMAND: baseline.exe taa next_state EVALUATING EVALUATING_TO_FAIL_CLOSED false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=FAIL_CLOSED
+
+PT-ID: VP-GEN-009
+COMMAND: baseline.exe taa next_state INTAKE STRUCTURAL_INCOMPLETENESS_TO_FAIL_CLOSED false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=FAIL_CLOSED
+
+PT-ID: VP-GEN-010
+COMMAND: baseline.exe taa next_state CLASSIFYING POLICY_SNAPSHOT_DRIFT_TO_FAIL_CLOSED false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=FAIL_CLOSED
+
+PT-ID: VP-GEN-011
+COMMAND: baseline.exe taa next_state EVALUATING CONFLICT_CHECKING_TO_ALLOW_DECISION false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=FAIL_CLOSED
+
+PT-ID: VP-GEN-012
+COMMAND: baseline.exe taa next_state FAIL_CLOSED FAIL_CLOSED_TO_NONCOMPLIANT_HOLD false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=NONCOMPLIANT_HOLD
+COMMAND: baseline.exe taa next_state NONCOMPLIANT_HOLD NONCOMPLIANT_HOLD_TO_READMISSION_PENDING false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=READMISSION_PENDING
+
+PT-ID: VP-GEN-013
+COMMAND: baseline.exe taa next_state READMISSION_PENDING READMISSION_PENDING_TO_ROLE_SCREENING true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=ROLE_SCREENING
+
+PT-ID: VP-GEN-014
+COMMAND: baseline.exe taa next_state CLOSED EVALUATING_TO_CLASSIFYING true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=CLOSED
+
+PT-ID: VP-GEN-015
+COMMAND: baseline.exe taa evidence closure
+EXIT_CODE: 0
+STDOUT_TAIL: OK taa_evidence semantic_closure=ok;evidence_closure=ok;failure_closure=ok;policy_snapshot_closure=ok
+
+PT-ID: VP-GEN-016
+COMMAND: baseline.exe taa evidence mandatory
+EXIT_CODE: 0
+STDOUT_TAIL: OK taa_evidence decision_id=td-0001;statement_id_list=taa-stmt-0001;verdict=ALLOW;reason_code=RC_OK;tsa_label=mechanism_level_admitted;source_class=TRAINED;source_ref=sr-0001;boundary_validated_role=mechanism_level;role_validation_result=confirmed;policy_snapshot_id=ps-0001;policy_hash_ref=sha256:ph0001;scope_id=scope-0001;turn_id=turn-0001;order_ref=ord-0001;logical_timestamp=1
+
+PT-ID: VP-GEN-017
+COMMAND: baseline.exe taa evidence conditional_conflict
+EXIT_CODE: 0
+STDOUT_TAIL: OK taa_evidence decision_id=td-0001;statement_id_list=taa-stmt-0001;verdict=ALLOW;reason_code=RC_OK;tsa_label=mechanism_level_admitted;source_class=TRAINED;source_ref=sr-0001;boundary_validated_role=mechanism_level;role_validation_result=confirmed;policy_snapshot_id=ps-0001;policy_hash_ref=sha256:ph0001;scope_id=scope-0001;turn_id=turn-0001;order_ref=ord-0001;logical_timestamp=1;conflict_check_mode=heuristic;conflict_check_strength=below_threshold;conflict_check_confidence=0.4;conflict_check_coverage_scope=partial;compared_claim_set_ref=ccs-0001;residual_risk_statement=residual_present
+
+PT-ID: VP-GEN-018
+COMMAND: baseline.exe taa evidence escalation
+EXIT_CODE: 0
+STDOUT_TAIL: OK taa_evidence request_id=er-0001;failure_ref=fr-0001;required_actor_role=external_reviewer;required_evidence=clearance;status=open
+
+PT-ID: VP-GEN-019
+COMMAND: baseline.exe taa next_state DECIDED CLEARANCE_ARTIFACT_MISSING_TO_FAIL_CLOSED false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=FAIL_CLOSED
+
+PT-ID: VP-GEN-021
+COMMAND: baseline.exe taa verdict_vocab
+EXIT_CODE: 0
+STDOUT_TAIL: OK taa_verdicts ALLOW=1;ALLOW_CONSTRAINED=1;DENY=1;FAIL_CLOSED=1;ESCALATE=1;OUT_OF_SCOPE=1
+
+PT-ID: VP-GEN-022
+COMMAND: baseline.exe taa next_state ROLE_SCREENING ROLE_SCREENING_RECLASSIFY_TO_CANONICALIZING true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=CANONICALIZING
+COMMAND: baseline.exe taa next_state ROLE_SCREENING ROLE_SCREENING_TO_OUT_OF_SCOPE_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=DECIDED
+
+PT-ID: VP-GEN-023
+COMMAND: baseline.exe taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=DECIDED
+COMMAND: baseline.exe taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_FAIL_CLOSED false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=FAIL_CLOSED
+
+PT-ID: VP-GEN-024
+COMMAND: baseline.exe taa next_state EVALUATING EVALUATING_TO_FAIL_CLOSED false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=FAIL_CLOSED
+
+PT-ID: VP-GEN-025
+COMMAND: baseline.exe taa evidence conditional_conflict
+EXIT_CODE: 0
+STDOUT_TAIL: OK taa_evidence decision_id=td-0001;statement_id_list=taa-stmt-0001;verdict=ALLOW;reason_code=RC_OK;tsa_label=mechanism_level_admitted;source_class=TRAINED;source_ref=sr-0001;boundary_validated_role=mechanism_level;role_validation_result=confirmed;policy_snapshot_id=ps-0001;policy_hash_ref=sha256:ph0001;scope_id=scope-0001;turn_id=turn-0001;order_ref=ord-0001;logical_timestamp=1;conflict_check_mode=heuristic;conflict_check_strength=below_threshold;conflict_check_confidence=0.4;conflict_check_coverage_scope=partial;compared_claim_set_ref=ccs-0001;residual_risk_statement=residual_present
+
+PT-ID: VP-GEN-026
+COMMAND: baseline.exe taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=DECIDED
+
+PT-ID: VP-GEN-027
+COMMAND: baseline.exe taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=DECIDED
+COMMAND: baseline.exe taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ALLOW_CONSTRAINED_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=DECIDED
+COMMAND: baseline.exe taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_DENY_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=DECIDED
+COMMAND: baseline.exe taa next_state CONFLICT_CHECKING CONFLICT_CHECKING_TO_ESCALATE_DECISION true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=DECIDED
+
+PT-ID: VP-GEN-020
+COMMAND: (no invocation -- SKIP: Truth_Arbitration_Agent_Conformance_Tests.md §4/record-kind — "Declarative conformance claim (not a buyer-runnable unit test)"; MRN bounded-external: ordering enforcement distributed across §11 + §9, satisfied at the runtime layer (AMB-011).)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: ARA-T001
+COMMAND: baseline.exe ara next_state S0 EV_PARSE_OK true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S1
+
+PT-ID: ARA-T002
+COMMAND: baseline.exe ara next_state S2 replay_fold_complete true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S3
+
+PT-ID: ARA-T003
+COMMAND: baseline.exe ara next_state S4 EV_REPORT_BOUND true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S5
+
+PT-ID: ARA-T004
+COMMAND: baseline.exe ara next_state S2 EV_SIGNATURE_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SX
+COMMAND: baseline.exe ara next_state S4 EV_CHAIN_BREAK false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SX
+COMMAND: baseline.exe ara verdict chain_break
+EXIT_CODE: 0
+STDOUT_TAIL: OK verdict=BROKEN
+
+PT-ID: ARA-T005
+COMMAND: baseline.exe ara verdict report_insufficient
+EXIT_CODE: 0
+STDOUT_TAIL: OK verdict=PARTIAL
+
+PT-ID: ARA-T006
+COMMAND: baseline.exe ara next_state S3 EV_EVIDENCE_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SH
+
+PT-ID: ARA-T007
+COMMAND: baseline.exe ara next_state S3 EV_LASTCLEAN_FOUND false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S3
+
+PT-ID: ARA-T008
+COMMAND: baseline.exe ara next_state S2 EV_SIGNATURE_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SX
+COMMAND: baseline.exe ara next_state S2 EV_CHAIN_BREAK true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SX
+COMMAND: baseline.exe ara next_state S2 EV_COUNTER_REPLAY true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SH
+COMMAND: baseline.exe ara next_state S2 EV_EVIDENCE_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SH
+
+PT-ID: ARA-T009
+COMMAND: baseline.exe ara next_state S2 EV_SIGNATURE_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SX
+
+PT-ID: ARA-T010
+COMMAND: baseline.exe ara next_state S4 EV_CHAIN_BREAK false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SX
+COMMAND: baseline.exe ara verdict chain_break
+EXIT_CODE: 0
+STDOUT_TAIL: OK verdict=BROKEN
+
+PT-ID: ARA-T011
+COMMAND: baseline.exe ara next_state S1 EV_SIGNATURE_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SX
+COMMAND: baseline.exe ara next_state S1 EV_CHAIN_BREAK true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SX
+COMMAND: baseline.exe ara next_state S1 EV_EVIDENCE_FAIL true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SH
+
+PT-ID: ARA-T012
+COMMAND: baseline.exe ara next_state SH EV_READMISSION_GRANTED true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S6
+
+PT-ID: ARA-T013
+COMMAND: baseline.exe ara next_state SH EV_READMISSION_GRANTED false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SH
+
+PT-ID: ARA-T014
+COMMAND: baseline.exe ara next_state S5 EV_PARSE_OK true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S5
+
+PT-ID: ARA-T015
+COMMAND: baseline.exe ara evidence final_export
+EXIT_CODE: 0
+STDOUT_TAIL: OK ara_evidence report_signature=rsig-0001;export_manifest_ref=em-0001
+
+PT-ID: ARA-T016
+COMMAND: baseline.exe ara evidence mandatory
+EXIT_CODE: 0
+STDOUT_TAIL: OK ara_evidence bundle_digest=sha256:bd0001;policy_profile_id=pp-0001;policy_hash=sha256:ph0001;validator_outcomes=V-04:pass;V-05:pass;hash_continuity_refs=hc-0001;checkpoint_refs=ara-ckpt-0001;rollback_refs=ara-rb-0001;signature_refs=sig-0001
+
+PT-ID: ARA-T017
+COMMAND: baseline.exe ara evidence hold_readmission
+EXIT_CODE: 0
+STDOUT_TAIL: OK ara_evidence hold_enter_refs=he-0001;hold_exit_refs=hx-0001;anchor_update_ref=43
+
+PT-ID: ARA-T018
+COMMAND: baseline.exe ara evidence producers
+EXIT_CODE: 0
+STDOUT_TAIL: OK ara_evidence producer_provenance=bounded_authorized
+
+PT-ID: ARA-T019
+COMMAND: baseline.exe ara evidence quarantine_gate
+EXIT_CODE: 0
+STDOUT_TAIL: OK ara_evidence v10_quarantine=gate_layer;admission_to_reconstruction=denied;classification=exported_declaratively
+
+PT-ID: ARA-T020
+COMMAND: baseline.exe ara evidence quarantine_gate
+EXIT_CODE: 0
+STDOUT_TAIL: OK ara_evidence v10_quarantine=gate_layer;admission_to_reconstruction=denied;classification=exported_declaratively
+
+PT-ID: ARA-T021
+COMMAND: baseline.exe ara verdict_vocab
+EXIT_CODE: 0
+STDOUT_TAIL: OK ara_verdicts REPLAYABLE=1;PARTIAL=1;REJECTED=1;BROKEN=1;INCIDENT_ONLY=1
+
+PT-ID: ARA-T022
+COMMAND: baseline.exe ara verdict_vocab
+EXIT_CODE: 0
+STDOUT_TAIL: OK ara_verdicts REPLAYABLE=1;PARTIAL=1;REJECTED=1;BROKEN=1;INCIDENT_ONLY=1
+
+PT-ID: ARA-T023
+COMMAND: baseline.exe ara next_state S2 EV_POLICY_UNRESOLVED true sx
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SX
+COMMAND: baseline.exe ara next_state S2 EV_POLICY_UNRESOLVED true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S2
+
+PT-ID: ARA-T024
+COMMAND: baseline.exe ara next_state S3 EV_LASTCLEAN_FOUND true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S4
+
+PT-ID: ARA-T025
+COMMAND: baseline.exe ara evidence hold_readmission
+EXIT_CODE: 0
+STDOUT_TAIL: OK ara_evidence hold_enter_refs=he-0001;hold_exit_refs=hx-0001;anchor_update_ref=43
+
+PT-ID: ARA-T026
+COMMAND: baseline.exe ara next_state S4 EV_REPORT_BOUND true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S5
+
+PT-ID: ARA-T027
+COMMAND: baseline.exe ara evidence quarantine_gate
+EXIT_CODE: 0
+STDOUT_TAIL: OK ara_evidence v10_quarantine=gate_layer;admission_to_reconstruction=denied;classification=exported_declaratively
+
+PT-ID: FPA-D-01
+COMMAND: (no invocation -- SKIP: Freshness_Portability_Agent_Conformance_Tests.md §F.D — "Declarative obligations (not locally runnable on the published surface)"; §H: each §F.D obligation "documented in the buyer's conformance record as a non-runnable but required obligation.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-02
+COMMAND: (no invocation -- SKIP: Freshness_Portability_Agent_Conformance_Tests.md §F.D — "Declarative obligations (not locally runnable on the published surface)"; §H: each §F.D obligation "documented in the buyer's conformance record as a non-runnable but required obligation.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-03
+COMMAND: (no invocation -- SKIP: Freshness_Portability_Agent_Conformance_Tests.md §F.D — "Declarative obligations (not locally runnable on the published surface)"; §H: each §F.D obligation "documented in the buyer's conformance record as a non-runnable but required obligation.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-04
+COMMAND: (no invocation -- SKIP: Freshness_Portability_Agent_Conformance_Tests.md §F.D — "Declarative obligations (not locally runnable on the published surface)"; §H: each §F.D obligation "documented in the buyer's conformance record as a non-runnable but required obligation.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-05
+COMMAND: (no invocation -- SKIP: Freshness_Portability_Agent_Conformance_Tests.md §F.D — "Declarative obligations (not locally runnable on the published surface)"; §H: each §F.D obligation "documented in the buyer's conformance record as a non-runnable but required obligation.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-D-06
+COMMAND: (no invocation -- SKIP: Freshness_Portability_Agent_Conformance_Tests.md §F.D — "Declarative obligations (not locally runnable on the published surface)"; §H: each §F.D obligation "documented in the buyer's conformance record as a non-runnable but required obligation.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: FPA-T-01
+COMMAND: baseline.exe fpa next_state IDLE TransferPacketReceived true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=RECEIVED
+
+PT-ID: FPA-T-02
+COMMAND: baseline.exe fpa next_state RECEIVED StructureValid true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=VERIFIED
+
+PT-ID: FPA-T-03
+COMMAND: baseline.exe fpa next_state RESTORATION_ELIGIBLE RestoreAdmitted true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=IDLE
+
+PT-ID: FPA-T-04
+COMMAND: baseline.exe fpa next_state RECEIVED StructureValid false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=REJECTED
+COMMAND: baseline.exe fpa next_state RECEIVED StructureInvalid true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=REJECTED
+
+PT-ID: FPA-T-06
+COMMAND: baseline.exe fpa next_state VERIFIED EvidencePending false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=QUARANTINED
+
+PT-ID: FPA-T-08a
+COMMAND: baseline.exe fpa next_state VERIFIED FreshnessFail true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=REJECTED
+
+PT-ID: FPA-T-08b
+COMMAND: baseline.exe fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=REJECTED
+
+PT-ID: FPA-T-08c
+COMMAND: baseline.exe fpa verdict_vocab
+EXIT_CODE: 0
+STDOUT_TAIL: OK fpa_verdicts ACCEPT=1;REJECT=1;QUARANTINE=1;RESTORATION_ELIGIBLE=1;READMIT=1;FAIL_CLOSED=1
+
+PT-ID: FPA-T-09
+COMMAND: baseline.exe fpa next_state VERIFIED FreshnessPass false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=REJECTED
+
+PT-ID: FPA-T-10
+COMMAND: baseline.exe fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=REJECTED
+
+PT-ID: FPA-T-11
+COMMAND: baseline.exe fpa next_state IRR_COMMITTED FreshnessPass true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=REJECTED
+
+PT-ID: FPA-T-12
+COMMAND: baseline.exe fpa next_state QUARANTINED ReadmissionApproved true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=VERIFIED
+
+PT-ID: FPA-T-13a
+COMMAND: baseline.exe fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=RESTORATION_ELIGIBLE
+
+PT-ID: FPA-T-13b
+COMMAND: baseline.exe fpa next_state RESTORATION_ELIGIBLE RestoreAdmitted true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=IDLE
+
+PT-ID: FPA-T-14
+COMMAND: baseline.exe fpa next_state REJECTED FreshnessPass true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=REJECTED
+
+PT-ID: FPA-T-15
+COMMAND: baseline.exe fpa evidence deny_restore
+EXIT_CODE: 0
+STDOUT_TAIL: OK fpa_evidence decision_id=fd-0002;agent_id=FPA-FRESHNESS-PORTABILITY-003;source_id=src-0001;ledger_uuid=lu-0001;decision_object=restore_admission;policy_id=pol-0001;policy_version=1;reason_code=DENY_RESTORE;semantic_verdict=FAIL_CLOSED;gate_class=BLOCK
+
+PT-ID: FPA-T-16
+COMMAND: baseline.exe fpa evidence accept
+EXIT_CODE: 0
+STDOUT_TAIL: OK fpa_evidence decision_id=fd-0001;agent_id=FPA-FRESHNESS-PORTABILITY-003;source_id=src-0001;ledger_uuid=lu-0001;decision_object=gate_verdict;policy_id=pol-0001;policy_version=1;reason_code=APPEND_IRR;semantic_verdict=ACCEPT;gate_class=RELEASE;packet_hash=sha256:pk0001;freshness_value=42;watermark_before=41;watermark_after=42;ssm_validation_result=pass
+
+PT-ID: FPA-T-17A
+COMMAND: baseline.exe fpa evidence tvc
+EXIT_CODE: 0
+STDOUT_TAIL: OK fpa_evidence tvc_validation_result=pass
+COMMAND: baseline.exe fpa evidence tvc_absent
+EXIT_CODE: 0
+STDOUT_TAIL: OK fpa_evidence
+
+PT-ID: FPA-T-17B
+COMMAND: baseline.exe fpa evidence evidence_bin
+EXIT_CODE: 0
+STDOUT_TAIL: OK fpa_evidence evidence_validation_result=pass
+COMMAND: baseline.exe fpa evidence evidence_bin_absent
+EXIT_CODE: 0
+STDOUT_TAIL: OK fpa_evidence
+
+PT-ID: FPA-T-17C
+COMMAND: baseline.exe fpa evidence transport
+EXIT_CODE: 0
+STDOUT_TAIL: OK fpa_evidence transport_validation_result=pass
+COMMAND: baseline.exe fpa evidence transport_absent
+EXIT_CODE: 0
+STDOUT_TAIL: OK fpa_evidence
+
+PT-ID: FPA-T-17D
+COMMAND: baseline.exe fpa evidence receipt_linkage
+EXIT_CODE: 0
+STDOUT_TAIL: OK fpa_evidence irr_digest=sha256:irr0001;prev_receipt_digest=sha256:prev0001
+
+PT-ID: FPA-T-18
+COMMAND: baseline.exe fpa evidence producers
+EXIT_CODE: 0
+STDOUT_TAIL: OK fpa_evidence non_validator_producer=bounded_grounded
+
+PT-ID: FPA-T-21
+COMMAND: baseline.exe fpa verdict_vocab
+EXIT_CODE: 0
+STDOUT_TAIL: OK fpa_verdicts ACCEPT=1;REJECT=1;QUARANTINE=1;RESTORATION_ELIGIBLE=1;READMIT=1;FAIL_CLOSED=1
+
+PT-ID: FPA-T-23
+COMMAND: baseline.exe fpa next_state VERIFIED EvidencePending true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=QUARANTINED
+COMMAND: baseline.exe fpa next_state VERIFIED FreshnessPass false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=REJECTED
+
+PT-ID: FPA-T-24
+COMMAND: baseline.exe fpa next_state VERIFIED FreshnessPass true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=FRESHNESS_ELIGIBLE
+
+PT-ID: FPA-T-25
+COMMAND: baseline.exe fpa evidence quarantine
+EXIT_CODE: 0
+STDOUT_TAIL: OK fpa_evidence evidence_validation_result=pending;semantic_verdict=QUARANTINE;gate_class=ESCALATION
+
+PT-ID: FPA-T-26
+COMMAND: baseline.exe fpa next_state FRESHNESS_ELIGIBLE IRRAppended true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=IRR_COMMITTED
+
+PT-ID: FPA-T-PR-01
+COMMAND: baseline.exe fpa next_state VERIFIED FreshnessFail true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=REJECTED
+
+PT-ID: FPA-T-PR-02
+COMMAND: baseline.exe fpa next_state FRESHNESS_ELIGIBLE IRRAppended true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=IRR_COMMITTED
+COMMAND: baseline.exe fpa next_state IRR_COMMITTED WatermarkPersisted true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=WATERMARK_COMMITTED
+COMMAND: baseline.exe fpa next_state FRESHNESS_ELIGIBLE WatermarkPersisted true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=REJECTED
+
+PT-ID: FPA-T-PR-03
+COMMAND: baseline.exe fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=RESTORATION_ELIGIBLE
+
+PT-ID: FPA-T-PR-09
+COMMAND: baseline.exe fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=RESTORATION_ELIGIBLE
+COMMAND: baseline.exe fpa next_state WATERMARK_COMMITTED RestoreRequest_GenesisConfirmed false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=REJECTED
+
+PT-ID: FPA-T-PR-10
+COMMAND: baseline.exe fpa next_state IDLE RestoreAdmitted true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=REJECTED
+
+PT-ID: FPA-T-PR-12
+COMMAND: baseline.exe fpa next_state QUARANTINED ReadmissionApproved true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=VERIFIED
+COMMAND: baseline.exe fpa next_state IDLE ReadmissionApproved true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=REJECTED
+
+PT-ID: FPA-T-PR-13
+COMMAND: baseline.exe fpa next_state VERIFIED FreshnessPass true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=FRESHNESS_ELIGIBLE
+COMMAND: baseline.exe fpa next_state FRESHNESS_ELIGIBLE IRRAppended true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=IRR_COMMITTED
+
+PT-ID: FPA-T-PR-14
+COMMAND: baseline.exe fpa next_state IRR_COMMITTED WatermarkPersisted false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=REJECTED
+
+PT-ID: PTS-001
+COMMAND: baseline.exe fam next_state S0 Fv01Pass true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S1
+
+PT-ID: PTS-002
+COMMAND: baseline.exe fam next_state S2 Fv03Pass true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S3
+
+PT-ID: PTS-003
+COMMAND: baseline.exe fam compose ct08
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=S8;verdict=REPLAY_ADMISSIBLE;foc=FOC-01;FEV-01_family_decision_id=fam-dec-0001;FEV-02_boundary_event_id=be-0001;FEV-03_session_id_prior=sess-0002/sess-0001;FEV-04_carried_statement_refs=cs-0001;FEV-05_tsa_refs_provenance=mechanism_level_admitted;FEV-06_anchor_document=bda-anchor-ref-0001;FEV-07_accepted_head_linked_irr=sha256:acceptedhead0001/sha256:irr0001;FEV-08_freshness_anchor_update=41/43;FEV-09_rehydration_closure_ref=vra-rhc-0001;FEV-10_replay_checkpoint_rollback=ara-ckpt-0001/ara-rb-0001;FEV-11_disclosure_class_entries=none;FEV-12_family_validator_outcomes=FV-01..FV-12:pass;FEV-13_hold_enter_exit=none;FEV-14_contamination_flags=none;FEV-15_report_signature_export=rsig-0001/em-0001;replay_admission_token=FOC-03
+
+PT-ID: PTS-004a
+COMMAND: baseline.exe fam next_state S1 Fv02AndFv04Pass false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SX
+
+PT-ID: PTS-004b
+COMMAND: baseline.exe fam next_state S2 UnlabeledMechanismLevelCarriedClaim false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SX
+
+PT-ID: PTS-005
+COMMAND: (no invocation -- SKIP: SSCAR_Conformance_Tests.md:27 §5 closed enumeration — "7 declarative records (PTS-005, PTS-015, PTS-019, PTS-020, PTS-027, plus the verdict-layer subsets of PTS-004 and PTS-017) are listed in §7 Public Oracles rather than here.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-006
+COMMAND: baseline.exe fam next_state S3 FreshnessReplay false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SH
+COMMAND: baseline.exe fam verdict_layer FV-06
+EXIT_CODE: 0
+STDOUT_TAIL: OK verdict=NONCOMPLIANT_HOLD
+COMMAND: baseline.exe fam compose ct04
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=SH;verdict=NONCOMPLIANT_HOLD;foc=FOC-05;hold_enter_refs=he-0001;pending_requirements=strict_increase_anchor_update_ref;freshness_before=41;freshness_after=40
+
+PT-ID: PTS-007
+COMMAND: baseline.exe fam compose ct13
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=S2;verdict=CONTAMINATION_FAIL_CLOSED;foc=FOC-04;boundary_validated_role=explanatory_only
+
+PT-ID: PTS-008
+COMMAND: baseline.exe fam next_state S3 FreshnessReplay false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SH
+COMMAND: baseline.exe fam next_state S3 CriticalContamination false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SX
+
+PT-ID: PTS-009
+COMMAND: baseline.exe fam next_state S3 CriticalContamination false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SX
+COMMAND: baseline.exe fam next_state S5 CriticalContamination false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SX
+COMMAND: baseline.exe fam next_state S0 CriticalContamination false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SX
+
+PT-ID: PTS-010
+COMMAND: baseline.exe fam next_state S5 AntiRollbackFailure false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SX
+
+PT-ID: PTS-011
+COMMAND: baseline.exe fam next_state S3 ChainBreak false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SX
+COMMAND: baseline.exe fam next_state S3 UntrustedAnchorPromoted false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SX
+
+PT-ID: PTS-012
+COMMAND: baseline.exe fam next_state SH HoldCaseWithNewFamilyClosureBundleAndAnchorUpdate true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SR
+
+PT-ID: PTS-013
+COMMAND: baseline.exe fam next_state SR ReadmissionBundleChangedCarriedPayload true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S2
+
+PT-ID: PTS-014
+COMMAND: baseline.exe fam next_state S8 Handoff false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S8
+COMMAND: baseline.exe fam next_state SX IncidentOnlyOutput false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SX
+
+PT-ID: PTS-015
+COMMAND: (no invocation -- SKIP: SSCAR_Conformance_Tests.md:27 §5 closed enumeration — "7 declarative records (PTS-005, PTS-015, PTS-019, PTS-020, PTS-027, plus the verdict-layer subsets of PTS-004 and PTS-017) are listed in §7 Public Oracles rather than here.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-016
+COMMAND: baseline.exe fam evidence ct08
+EXIT_CODE: 0
+STDOUT_TAIL: OK fam_evidence FEV-01_family_decision_id=fam-dec-0001;FEV-02_boundary_event_id=be-0001;FEV-03_session_id_prior=sess-0002/sess-0001;FEV-04_carried_statement_refs=cs-0001;FEV-05_tsa_refs_provenance=mechanism_level_admitted;FEV-06_anchor_document=bda-anchor-ref-0001;FEV-07_accepted_head_linked_irr=sha256:acceptedhead0001/sha256:irr0001;FEV-08_freshness_anchor_update=41/43;FEV-09_rehydration_closure_ref=vra-rhc-0001;FEV-10_replay_checkpoint_rollback=ara-ckpt-0001/ara-rb-0001;FEV-11_disclosure_class_entries=none;FEV-12_family_validator_outcomes=FV-01..FV-12:pass;FEV-13_hold_enter_exit=none;FEV-14_contamination_flags=none;FEV-15_report_signature_export=rsig-0001/em-0001
+
+PT-ID: PTS-017a
+COMMAND: baseline.exe fam compose ct02
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=SX;verdict=CONTAMINATION_FAIL_CLOSED;foc=FOC-04;contamination_flags=unlabeled_claim;contaminating_ref_set=cs-0001;blocked_stage=provenance_classification;tsa_refs=inadmissible
+
+PT-ID: PTS-017b
+COMMAND: baseline.exe fam compose ct04
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=SH;verdict=NONCOMPLIANT_HOLD;foc=FOC-05;hold_enter_refs=he-0001;pending_requirements=strict_increase_anchor_update_ref;freshness_before=41;freshness_after=40
+
+PT-ID: PTS-017d
+COMMAND: baseline.exe fam compose ct10
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=SR;verdict=NONCOMPLIANT_HOLD;foc=FOC-05;hold_exit_refs=hx-0001;anchor_update_ref=43>41
+
+PT-ID: PTS-018
+COMMAND: baseline.exe fam compose ct02
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=SX;verdict=CONTAMINATION_FAIL_CLOSED;foc=FOC-04;contamination_flags=unlabeled_claim;contaminating_ref_set=cs-0001;blocked_stage=provenance_classification;tsa_refs=inadmissible
+COMMAND: baseline.exe fam compose ct04
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=SH;verdict=NONCOMPLIANT_HOLD;foc=FOC-05;hold_enter_refs=he-0001;pending_requirements=strict_increase_anchor_update_ref;freshness_before=41;freshness_after=40
+
+PT-ID: PTS-019
+COMMAND: (no invocation -- SKIP: SSCAR_Conformance_Tests.md:27 §5 closed enumeration — "7 declarative records (PTS-005, PTS-015, PTS-019, PTS-020, PTS-027, plus the verdict-layer subsets of PTS-004 and PTS-017) are listed in §7 Public Oracles rather than here.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-020
+COMMAND: (no invocation -- SKIP: SSCAR_Conformance_Tests.md:27 §5 closed enumeration — "7 declarative records (PTS-005, PTS-015, PTS-019, PTS-020, PTS-027, plus the verdict-layer subsets of PTS-004 and PTS-017) are listed in §7 Public Oracles rather than here.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PTS-021
+COMMAND: baseline.exe fam verdict_vocab
+EXIT_CODE: 0
+STDOUT_TAIL: OK verdict_vocab REPLAY_ADMISSIBLE=1;REPLAY_ADMISSIBLE_CONSTRAINED=1;REPLAY_INCOMPLETE=1;NONCOMPLIANT_HOLD=1;CONTAMINATION_FAIL_CLOSED=1;INCIDENT_ONLY=1
+
+PT-ID: PTS-022
+COMMAND: baseline.exe fam next_state S3 FreshnessReplay false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SH
+COMMAND: baseline.exe fam verdict_layer FV-06
+EXIT_CODE: 0
+STDOUT_TAIL: OK verdict=NONCOMPLIANT_HOLD
+COMMAND: baseline.exe fam next_state S3 CriticalContamination false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SX
+COMMAND: baseline.exe fam verdict_layer FV-09
+EXIT_CODE: 0
+STDOUT_TAIL: OK verdict=CONTAMINATION_FAIL_CLOSED
+
+PT-ID: PTS-023
+COMMAND: baseline.exe fam next_state SR ReadmissionBundleChangedCarriedPayload true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S2
+COMMAND: baseline.exe fam next_state SR ReadmissionBundleChangedAnchorDocumentRef true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S2
+COMMAND: baseline.exe fam next_state SR ReadmissionBundleChangedSourceControlBundles true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S2
+COMMAND: baseline.exe fam next_state SR ReadmissionBundleChangedPolicySnapshot true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S5
+COMMAND: baseline.exe fam next_state SR ReadmissionBundleChangedRehydrationClosure true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S5
+
+PT-ID: PTS-024
+COMMAND: baseline.exe fam next_state S4 Fv07Pass true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S5
+
+PT-ID: PTS-025
+COMMAND: baseline.exe fam next_state S5 AntiRollbackFailure false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SX
+COMMAND: baseline.exe fam compose ct06_fail
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=SX;verdict=CONTAMINATION_FAIL_CLOSED;foc=FOC-04;contamination_flags=anti_rollback_failure
+
+PT-ID: PTS-026
+COMMAND: baseline.exe fam next_state S1 Fv02AndFv04Pass false
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SX
+
+PT-ID: PTS-027
+COMMAND: (no invocation -- SKIP: SSCAR_Conformance_Tests.md:27 §5 closed enumeration — "7 declarative records (PTS-005, PTS-015, PTS-019, PTS-020, PTS-027, plus the verdict-layer subsets of PTS-004 and PTS-017) are listed in §7 Public Oracles rather than here.")
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: CT-01
+COMMAND: baseline.exe fam compose ct01
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=S1;verdict=REPLAY_ADMISSIBLE;foc=FOC-01;fv01=pass;family_decision_id=fam-dec-0001
+
+PT-ID: CT-02
+COMMAND: baseline.exe fam compose ct02
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=SX;verdict=CONTAMINATION_FAIL_CLOSED;foc=FOC-04;contamination_flags=unlabeled_claim;contaminating_ref_set=cs-0001;blocked_stage=provenance_classification;tsa_refs=inadmissible
+
+PT-ID: CT-03
+COMMAND: baseline.exe fam compose ct03
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=S1;verdict=CONTAMINATION_FAIL_CLOSED;foc=FOC-04;anchor_document_digest=untrusted
+
+PT-ID: CT-04
+COMMAND: baseline.exe fam compose ct04
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=SH;verdict=NONCOMPLIANT_HOLD;foc=FOC-05;hold_enter_refs=he-0001;pending_requirements=strict_increase_anchor_update_ref;freshness_before=41;freshness_after=40
+
+PT-ID: CT-05
+COMMAND: baseline.exe fam compose ct08
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=S8;verdict=REPLAY_ADMISSIBLE;foc=FOC-01;FEV-01_family_decision_id=fam-dec-0001;FEV-02_boundary_event_id=be-0001;FEV-03_session_id_prior=sess-0002/sess-0001;FEV-04_carried_statement_refs=cs-0001;FEV-05_tsa_refs_provenance=mechanism_level_admitted;FEV-06_anchor_document=bda-anchor-ref-0001;FEV-07_accepted_head_linked_irr=sha256:acceptedhead0001/sha256:irr0001;FEV-08_freshness_anchor_update=41/43;FEV-09_rehydration_closure_ref=vra-rhc-0001;FEV-10_replay_checkpoint_rollback=ara-ckpt-0001/ara-rb-0001;FEV-11_disclosure_class_entries=none;FEV-12_family_validator_outcomes=FV-01..FV-12:pass;FEV-13_hold_enter_exit=none;FEV-14_contamination_flags=none;FEV-15_report_signature_export=rsig-0001/em-0001;replay_admission_token=FOC-03
+COMMAND: baseline.exe fam compose ct05_broken
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=S4;verdict=REPLAY_INCOMPLETE;foc=FOC-02;accepted_head_linked_irr=broken
+
+PT-ID: CT-06
+COMMAND: baseline.exe fam compose ct08
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=S8;verdict=REPLAY_ADMISSIBLE;foc=FOC-01;FEV-01_family_decision_id=fam-dec-0001;FEV-02_boundary_event_id=be-0001;FEV-03_session_id_prior=sess-0002/sess-0001;FEV-04_carried_statement_refs=cs-0001;FEV-05_tsa_refs_provenance=mechanism_level_admitted;FEV-06_anchor_document=bda-anchor-ref-0001;FEV-07_accepted_head_linked_irr=sha256:acceptedhead0001/sha256:irr0001;FEV-08_freshness_anchor_update=41/43;FEV-09_rehydration_closure_ref=vra-rhc-0001;FEV-10_replay_checkpoint_rollback=ara-ckpt-0001/ara-rb-0001;FEV-11_disclosure_class_entries=none;FEV-12_family_validator_outcomes=FV-01..FV-12:pass;FEV-13_hold_enter_exit=none;FEV-14_contamination_flags=none;FEV-15_report_signature_export=rsig-0001/em-0001;replay_admission_token=FOC-03
+COMMAND: baseline.exe fam compose ct06_fail
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=SX;verdict=CONTAMINATION_FAIL_CLOSED;foc=FOC-04;contamination_flags=anti_rollback_failure
+
+PT-ID: CT-07
+COMMAND: baseline.exe fam compose ct08
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=S8;verdict=REPLAY_ADMISSIBLE;foc=FOC-01;FEV-01_family_decision_id=fam-dec-0001;FEV-02_boundary_event_id=be-0001;FEV-03_session_id_prior=sess-0002/sess-0001;FEV-04_carried_statement_refs=cs-0001;FEV-05_tsa_refs_provenance=mechanism_level_admitted;FEV-06_anchor_document=bda-anchor-ref-0001;FEV-07_accepted_head_linked_irr=sha256:acceptedhead0001/sha256:irr0001;FEV-08_freshness_anchor_update=41/43;FEV-09_rehydration_closure_ref=vra-rhc-0001;FEV-10_replay_checkpoint_rollback=ara-ckpt-0001/ara-rb-0001;FEV-11_disclosure_class_entries=none;FEV-12_family_validator_outcomes=FV-01..FV-12:pass;FEV-13_hold_enter_exit=none;FEV-14_contamination_flags=none;FEV-15_report_signature_export=rsig-0001/em-0001;replay_admission_token=FOC-03
+COMMAND: baseline.exe fam compose ct07_broken
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=S5;verdict=REPLAY_INCOMPLETE;foc=FOC-02;replay_refs=incomplete
+
+PT-ID: CT-08
+COMMAND: baseline.exe fam compose ct08
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=S8;verdict=REPLAY_ADMISSIBLE;foc=FOC-01;FEV-01_family_decision_id=fam-dec-0001;FEV-02_boundary_event_id=be-0001;FEV-03_session_id_prior=sess-0002/sess-0001;FEV-04_carried_statement_refs=cs-0001;FEV-05_tsa_refs_provenance=mechanism_level_admitted;FEV-06_anchor_document=bda-anchor-ref-0001;FEV-07_accepted_head_linked_irr=sha256:acceptedhead0001/sha256:irr0001;FEV-08_freshness_anchor_update=41/43;FEV-09_rehydration_closure_ref=vra-rhc-0001;FEV-10_replay_checkpoint_rollback=ara-ckpt-0001/ara-rb-0001;FEV-11_disclosure_class_entries=none;FEV-12_family_validator_outcomes=FV-01..FV-12:pass;FEV-13_hold_enter_exit=none;FEV-14_contamination_flags=none;FEV-15_report_signature_export=rsig-0001/em-0001;replay_admission_token=FOC-03
+
+PT-ID: CT-09
+COMMAND: baseline.exe fam compose ct09
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=SX;verdict=CONTAMINATION_FAIL_CLOSED;foc=FOC-04;contaminating_ref_set=tool_state_object;blocked_stage=boundary_screened
+
+PT-ID: CT-10
+COMMAND: baseline.exe fam next_state SH HoldCaseWithNewFamilyClosureBundleAndAnchorUpdate true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=SR
+COMMAND: baseline.exe fam compose ct10
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=SR;verdict=NONCOMPLIANT_HOLD;foc=FOC-05;hold_exit_refs=hx-0001;anchor_update_ref=43>41
+
+PT-ID: CT-11
+COMMAND: baseline.exe fam compose ct11_ok
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=S7;verdict=REPLAY_ADMISSIBLE_CONSTRAINED;foc=FOC-02;disclosure_class_entries=BOUNDED_EXECUTION_NEUTRAL_OPENNESS
+COMMAND: baseline.exe fam compose ct11_collapse
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=S7;verdict=INCIDENT_ONLY;foc=FOC-02;disclosure_class_entries=collapsed
+
+PT-ID: CT-12
+COMMAND: baseline.exe fam compose ct12
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=S7;verdict=INCIDENT_ONLY;foc=FOC-04;family_validator_outcomes=empty
+
+PT-ID: CT-13
+COMMAND: baseline.exe fam compose ct13
+EXIT_CODE: 0
+STDOUT_TAIL: OK compose state=S2;verdict=CONTAMINATION_FAIL_CLOSED;foc=FOC-04;boundary_validated_role=explanatory_only
+
+PT-ID: CT-14
+COMMAND: baseline.exe fam next_state SR ReadmissionBundleChangedCarriedPayload true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S2
+COMMAND: baseline.exe fam next_state SR ReadmissionBundleChangedAnchorDocumentRef true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S2
+COMMAND: baseline.exe fam next_state SR ReadmissionBundleChangedPolicySnapshot true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S5
+COMMAND: baseline.exe fam next_state SR ReadmissionBundleChangedComponentSet true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S2
+COMMAND: baseline.exe fam next_state SR ReadmissionBundleChangedRehydrationClosure true
+EXIT_CODE: 0
+STDOUT_TAIL: OK state=S5
+
